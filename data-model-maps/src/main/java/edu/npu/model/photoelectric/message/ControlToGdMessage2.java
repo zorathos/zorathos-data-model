@@ -19,7 +19,7 @@ public class ControlToGdMessage2 {
     @Setter
     private byte[] message;
 
-    private static int messageFrameNumberAuto;
+    private static int udpClientMessageFrameNumberAuto;
 
 
     public ControlToGdMessage2() {
@@ -28,10 +28,10 @@ public class ControlToGdMessage2 {
         // 报文长度35
         this.messageLength = intToBytes(35);
         // 报文帧号
-        if (messageFrameNumberAuto == 2147483647) {
-            messageFrameNumberAuto = 0;
+        if (udpClientMessageFrameNumberAuto == 2147483647) {
+            udpClientMessageFrameNumberAuto = 0;
         }
-        this.messageFrameNumber = intToBytes(messageFrameNumberAuto++);
+        this.messageFrameNumber = intToBytes(udpClientMessageFrameNumberAuto++);
         // 控制字1
         this.controlWord1 = intToBytes(0);
         // 批号：0
@@ -120,10 +120,10 @@ public class ControlToGdMessage2 {
 
     public void setCheckSumAndRewriteContol() {
         // 报文帧号
-        if (messageFrameNumberAuto == 2147483647) {
-            messageFrameNumberAuto = 0;
+        if (udpClientMessageFrameNumberAuto == 2147483647) {
+            udpClientMessageFrameNumberAuto = 0;
         }
-        this.messageFrameNumber = intToBytes(messageFrameNumberAuto++);
+        this.messageFrameNumber = intToBytes(udpClientMessageFrameNumberAuto++);
         message = combineArrays(messageIdentification, messageLength, messageFrameNumber, controlWord1, batchNum,
                 targetAzimuth, targetElevation, targetDistance, reservedBytes1
         );

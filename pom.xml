@@ -154,6 +154,10 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <!-- 关闭javadoc报错 老项目都是屎山没办法 -->
+                    <additionalJOption>-Xdoclint:none</additionalJOption>
+                </configuration>
             </plugin>
 
             <plugin>

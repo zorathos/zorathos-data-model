@@ -1,7 +1,6 @@
 package edu.npu.model.photoelectric.message;
 
 
-import com.uav.uavserver.config.udpserver.LogPushUdpClientHandler;
 import edu.npu.util.PhotoElectronicByteUtil;
 import lombok.Getter;
 import lombok.Setter;
@@ -23,6 +22,8 @@ public class ControlToGdMessage {
     @Getter
     @Setter
     private byte[] message;
+
+    private static int logPushMessageFrameNumberAuto;
 
     public ControlToGdMessage(byte[] message) {
         this.message = message;
@@ -63,10 +64,10 @@ public class ControlToGdMessage {
         // 报文长度86(10进制)
         this.messageLength = PhotoElectronicByteUtil.intToBytes(86);
         // 报文帧号===
-        if (LogPushUdpClientHandler.messageFrameNumberAuto == 2147483647){
-            LogPushUdpClientHandler.messageFrameNumberAuto = 0;
+        if (logPushMessageFrameNumberAuto == 2147483647){
+            logPushMessageFrameNumberAuto = 0;
         }
-        this.messageFrameNumber = PhotoElectronicByteUtil.intToBytes(LogPushUdpClientHandler.messageFrameNumberAuto++);
+        this.messageFrameNumber = PhotoElectronicByteUtil.intToBytes(logPushMessageFrameNumberAuto++);
         // 控制字1
         this.controlWord1 = intToBytes(0x0810);
         // 控制字2
@@ -298,52 +299,22 @@ public class ControlToGdMessage {
 
     public void setCheckSumAndRewriteContol() {
         // 报文帧号===
-        if (LogPushUdpClientHandler.messageFrameNumberAuto == 2147483647){
-            LogPushUdpClientHandler.messageFrameNumberAuto = 0;
+        if (logPushMessageFrameNumberAuto == 2147483647){
+            logPushMessageFrameNumberAuto = 0;
         }
-        this.messageFrameNumber = PhotoElectronicByteUtil.intToBytes(LogPushUdpClientHandler.messageFrameNumberAuto++);
+        this.messageFrameNumber = PhotoElectronicByteUtil.intToBytes(logPushMessageFrameNumberAuto++);
         message = combineArrays(messageIdentification,messageLength,messageFrameNumber,controlWord1,controlWord2,controlWord3,controlWord4,
                 controlWord5,controlWord6,controlWord7,controlWord8,controlWord9,controlWord10,reservedBytes1,targetDistance,targetAzimuth,
                 targetElevation,reservedBytes2,azimuthCorrection,elevationCorrection,headingAngle,reservedBytes3,joystickAzimuth,
                 joystickElevation,analogTargetDistance,reservedBytes4,routeNumber,reservedBytes5
         );
-        // 校验(前面每两个字节异或，后面一个异或)
-        // 取值进行异或比较
-//        int checkSum = bytesToUnsignedShort(new byte[]{message[0], message[1]}) ^ bytesToUnsignedShort(new byte[]{message[2], message[3]})
-//                ^ bytesToUnsignedShort(new byte[]{message[4], message[5]}) ^ bytesToUnsignedShort(new byte[]{message[6], message[7]})
-//                ^ bytesToUnsignedShort(new byte[]{message[8], message[9]}) ^ bytesToUnsignedShort(new byte[]{message[10], message[11]})
-//                ^ bytesToUnsignedShort(new byte[]{message[12], message[13]}) ^ bytesToUnsignedShort(new byte[]{message[14], message[15]})
-//                ^ bytesToUnsignedShort(new byte[]{message[16], message[17]}) ^ bytesToUnsignedShort(new byte[]{message[18], message[19]})
-//                ^ bytesToUnsignedShort(new byte[]{message[20], message[21]}) ^ bytesToUnsignedShort(new byte[]{message[22], message[23]})
-//                ^ bytesToUnsignedShort(new byte[]{message[24], message[25]}) ^ bytesToUnsignedShort(new byte[]{message[26], message[27]})
-//                ^ bytesToUnsignedShort(new byte[]{message[28], message[29]}) ^ bytesToUnsignedShort(new byte[]{message[30], message[31]})
-//                ^ bytesToUnsignedShort(new byte[]{message[32], message[33]}) ^ bytesToUnsignedShort(new byte[]{message[34], message[35]})
-//                ^ bytesToUnsignedShort(new byte[]{message[36], message[37]}) ^ bytesToUnsignedShort(new byte[]{message[38], message[39]})
-//                ^ bytesToUnsignedShort(new byte[]{message[40], message[41]}) ^ bytesToUnsignedShort(new byte[]{message[42], message[43]})
-//                ^ bytesToUnsignedShort(new byte[]{message[44], message[45]}) ^ bytesToUnsignedShort(new byte[]{message[46], message[47]})
-//                ^ bytesToUnsignedShort(new byte[]{message[48], message[49]}) ^ bytesToUnsignedShort(new byte[]{message[50], message[51]})
-//                ^ bytesToUnsignedShort(new byte[]{message[52], message[53]}) ^ bytesToUnsignedShort(new byte[]{message[54], message[55]})
-//                ^ bytesToUnsignedShort(new byte[]{message[56], message[57]}) ^ bytesToUnsignedShort(new byte[]{message[58], message[59]})
-//                ^ bytesToUnsignedShort(new byte[]{message[60], message[61]}) ^ bytesToUnsignedShort(new byte[]{message[62], message[63]})
-//                ^ bytesToUnsignedShort(new byte[]{message[64], message[65]}) ^ bytesToUnsignedShort(new byte[]{message[66], message[67]})
-//                ^ bytesToUnsignedShort(new byte[]{message[68], message[69]}) ^ bytesToUnsignedShort(new byte[]{message[70], message[71]})
-//                ^ bytesToUnsignedShort(new byte[]{message[72], message[73]}) ^ bytesToUnsignedShort(new byte[]{message[74], message[75]})
-//                ^ bytesToUnsignedShort(new byte[]{message[76], message[77]}) ^ bytesToUnsignedShort(new byte[]{message[78], message[79]})
-//                ^ bytesToUnsignedShort(new byte[]{message[80], message[81]}) ^ bytesToUnsignedShort(new byte[]{message[82], message[83]});
-////                ^ message[84]; 不要补位了，java位数不够
-//        byte[] newArray = new byte[message.length + 2];
-//        System.arraycopy(message, 0, newArray, 0, message.length);
-//        byte[] bytes = intToBytes(this.checkSum);
-//        newArray[84] = bytes[0];
-//        newArray[85] = bytes[1];
-//        message = combineArrays(message,bytes);
         int checkSum = 0;
-        for (int i = 0; i < message.length; i++) {
-            checkSum = message[i] ^ checkSum;
+        for (byte b : message) {
+            checkSum = b ^ checkSum;
         }
         byte[] newMessage = new byte[message.length + 1];    // 新数组
         System.arraycopy(message, 0, newMessage, 0, message.length);    // 复制原数组到新数组
-        newMessage[newMessage.length - 1] = new Byte(String.valueOf(checkSum));    // 添加新元素到新数组的最后位置
+        newMessage[newMessage.length - 1] = Byte.parseByte(String.valueOf(checkSum));    // 添加新元素到新数组的最后位置
         message = newMessage;
         this.checkSum = message[85];
     }
