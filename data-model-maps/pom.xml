@@ -6,13 +6,13 @@
     <parent>
         <groupId>io.github.wangminan</groupId>
         <artifactId>zorathos-data-model</artifactId>
-        <version>0.0.1</version>
+        <version>0.0.1-fix</version>
     </parent>
 
     <artifactId>data-model-maps</artifactId>
     <name>zorathos-data-model-maps</name>
     <description>为MAPS系统准备的数据基底</description>
-    <url>https://github.com/zorathos/zorathos-data-model/data-model-maps</url>
+    <url>https://github.com/zorathos/data-model-maps</url>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
