@@ -1,15 +1,13 @@
 package edu.npu.model.photoelectric.message;
 
-
-import com.uav.uavserver.config.udpserverspare.SpareUdpClientHandler;
-import com.uav.uavserver.util.PhotoElectronicByteUtil;
+import edu.npu.util.PhotoElectronicByteUtil;
 import lombok.Getter;
 import lombok.Setter;
 
-import static com.uav.uavserver.util.PhotoElectronicByteUtil.angle180ToBytes;
-import static com.uav.uavserver.util.PhotoElectronicByteUtil.bytesTo180Angle;
-import static com.uav.uavserver.util.PhotoElectronicByteUtil.bytesToUnsignedShort;
-import static com.uav.uavserver.util.PhotoElectronicByteUtil.intToBytes;
+import static edu.npu.util.PhotoElectronicByteUtil.angle180ToBytes;
+import static edu.npu.util.PhotoElectronicByteUtil.bytesTo180Angle;
+import static edu.npu.util.PhotoElectronicByteUtil.bytesToUnsignedShort;
+import static edu.npu.util.PhotoElectronicByteUtil.intToBytes;
 
 /**
  * @author : [wangminan]
@@ -21,6 +19,8 @@ public class ControlToGdMessage2 {
     @Setter
     private byte[] message;
 
+    private static int messageFrameNumberAuto;
+
 
     public ControlToGdMessage2() {
         // 报文标识0x1150
@@ -28,14 +28,14 @@ public class ControlToGdMessage2 {
         // 报文长度35
         this.messageLength = intToBytes(35);
         // 报文帧号
-        if (SpareUdpClientHandler.messageFrameNumberAuto == 2147483647){
-            SpareUdpClientHandler.messageFrameNumberAuto = 0;
+        if (messageFrameNumberAuto == 2147483647) {
+            messageFrameNumberAuto = 0;
         }
-        this.messageFrameNumber = intToBytes(SpareUdpClientHandler.messageFrameNumberAuto++);
+        this.messageFrameNumber = intToBytes(messageFrameNumberAuto++);
         // 控制字1
         this.controlWord1 = intToBytes(0);
         // 批号：0
-        this.batchNum = new byte[]{0,0};
+        this.batchNum = new byte[]{0, 0};
         // 目标方位角!!!（从雷达中获取）
         this.targetAzimuth = PhotoElectronicByteUtil.intToBytes(0);
         // 目标俯仰角!!!（从雷达中获取）
@@ -43,7 +43,7 @@ public class ControlToGdMessage2 {
         // 目标距离!!!（从雷达中获取）
         this.targetDistance = PhotoElectronicByteUtil.intToBytes(0);
         // 备用1
-        this.reservedBytes1 = new byte[]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+        this.reservedBytes1 = new byte[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         setCheckSumAndRewriteContol();
     }
 
@@ -63,12 +63,14 @@ public class ControlToGdMessage2 {
 
     // 报文帧号 2字节
     private byte[] messageFrameNumber;
+
     private int getMessageFrameNumber() {
         return bytesToUnsignedShort(messageFrameNumber);
     }
 
     // 控制字1-10 各2字节
-    @Getter @Setter
+    @Getter
+    @Setter
     private byte[] controlWord1;
 
     // 批号 2字节
@@ -118,22 +120,22 @@ public class ControlToGdMessage2 {
 
     public void setCheckSumAndRewriteContol() {
         // 报文帧号
-        if (SpareUdpClientHandler.messageFrameNumberAuto == 2147483647){
-            SpareUdpClientHandler.messageFrameNumberAuto = 0;
+        if (messageFrameNumberAuto == 2147483647) {
+            messageFrameNumberAuto = 0;
         }
-        this.messageFrameNumber = intToBytes(SpareUdpClientHandler.messageFrameNumberAuto++);
-        message = combineArrays(messageIdentification,messageLength,messageFrameNumber,controlWord1,batchNum,
-                targetAzimuth,targetElevation,targetDistance,reservedBytes1
+        this.messageFrameNumber = intToBytes(messageFrameNumberAuto++);
+        message = combineArrays(messageIdentification, messageLength, messageFrameNumber, controlWord1, batchNum,
+                targetAzimuth, targetElevation, targetDistance, reservedBytes1
         );
         // 校验(前面每两个字节异或，后面一个异或)
         // 取值进行异或比较
         int checkSum = 0;
-        for (int i = 0; i < message.length; i++) {
-            checkSum = message[i] ^ checkSum;
+        for (byte b : message) {
+            checkSum = b ^ checkSum;
         }
         byte[] newMessage = new byte[message.length + 1];    // 新数组
         System.arraycopy(message, 0, newMessage, 0, message.length);    // 复制原数组到新数组
-        newMessage[newMessage.length - 1] = new Byte(String.valueOf(checkSum));    // 添加新元素到新数组的最后位置
+        newMessage[newMessage.length - 1] = Byte.parseByte(String.valueOf(checkSum));    // 添加新元素到新数组的最后位置
         message = newMessage;
         this.checkSum = message[34];
     }
@@ -148,7 +150,7 @@ public class ControlToGdMessage2 {
         int index = 0;
         for (byte[] anA : a) {
             d = anA;
-            System.arraycopy(d, 0, c, 0 + index, d.length);
+            System.arraycopy(d, 0, c, index, d.length);
             index += d.length;
         }
         return c;

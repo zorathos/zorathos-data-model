@@ -2,17 +2,17 @@ package edu.npu.model.photoelectric.message;
 
 
 import com.uav.uavserver.config.udpserver.LogPushUdpClientHandler;
-import com.uav.uavserver.util.PhotoElectronicByteUtil;
+import edu.npu.util.PhotoElectronicByteUtil;
 import lombok.Getter;
 import lombok.Setter;
 
-import static com.uav.uavserver.util.PhotoElectronicByteUtil.angle180ToBytes;
-import static com.uav.uavserver.util.PhotoElectronicByteUtil.angle360ToBytes;
-import static com.uav.uavserver.util.PhotoElectronicByteUtil.bytesTo180Angle;
-import static com.uav.uavserver.util.PhotoElectronicByteUtil.bytesTo360Angle;
-import static com.uav.uavserver.util.PhotoElectronicByteUtil.bytesToShort;
-import static com.uav.uavserver.util.PhotoElectronicByteUtil.bytesToUnsignedShort;
-import static com.uav.uavserver.util.PhotoElectronicByteUtil.intToBytes;
+import static edu.npu.util.PhotoElectronicByteUtil.angle180ToBytes;
+import static edu.npu.util.PhotoElectronicByteUtil.angle360ToBytes;
+import static edu.npu.util.PhotoElectronicByteUtil.bytesTo180Angle;
+import static edu.npu.util.PhotoElectronicByteUtil.bytesTo360Angle;
+import static edu.npu.util.PhotoElectronicByteUtil.bytesToShort;
+import static edu.npu.util.PhotoElectronicByteUtil.bytesToUnsignedShort;
+import static edu.npu.util.PhotoElectronicByteUtil.intToBytes;
 
 /**
  * @author : [wangminan]

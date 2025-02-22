@@ -1,14 +1,14 @@
 package edu.npu.model.photoelectric.message;
 
-import com.uav.uavserver.domain.photoelectric.statusWord.GdStatusWord1;
-import com.uav.uavserver.domain.photoelectric.statusWord.GdStatusWord2;
-import com.uav.uavserver.domain.photoelectric.statusWord.GdStatusWord5;
+import edu.npu.model.photoelectric.statusWord.GdStatusWord1;
+import edu.npu.model.photoelectric.statusWord.GdStatusWord2;
+import edu.npu.model.photoelectric.statusWord.GdStatusWord5;
 import lombok.Getter;
 import lombok.Setter;
 
-import static com.uav.uavserver.util.PhotoElectronicByteUtil.bytesTo180Angle;
-import static com.uav.uavserver.util.PhotoElectronicByteUtil.bytesToShort;
-import static com.uav.uavserver.util.PhotoElectronicByteUtil.bytesToUnsignedShort;
+import static edu.npu.util.PhotoElectronicByteUtil.bytesTo180Angle;
+import static edu.npu.util.PhotoElectronicByteUtil.bytesToShort;
+import static edu.npu.util.PhotoElectronicByteUtil.bytesToUnsignedShort;
 
 /**
  * @author : [wangminan]

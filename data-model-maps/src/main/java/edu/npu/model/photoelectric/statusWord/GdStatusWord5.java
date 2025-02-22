@@ -1,6 +1,6 @@
 package edu.npu.model.photoelectric.statusWord;
 
-import static com.uav.uavserver.util.PhotoElectronicByteUtil.bytesToUnsignedShort;
+import static edu.npu.util.PhotoElectronicByteUtil.bytesToUnsignedShort;
 
 /**
  * @author : [wangminan]
