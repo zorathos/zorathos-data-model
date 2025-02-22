@@ -1,8 +1,8 @@
-package edu.npu.model.photoelectric.message;
+package io.github.wangminan.model.photoelectric.message;
 
-import edu.npu.model.photoelectric.statusWord.GdStatusWord1;
-import edu.npu.model.photoelectric.statusWord.GdStatusWord2;
-import edu.npu.model.photoelectric.statusWord.GdStatusWord5;
+import io.github.wangminan.model.photoelectric.statusWord.GdStatusWord1;
+import io.github.wangminan.model.photoelectric.statusWord.GdStatusWord2;
+import io.github.wangminan.model.photoelectric.statusWord.GdStatusWord5;
 import lombok.Getter;
 import lombok.Setter;
 

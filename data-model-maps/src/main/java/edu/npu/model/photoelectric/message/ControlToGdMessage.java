@@ -1,4 +1,4 @@
-package edu.npu.model.photoelectric.message;
+package io.github.wangminan.model.photoelectric.message;
 
 
 import edu.npu.util.PhotoElectronicByteUtil;

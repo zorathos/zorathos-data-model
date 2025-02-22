@@ -1,4 +1,4 @@
-package edu.npu.model.radar;
+package io.github.wangminan.model.radar;
 
 import lombok.Data;
 

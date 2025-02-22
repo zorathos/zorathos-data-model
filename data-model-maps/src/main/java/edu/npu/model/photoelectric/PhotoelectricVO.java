@@ -1,4 +1,4 @@
-package edu.npu.model.photoelectric;
+package io.github.wangminan.model.photoelectric;
 
 /**
  * @description : 光电设备返回对象

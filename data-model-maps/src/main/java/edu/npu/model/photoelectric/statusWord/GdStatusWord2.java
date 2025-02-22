@@ -1,4 +1,4 @@
-package edu.npu.model.photoelectric.statusWord;
+package io.github.wangminan.model.photoelectric.statusWord;
 
 import static edu.npu.util.PhotoElectronicByteUtil.bytesToUnsignedShort;
 

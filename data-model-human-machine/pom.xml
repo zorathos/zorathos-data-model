@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>edu.npu</groupId>
+        <groupId>io.github.wangminan</groupId>
         <artifactId>zorathos-data-model</artifactId>
         <version>0.0.1</version>
     </parent>
@@ -12,6 +12,7 @@
     <artifactId>data-model-human-machine</artifactId>
     <name>zorathos-data-model-human-machine</name>
     <description>为人机能力系统准备的数据模型基底</description>
+    <url>https://github.com/zorathos/zorathos-data-model/data-model-human-machine</url>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>

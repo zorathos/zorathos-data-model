@@ -4,10 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>edu.npu</groupId>
+    <groupId>io.github.wangminan</groupId>
     <artifactId>zorathos-data-model</artifactId>
     <version>0.0.1</version>
     <packaging>pom</packaging>
+
+    <description>zorathos的数据模型父项目</description>
+    <url>https://github.com/zorathos/zorathos-data-model</url>
+
     <modules>
         <module>data-model-human-machine</module>
         <module>data-model-maps</module>
@@ -149,12 +153,19 @@
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
+                        <phase>package</phase>
                         <goals>
                             <goal>jar</goal>
                         </goals>
                     </execution>
                 </executions>
                 <configuration>
+                    <maxmemory>1024</maxmemory>
+                    <encoding>UTF-8</encoding>
+                    <show>protected</show>
+                    <notree>true</notree>
+                    <!-- Avoid running into Java 8's very restrictive doclint issues -->
+                    <failOnError>false</failOnError>
                     <!-- 关闭javadoc报错 老项目都是屎山没办法 -->
                     <additionalJOption>-Xdoclint:none</additionalJOption>
                 </configuration>

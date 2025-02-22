@@ -1,7 +1,7 @@
 /**
   * Copyright 2025 bejson.com
   */
-package edu.npu.model.silas;
+package io.github.wangminan.model.silas;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 import lombok.Data;

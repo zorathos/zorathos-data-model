@@ -1,4 +1,4 @@
-package edu.npu.model.photoelectric.controlWord;
+package io.github.wangminan.model.photoelectric.controlWord;
 
 import lombok.Data;
 

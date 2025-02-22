@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>edu.npu</groupId>
+        <groupId>io.github.wangminan</groupId>
         <artifactId>zorathos-data-model</artifactId>
         <version>0.0.1</version>
     </parent>
@@ -12,6 +12,7 @@
     <artifactId>data-model-maps</artifactId>
     <name>zorathos-data-model-maps</name>
     <description>为MAPS系统准备的数据基底</description>
+    <url>https://github.com/zorathos/zorathos-data-model/data-model-maps</url>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
