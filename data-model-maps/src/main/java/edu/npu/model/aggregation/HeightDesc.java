@@ -1,4 +1,4 @@
-package edu.npu.model;
+package edu.npu.model.aggregation;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
@@ -12,9 +12,13 @@ import lombok.Getter;
 @Builder
 public class HeightDesc {
 
-    // 高度类型 推荐MSL
+    /**
+     * 高度类型 推荐MSL
+     */
     private HeightType heightType;
-    // 高度基准 推荐EGM2008
+    /**
+     * 高度基准 推荐EGM2008
+     */
     @JsonProperty("baseModel")
     private BaseModel baseModel;
     @JsonProperty("baseDEM")
@@ -22,11 +26,17 @@ public class HeightDesc {
 
     @Getter
     public enum HeightType {
-        // HAE不需要BASE MODEL
+        /**
+         * HAE不需要BASE MODEL
+         */
         HAE,
-        // BaseModel在EGM2008,EMG69,Other里选
+        /**
+         * BaseModel在EGM2008,EMG69,Other里选
+         */
         MSL,
-        // BaseDEM在DTM和DSM之间选
+        /**
+         * BaseDEM在DTM和DSM之间选
+         */
         AGL;
 
         public static HeightType fromString(String value) {

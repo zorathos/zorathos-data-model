@@ -1,4 +1,4 @@
-package edu.npu.model;
+package edu.npu.model.aggregation;
 
 import lombok.Builder;
 import lombok.Data;

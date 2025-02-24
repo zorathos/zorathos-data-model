@@ -1,4 +1,4 @@
-package edu.npu.model;
+package edu.npu.model.aggregation;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -15,7 +15,7 @@ import java.util.List;
  * #####-----#####
  * ZorathosEntity
  *  - {@link ZorathosData}
- *    - {@link edu.npu.model.ZorathosData.CoordinateReferenceSystem}
+ *    - {@link ZorathosData.CoordinateReferenceSystem}
  *    - {@link HeightDesc}
  *    - {@link PerceivedStatus}
  */
@@ -25,15 +25,23 @@ import java.util.List;
 @AllArgsConstructor
 public class ZorathosEntity {
 
-    // 默认常量
+    /**
+     * 默认常量
+     */
     @Builder.Default
     private String dataType = "ZORATHOS_BASIC_DATA";
-    private String version;
-    // 数据上报来源
+    /**
+     * 协议版本
+     */
+    @Builder.Default
+    private String version = "1.0";
+    /**
+     * 数据上报来源
+     */
     @Builder.Default
     private String source = "ZORATHOS";
     private Long uploadTime;
     @Singular
-    @JsonProperty("zorathosItem")
+    @JsonProperty("data")
     private List<ZorathosData> zorathosItems;
 }

@@ -1,7 +1,7 @@
-package edu.npu.model;
+package edu.npu.model.aggregation;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import edu.npu.model.sensor.Sensor;
+import edu.npu.model.aggregation.sensor.Sensor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
@@ -22,7 +22,13 @@ public class ZorathosData {
     @Builder.Default
     @JsonProperty("CRS")
     private CoordinateReferenceSystem CRS = CoordinateReferenceSystem.WGS84;
+    /**
+     * 高度描述符
+     */
     private HeightDesc heightDesc;
+    /**
+     * 感知目标动态
+     */
     @Singular
     @JsonProperty("perceivedStatus")
     private List<PerceivedStatus> perceivedStatuses;

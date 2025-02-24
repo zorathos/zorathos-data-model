@@ -1,7 +1,7 @@
 /**
   * Copyright 2025 bejson.com
   */
-package edu.npu.model.sensor;
+package edu.npu.model.aggregation.sensor;
 
 import lombok.Builder;
 import lombok.Data;
@@ -14,8 +14,10 @@ import lombok.Data;
  */
 @Data
 @Builder
-public class SensorVelocity {
-    private String velocityBase;
-    private Double radialVelocity;
-    private Double deltaRadialVelocity;
+public class SensorPosture {
+
+    private Double azimuth;
+    private Double elevation;
+    private Double twist;
+
 }

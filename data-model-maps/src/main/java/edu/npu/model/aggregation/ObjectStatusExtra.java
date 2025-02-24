@@ -1,6 +1,6 @@
-package edu.npu.model;
+package edu.npu.model.aggregation;
 
-import edu.npu.model.aircraft.Aircraft;
+import edu.npu.model.aggregation.aircraft.Aircraft;
 import lombok.Builder;
 import lombok.Data;
 
