@@ -5,13 +5,12 @@ import lombok.Builder;
 import lombok.Data;
 
 /**
- * @author : [Lenovo]
- * @description : [一句话描述该类的功能]
+ * @author : wangminan
+ * @description : 对目标的补充描述
  */
 @Data
 @Builder
 public class ObjectStatusExtra {
     private Aircraft aircraft;
-
-    private Manipulator  manipulator;
+    private Manipulator manipulator;
 }

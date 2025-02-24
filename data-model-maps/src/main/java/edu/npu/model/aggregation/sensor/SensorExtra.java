@@ -1,6 +1,3 @@
-/**
-  * Copyright 2025 bejson.com
-  */
 package edu.npu.model.aggregation.sensor;
 
 import lombok.Builder;
@@ -15,7 +12,5 @@ import lombok.Data;
 @Data
 @Builder
 public class SensorExtra {
-
     private String sensorCategory;
-
 }

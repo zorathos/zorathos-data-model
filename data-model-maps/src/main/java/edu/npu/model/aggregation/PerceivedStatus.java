@@ -5,7 +5,7 @@ package edu.npu.model.aggregation;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import edu.npu.model.aggregation.aircraft.BasePosition;
-import edu.npu.model.aggregation.sensor.SensorVelocity;
+import edu.npu.model.aggregation.aircraft.BaseVelocity;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
@@ -50,10 +50,15 @@ public class PerceivedStatus {
     @Singular
     @JsonProperty("objectPosition")
     private List<BasePosition> objectPositions;
-
+    /**
+     * 飞行目标速度与精度
+     */
     @Singular
     @JsonProperty("objectVelocity")
-    private List<SensorVelocity> objectVelocities;
+    private List<BaseVelocity> objectVelocities;
+    /**
+     * 对目标的补充描述
+     */
     private ObjectStatusExtra objectStatusExtra;
 
     public void setTrackDuration(long milliseconds) {
