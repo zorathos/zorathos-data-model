@@ -1,5 +1,6 @@
-package io.github.wangminan.model.silas;
+package edu.npu.model;
 
+import edu.npu.model.aircraft.Aircraft;
 import lombok.Builder;
 import lombok.Data;
 

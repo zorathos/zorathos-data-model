@@ -1,4 +1,4 @@
-package io.github.wangminan.model.silas;
+package edu.npu.model.sensor;
 
 import lombok.Builder;
 import lombok.Data;

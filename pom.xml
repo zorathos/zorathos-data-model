@@ -202,7 +202,8 @@
                 <executions>
                     <execution>
                         <id>sign-artifacts</id>
-                        <phase>verify</phase>
+                        <!-- 只有在deploy的时候才执行GPG签名 -->
+                        <phase>deploy</phase>
                         <goals>
                             <goal>sign</goal>
                         </goals>

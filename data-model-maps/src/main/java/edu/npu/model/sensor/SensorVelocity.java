@@ -1,7 +1,7 @@
 /**
   * Copyright 2025 bejson.com
   */
-package io.github.wangminan.model.silas;
+package edu.npu.model.sensor;
 
 import lombok.Builder;
 import lombok.Data;
@@ -14,10 +14,8 @@ import lombok.Data;
  */
 @Data
 @Builder
-public class SensorLocation {
-
-    private Double longitude;
-    private Double latitude;
-    private Double height;
-
+public class SensorVelocity {
+    private String velocityBase;
+    private Double radialVelocity;
+    private Double deltaRadialVelocity;
 }

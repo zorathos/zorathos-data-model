@@ -1,7 +1,7 @@
 /**
   * Copyright 2025 bejson.com
   */
-package io.github.wangminan.model.silas;
+package edu.npu.model.sensor;
 
 import lombok.Builder;
 import lombok.Data;
@@ -14,9 +14,8 @@ import lombok.Data;
  */
 @Data
 @Builder
-public class HeightDesc {
+public class SensorExtra {
 
-    private String heightType;
-    private String baseModel;
+    private String sensorCategory;
 
 }

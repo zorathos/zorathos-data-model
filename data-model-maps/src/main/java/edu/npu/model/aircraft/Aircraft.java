@@ -1,4 +1,4 @@
-package io.github.wangminan.model.silas;
+package edu.npu.model.aircraft;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
@@ -11,7 +11,7 @@ import lombok.Data;
 @Data
 @Builder
 public class Aircraft {
-    //Normal：正常
+    // Normal：正常
     // Deregister：注销
     // NoRecord：无记录
     private String aircraftState;

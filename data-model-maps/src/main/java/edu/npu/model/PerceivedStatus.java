@@ -1,8 +1,9 @@
 /**
   * Copyright 2025 bejson.com
   */
-package io.github.wangminan.model.silas;
+package edu.npu.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import edu.npu.model.sensor.SensorVelocity;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Singular;

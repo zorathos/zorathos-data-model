@@ -1,7 +1,7 @@
 /**
   * Copyright 2025 bejson.com
   */
-package io.github.wangminan.model.silas;
+package edu.npu.model.sensor;
 
 import lombok.Builder;
 import lombok.Data;
@@ -14,10 +14,11 @@ import lombok.Data;
  */
 @Data
 @Builder
-public class SensorPosture {
+public class SensorOperatorInfo {
 
-    private Double azimuth;
-    private Double elevation;
-    private Double twist;
+    private String entityID;
+    private String entityName;
+    private String entityType;
+    private String phone;
 
 }
