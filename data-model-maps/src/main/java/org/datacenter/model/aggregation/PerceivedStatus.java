@@ -4,12 +4,12 @@
 package org.datacenter.model.aggregation;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.datacenter.model.aggregation.aircraft.BasePosition;
-import org.datacenter.model.aggregation.aircraft.BaseVelocity;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Singular;
+import org.datacenter.model.aggregation.aircraft.BasePosition;
+import org.datacenter.model.aggregation.aircraft.BaseVelocity;
 
 import java.time.Duration;
 import java.util.List;

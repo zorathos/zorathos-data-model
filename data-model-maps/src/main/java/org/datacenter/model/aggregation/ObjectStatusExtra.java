@@ -1,8 +1,8 @@
 package org.datacenter.model.aggregation;
 
-import org.datacenter.model.aggregation.aircraft.Aircraft;
 import lombok.Builder;
 import lombok.Data;
+import org.datacenter.model.aggregation.aircraft.Aircraft;
 import org.datacenter.model.aggregation.aircraft.Manipulator;
 
 /**

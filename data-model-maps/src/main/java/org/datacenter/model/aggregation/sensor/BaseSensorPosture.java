@@ -1,7 +1,6 @@
 
 package org.datacenter.model.aggregation.sensor;
 
-import lombok.Builder;
 import lombok.Data;
 
 /**

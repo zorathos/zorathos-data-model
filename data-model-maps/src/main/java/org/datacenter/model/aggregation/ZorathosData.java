@@ -1,11 +1,11 @@
 package org.datacenter.model.aggregation;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.datacenter.model.aggregation.sensor.Sensor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Singular;
+import org.datacenter.model.aggregation.sensor.Sensor;
 
 import java.util.List;
 
