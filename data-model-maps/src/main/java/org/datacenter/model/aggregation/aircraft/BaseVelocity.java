@@ -13,7 +13,6 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public abstract class BaseVelocity {
     private VelocityBase velocityBase;
 

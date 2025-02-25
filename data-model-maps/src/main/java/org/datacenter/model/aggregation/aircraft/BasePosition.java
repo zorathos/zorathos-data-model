@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
  * @description : 位置基类
  */
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public abstract class BasePosition {

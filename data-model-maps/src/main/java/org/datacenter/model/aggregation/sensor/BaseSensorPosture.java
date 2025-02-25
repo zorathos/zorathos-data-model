@@ -9,6 +9,5 @@ import lombok.Data;
  * @description 传感器姿态
  */
 @Data
-@Builder
 public abstract class BaseSensorPosture {
 }
