@@ -61,6 +61,12 @@ jobs:
           # Verify gpg secret key
           gpg --list-secret-keys --keyid-format LONG
 
+      - name: Create .m2 directory
+        run: mkdir -p ~/.m2
+
+      - name: Write Maven settings
+        run: echo "${{ secrets.MAVEN_SETTINGS_XML }}" > ~/.m2/settings.xml
+
       - name: Get settings.xml
         run: cat ~/.m2/settings.xml
 
