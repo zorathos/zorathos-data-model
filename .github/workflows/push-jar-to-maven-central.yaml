@@ -66,5 +66,37 @@ jobs:
           git config --global user.email "wangminan"
 
       - name: Build and deploy with Maven
-#        if: ${{ steps.version_check.outputs.VERSION_CHANGED == 'true' }}
-        run: mvn -B -Dmaven.test.skip=true release:prepare release:perform
+        if: ${{ steps.version_check.outputs.VERSION_CHANGED == 'true' }}
+        run: mvn -B -Dmaven.test.skip=true clean deploy
+
+      - name: Tag the latest commit
+        if: ${{ steps.version_check.outputs.VERSION_CHANGED == 'true' }}
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git tag -a "v${{ steps.version_check.outputs.CURRENT_VERSION }}" -m "Version ${{ steps.version_check.outputs.CURRENT_VERSION }}"
+          git push origin "v${{ steps.version_check.outputs.CURRENT_VERSION }}"
+
+      - name: Generate change log
+        if: ${{ steps.version_check.outputs.VERSION_CHANGED == 'true' }}
+        run: |
+          npm install -g auto-changelog
+          auto-changelog -u
+
+      - name: Create a release
+        if: ${{ steps.version_check.outputs.VERSION_CHANGED == 'true' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p build
+          cp data-model-human-machine-target/*.jar build/
+          cp data-model-human-machine-target/*.jar.asc build/
+          cp data-model-human-machine-target/*.pom build/
+          cp data-model-human-machine-target/*.pom.asc build/
+          cp data-model-human-machine-target/*.txt build/
+          cp data-model-maps/*.jar build/
+          cp data-model-maps/*.jar.asc build/
+          cp data-model-maps/*.pom build/
+          cp data-model-maps/*.pom.asc build/
+          cp data-model-maps/*.txt build/
+          gh release create ${{ steps.version_check.outputs.CURRENT_VERSION }} -F CHANGELOG.md build/*
