@@ -10,8 +10,6 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    env:
-      VERSION_CHANGED: false
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
