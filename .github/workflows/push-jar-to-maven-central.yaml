@@ -86,9 +86,6 @@ jobs:
           npm install -g auto-changelog
           auto-changelog -u
 
-      - name: List contents of target directory
-        run: ls -la data-model-human-machine/target
-
       - name: Create a release
         #        if: ${{ steps.version_check.outputs.VERSION_CHANGED == 'true' }}
         run: |
