@@ -5,12 +5,11 @@ on:
       # 只监听根路径 pom.xml 文件变化
       - pom.xml
 
-env:
-  VERSION_CHANGED: false
-
 jobs:
-  check-version-change:
+  build-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      VERSION_CHANGED: false
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -32,16 +31,6 @@ jobs:
             echo "Version not changed"
             $VERSION_CHANGED=false
 
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    needs: check-version-change
-    if: ${{ env.VERSION_CHANGED == 'true' }}
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          submodules: 'recursive'
-
       - name: Download gpg public key
         run: gpg --keyserver keyserver.ubuntu.com --recv-keys ${{ secrets.GPG_PUBLIC_KEY_ID }}
 
@@ -58,6 +47,7 @@ jobs:
           gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}
 
       - name: Build and deploy with Maven
+        if: ${{ env.VERSION_CHANGED == true }}
         run: mvn -B -Dmaven.test.skip=true clean deploy
 
 
