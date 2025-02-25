@@ -1,11 +1,9 @@
 name: push-jar-to-maven-central
 on:
   push:
-#    paths:
-#      # 只监听根路径 pom.xml 文件变化
-#      - pom.xml
-    branches:
-      - main
+    paths:
+      # 只监听根路径 pom.xml 文件变化
+      - pom.xml
 
 jobs:
   build-and-deploy:
@@ -13,6 +11,7 @@ jobs:
     env:
       MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
       MAVEN_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
+      MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -61,6 +60,6 @@ jobs:
 
       - name: Build and deploy with Maven
         if: ${{ steps.version_check.outputs.VERSION_CHANGED == 'true' }}
-        run: mvn -B -Dgpg.passphrase=${{ secrets.GPG_PASSPHRASE }} -Dmaven.test.skip=true clean deploy
+        run: mvn -B -Dmaven.test.skip=true clean deploy
 
 

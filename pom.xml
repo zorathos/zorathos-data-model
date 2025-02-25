@@ -6,7 +6,7 @@
 
     <groupId>io.github.wangminan</groupId>
     <artifactId>zorathos-data-model</artifactId>
-    <version>0.0.1-action-test-15</version>
+    <version>0.0.1-action-test-16</version>
     <packaging>pom</packaging>
 
     <description>zorathos的数据模型父项目</description>
@@ -209,12 +209,6 @@
                         </goals>
                     </execution>
                 </executions>
-                <configuration>
-                    <gpgArguments>
-                        <arg>--pinentry-mode</arg>
-                        <arg>loopback</arg>
-                    </gpgArguments>
-                </configuration>
             </plugin>
 
             <plugin>
