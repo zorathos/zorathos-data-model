@@ -14,7 +14,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
+          ref: 'main'
           submodules: 'recursive'
+          # 我要所有的commit记录
+          fetch-depth: 0
 
       - name: Get the version from pom.xml before and after commit
         id: version_check
