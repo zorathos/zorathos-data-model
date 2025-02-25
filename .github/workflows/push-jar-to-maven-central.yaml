@@ -52,6 +52,9 @@ jobs:
 
       - name: Build and deploy with Maven
         if: ${{ steps.version_check.outputs.VERSION_CHANGED == 'true' }}
+        env:
+          MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
+          MAVEN_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
         run: mvn -B -Dgpg.passphrase=${{ secrets.GPG_PASSPHRASE }} -Dmaven.test.skip=true clean deploy
 
 
