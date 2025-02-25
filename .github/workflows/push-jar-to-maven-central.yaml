@@ -92,6 +92,7 @@ jobs:
       - name: Create a release
         #        if: ${{ steps.version_check.outputs.VERSION_CHANGED == 'true' }}
         run: |
+          mvn -B -Dmaven.test.skip=true clean package
           mkdir -p build
           cp data-model-human-machine/target/*.jar build/
           cp data-model-human-machine/target/*.jar.asc build/
