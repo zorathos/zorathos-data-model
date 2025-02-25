@@ -1,11 +1,11 @@
 name: push-jar-to-maven-central
 on:
   push:
-#    paths:
-#      # 只监听根路径 pom.xml 文件变化
-#      - pom.xml
-    branches:
-      - main
+    paths:
+      # 只监听根路径 pom.xml 文件变化
+      - pom.xml
+#    branches:
+#      - main
 
 jobs:
   build-and-deploy:
@@ -29,13 +29,11 @@ jobs:
           # 如果版本变化了，标记为 true
           if [ "$PREVIOUS_VERSION" != "$CURRENT_VERSION" ]; then
             echo "Version changed: $PREVIOUS_VERSION -> $CURRENT_VERSION"
-            echo "VERSION_CHANGED=true" >> $GITHUB_ENV
+            echo "VERSION_CHANGED=true" >> $GITHUB_OUTPUT
           else
             echo "Version not changed"
-            echo "VERSION_CHANGED=false" >> $GITHUB_ENV
+            echo "VERSION_CHANGED=false" >> $GITHUB_OUTPUT
           fi
-          # 打印环境变量
-          echo $GITHUB_ENV.VERSION_CHANGED
 
       - name: Download gpg public key
         run: gpg --keyserver keyserver.ubuntu.com --recv-keys ${{ secrets.GPG_PUBLIC_KEY_ID }}
@@ -52,12 +50,8 @@ jobs:
           gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
           gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}
 
-      - name: print env variables
-        run: |
-          echo ${{ env.VERSION_CHANGED }}
-
       - name: Build and deploy with Maven
-        if: ${{ env.VERSION_CHANGED == true }}
+        if: ${{ steps.version_check.outputs.VERSION_CHANGED == 'true' }}
         run: mvn -B -Dmaven.test.skip=true clean deploy
 
 
