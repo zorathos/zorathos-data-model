@@ -6,7 +6,7 @@
 
     <groupId>io.github.wangminan</groupId>
     <artifactId>zorathos-data-model</artifactId>
-    <version>0.0.1-action-test</version>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <description>zorathos的数据模型父项目</description>
@@ -34,7 +34,7 @@
 
     <scm>
         <connection>scm:git:git://github.com/zorathos/zorathos-data-model.git</connection>
-        <developerConnection>scm:git:ssh://github.com:zorathos/zorathos-data-model.git</developerConnection>
+        <developerConnection>scm:git:ssh://github.com/zorathos/zorathos-data-model.git</developerConnection>
         <url>https://github.com/zorathos/zorathos-data-model</url>
     </scm>
 
@@ -51,6 +51,7 @@
         <central-publishing-maven-plugin.version>0.7.0</central-publishing-maven-plugin.version>
         <maven-gpg-plugin.version>3.2.7</maven-gpg-plugin.version>
         <maven-shade-plugin.version>3.6.0</maven-shade-plugin.version>
+        <maven-release-plugin.version>3.1.1</maven-release-plugin.version>
         <os-maven-plugin.version>1.7.1</os-maven-plugin.version>
 
         <lombok-maven-plugin.version>1.18.20.0</lombok-maven-plugin.version>
@@ -59,6 +60,15 @@
 
         <jackson.version>2.18.2</jackson.version>
     </properties>
+
+    <distributionManagement>
+        <!-- maven中央仓 -->
+        <repository>
+            <id>central</id>
+            <name>Maven Central Repository</name>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
 
     <dependencyManagement>
         <dependencies>
@@ -202,6 +212,7 @@
                 <executions>
                     <execution>
                         <id>sign-artifacts</id>
+                        <!-- 这个谓词不能动 只能verify -->
                         <phase>verify</phase>
                         <goals>
                             <goal>sign</goal>
@@ -215,6 +226,16 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>${maven-release-plugin.version}</version>
+                <configuration>
+                    <tagNameFormat>v@{project.version}</tagNameFormat>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                </configuration>
             </plugin>
 
             <plugin>
