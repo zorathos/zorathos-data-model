@@ -65,6 +65,11 @@ jobs:
           # Verify gpg secret key
           gpg --list-secret-keys --keyid-format LONG
 
+      - name: Set up git
+        run: |
+          git config --global user.name "wangminan0811@hotmail.com"
+          git config --global user.email "wangminan"
+
       #      - name: Build and deploy with Maven
       #        if: ${{ steps.version_check.outputs.VERSION_CHANGED == 'true' }}
       #        run: mvn -B -Dmaven.test.skip=true clean deploy
