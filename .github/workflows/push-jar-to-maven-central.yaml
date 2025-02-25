@@ -8,8 +8,6 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    env:
-      VERSION_CHANGED: false
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -29,10 +27,10 @@ jobs:
           # 如果版本变化了，标记为 true
           if [ "$PREVIOUS_VERSION" != "$CURRENT_VERSION" ]; then
             echo "Version changed: $PREVIOUS_VERSION -> $CURRENT_VERSION"
-            VERSION_CHANGED=true
+            echo "VERSION_CHANGED=true" >> $GITHUB_OUTPUT
           else
             echo "Version not changed"
-            VERSION_CHANGED=false
+            echo "VERSION_CHANGED=false" >> $GITHUB_OUTPUT
           fi
 
       - name: Download gpg public key
@@ -51,7 +49,7 @@ jobs:
           gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}
 
       - name: Build and deploy with Maven
-        if: ${{ env.VERSION_CHANGED == true }}
+        if: ${{ steps.vars.outputs.VERSION_CHANGED == true }}
         run: mvn -B -Dmaven.test.skip=true clean deploy
 
 
