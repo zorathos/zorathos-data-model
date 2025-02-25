@@ -1,9 +1,11 @@
 name: push-jar-to-maven-central
 on:
   push:
-    paths:
-      # 只监听根路径 pom.xml 文件变化
-      - pom.xml
+#    paths:
+#      # 只监听根路径 pom.xml 文件变化
+#      - pom.xml
+    branches:
+      - main
 
 jobs:
   build-and-deploy:
@@ -13,6 +15,8 @@ jobs:
       MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
       MAVEN_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
       MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -65,38 +69,34 @@ jobs:
           git config --global user.name "wangminan0811@hotmail.com"
           git config --global user.email "wangminan"
 
-      - name: Build and deploy with Maven
-        if: ${{ steps.version_check.outputs.VERSION_CHANGED == 'true' }}
-        run: mvn -B -Dmaven.test.skip=true clean deploy
+#      - name: Build and deploy with Maven
+#        if: ${{ steps.version_check.outputs.VERSION_CHANGED == 'true' }}
+#        run: mvn -B -Dmaven.test.skip=true clean deploy
 
       - name: Tag the latest commit
-        if: ${{ steps.version_check.outputs.VERSION_CHANGED == 'true' }}
+#        if: ${{ steps.version_check.outputs.VERSION_CHANGED == 'true' }}
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git tag -a "v${{ steps.version_check.outputs.CURRENT_VERSION }}" -m "Version ${{ steps.version_check.outputs.CURRENT_VERSION }}"
           git push origin "v${{ steps.version_check.outputs.CURRENT_VERSION }}"
 
       - name: Generate change log
-        if: ${{ steps.version_check.outputs.VERSION_CHANGED == 'true' }}
+#        if: ${{ steps.version_check.outputs.VERSION_CHANGED == 'true' }}
         run: |
           npm install -g auto-changelog
           auto-changelog -u
 
       - name: Create a release
-        if: ${{ steps.version_check.outputs.VERSION_CHANGED == 'true' }}
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        if: ${{ steps.version_check.outputs.VERSION_CHANGED == 'true' }}
         run: |
           mkdir -p build
-          cp data-model-human-machine-target/*.jar build/
-          cp data-model-human-machine-target/*.jar.asc build/
-          cp data-model-human-machine-target/*.pom build/
-          cp data-model-human-machine-target/*.pom.asc build/
-          cp data-model-human-machine-target/*.txt build/
-          cp data-model-maps/*.jar build/
-          cp data-model-maps/*.jar.asc build/
-          cp data-model-maps/*.pom build/
-          cp data-model-maps/*.pom.asc build/
-          cp data-model-maps/*.txt build/
+          cp data-model-human-machine/target/*.jar build/
+          cp data-model-human-machine/target/*.jar.asc build/
+          cp data-model-human-machine/target/*.pom build/
+          cp data-model-human-machine/target/*.pom.asc build/
+          cp data-model-human-machine/target/*.txt build/
+          cp data-model-maps/target/*.jar build/
+          cp data-model-maps/target/*.jar.asc build/
+          cp data-model-maps/target/*.pom build/
+          cp data-model-maps/target/*.pom.asc build/
+          cp data-model-maps/target/*.txt build/
           gh release create ${{ steps.version_check.outputs.CURRENT_VERSION }} -F CHANGELOG.md build/*
