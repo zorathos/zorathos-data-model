@@ -6,7 +6,7 @@
     <parent>
         <groupId>io.github.wangminan</groupId>
         <artifactId>zorathos-data-model</artifactId>
-        <version>0.0.1-action-test-4</version>
+        <version>0.0.1-action-test-5</version>
     </parent>
 
     <artifactId>data-model-human-machine</artifactId>
