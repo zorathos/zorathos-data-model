@@ -3,31 +3,22 @@ package org.datacenter.model.aggregation.aircraft;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 
 /**
- * @author : [Lenovo]
- * @description : [一句话描述该类的功能]
+ * @author : wangminan
+ * @description : 用于补充信息 无人机具体信息
  */
 @Data
 @Builder
 public class Aircraft {
-    // Normal：正常
-    // Deregister：注销
-    // NoRecord：无记录
-    private String aircraftState;
-    // Fixed-wingAircraft 固定翼
-    // Rotorcraft旋翼航空器
-    // Multi-rotorAircraft多桨或多轴航空器
-    // Compound-wingAircraft复合翼航空器
-    // Airship飞艇
-    // Other其他
-    private String aircraftType;
-    // MicroUAV微型无人驾驶航空器
-    // LightUAV轻型无人驾驶航空器
-    // SmallUAV小型无人驾驶航空器
-    // MediumUAV中型无人驾驶航空器
-    // LargeUAV大型无人驾驶航空器
-    private String aircraftCategory;
+
+    @Builder.Default
+    private AircraftState aircraftState = AircraftState.NoRecord;
+    @Builder.Default
+    private AircraftType aircraftType = AircraftType.Other;
+    @Builder.Default
+    private AircraftCategory aircraftCategory = AircraftCategory.MicroUAV;
     private String aircraftName;
     private String aircraftModel;
     private String manufacturerName;
@@ -37,4 +28,108 @@ public class Aircraft {
     private Double maxTakeoffWeight;
     @JsonProperty("SN")
     private String SN;
+
+    /**
+     * 无人机状态
+     */
+    @Getter
+    public enum AircraftState {
+        /**
+         * 正常
+         */
+        Normal,
+        /**
+         * 注销
+         */
+        Deregister,
+        /**
+         * 无记录
+         */
+        NoRecord;
+
+        public static AircraftState fromString(String value) {
+            for (AircraftState aircraftState : AircraftState.values()) {
+                if (aircraftState.name().equalsIgnoreCase(value)) {
+                    return aircraftState;
+                }
+            }
+            return null;
+        }
+    }
+
+    /**
+     * 无人机类型
+     */
+    @Getter
+    public enum AircraftType {
+        /**
+         * 固定翼
+         */
+        FixedWingAircraft,
+        /**
+         * 旋翼航空器
+         */
+        Rotorcraft,
+        /**
+         * 多桨或多轴航空器
+         */
+        MultiRotorAircraft,
+        /**
+         * 复合翼航空器
+         */
+        CompoundWingAircraft,
+        /**
+         * 飞艇
+         */
+        Airship,
+        /**
+         * 其他
+         */
+        Other;
+
+        public static AircraftType fromString(String value) {
+            for (AircraftType aircraftType : AircraftType.values()) {
+                if (aircraftType.name().equalsIgnoreCase(value)) {
+                    return aircraftType;
+                }
+            }
+            return null;
+        }
+    }
+
+    /**
+     * 无人机类别
+     */
+    @Getter
+    public enum AircraftCategory {
+        /**
+         * 微型无人驾驶航空器
+         */
+        MicroUAV,
+        /**
+         * 轻型无人驾驶航空器
+         */
+        LightUAV,
+        /**
+         * 小型无人驾驶航空器
+         */
+        SmallUAV,
+        /**
+         * 中型无人驾驶航空器
+         */
+        MediumUAV,
+        /**
+         * 大型无人驾驶航空器
+         */
+        LargeUAV;
+
+        public static AircraftCategory fromString(String value) {
+            for (AircraftCategory aircraftCategory : AircraftCategory.values()) {
+                if (aircraftCategory.name().equalsIgnoreCase(value)) {
+                    return aircraftCategory;
+                }
+            }
+            return null;
+        }
+    }
 }

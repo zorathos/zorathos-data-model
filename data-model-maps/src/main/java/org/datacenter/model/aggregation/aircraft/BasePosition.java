@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 
 /**
  * @author : [wangminan]
- * @description : [一句话描述该类的功能]
+ * @description : 位置基类
  */
 @Data
 @Builder
@@ -19,7 +19,13 @@ public abstract class BasePosition {
 
     @Getter
     public enum PositionBase {
+        /**
+         * 基于地面
+         */
         Ground,
+        /**
+         * 基于传感器
+         */
         Sensor;
 
         public static PositionBase fromString(String value) {

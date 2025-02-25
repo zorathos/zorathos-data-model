@@ -17,8 +17,13 @@ import java.util.List;
 @Builder
 public class ZorathosData {
 
+    /**
+     * 传感器
+     */
     private Sensor sensor;
-    // 坐标参考系 默认用WGS84
+    /**
+     * 坐标参考系 默认用WGS84
+     */
     @Builder.Default
     @JsonProperty("CRS")
     private CoordinateReferenceSystem CRS = CoordinateReferenceSystem.WGS84;

@@ -8,7 +8,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * 通过传感器获取的位置与精度
+ * @author wangminan
+ * @description 通过传感器获取的位置与精度
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

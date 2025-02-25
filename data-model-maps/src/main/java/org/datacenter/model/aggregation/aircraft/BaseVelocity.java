@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 
 /**
  * @author : [wangminan]
- * @description : Velocity基类
+ * @description : Velocity 速度基类
  */
 @Data
 @NoArgsConstructor
@@ -19,7 +19,13 @@ public abstract class BaseVelocity {
 
     @Getter
     public enum VelocityBase {
+        /**
+         * 基于地面
+         */
         Ground,
+        /**
+         * 基于传感器
+         */
         Sensor;
 
         public static VelocityBase fromString(String value) {
