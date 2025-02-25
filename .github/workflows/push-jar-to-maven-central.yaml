@@ -35,7 +35,7 @@ jobs:
             echo "VERSION_CHANGED=false" >> $GITHUB_ENV
           fi
           # 打印环境变量
-          echo ${{ env.VERSION_CHANGED }}
+          echo ${{ GITHUB_ENV.VERSION_CHANGED }}
 
       - name: Download gpg public key
         run: gpg --keyserver keyserver.ubuntu.com --recv-keys ${{ secrets.GPG_PUBLIC_KEY_ID }}
