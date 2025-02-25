@@ -47,8 +47,6 @@ jobs:
           server-id: central
           server-username: MAVEN_USERNAME
           server-password: MAVEN_PASSWORD
-          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
-          gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}
 
       - name: Download gpg public key
         run: gpg --keyserver keyserver.ubuntu.com --recv-keys ${{ secrets.GPG_PUBLIC_KEY_ID }}
@@ -60,12 +58,6 @@ jobs:
           cat <(echo -e "${{ secrets.GPG_PRIVATE_KEY }}") | gpg --batch --import
           # Verify gpg secret key
           gpg --list-secret-keys --keyid-format LONG
-
-      - name: Create .m2 directory
-        run: mkdir -p ~/.m2
-
-      - name: Write Maven settings
-        run: echo "${{ secrets.MAVEN_SETTINGS_XML }}" > ~/.m2/settings.xml
 
       - name: Build and deploy with Maven
         if: ${{ steps.version_check.outputs.VERSION_CHANGED == 'true' }}
