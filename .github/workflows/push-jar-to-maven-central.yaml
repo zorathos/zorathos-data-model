@@ -33,6 +33,7 @@ jobs:
           else
             echo "Version not changed"
             $VERSION_CHANGED=false
+          fi
 
       - name: Download gpg public key
         run: gpg --keyserver keyserver.ubuntu.com --recv-keys ${{ secrets.GPG_PUBLIC_KEY_ID }}
