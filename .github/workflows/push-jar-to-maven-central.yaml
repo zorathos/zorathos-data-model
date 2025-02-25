@@ -1,9 +1,11 @@
 name: push-jar-to-maven-central
 on:
   push:
-    paths:
-      # 只监听根路径 pom.xml 文件变化
-      - pom.xml
+#    paths:
+#      # 只监听根路径 pom.xml 文件变化
+#      - pom.xml
+    branches:
+      - main
 
 jobs:
   build-and-deploy:
@@ -49,6 +51,10 @@ jobs:
           server-password: ${{ secrets.MAVEN_PASSWORD }}
           gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
           gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}
+
+      - name: print env variables
+        run: |
+          echo ${{ env.VERSION_CHANGED }}
 
       - name: Build and deploy with Maven
         if: ${{ env.VERSION_CHANGED == true }}
