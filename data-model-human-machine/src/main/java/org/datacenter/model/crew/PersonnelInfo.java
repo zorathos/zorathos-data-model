@@ -8,7 +8,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 /**
  * 人员信息类，表示某一人员的详细信息 业务系统中为JSON结构，key值为汉语拼音缩写 需要转换

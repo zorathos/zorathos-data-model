@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 /**
  * 装备编号类，表示装备的编号及相关信息
