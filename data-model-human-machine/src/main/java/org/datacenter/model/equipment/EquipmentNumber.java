@@ -20,60 +20,85 @@ import java.util.Date;
 public class EquipmentNumber {
 
     /**
-     * 装备编号，主键 和 EquipmentInfo 中的 id 不是一个概念
+     * 装备编号，主键 和 EquipmentInfo 中的 id 不是一个概念 id
      */
     private String id;
 
     /**
-     * 出场编号
-     */
-    private Integer sceneNumber;
-
-    /**
-     * 内部编号
-     */
-    private Integer internalNumber;
-
-    /**
-     * 航电版本
-     */
-    private Integer avionicsVersion;
-
-    /**
-     * ICD版本
-     */
-    private String icdVersion;
-
-    /**
-     * ICD启用日期
-     */
-    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
-    private LocalDate icdEnableDate;
-
-    /**
-     * 创建人
+     * 创建人 create_people
      */
     private String creator;
 
     /**
-     * 创建时间
+     * 创建时间 create_time
      */
     @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
-    private LocalDate creationTime;
+    private LocalDate createTime;
 
     /**
-     * 修改人
+     * 修改人 update_people
      */
     private String modifier;
 
     /**
-     * 修改时间
+     * 修改时间 update_time
      */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private LocalDateTime modificationTime;
 
     /**
-     * 操作，存储为 JSON 格式的数据
+     * 老ID old_id
      */
-    private String operation;
+    private String oldId;
+
+    /**
+     * 飞机老ID plane_old_id
+     */
+    private String planeOldId;
+
+    /**
+     * c_coat
+     */
+    private String cCoat;
+
+    /**
+     * 内部 c_interior
+     */
+    private String cInterior;
+
+    /**
+     * c_manufacturing
+     */
+    private String cManufacturing;
+
+    /**
+     * icd_version
+     */
+    private String icdVersion;
+
+    /**
+     * 航电系统版本 avionics_system_version
+     */
+    private String avionicsSystemVersion;
+
+    /**
+     * 是否使用 is_used
+     */
+    private String isUsed;
+
+    /**
+     * 是否删除
+     */
+    private String isDeleted;
+
+    /**
+     * 使用时间 yyyy-MM-dd used_time
+     */
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
+    private LocalDate usedTime;
+
+    /**
+     * icd_version_id
+     */
+    private String icdVersionId;
 }
