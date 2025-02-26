@@ -1,9 +1,12 @@
 package org.datacenter.model.crew;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.Date;
 
 /**
  * 人员信息类，表示某一人员的详细信息 业务系统中为JSON结构，key值为汉语拼音缩写 需要转换
@@ -48,7 +51,8 @@ public class PersonnelInfo {
     /**
      * 任职年月 RZNY
      */
-    private String appointmentDate;
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
+    private Date appointmentDate;
 
     /**
      * 籍贯 JG
@@ -68,17 +72,20 @@ public class PersonnelInfo {
     /**
      * 生日 SR
      */
-    private String birthday;
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
+    private Date birthday;
 
     /**
      * 入伍年月 RWNY
      */
-    private String enlistmentDate;
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
+    private Date enlistmentDate;
 
     /**
      * 评级年月 PJNY
      */
-    private String ratingDate;
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
+    private Date ratingDate;
 
     /**
      * 毕业学院 BYXY
@@ -88,7 +95,8 @@ public class PersonnelInfo {
     /**
      * 毕业年月 BYNY
      */
-    private String graduationDate;
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
+    private Date graduationDate;
 
     /**
      * 军衔 JX
@@ -168,30 +176,33 @@ public class PersonnelInfo {
     /**
      * 最后跳伞时间（陆） ZHTSSJ_L
      */
-    private String lastParachuteTimeLand;
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
+    private Date lastParachuteTimeLand;
 
     /**
      * 最后跳伞时间（水） ZHTSSJ_S
      */
-    private String lastParachuteTimeWater;
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
+    private Date lastParachuteTimeWater;
 
     /**
      * 修改时间 XGSJ
      */
-    private String modificationTime;
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
+    private Date modificationTime;
 
     /**
-     * 历年总时间 LNZSJ
+     * 历年总时间 LNZSJ HH:mm
      */
     private String totalTimeHistory;
 
     /**
-     * 本年总时间 BNZSJ
+     * 本年总时间 BNZSJ HH:mm
      */
     private String totalTimeCurrentYear;
 
     /**
-     * 历年任教时间 LNRJSJ
+     * 历年任教时间 LNRJSJ HH:mm
      */
     private String totalTeachingTimeHistory;
 }
