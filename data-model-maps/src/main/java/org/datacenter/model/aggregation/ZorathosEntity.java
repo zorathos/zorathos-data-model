@@ -26,12 +26,12 @@ import java.util.List;
 public class ZorathosEntity {
 
     /**
-     * 默认常量
+     * 默认常量 silas要求
      */
     @Builder.Default
-    private String dataType = "ZORATHOS_BASIC_DATA";
+    private String dataType = "PerceivedStatusUpload";
     /**
-     * 协议版本
+     * 协议版本 默认常量 silas要求
      */
     @Builder.Default
     private String version = "1.0";
