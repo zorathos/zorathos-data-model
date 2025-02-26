@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -46,7 +48,7 @@ public class EquipmentNumber {
      * ICD启用日期
      */
     @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
-    private Date icdEnableDate;
+    private LocalDate icdEnableDate;
 
     /**
      * 创建人
@@ -57,7 +59,7 @@ public class EquipmentNumber {
      * 创建时间
      */
     @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
-    private Date creationTime;
+    private LocalDate creationTime;
 
     /**
      * 修改人
@@ -68,7 +70,7 @@ public class EquipmentNumber {
      * 修改时间
      */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Date modificationTime;
+    private LocalDateTime modificationTime;
 
     /**
      * 操作，存储为 JSON 格式的数据
