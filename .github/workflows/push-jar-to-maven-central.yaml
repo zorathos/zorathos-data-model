@@ -77,8 +77,8 @@ jobs:
       - name: Tag the latest commit
         if: ${{ steps.version_check.outputs.VERSION_CHANGED == 'true' }}
         run: |
-          git tag -a "v${{ steps.version_check.outputs.CURRENT_VERSION }}" -m "Version ${{ steps.version_check.outputs.CURRENT_VERSION }}"
-          git push origin "v${{ steps.version_check.outputs.CURRENT_VERSION }}"
+          git tag -a "${{ steps.version_check.outputs.CURRENT_VERSION }}" -m "Version ${{ steps.version_check.outputs.CURRENT_VERSION }}"
+          git push origin "${{ steps.version_check.outputs.CURRENT_VERSION }}"
 
       - name: Generate change log
         if: ${{ steps.version_check.outputs.VERSION_CHANGED == 'true' }}
