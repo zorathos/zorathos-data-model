@@ -41,6 +41,12 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-annotations</artifactId>
         </dependency>
+
+        <!-- 没想到吧jackson还做XML -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-xml</artifactId>
+        </dependency>
         <!-- jackson全家桶 -->
     </dependencies>
 </project>

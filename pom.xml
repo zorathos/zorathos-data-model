@@ -99,6 +99,13 @@
                 <artifactId>jackson-annotations</artifactId>
                 <version>${jackson.version}</version>
             </dependency>
+
+            <!-- 没想到吧jackson还做XML 给飞行计划用的 -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.dataformat</groupId>
+                <artifactId>jackson-dataformat-xml</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
             <!-- jackson全家桶 -->
         </dependencies>
     </dependencyManagement>
