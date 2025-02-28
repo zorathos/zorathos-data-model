@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 
 /**
  * 装备编号类，表示装备的编号及相关信息
+ * 表名plane_code
  */
 @Data
 @NoArgsConstructor
