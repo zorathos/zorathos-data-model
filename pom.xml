@@ -6,7 +6,7 @@
 
     <groupId>io.github.wangminan</groupId>
     <artifactId>zorathos-data-model</artifactId>
-    <version>0.0.2-fix</version>
+    <version>0.0.3</version>
     <packaging>pom</packaging>
 
 
@@ -14,6 +14,7 @@
     <url>https://github.com/zorathos/zorathos-data-model</url>
 
     <modules>
+        <module>data-model-base</module>
         <module>data-model-human-machine</module>
         <module>data-model-maps</module>
     </modules>
@@ -44,6 +45,7 @@
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
+        <!-- maven插件 -->
         <maven-enforcer-plugin.version>3.5.0</maven-enforcer-plugin.version>
         <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
         <maven-clean-plugin.version>3.4.1</maven-clean-plugin.version>
@@ -54,8 +56,9 @@
         <maven-shade-plugin.version>3.6.0</maven-shade-plugin.version>
         <maven-release-plugin.version>3.1.1</maven-release-plugin.version>
         <os-maven-plugin.version>1.7.1</os-maven-plugin.version>
-
         <lombok-maven-plugin.version>1.18.20.0</lombok-maven-plugin.version>
+        <!-- maven插件 -->
+
         <lombok.version>1.18.36</lombok.version>
         <delombok.output.dir>${project.build.directory}/delombok</delombok.output.dir>
 
@@ -76,8 +79,6 @@
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
-                <!-- optional意味着不会向下传递依赖 下游项目仍需要手动引入lombok -->
-                <optional>true</optional>
                 <version>${lombok.version}</version>
             </dependency>
 
@@ -213,28 +214,28 @@
                 </configuration>
             </plugin>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>${maven-gpg-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <id>sign-artifacts</id>
-                        <!-- 这个谓词不能动 只能verify -->
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                        <configuration>
-                            <!-- 确保签名所有文件 -->
-                            <gpgArguments>
-                                <arg>--pinentry-mode</arg>
-                                <arg>loopback</arg>
-                            </gpgArguments>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-gpg-plugin</artifactId>-->
+<!--                <version>${maven-gpg-plugin.version}</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>sign-artifacts</id>-->
+<!--                        &lt;!&ndash; 这个谓词不能动 只能verify &ndash;&gt;-->
+<!--                        <phase>verify</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>sign</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            &lt;!&ndash; 确保签名所有文件 &ndash;&gt;-->
+<!--                            <gpgArguments>-->
+<!--                                <arg>&#45;&#45;pinentry-mode</arg>-->
+<!--                                <arg>loopback</arg>-->
+<!--                            </gpgArguments>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -244,20 +245,6 @@
                     <tagNameFormat>v@{project.version}</tagNameFormat>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                 </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>${maven-shade-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
 
             <plugin>
@@ -285,6 +272,30 @@
                         <version>${lombok.version}</version>
                     </dependency>
                 </dependencies>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>${maven-shade-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <filters>
+                        <filter>
+                            <artifact>org.projectlombok:lombok</artifact>
+                            <excludes>
+                                <exclude>**/*</exclude>
+                            </excludes>
+                        </filter>
+                    </filters>
+                </configuration>
             </plugin>
         </plugins>
     </build>

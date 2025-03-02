@@ -6,13 +6,13 @@
     <parent>
         <groupId>io.github.wangminan</groupId>
         <artifactId>zorathos-data-model</artifactId>
-        <version>0.0.2-fix</version>
+        <version>0.0.3</version>
     </parent>
 
     <artifactId>data-model-human-machine</artifactId>
     <name>zorathos-data-model-human-machine</name>
     <description>为人机能力系统准备的数据模型基底</description>
-    <url>https://github.com/zorathos/data-model-human-machine</url>
+    <url>https://github.com/zorathos/zorathos-data-receiver/tree/main/data-receiver-human-machine</url>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
@@ -22,24 +22,16 @@
 
     <dependencies>
         <dependency>
+            <groupId>io.github.wangminan</groupId>
+            <artifactId>data-model-base</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-        </dependency>
-
-        <!-- jackson全家桶-->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-core</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-annotations</artifactId>
+            <!-- optional意味着不会向下传递依赖 下游项目仍需要手动引入lombok -->
+            <optional>true</optional>
         </dependency>
 
         <!-- 没想到吧jackson还做XML -->

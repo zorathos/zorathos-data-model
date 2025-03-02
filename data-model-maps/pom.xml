@@ -6,13 +6,13 @@
     <parent>
         <groupId>io.github.wangminan</groupId>
         <artifactId>zorathos-data-model</artifactId>
-        <version>0.0.2-fix</version>
+        <version>0.0.3</version>
     </parent>
 
     <artifactId>data-model-maps</artifactId>
     <name>zorathos-data-model-maps</name>
     <description>为MAPS系统准备的数据基底</description>
-    <url>https://github.com/zorathos/data-model-maps</url>
+    <url>https://github.com/zorathos/zorathos-data-receiver/tree/main/data-receiver-maps</url>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
@@ -22,25 +22,16 @@
 
     <dependencies>
         <dependency>
+            <groupId>io.github.wangminan</groupId>
+            <artifactId>data-model-base</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <!-- optional意味着不会向下传递依赖 下游项目仍需要手动引入lombok -->
+            <optional>true</optional>
         </dependency>
-
-        <!-- jackson全家桶-->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-core</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-annotations</artifactId>
-        </dependency>
-        <!-- jackson全家桶 -->
     </dependencies>
 </project>
