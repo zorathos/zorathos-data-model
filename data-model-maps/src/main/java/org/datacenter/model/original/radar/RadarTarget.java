@@ -1,4 +1,4 @@
-package org.datacenter.model.original.rader;
+package org.datacenter.model.original.radar;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
