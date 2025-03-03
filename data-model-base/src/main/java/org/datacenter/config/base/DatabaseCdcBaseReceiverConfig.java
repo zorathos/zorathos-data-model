@@ -8,14 +8,14 @@ import lombok.NoArgsConstructor;
 
 /**
  * @author : [wangminan]
- * @description : Kafka数据接收器基础配置
+ * @description : 数据库配置 使用Flink CDC
  */
 @EqualsAndHashCode(callSuper = true)
 @Builder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public abstract class KafkaBaseConfig extends BaseConfig{
+public abstract class DatabaseCdcBaseReceiverConfig extends BaseReceiverConfig {
     @Builder.Default
-    protected DataSourceType dataSourceType = DataSourceType.KAFKA;
+    protected DataSourceType dataSourceType = DataSourceType.DATABASE_CDC;
 }

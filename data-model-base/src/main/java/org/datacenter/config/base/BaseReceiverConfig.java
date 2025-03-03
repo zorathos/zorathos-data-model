@@ -13,6 +13,6 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public abstract class BaseConfig {
+public abstract class BaseReceiverConfig {
     protected DataSourceType dataSourceType;
 }

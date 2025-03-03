@@ -1,21 +1,21 @@
-package org.datacenter.config.base;
+package org.datacenter.config.plan;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.datacenter.config.base.KafkaBaseReceiverConfig;
 
 /**
  * @author : [wangminan]
- * @description : 文件接收器基础配置
+ * @description : 飞行计划数据通过接口接收后投递到Kafka，Flink通过Kafka接收
  */
 @EqualsAndHashCode(callSuper = true)
 @Builder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public abstract class FileBaseConfig extends BaseConfig {
-    @Builder.Default
-    protected DataSourceType dataSourceType = DataSourceType.FILE;
+public class FlightPlanKafkaReceiverConfig extends KafkaBaseReceiverConfig {
+
 }

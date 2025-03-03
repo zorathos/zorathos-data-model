@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public abstract class DatabaseJdbcBaseConfig extends BaseConfig {
+public abstract class DatabaseJdbcBaseReceiverConfig extends BaseReceiverConfig {
     @Builder.Default
     protected DataSourceType dataSourceType = DataSourceType.DATABASE_JDBC;
 }
