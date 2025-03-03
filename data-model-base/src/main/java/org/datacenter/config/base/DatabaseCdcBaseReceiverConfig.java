@@ -11,11 +11,7 @@ import lombok.NoArgsConstructor;
  * @description : 数据库配置 使用Flink CDC
  */
 @EqualsAndHashCode(callSuper = true)
-@Builder
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public abstract class DatabaseCdcBaseReceiverConfig extends BaseReceiverConfig {
-    @Builder.Default
     protected DataSourceType dataSourceType = DataSourceType.DATABASE_CDC;
 }

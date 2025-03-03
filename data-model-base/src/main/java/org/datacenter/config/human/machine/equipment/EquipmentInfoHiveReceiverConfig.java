@@ -14,7 +14,5 @@ import org.datacenter.config.base.DatabaseJdbcBaseReceiverConfig;
 @EqualsAndHashCode(callSuper = true)
 @Builder
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class EquipmentInfoHiveReceiverConfig extends DatabaseJdbcBaseReceiverConfig {
 }

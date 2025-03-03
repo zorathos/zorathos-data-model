@@ -11,11 +11,7 @@ import lombok.NoArgsConstructor;
  * @description : 文件接收器基础配置
  */
 @EqualsAndHashCode(callSuper = true)
-@Builder
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public abstract class FileBaseReceiverConfig extends BaseReceiverConfig {
-    @Builder.Default
     protected DataSourceType dataSourceType = DataSourceType.FILE;
 }

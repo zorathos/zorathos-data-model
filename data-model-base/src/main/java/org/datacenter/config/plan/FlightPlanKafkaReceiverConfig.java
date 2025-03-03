@@ -14,8 +14,5 @@ import org.datacenter.config.base.KafkaBaseReceiverConfig;
 @EqualsAndHashCode(callSuper = true)
 @Builder
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class FlightPlanKafkaReceiverConfig extends KafkaBaseReceiverConfig {
-
 }

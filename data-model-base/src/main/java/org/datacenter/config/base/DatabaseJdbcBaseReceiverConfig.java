@@ -11,11 +11,7 @@ import lombok.NoArgsConstructor;
  * @description : 数据库JDBC接收器配置
  */
 @EqualsAndHashCode(callSuper = true)
-@Builder
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public abstract class DatabaseJdbcBaseReceiverConfig extends BaseReceiverConfig {
-    @Builder.Default
     protected DataSourceType dataSourceType = DataSourceType.DATABASE_JDBC;
 }

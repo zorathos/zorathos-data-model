@@ -9,10 +9,7 @@ import lombok.NoArgsConstructor;
  * @author : [wangminan]
  * @description : 基础配置
  */
-@Builder
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public abstract class BaseReceiverConfig {
     protected DataSourceType dataSourceType;
 }
