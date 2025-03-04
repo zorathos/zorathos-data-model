@@ -14,7 +14,6 @@
     <url>https://github.com/zorathos/zorathos-data-model</url>
 
     <modules>
-        <module>data-model-base</module>
         <module>data-model-human-machine</module>
         <module>data-model-maps</module>
     </modules>

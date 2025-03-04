@@ -7,8 +7,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
 /**
  * @author : [wangminan]
  * @description : 飞行计划文件解析，从接口拉出来的是XML格式的飞行计划文件，需要解析成对象
