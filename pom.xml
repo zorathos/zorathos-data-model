@@ -61,7 +61,7 @@
         <lombok.version>1.18.36</lombok.version>
         <delombok.output.dir>${project.build.directory}/delombok</delombok.output.dir>
 
-        <jackson.version>2.18.2</jackson.version>
+        <jackson.version>2.18.3</jackson.version>
     </properties>
 
     <distributionManagement>
