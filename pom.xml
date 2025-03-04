@@ -6,7 +6,7 @@
 
     <groupId>io.github.wangminan</groupId>
     <artifactId>zorathos-data-model</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
     <packaging>pom</packaging>
 
 

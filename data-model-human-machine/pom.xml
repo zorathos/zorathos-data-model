@@ -6,7 +6,7 @@
     <parent>
         <groupId>io.github.wangminan</groupId>
         <artifactId>zorathos-data-model</artifactId>
-        <version>0.0.3</version>
+        <version>0.0.4</version>
     </parent>
 
     <artifactId>data-model-human-machine</artifactId>
@@ -21,12 +21,6 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>io.github.wangminan</groupId>
-            <artifactId>data-model-base</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
