@@ -6,7 +6,7 @@
 
     <groupId>io.github.wangminan</groupId>
     <artifactId>zorathos-data-model</artifactId>
-    <version>0.0.4</version>
+    <version>0.0.5</version>
     <packaging>pom</packaging>
 
 
@@ -62,6 +62,8 @@
         <delombok.output.dir>${project.build.directory}/delombok</delombok.output.dir>
 
         <jackson.version>2.18.3</jackson.version>
+
+        <gpg.skip>false</gpg.skip>
     </properties>
 
     <distributionManagement>
@@ -226,6 +228,7 @@
                             <goal>sign</goal>
                         </goals>
                         <configuration>
+                            <skip>${gpg.skip}</skip>
                             <!-- 确保签名所有文件 -->
                             <gpgArguments>
                                 <arg>--pinentry-mode</arg>
