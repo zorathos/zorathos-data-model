@@ -21,7 +21,7 @@ import java.time.LocalDateTime;
 public class EquipmentInfo {
 
     /**
-     * 装备型号，主键 和 EquipmentNumber 中的 equipmentNumber 不是一个概念 id
+     * 装备型号，主键 和 EquipmentCode 中的 equipmentNumber 不是一个概念 id
      */
     private String id;
 
@@ -29,7 +29,13 @@ public class EquipmentInfo {
      * 创建时间 create_time
      */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private LocalDateTime creationTime;
+    private LocalDateTime createTime;
+
+    /**
+     * 修改时间 update_time
+     */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private LocalDateTime modificationTime;
 
     /**
      * 创建人 create_people
@@ -67,14 +73,14 @@ public class EquipmentInfo {
     private String parentId;
 
     /**
-     * 三维系统 threetype_system
+     * 三维系统 threetype_system 1三型机 2体系 3小体系 4ACMI
      */
-    private Integer _3DSystem;
+    private String _3DSystem;
 
     /**
-     * 是否删除 is_deleted
+     * 是否删除 is_deleted 1删除 2未删除
      */
-    private Integer isDeleted;
+    private Byte isDeleted;
 
     /**
      * 装备模型 equipment_model
@@ -102,7 +108,7 @@ public class EquipmentInfo {
     private Double latitude;
 
     /**
-     * 是否三维回放，1代表是，0代表否 is_three_back
+     * 是否三维回放，1代表是，2代表否 is_three_back
      */
-    private Integer is3DPlayback;
+    private Byte is3DPlayback;
 }

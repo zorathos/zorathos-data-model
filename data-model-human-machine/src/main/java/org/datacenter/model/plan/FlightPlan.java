@@ -19,6 +19,11 @@ import lombok.NoArgsConstructor;
 public class FlightPlan {
 
     /**
+     * 这个字段是咱自己的 主键 bigint auto increment，源库没有主键
+     */
+    private Long id;
+
+    /**
      * 机场ID JCID
      */
     @JacksonXmlProperty(localName = "JCID")

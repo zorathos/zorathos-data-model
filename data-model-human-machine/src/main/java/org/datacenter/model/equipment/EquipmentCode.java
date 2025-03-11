@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class EquipmentNumber {
+public class EquipmentCode {
 
     /**
      * 装备编号，主键 和 EquipmentInfo 中的 id 不是一个概念 id
@@ -49,30 +49,30 @@ public class EquipmentNumber {
     /**
      * 老ID old_id
      */
-    private String oldId;
+    private int oldId;
 
     /**
      * 飞机老ID plane_old_id
      */
-    private String planeOldId;
+    private int planeOldId;
 
     /**
-     * c_coat
+     * 涂装号 c_coat
      */
     private String cCoat;
 
     /**
-     * 内部 c_interior
+     * 内部编号 c_interior
      */
     private String cInterior;
 
     /**
-     * c_manufacturing
+     * 出厂编号 c_manufacturing
      */
     private String cManufacturing;
 
     /**
-     * icd_version
+     * icd版本 icd_version
      */
     private String icdVersion;
 
