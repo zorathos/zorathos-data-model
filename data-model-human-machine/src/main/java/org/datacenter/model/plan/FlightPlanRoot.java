@@ -49,7 +49,7 @@ public class FlightPlanRoot {
         this.flightPlans = new ArrayList<>();
     }
 
-    public FlightPlanRoot fromXml(String xml) throws JsonProcessingException {
+    public static FlightPlanRoot fromXml(String xml) throws JsonProcessingException {
         XmlMapper xmlMapper = new XmlMapper();
         FlightPlanRoot root = xmlMapper.readValue(xml, FlightPlanRoot.class);
         root.getFlightHead().setRootId(root.getId());
