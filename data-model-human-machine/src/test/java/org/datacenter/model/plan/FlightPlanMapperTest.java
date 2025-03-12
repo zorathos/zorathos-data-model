@@ -15,11 +15,8 @@ public class FlightPlanMapperTest {
         File file = new File("d:\\0_大学\\2024.9\\实验室\\数据中台\\数据模型\\0_业务和武器_定\\3.10-数据模型\\4_人员档案及飞行计划\\飞行计划样例数据.xml");
 
         // 解析XML文件
-        Flts flts = xmlMapper.readValue(file, Flts.class);
+        FlightPlanRoot root = xmlMapper.readValue(file, FlightPlanRoot.class);
 
-        // 输出解析结果
-        for (FlightPlan flightPlan : flts.getFlightPlans()) {
-            System.out.println(flightPlan);
-        }
+        System.out.println(root);
     }
 }

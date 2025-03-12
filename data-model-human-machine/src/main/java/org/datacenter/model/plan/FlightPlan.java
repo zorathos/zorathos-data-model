@@ -1,5 +1,6 @@
 package org.datacenter.model.plan;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,18 +15,19 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+// 忽略不需要的字段
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class FlightPlan {
+
+    /**
+     * 根ID
+     */
+    private String rootId;
 
     /**
      * 这个字段是咱自己的 主键 bigint auto increment，源库没有主键
      */
     private Long id;
-
-    @JacksonXmlProperty(localName = "X", isAttribute = true)
-    private int x;
-
-    @JacksonXmlProperty(localName = "Y", isAttribute = true)
-    private int y;
 
     /**
      * 机场ID JCID
