@@ -28,15 +28,27 @@ public class FlightTask {
      */
     private long id;
 
+    /**
+     * 型号
+     */
     @JacksonXmlProperty(localName = "XH", isAttribute = true)
-    private String xh;
+    private String model;
 
+    /**
+     * 代码
+     */
     @JacksonXmlProperty(localName = "DM", isAttribute = true)
-    private String dm;
+    private String code;
 
+    /**
+     * 姓名
+     */
     @JacksonXmlProperty(localName = "XM", isAttribute = true)
-    private String xm;
+    private String name;
 
+    /**
+     * 任务
+     */
     @JacksonXmlProperty(localName = "RW", isAttribute = true)
     private String rw;
 }

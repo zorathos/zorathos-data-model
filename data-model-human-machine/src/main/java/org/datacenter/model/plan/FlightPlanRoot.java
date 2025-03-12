@@ -27,7 +27,7 @@ public class FlightPlanRoot {
     private FlightHead flightHead;
 
     @JacksonXmlProperty(localName = "NOTES")
-    private FlightNotes notes;
+    private FlightNotes flightNotes;
 
     @JacksonXmlElementWrapper(localName = "CMDS")
     @JacksonXmlProperty(localName = "CMD")
@@ -53,7 +53,7 @@ public class FlightPlanRoot {
         XmlMapper xmlMapper = new XmlMapper();
         FlightPlanRoot root = xmlMapper.readValue(xml, FlightPlanRoot.class);
         root.getFlightHead().setRootId(root.getId());
-        root.getNotes().setRootId(root.getId());
+        root.getFlightNotes().setRootId(root.getId());
         root.getFlightCommands().forEach(flightCmd -> flightCmd.setRootId(root.getId()));
         root.getFlightTasks().forEach(flightTask -> flightTask.setRootId(root.getId()));
         root.getFlightPlans().forEach(flightPlan -> flightPlan.setRootId(root.getId()));

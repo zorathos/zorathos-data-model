@@ -7,8 +7,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalTime;
-
 /**
  * Represents the HEAD element in the flight plan XML.
  */
@@ -27,7 +25,7 @@ public class FlightHead {
     /**
      * 这个字段是咱自己的 主键 bigint auto increment，源库没有主键
      */
-    private long id;
+    private Long id;
 
     /**
      * 版本
@@ -57,25 +55,25 @@ public class FlightHead {
      * 计划数量
      */
     @JacksonXmlProperty(localName = "PLANENUM", isAttribute = true)
-    private int planeNum;
+    private Integer planeNum;
 
     /**
      * 开飞时刻
      */
     @JacksonXmlProperty(localName = "KFSK", isAttribute = true)
-    private int flightsTime;
+    private Integer flightsTime;
 
     /**
      * 总场时间
      */
     @JacksonXmlProperty(localName = "ZCSJ", isAttribute = true)
-    private int totalTime;
+    private Integer totalTime;
 
     /**
      * 退离时刻
      */
     @JacksonXmlProperty(localName = "TLSK", isAttribute = true)
-    private int exitTime;
+    private Integer exitTime;
 
     /**
      * 日出时刻

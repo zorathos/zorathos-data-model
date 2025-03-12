@@ -28,12 +28,21 @@ public class FlightCmd {
      */
     private long id;
 
-    @JacksonXmlProperty(localName = "xm", isAttribute = true)
-    private String xm;
+    /**
+     * 姓名
+     */
+    @JacksonXmlProperty(localName = "XM", isAttribute = true)
+    private String name;
 
+    /**
+     * 类别
+     */
     @JacksonXmlProperty(localName = "LB", isAttribute = true)
     private String lb;
 
+    /**
+     * 属性
+     */
     @JacksonXmlProperty(localName = "SX", isAttribute = true)
     private String sx;
 }
