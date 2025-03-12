@@ -75,12 +75,12 @@ public class EquipmentInfo {
     /**
      * 三维系统 threetype_system 1三型机 2体系 3小体系 4ACMI
      */
-    private String _3DSystem;
+    private Integer _3DSystem;
 
     /**
      * 是否删除 is_deleted 1删除 2未删除
      */
-    private Byte isDeleted;
+    private Integer isDeleted;
 
     /**
      * 装备模型 equipment_model
@@ -110,5 +110,5 @@ public class EquipmentInfo {
     /**
      * 是否三维回放，1代表是，2代表否 is_three_back
      */
-    private Byte is3DPlayback;
+    private Integer is3DPlayback;
 }
