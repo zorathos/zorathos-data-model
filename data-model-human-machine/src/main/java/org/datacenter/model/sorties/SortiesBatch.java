@@ -1,4 +1,4 @@
-package org.datacenter.model.flight;
+package org.datacenter.model.sorties;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

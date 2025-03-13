@@ -1,4 +1,4 @@
-package org.datacenter.model.flight;
+package org.datacenter.model.sorties;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
