@@ -10,9 +10,7 @@ import org.datacenter.model.unstructured.UnstructuredFileBase;
  * @author : [wangminan]
  * @description : 脑电数据 以bdf形式接入
  */
-@NoArgsConstructor
-@AllArgsConstructor
 @Data
-@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode(callSuper = false)
 public class Eeg extends UnstructuredFileBase {
 }

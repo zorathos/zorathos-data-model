@@ -10,9 +10,7 @@ import org.datacenter.model.unstructured.UnstructuredFileBase;
  * @author : [wangminan]
  * @description : 心率呼吸血氧指标 二进制的dat文件
  */
-@NoArgsConstructor
-@AllArgsConstructor
 @Data
-@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode(callSuper = false)
 public class VitalSigns extends UnstructuredFileBase {
 }
