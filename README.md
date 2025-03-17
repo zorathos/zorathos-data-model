@@ -2,7 +2,7 @@
 
 ### 项目介绍
 
-zorathos-data-model是数据中台的数据模型基底。该module将以maven module的形式为其他主干项目提供数据模型支持。
+zorathos-data-model是云软件与智能决策实验室数据中台的数据模型基底。该module将以maven module的形式为其他主干项目提供数据模型支持。
 
 我们希望zorathos-data-model只包含纯粹的java基类，但是为了后续的业务我们不得不引入lombok和jackson依赖。
 
@@ -13,7 +13,7 @@ zorathos-data-model是数据中台的数据模型基底。该module将以maven m
 
 ### 依赖的使用方法
 
-项目应该不能作为一个整体引入 你需要在human-machine和maps的模块做分别引入 最新的依赖版本为0.0.8
+项目应该不能作为一个整体引入 你需要在human-machine和maps的模块做分别引入 最新的依赖版本为**0.0.9**
 
 MAPS依赖如下
 
@@ -21,7 +21,7 @@ MAPS依赖如下
 <dependency>
   <groupId>io.github.wangminan</groupId>
   <artifactId>data-model-human-maps</artifactId>
-  <version>0.0.8</version>
+  <version>0.0.9</version>
 </dependency>
 ```
 
@@ -31,7 +31,7 @@ human-machine依赖如下
 <dependency>
   <groupId>io.github.wangminan</groupId>
   <artifactId>data-model-human-machine</artifactId>
-  <version>0.0.8</version>
+  <version>0.0.9</version>
 </dependency>
 ```
 
@@ -40,7 +40,7 @@ human-machine依赖如下
 如果您需要在本地编译并测试，请使用命令
 
 ```shell
-mvn -Dgpg.skip=true clean install
+mvn -Dmaven.test.skip=true -Dgpg.skip=true clean install
 ```
 
 这样，zorathos-data-model将作为一个依赖被安装到本地仓库中。您可以在别的本地项目中使用该依赖。
