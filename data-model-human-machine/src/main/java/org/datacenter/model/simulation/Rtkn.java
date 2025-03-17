@@ -1,9 +1,12 @@
 package org.datacenter.model.simulation;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
 
 /**
  * RTKN Data Record
@@ -22,6 +25,12 @@ public class Rtkn {
      * 主键，自增ID
      */
     private Long id;
+
+    /**
+     * 数据记录时间
+     */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private LocalDateTime timestamp;
 
     /**
      * 目标虚实属性：无效、实体、模拟器、虚拟，范围0~4

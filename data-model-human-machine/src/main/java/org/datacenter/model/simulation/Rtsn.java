@@ -1,6 +1,9 @@
 package org.datacenter.model.simulation;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+
+import java.time.LocalDateTime;
 
 /**
  * RTSN Data Record
@@ -16,6 +19,12 @@ public class Rtsn {
      * 主键，自增ID
      */
     private Long id;
+
+    /**
+     * 数据记录时间
+     */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private LocalDateTime timestamp;
 
     /**
      * 发射空空武器时的雷达融合编号，超出范围填 0；
