@@ -1,22 +1,21 @@
-package org.datacenter.config;
+package org.datacenter.config.simulation;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-
-import java.util.Set;
+import org.datacenter.config.BaseReceiverConfig;
 
 /**
  * @author : [wangminan]
- * @description : 飞行计划配置
+ * @description : Tspi接收器配置
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class FlightPlanReceiverConfig extends BaseReceiverConfig {
-    private Set<String> queryCodes;
+public class TspiReceiverConfig extends BaseReceiverConfig {
+    private String url;
 }

@@ -1,6 +1,7 @@
 package org.datacenter.model.physiological;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,6 +18,22 @@ import java.time.LocalTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+// 不带id
+@JsonPropertyOrder({"recordName, userName, validRatio, timeOfDay, " +
+        "videoTime, recordingTimeStamp, gazeVelocity, serialSend, " +
+        "serialReceive, udpSend, udpReceive, eventLabel, annotation, " +
+        "validityLeft, validityRight, pupilPositionLeftX, pupilPositionLeftY, " +
+        "pupilPositionRightX, pupilPositionRightY, pupilDiameterLeftPx, pupilDiameterLeftMm, " +
+        "pupilDiameterRightPx, pupilDiameterRightMm, opennessLeft, opennessRight, " +
+        "eyelidDistanceLeftPx, eyelidDistanceLeftMm, eyelidDistanceRightPx, " +
+        "eyelidDistanceRightMm, ipd, gazePointIndex, gazePointX, gazePointY, " +
+        "xOffset, yOffset, gazePointLeftX, gazePointLeftY, gazePointRightX, " +
+        "gazePointRightY, gazeOriginLeftX, gazeOriginLeftY, gazeOriginLeftZ, " +
+        "gazeOriginRightX, gazeOriginRightY, gazeOriginRightZ, gazeDirectionLeftX, " +
+        "gazeDirectionLeftY, gazeDirectionLeftZ, gazeDirectionRightX, gazeDirectionRightY, " +
+        "gazeDirectionRightZ, fixationIndex, fixationDuration, fixationPointX, fixationPointY, " +
+        "saccadeIndex, saccadeDuration, saccadeAmplitude, saccadeVelocityAverage, saccadeVelocityPeak, " +
+        "invalidIndex, invalidDuration, blinkIndex, blinkDuration, blinkEye, quatData, gyro, accel, mag"})
 public class EyeMovement {
 
     /**
