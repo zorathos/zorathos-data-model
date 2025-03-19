@@ -50,7 +50,7 @@ public class EquipmentInfo {
     /**
      * 老id old_id
      */
-    private String oldId;
+    private int oldId;
 
     /**
      * 飞机类型 plane_type
@@ -80,7 +80,7 @@ public class EquipmentInfo {
     /**
      * 是否删除 is_deleted 1删除 2未删除
      */
-    private Integer isDeleted;
+    private Short isDeleted;
 
     /**
      * 装备模型 equipment_model

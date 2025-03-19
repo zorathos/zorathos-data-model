@@ -82,14 +82,14 @@ public class EquipmentCode {
     private String avionicsSystemVersion;
 
     /**
-     * 是否使用 is_used
+     * is_used 是否被启用，1启用，2未启用
      */
-    private String isUsed;
+    private Short isUsed;
 
     /**
-     * 是否删除
+     * 是否删除 删除标记位，1正常，2删除
      */
-    private String isDeleted;
+    private Short isDeleted;
 
     /**
      * 使用时间 yyyy-MM-dd used_time
