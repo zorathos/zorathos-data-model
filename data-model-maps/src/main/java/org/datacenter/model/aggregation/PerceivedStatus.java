@@ -61,7 +61,7 @@ public class PerceivedStatus {
      */
     private ObjectStatusExtra objectStatusExtra;
 
-    public void setTrackDuration(long milliseconds) {
+    public void setTrackDuration(Long milliseconds) {
         // 转duration后toString直接得到ISO8601格式
         Duration duration = Duration.ofMillis(milliseconds);
         this.trackDuration = duration.toString();

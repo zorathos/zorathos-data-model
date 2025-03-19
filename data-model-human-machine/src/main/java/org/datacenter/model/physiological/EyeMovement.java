@@ -54,7 +54,7 @@ public class EyeMovement {
     /**
      * Valid Ratio [%]
      */
-    private double validRatio;
+    private Double validRatio;
 
     /**
      * Time of Day [HH:mm:ss.ms]
@@ -71,32 +71,32 @@ public class EyeMovement {
     /**
      * Recording Time Stamp [ms]
      */
-    private long recordingTimeStamp;
+    private Long recordingTimeStamp;
 
     /**
      * Gaze Velocity [px/ms]
      */
-    private double gazeVelocity;
+    private Double gazeVelocity;
 
     /**
      * Serial Send
      */
-    private int serialSend;
+    private Integer serialSend;
 
     /**
      * Serial Receive
      */
-    private int serialReceive;
+    private Integer serialReceive;
 
     /**
      * UDP Send
      */
-    private int udpSend;
+    private Integer udpSend;
 
     /**
      * UDP Receive
      */
-    private int udpReceive;
+    private Integer udpReceive;
 
     /**
      * Event Label
@@ -111,257 +111,257 @@ public class EyeMovement {
     /**
      * Validity Left
      */
-    private double validityLeft;
+    private Double validityLeft;
 
     /**
      * Validity Right
      */
-    private double validityRight;
+    private Double validityRight;
 
     /**
      * Pupil Position Left X
      */
-    private double pupilPositionLeftX;
+    private Double pupilPositionLeftX;
 
     /**
      * Pupil Position Left Y
      */
-    private double pupilPositionLeftY;
+    private Double pupilPositionLeftY;
 
     /**
      * Pupil Position Right X
      */
-    private double pupilPositionRightX;
+    private Double pupilPositionRightX;
 
     /**
      * Pupil Position Right Y
      */
-    private double pupilPositionRightY;
+    private Double pupilPositionRightY;
 
     /**
      * Pupil Diameter Left [px]
      */
-    private double pupilDiameterLeftPx;
+    private Double pupilDiameterLeftPx;
 
     /**
      * Pupil Diameter Left [mm]
      */
-    private double pupilDiameterLeftMm;
+    private Double pupilDiameterLeftMm;
 
     /**
      * Pupil Diameter Right [px]
      */
-    private double pupilDiameterRightPx;
+    private Double pupilDiameterRightPx;
 
     /**
      * Pupil Diameter Right [mm]
      */
-    private double pupilDiameterRightMm;
+    private Double pupilDiameterRightMm;
 
     /**
      * Openness Left [%]
      */
-    private double opennessLeft;
+    private Double opennessLeft;
 
     /**
      * Openness Right [%]
      */
-    private double opennessRight;
+    private Double opennessRight;
 
     /**
      * Eyelid Distance Left [px]
      */
-    private double eyelidDistanceLeftPx;
+    private Double eyelidDistanceLeftPx;
 
     /**
      * Eyelid Distance Left [mm]
      */
-    private double eyelidDistanceLeftMm;
+    private Double eyelidDistanceLeftMm;
 
     /**
      * Eyelid Distance Right [px]
      */
-    private double eyelidDistanceRightPx;
+    private Double eyelidDistanceRightPx;
 
     /**
      * Eyelid Distance Right [mm]
      */
-    private double eyelidDistanceRightMm;
+    private Double eyelidDistanceRightMm;
 
     /**
      * Inter-Pupillary Distance (IPD) [mm]
      */
-    private double ipd;
+    private Double ipd;
 
     /**
      * Gaze Point Index
      */
-    private int gazePointIndex;
+    private Integer gazePointIndex;
 
     /**
      * Gaze Point X [px]
      */
-    private double gazePointX;
+    private Double gazePointX;
 
     /**
      * Gaze Point Y [px]
      */
-    private double gazePointY;
+    private Double gazePointY;
 
     /**
      * X Offset [px]
      */
-    private double xOffset;
+    private Double xOffset;
 
     /**
      * Y Offset [px]
      */
-    private double yOffset;
+    private Double yOffset;
 
     /**
      * Gaze Point Left X [px]
      */
-    private double gazePointLeftX;
+    private Double gazePointLeftX;
 
     /**
      * Gaze Point Left Y [px]
      */
-    private double gazePointLeftY;
+    private Double gazePointLeftY;
 
     /**
      * Gaze Point Right X [px]
      */
-    private double gazePointRightX;
+    private Double gazePointRightX;
 
     /**
      * Gaze Point Right Y [px]
      */
-    private double gazePointRightY;
+    private Double gazePointRightY;
 
     /**
      * Gaze Origin Left X [mm]
      */
-    private double gazeOriginLeftX;
+    private Double gazeOriginLeftX;
 
     /**
      * Gaze Origin Left Y [mm]
      */
-    private double gazeOriginLeftY;
+    private Double gazeOriginLeftY;
 
     /**
      * Gaze Origin Left Z [mm]
      */
-    private double gazeOriginLeftZ;
+    private Double gazeOriginLeftZ;
 
     /**
      * Gaze Origin Right X [mm]
      */
-    private double gazeOriginRightX;
+    private Double gazeOriginRightX;
 
     /**
      * Gaze Origin Right Y [mm]
      */
-    private double gazeOriginRightY;
+    private Double gazeOriginRightY;
 
     /**
      * Gaze Origin Right Z [mm]
      */
-    private double gazeOriginRightZ;
+    private Double gazeOriginRightZ;
 
     /**
      * Gaze Direction Left X
      */
-    private double gazeDirectionLeftX;
+    private Double gazeDirectionLeftX;
 
     /**
      * Gaze Direction Left Y
      */
-    private double gazeDirectionLeftY;
+    private Double gazeDirectionLeftY;
 
     /**
      * Gaze Direction Left Z
      */
-    private double gazeDirectionLeftZ;
+    private Double gazeDirectionLeftZ;
 
     /**
      * Gaze Direction Right X
      */
-    private double gazeDirectionRightX;
+    private Double gazeDirectionRightX;
 
     /**
      * Gaze Direction Right Y
      */
-    private double gazeDirectionRightY;
+    private Double gazeDirectionRightY;
 
     /**
      * Gaze Direction Right Z
      */
-    private double gazeDirectionRightZ;
+    private Double gazeDirectionRightZ;
 
     /**
      * Fixation Index
      */
-    private int fixationIndex;
+    private Integer fixationIndex;
 
     /**
      * Fixation Duration [ms]
      */
-    private long fixationDuration;
+    private Long fixationDuration;
 
     /**
      * Fixation Point X [px]
      */
-    private double fixationPointX;
+    private Double fixationPointX;
 
     /**
      * Fixation Point Y [px]
      */
-    private double fixationPointY;
+    private Double fixationPointY;
 
     /**
      * Saccade Index
      */
-    private int saccadeIndex;
+    private Integer saccadeIndex;
 
     /**
      * Saccade Duration [ms]
      */
-    private long saccadeDuration;
+    private Long saccadeDuration;
 
     /**
      * Saccade Amplitude [px]
      */
-    private double saccadeAmplitude;
+    private Double saccadeAmplitude;
 
     /**
      * Saccade Velocity Average [px/ms]
      */
-    private double saccadeVelocityAverage;
+    private Double saccadeVelocityAverage;
 
     /**
      * Saccade Velocity Peak [px/ms]
      */
-    private double saccadeVelocityPeak;
+    private Double saccadeVelocityPeak;
 
     /**
      * Invalid Index
      */
-    private int invalidIndex;
+    private Integer invalidIndex;
 
     /**
      * Invalid Duration [ms]
      */
-    private long invalidDuration;
+    private Long invalidDuration;
 
     /**
      * Blink Index
      */
-    private int blinkIndex;
+    private Integer blinkIndex;
 
     /**
      * Blink Duration [ms]
      */
-    private long blinkDuration;
+    private Long blinkDuration;
 
     /**
      * Blink Eye

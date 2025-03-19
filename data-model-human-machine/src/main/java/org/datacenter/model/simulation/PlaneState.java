@@ -14,10 +14,13 @@ import java.time.LocalTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@JsonPropertyOrder({"飞机ID", "消息时间", "卫导时间", "本地时间", "消息序列号", "真攻角", "马赫数", "法向过载", "表速(km/h)", "场高", "无线电高度", "余油量", "手动复活", "参数设置状态"})
-public class cdDronePlaneState{ // Choose a descriptive class name
+@JsonPropertyOrder({"飞机ID", "消息时间", "卫导时间", "本地时间", "消息序列号", "真攻角", "马赫数", "法向过载", "表速(km/h)", "场高", "无线电高度", "余油量", "场景", "手动复活", "参数设置状态", "加密状态"})
+public class PlaneState {
 
-    private long id; // Optional: If you have an auto-incrementing ID
+    /**
+     * 主键 auto-incrementing ID
+     */
+    private Long id;
 
     @JsonProperty(value = "飞机ID")
     private String aircraftId;
@@ -35,32 +38,38 @@ public class cdDronePlaneState{ // Choose a descriptive class name
     private LocalTime localTime;
 
     @JsonProperty(value = "消息序列号")
-    private long messageSequenceNumber;
+    private Long messageSequenceNumber;
 
     @JsonProperty(value = "真攻角")
-    private double trueAngleOfAttack;
+    private Double trueAngleOfAttack;
 
     @JsonProperty(value = "马赫数")
-    private double machNumber;
+    private Double machNumber;
 
     @JsonProperty(value = "法向过载")
-    private double normalLoadFactor; // Or 'gForce' might be a suitable name
+    private Double normalLoadFactor;
 
     @JsonProperty(value = "表速(km/h)")
-    private double indicatedAirspeed; // km/h
+    private Double indicatedAirspeed; // km/h
 
     @JsonProperty(value = "场高")
-    private double fieldElevation;
+    private Double fieldElevation;
 
     @JsonProperty(value = "无线电高度")
-    private double radioAltitude;
+    private Double radioAltitude;
 
     @JsonProperty(value = "余油量")
-    private double remainingFuel; // Consider units (kg, lbs, etc.)
+    private Double remainingFuel;  // Consider adding units: (kg) or (lbs)
+
+    @JsonProperty(value = "场景")
+    private String scenario;
 
     @JsonProperty(value = "手动复活")
-    private String manualRespawn; // Or boolean manualRespawnEnabled;
+    private String manualRespawn;
 
     @JsonProperty(value = "参数设置状态")
-    private String parameterSettingStatus; // Or boolean parametersSet;
+    private String parameterSettingStatus;
+
+    @JsonProperty(value = "加密状态")
+    private String encryptionStatus;
 }

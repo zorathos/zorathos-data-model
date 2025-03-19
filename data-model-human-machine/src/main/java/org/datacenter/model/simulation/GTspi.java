@@ -14,10 +14,13 @@ import java.time.LocalTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@JsonPropertyOrder({"地防ID", "消息时间", "卫导时间", "本地时间", "消息序列号", "装备类型", "装备编号", "目标方位角", "目标俯仰角", "目标斜距", "通道号", "目标批号"})
-public class saTgt {
+@JsonPropertyOrder({"地防ID", "消息时间", "卫导时间", "本地时间", "消息序列号", "营地类型", "装备类型", "装备ID", "状态", "指北角", "经度", "纬度", "高度", "假阵地编号"})
+public class GTspi {
 
-    private long id; // Optional: auto-incrementing ID
+    /**
+     * 主键 auto-incrementing ID
+     */
+    private Long id;
 
     @JsonProperty(value = "地防ID")
     private String groundDefenseId;
@@ -35,26 +38,32 @@ public class saTgt {
     private LocalTime localTime;
 
     @JsonProperty(value = "消息序列号")
-    private long messageSequenceNumber;
+    private Long messageSequenceNumber;
+
+    @JsonProperty(value = "营地类型")
+    private String campType;
 
     @JsonProperty(value = "装备类型")
-    private String equipmentType; // Consider an enum
+    private String equipmentType;
 
-    @JsonProperty(value = "装备编号")
-    private String equipmentNumber; // Or int
+    @JsonProperty(value = "装备ID")
+    private String equipmentId;
 
-    @JsonProperty(value = "目标方位角")
-    private double targetAzimuth;
+    @JsonProperty(value = "状态")
+    private String status;
 
-    @JsonProperty(value = "目标俯仰角")
-    private double targetElevation;
+    @JsonProperty(value = "指北角")
+    private Double northAngle;
 
-    @JsonProperty(value = "目标斜距")
-    private double targetSlantRange;
+    @JsonProperty(value = "经度")
+    private Double Longitude;
 
-    @JsonProperty(value = "通道号")
-    private String channelNumber;  // Or int
+    @JsonProperty(value = "纬度")
+    private Double latitude;
 
-    @JsonProperty(value = "目标批号")
-    private String targetBatchNumber; // Or int
+    @JsonProperty(value = "高度")
+    private Double altitude;
+
+    @JsonProperty(value = "假阵地编号")
+    private String decoyPositionId; // Or Integer, depending on the ID format
 }

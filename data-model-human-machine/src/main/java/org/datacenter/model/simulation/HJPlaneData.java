@@ -17,16 +17,19 @@ import java.time.LocalTime;
 @JsonPropertyOrder({"批次号", "设备号", "航管号", "本地时间", "消息时间", "消息序列号", "经度", "纬度", "高度", "地速", "垂直速度", "航向"})
 public class HJPlaneData {
 
-    private long id; // Optional: auto-incrementing ID
+    /**
+     * 主键 auto-incrementing ID
+     */
+    private Long id;
 
     @JsonProperty(value = "批次号")
-    private String batchNumber; // Or int, depending on format
+    private String batchNumber; // Or Integer, depending on format
 
     @JsonProperty(value = "设备号")
-    private String deviceNumber; // Or int, depending on format
+    private String deviceNumber; // Or Integer, depending on format
 
     @JsonProperty(value = "航管号")
-    private String flightControlNumber; // Or int
+    private String flightControlNumber; // Or Integer
 
     @JsonFormat(pattern = "HH:mm:ss.SSS", timezone = "GMT+8")
     @JsonProperty(value = "本地时间")
@@ -37,23 +40,23 @@ public class HJPlaneData {
     private String messageTime;
 
     @JsonProperty(value = "消息序列号")
-    private long messageSequenceNumber;
+    private Long messageSequenceNumber;
 
     @JsonProperty(value = "经度")
-    private double longitude;
+    private Double Longitude;
 
     @JsonProperty(value = "纬度")
-    private double latitude;
+    private Double latitude;
 
     @JsonProperty(value = "高度")
-    private double altitude;
+    private Double altitude;
 
     @JsonProperty(value = "地速")
-    private double groundSpeed;
+    private Double groundSpeed;
 
     @JsonProperty(value = "垂直速度")
-    private double verticalSpeed;
+    private Double verticalSpeed;
 
     @JsonProperty(value = "航向")
-    private double heading;
+    private Double heading;
 }

@@ -14,10 +14,13 @@ import java.time.LocalTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@JsonPropertyOrder({"飞机ID", "消息时间", "卫导时间", "本地时间", "消息序列号", "武器ID", "挂架ID", "武器类型", "目标ID", "被拦截武器ID", "经度", "纬度", "高度", "弹目距离", "弹速度(m/s)", "截获状态", "未截获原因", "导引头视线方位角", "导引头视线俯仰角", "目标TSPI状态", "指令机状态"})
-public class satraj {
+@JsonPropertyOrder({"飞机ID", "消息时间","卫导时间","本地时间","消息序列号","武器ID","挂架ID","武器类型","目标ID","经度","纬度","高度","弹目距离","弹速度","截获状态","未截获原因","导引头视线方位角","导引头视线俯仰角","目标TSPI状态","指令机状态","擦地角满足标志","过零标志"})
+public class Aatraj {
 
-    private long id;  // Optional: auto-incrementing ID
+    /**
+     * 主键 auto-incrementing ID
+     */
+    private Long id;
 
     @JsonProperty(value = "飞机ID")
     private String aircraftId;
@@ -27,15 +30,11 @@ public class satraj {
     private LocalTime messageTime;
 
     @JsonFormat(pattern = "HH:mm:ss.SSS", timezone = "GMT+8")
-    @JsonProperty(value = "卫导时间")
-    private LocalTime satelliteGuidanceTime;
-
-    @JsonFormat(pattern = "HH:mm:ss.SSS", timezone = "GMT+8")
     @JsonProperty(value = "本地时间")
     private LocalTime localTime;
 
     @JsonProperty(value = "消息序列号")
-    private long messageSequenceNumber;
+    private Long messageSequenceNumber;
 
     @JsonProperty(value = "武器ID")
     private String weaponId;
@@ -49,39 +48,42 @@ public class satraj {
     @JsonProperty(value = "目标ID")
     private String targetId;
 
-    @JsonProperty(value = "被拦截武器ID")
-    private String interceptedWeaponId;
-
     @JsonProperty(value = "经度")
-    private double longitude;
+    private Double Longitude;
 
     @JsonProperty(value = "纬度")
-    private double latitude;
+    private Double latitude;
 
     @JsonProperty(value = "高度")
-    private double altitude;
+    private Double altitude;
 
     @JsonProperty(value = "弹目距离")
-    private double missileTargetDistance;
+    private Double missileTargetDistance;
 
-    @JsonProperty(value = "弹速度(m/s)")
-    private double missileSpeed;
+    @JsonProperty(value = "弹速度")
+    private Double missileSpeed;
 
     @JsonProperty(value = "截获状态")
-    private String interceptionStatus; // Or boolean intercepted;
+    private String interceptionStatus;
 
     @JsonProperty(value = "未截获原因")
-    private String nonInterceptionReason; // Consider an enum
+    private String nonInterceptionReason;
 
     @JsonProperty(value = "导引头视线方位角")
-    private double seekerAzimuth;
+    private Double seekerAzimuth;
 
     @JsonProperty(value = "导引头视线俯仰角")
-    private double seekerElevation;
+    private Double seekerElevation;
 
     @JsonProperty(value = "目标TSPI状态")
-    private String targetTspiStatus; // Consider an enum
+    private String targetTspiStatus;
 
     @JsonProperty(value = "指令机状态")
-    private String commandMachineStatus; // Consider an enum
+    private String commandMachineStatus;
+
+    @JsonProperty(value = "擦地角满足标志")
+    private String groundAngleSatisfactionFlag;
+
+    @JsonProperty(value = "过零标志")
+    private String zeroCrossingFlag;
 }

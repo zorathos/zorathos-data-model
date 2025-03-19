@@ -14,13 +14,16 @@ import java.time.LocalTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@JsonPropertyOrder({"飞机ID", "消息时间", "卫导时间", "本地时间", "消息序列号", "导引头方位角", "导引头俯仰角", "武器类型", "截获标识"})
-public class irMsl {
+@JsonPropertyOrder({"地防ID", "消息时间", "卫导时间", "本地时间", "消息序列号", "可用导弹数量", "可用目标通道数量", "训练模式", "允许重置导弹", "自主复活"})
+public class CmbPower {
 
-    private long id; // Optional: auto-incrementing ID
+    /**
+     * 主键 auto-incrementing ID
+     */
+    private Long id;
 
-    @JsonProperty(value = "飞机ID")
-    private String aircraftId;
+    @JsonProperty(value = "地防ID")
+    private String groundDefenseId;
 
     @JsonFormat(pattern = "HH:mm:ss.SSS", timezone = "GMT+8")
     @JsonProperty(value = "消息时间")
@@ -35,17 +38,20 @@ public class irMsl {
     private LocalTime localTime;
 
     @JsonProperty(value = "消息序列号")
-    private long messageSequenceNumber;
+    private Long messageSequenceNumber;
 
-    @JsonProperty(value = "导引头方位角")
-    private double seekerAzimuth;
+    @JsonProperty(value = "可用导弹数量")
+    private Integer availableMissileCount;
 
-    @JsonProperty(value = "导引头俯仰角")
-    private double seekerElevation;
+    @JsonProperty(value = "可用目标通道数量")
+    private Integer availableTargetChannelCount;
 
-    @JsonProperty(value = "武器类型")
-    private String weaponType;
+    @JsonProperty(value = "训练模式")
+    private String trainingMode;
 
-    @JsonProperty(value = "截获标识")
-    private String interceptionFlag; // Or boolean interceptionStatus;
+    @JsonProperty(value = "允许重置导弹")
+    private String allowMissileReset;
+
+    @JsonProperty(value = "自主复活")
+    private String autoRespawn;
 }

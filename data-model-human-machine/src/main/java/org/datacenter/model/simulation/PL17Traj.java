@@ -14,10 +14,13 @@ import java.time.LocalTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@JsonPropertyOrder({"飞机ID", "消息时间","卫导时间","本地时间","消息序列号","武器ID","挂架ID","武器类型","目标ID","经度","纬度","高度","弹目距离","弹速度","截获状态","未截获原因","导引头视线方位角","导引头视线俯仰角","目标TSPI状态","指令机状态","擦地角满足标志","过零标志"})
-public class aatraj {
-    private long id;
-    //主键id，自增
+@JsonPropertyOrder({"飞机ID", "消息时间", "卫导时间", "本地时间", "消息序列号", "武器ID", "挂架ID", "武器类型", "目标ID", "经度", "纬度", "高度", "弹目距离", "弹速度(m/s)", "截获状态", "未截获原因", "导引头视线方位角", "导引头视线俯仰角", "目标TSPI状态", "指令机状态", "擦地角满足标志", "过零标志", "距离截获标志", "速度截获标志", "角度截获标志"})
+public class PL17Traj {
+
+    /**
+     * 主键 auto-incrementing ID
+     */
+    private Long id;
 
     @JsonProperty(value = "飞机ID")
     private String aircraftId;
@@ -27,11 +30,15 @@ public class aatraj {
     private LocalTime messageTime;
 
     @JsonFormat(pattern = "HH:mm:ss.SSS", timezone = "GMT+8")
+    @JsonProperty(value = "卫导时间")
+    private LocalTime satelliteGuidanceTime;
+
+    @JsonFormat(pattern = "HH:mm:ss.SSS", timezone = "GMT+8")
     @JsonProperty(value = "本地时间")
     private LocalTime localTime;
 
     @JsonProperty(value = "消息序列号")
-    private long messageSequenceNumber;
+    private Long messageSequenceNumber;
 
     @JsonProperty(value = "武器ID")
     private String weaponId;
@@ -46,19 +53,19 @@ public class aatraj {
     private String targetId;
 
     @JsonProperty(value = "经度")
-    private double longitude;
+    private Double Longitude;
 
     @JsonProperty(value = "纬度")
-    private double latitude;
+    private Double latitude;
 
     @JsonProperty(value = "高度")
-    private double altitude;
+    private Double altitude;
 
     @JsonProperty(value = "弹目距离")
-    private double missileTargetDistance;
+    private Double missileTargetDistance;
 
-    @JsonProperty(value = "弹速度")
-    private double missileSpeed;
+    @JsonProperty(value = "弹速度(m/s)")
+    private Double missileSpeed;
 
     @JsonProperty(value = "截获状态")
     private String interceptionStatus;
@@ -67,10 +74,10 @@ public class aatraj {
     private String nonInterceptionReason;
 
     @JsonProperty(value = "导引头视线方位角")
-    private double seekerAzimuth;
+    private Double seekerAzimuth;
 
     @JsonProperty(value = "导引头视线俯仰角")
-    private double seekerElevation;
+    private Double seekerElevation;
 
     @JsonProperty(value = "目标TSPI状态")
     private String targetTspiStatus;
@@ -79,8 +86,17 @@ public class aatraj {
     private String commandMachineStatus;
 
     @JsonProperty(value = "擦地角满足标志")
-    private boolean groundAngleSatisfactionFlag;
+    private String groundAngleSatisfactionFlag;
 
     @JsonProperty(value = "过零标志")
-    private boolean zeroCrossingFlag;
+    private String zeroCrossingFlag;
+
+    @JsonProperty(value = "距离截获标志")
+    private String distanceInterceptionFlag;
+
+    @JsonProperty(value = "速度截获标志")
+    private String speedInterceptionFlag;
+
+    @JsonProperty(value = "角度截获标志")
+    private String angleInterceptionFlag;
 }

@@ -15,9 +15,12 @@ import java.time.LocalTime;
 @AllArgsConstructor
 @Builder
 @JsonPropertyOrder({"飞机ID", "消息时间", "卫导时间", "本地时间", "消息序列号", "武器ID", "武器类型", "目标ID", "目标机实虚属性", "命中结果", "未命中原因", "脱靶量", "匹配失败原因", "干扰是否有效", "干扰", "加力", "迎头", "航向", "俯仰"})
-public class pl17rtkn {
+public class PL17Rtkn {
 
-    private long id; // Optional: auto-incrementing ID
+    /**
+     * 主键 auto-incrementing ID
+     */
+    private Long id;
 
     @JsonProperty(value = "飞机ID")
     private String aircraftId;
@@ -35,7 +38,7 @@ public class pl17rtkn {
     private LocalTime localTime;
 
     @JsonProperty(value = "消息序列号")
-    private long messageSequenceNumber;
+    private Long messageSequenceNumber;
 
     @JsonProperty(value = "武器ID")
     private String weaponId;
@@ -47,35 +50,35 @@ public class pl17rtkn {
     private String targetId;
 
     @JsonProperty(value = "目标机实虚属性")
-    private String targetRealOrVirtual; // Consider an enum
+    private String targetRealOrVirtual;
 
     @JsonProperty(value = "命中结果")
-    private String hitResult; // Or boolean hit;
+    private String hitResult;
 
     @JsonProperty(value = "未命中原因")
-    private String missReason; // Consider an enum
+    private String missReason;
 
     @JsonProperty(value = "脱靶量")
-    private double missDistance;
+    private Double missDistance;
 
     @JsonProperty(value = "匹配失败原因")
-    private String matchingFailureReason; // Consider an enum
+    private String matchingFailureReason;
 
     @JsonProperty(value = "干扰是否有效")
-    private String jammingEffective; // Or boolean jammingEffective;
+    private String jammingEffective;
 
     @JsonProperty(value = "干扰")
-    private String jamming; // Or boolean jammingActive;
+    private String jamming;
 
     @JsonProperty(value = "加力")
-    private String afterburner; // Or boolean afterburnerEngaged;
+    private String afterburner;
 
     @JsonProperty(value = "迎头")
-    private String headOn; // Or boolean headOnEngagement;
+    private String headOn;
 
     @JsonProperty(value = "航向")
-    private double heading;
+    private Double heading;
 
     @JsonProperty(value = "俯仰")
-    private double pitch;
+    private Double pitch;
 }

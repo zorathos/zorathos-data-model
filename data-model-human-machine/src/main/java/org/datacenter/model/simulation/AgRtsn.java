@@ -16,8 +16,11 @@ import java.time.LocalTime;
 @AllArgsConstructor
 @Builder
 @JsonPropertyOrder({"飞机ID", "消息时间", "卫导时间", "本地时间", "消息序列号", "武器ID", "武器挂架ID", "武器类型", "投放弹数", "载机地速", "载机经度", "载机纬度", "载机高度", "载机航向", "载机俯仰", "载机横滚", "载机攻角", "载机北速", "载机天速", "载机东速", "北向风速", "天向风速", "东向风速", "目标经度", "目标纬度", "目标高度", "目标距离", "导引头号", "目标经纬高有效标识", "目标方位俯仰有效标识", "目标俯仰角(惯性侧滑角)", "目标方位角(真空速)", "落角有效性", "进入角", "落角", "方向有效性"})
-public class agRtsn {
-    private long id;
+public class AgRtsn {
+    /**
+     * 主键 auto-incrementing ID
+     */
+    private Long id;
 
     @JsonProperty(value = "飞机ID")
     private String aircraftId;
@@ -35,7 +38,7 @@ public class agRtsn {
     private LocalTime localTime;
 
     @JsonProperty(value = "消息序列号")
-    private long messageSequenceNumber;
+    private Long messageSequenceNumber;
 
     @JsonProperty(value = "武器ID")
     private String weaponId;
@@ -47,86 +50,86 @@ public class agRtsn {
     private String weaponType;
 
     @JsonProperty(value = "投放弹数")
-    private int numberOfMissilesReleased;
+    private Integer numberOfMissilesReleased;
 
     @JsonProperty(value = "载机地速")
-    private double aircraftGroundSpeed;
+    private Double aircraftGroundSpeed;
 
     @JsonProperty(value = "载机经度")
-    private double aircraftLongitude;
+    private Double aircraftLongitude;
 
     @JsonProperty(value = "载机纬度")
-    private double aircraftLatitude;
+    private Double aircraftLatitude;
 
     @JsonProperty(value = "载机高度")
-    private double aircraftAltitude;
+    private Double aircraftAltitude;
 
     @JsonProperty(value = "载机航向")
-    private double aircraftHeading;
+    private Double aircraftHeading;
 
     @JsonProperty(value = "载机俯仰")
-    private double aircraftPitch;
+    private Double aircraftPitch;
 
     @JsonProperty(value = "载机横滚")
-    private double aircraftRoll;
+    private Double aircraftRoll;
 
     @JsonProperty(value = "载机攻角")
-    private double aircraftAngleOfAttack;
+    private Double aircraftAngleOfAttack;
 
     @JsonProperty(value = "载机北速")
-    private double aircraftNorthSpeed;
+    private Double aircraftNorthSpeed;
 
     @JsonProperty(value = "载机天速")
-    private double aircraftVerticalSpeed;
+    private Double aircraftVerticalSpeed;
 
     @JsonProperty(value = "载机东速")
-    private double aircraftEastSpeed;
+    private Double aircraftEastSpeed;
 
     @JsonProperty(value = "北向风速")
-    private double northWindSpeed;
+    private Double northWindSpeed;
 
     @JsonProperty(value = "天向风速")
-    private double verticalWindSpeed;
+    private Double verticalWindSpeed;
 
     @JsonProperty(value = "东向风速")
-    private double eastWindSpeed;
+    private Double eastWindSpeed;
 
     @JsonProperty(value = "目标经度")
-    private double targetLongitude;
+    private Double targetLongitude;
 
     @JsonProperty(value = "目标纬度")
-    private double targetLatitude;
+    private Double targetLatitude;
 
     @JsonProperty(value = "目标高度")
-    private double targetAltitude;
+    private Double targetAltitude;
 
     @JsonProperty(value = "目标距离")
-    private double targetDistance;
+    private Double targetDistance;
 
     @JsonProperty(value = "导引头号")
-    private int seekerHeadNumber;
+    private Integer seekerHeadNumber;
 
     @JsonProperty(value = "目标经纬高有效标识")
-    private boolean targetCoordinateValidity;
+    private String targetCoordinateValidity;
 
     @JsonProperty(value = "目标方位俯仰有效标识")
-    private boolean targetAzimuthElevationValidity;
+    private String targetAzimuthElevationValidity;
 
     @JsonProperty(value = "目标俯仰角(惯性侧滑角)")
-    private double targetElevationAngle;
+    private Double targetElevationAngle;
 
     @JsonProperty(value = "目标方位角(真空速)")
-    private double targetAzimuthAngle;
+    private Double targetAzimuthAngle;
 
     @JsonProperty(value = "落角有效性")
-    private boolean impactAngleValidity;
+    private String impactAngleValidity;
 
     @JsonProperty(value = "进入角")
-    private double entryAngle;
+    private Double entryAngle;
 
     @JsonProperty(value = "落角")
-    private double impactAngle;
+    private Double impactAngle;
 
     @JsonProperty(value = "方向有效性")
-    private boolean directionValidity;
+    private String directionValidity;
 }

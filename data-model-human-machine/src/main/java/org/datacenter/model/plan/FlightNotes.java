@@ -27,7 +27,7 @@ public class FlightNotes {
     /**
      * 这个字段是咱自己的 主键 bigint auto increment，源库没有主键
      */
-    private long id;
+    private Long id;
 
     @JacksonXmlProperty(localName = "NOTE", isAttribute = true)
     private String note;

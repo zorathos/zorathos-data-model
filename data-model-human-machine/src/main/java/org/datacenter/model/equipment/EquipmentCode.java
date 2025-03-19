@@ -49,12 +49,12 @@ public class EquipmentCode {
     /**
      * 老ID old_id
      */
-    private int oldId;
+    private Integer oldId;
 
     /**
      * 飞机老ID plane_old_id
      */
-    private int planeOldId;
+    private Integer planeOldId;
 
     /**
      * 涂装号 c_coat

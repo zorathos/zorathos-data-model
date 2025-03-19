@@ -19,12 +19,12 @@ public class PhotoelectricData {
     private String visibleLightUrl;         // 可见光RTSP地址
 
     // 设备状态
-    private boolean visibleLightStatus;     // 可见光状态
+    private Boolean visibleLightStatus;     // 可见光状态
 
     // 视频参数
-    private int width;                      // 视频宽度
-    private int height;                     // 视频高度
-    private int fps;                        // 帧率
+    private Integer width;                      // 视频宽度
+    private Integer height;                     // 视频高度
+    private Integer fps;                        // 帧率
     private String codec;                   // 编码格式
     private String resolution;              // 分辨率7
 
@@ -32,7 +32,7 @@ public class PhotoelectricData {
     private String currentStreamType;       // 当前流类型(visible/infrared)
 
     // 帧计数
-    private long visibleLightFrameCount;    // 可见光帧计数
+    private Long visibleLightFrameCount;    // 可见光帧计数
 
     // 云台参数（可选）
     private Double panAngle;                // 水平角度

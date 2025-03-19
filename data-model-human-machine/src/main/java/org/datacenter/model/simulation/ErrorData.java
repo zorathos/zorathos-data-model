@@ -15,9 +15,12 @@ import java.time.LocalTime;
 @AllArgsConstructor
 @Builder
 @JsonPropertyOrder({"发送方ID", "消息时间", "本地时间", "消息序列号", "消息标识", "消息长度", "错误信息"})
-public class errorData {
+public class ErrorData {
 
-    private long id; // Optional: auto-incrementing ID
+    /**
+     * 主键 auto-incrementing ID
+     */
+    private Long id;
 
     @JsonProperty(value = "发送方ID")
     private String senderId;
@@ -31,13 +34,13 @@ public class errorData {
     private LocalTime localTime;
 
     @JsonProperty(value = "消息序列号")
-    private long messageSequenceNumber;
+    private Long messageSequenceNumber;
 
     @JsonProperty(value = "消息标识")
     private String messageId;
 
     @JsonProperty(value = "消息长度")
-    private int messageLength;
+    private Integer messageLength;
 
     @JsonProperty(value = "错误信息")
     private String errorMessage;

@@ -15,9 +15,12 @@ import java.time.LocalTime;
 @AllArgsConstructor
 @Builder
 @JsonPropertyOrder({"飞机ID", "飞机类型", "消息时间", "卫导时间", "本地时间", "消息序列号", "经度", "纬度", "气压高度", "横滚", "俯仰", "航向", "卫星高度", "训练状态", "干扰弹", "加力", "北向速度", "天向速度", "东向速度", "延迟状态"})
-public class cdDroneTspi {
+public class CdDroneTspi {
 
-    private long id; // Optional: If you have an auto-incrementing ID
+    /**
+     * 主键 auto-incrementing ID
+     */
+    private Long id;
 
     @JsonProperty(value = "飞机ID")
     private String aircraftId;
@@ -38,47 +41,47 @@ public class cdDroneTspi {
     private LocalTime localTime;
 
     @JsonProperty(value = "消息序列号")
-    private long messageSequenceNumber;
+    private Long messageSequenceNumber;
 
     @JsonProperty(value = "经度")
-    private double longitude;
+    private Double Longitude;
 
     @JsonProperty(value = "纬度")
-    private double latitude;
+    private Double latitude;
 
     @JsonProperty(value = "气压高度")
-    private double pressureAltitude;
+    private Double pressureAltitude;
 
     @JsonProperty(value = "横滚")
-    private double roll;
+    private Double roll;
 
     @JsonProperty(value = "俯仰")
-    private double pitch;
+    private Double pitch;
 
     @JsonProperty(value = "航向")
-    private double heading;
+    private Double heading;
 
     @JsonProperty(value = "卫星高度")
-    private double satelliteAltitude;
+    private Double satelliteAltitude;
 
     @JsonProperty(value = "训练状态")
-    private String trainingStatus; // Or boolean inTraining;
+    private String trainingStatus;
 
     @JsonProperty(value = "干扰弹")
-    private String chaff; // Or boolean chaffDeployed;  Or int chaffCount;
+    private String chaff;
 
     @JsonProperty(value = "加力")
-    private String afterburner; // Or boolean afterburnerEngaged;
+    private String afterburner;
 
     @JsonProperty(value = "北向速度")
-    private double northVelocity;
+    private Double northVelocity;
 
     @JsonProperty(value = "天向速度")
-    private double verticalVelocity;
+    private Double verticalVelocity;
 
     @JsonProperty(value = "东向速度")
-    private double eastVelocity;
+    private Double eastVelocity;
 
     @JsonProperty(value = "延迟状态")
-    private String delayStatus;  //Or boolean isDelayed
+    private String delayStatus;
 }

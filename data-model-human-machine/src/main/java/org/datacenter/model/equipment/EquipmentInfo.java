@@ -50,7 +50,7 @@ public class EquipmentInfo {
     /**
      * 老id old_id
      */
-    private int oldId;
+    private Integer oldId;
 
     /**
      * 飞机类型 plane_type
@@ -98,9 +98,9 @@ public class EquipmentInfo {
     private String workingFrequencyBand;
 
     /**
-     * 经度 longitude
+     * 经度 Longitude
      */
-    private Double longitude;
+    private Double Longitude;
 
     /**
      * 纬度 latitude

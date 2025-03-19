@@ -14,10 +14,13 @@ import java.time.LocalTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@JsonPropertyOrder({"飞机ID", "消息时间", "卫导时间", "本地时间", "消息序列号", "导调/导调回复", "命令ID", "命令内容", "回复序列号"})
-public class command {
+@JsonPropertyOrder({"飞机ID", "消息时间", "卫导时间", "本地时间", "消息序列号", "工作模式", "空海扫描比", "开机状态", "辐射状态"})
+public class RdrState {
 
-    private long id; // Optional: If you have an auto-incrementing ID
+    /**
+     * 主键 auto-incrementing ID
+     */
+    private Long id;
 
     @JsonProperty(value = "飞机ID")
     private String aircraftId;
@@ -35,17 +38,17 @@ public class command {
     private LocalTime localTime;
 
     @JsonProperty(value = "消息序列号")
-    private long messageSequenceNumber;
+    private Long messageSequenceNumber;
 
-    @JsonProperty(value = "导调/导调回复")
-    private String commandType; // Could also be an enum if there are a limited number of types
+    @JsonProperty(value = "工作模式")
+    private String workingMode;
 
-    @JsonProperty(value = "命令ID")
-    private String commandId; // Or int, depending on the ID format
+    @JsonProperty(value = "空海扫描比")
+    private String airSeaScanRatio;
 
-    @JsonProperty(value = "命令内容")
-    private String commandContent;
+    @JsonProperty(value = "开机状态")
+    private String powerStatus;
 
-    @JsonProperty(value = "回复序列号")
-    private long responseSequenceNumber; //Or Int
+    @JsonProperty(value = "辐射状态")
+    private String emissionStatus;
 }

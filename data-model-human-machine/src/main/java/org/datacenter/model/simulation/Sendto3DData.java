@@ -14,13 +14,16 @@ import lombok.NoArgsConstructor;
 @JsonPropertyOrder({"飞机ID", "飞机代字", "飞机代号", "红蓝属性", "飞行批次"})
 public class Sendto3DData {
 
-    private long id; // Optional: auto-incrementing ID
+    /**
+     * 主键 auto-incrementing ID
+     */
+    private Long id;
 
     @JsonProperty(value = "飞机ID")
-    private String aircraftId;  // Or int, depending on ID format
+    private String aircraftId;  // Or Integer, depending on ID format
 
     @JsonProperty(value = "飞机代字")
-    private String aircraftCallsign; // Or aircraftDesignation
+    private String aircraftCallsign;
 
     @JsonProperty(value = "飞机代号")
     private String aircraftCodeName;
@@ -29,5 +32,5 @@ public class Sendto3DData {
     private String redBlueAffiliation; // Or an enum (e.g., enum Affiliation { RED, BLUE })
 
     @JsonProperty(value = "飞行批次")
-    private String flightBatch; // Or int
+    private String flightBatch; // Or Integer
 }

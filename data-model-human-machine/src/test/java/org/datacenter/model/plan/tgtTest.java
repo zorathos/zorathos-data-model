@@ -1,6 +1,6 @@
 package org.datacenter.model.plan;
 
-import org.datacenter.model.simulation.tgt;
+import org.datacenter.model.simulation.Tgt;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -18,12 +18,12 @@ import java.util.List;
 public class tgtTest {
 
     public static void main(String[] args) {
-        String csvFilePath = "d:\\tgt.csv"; // 替换为你的CSV文件路径
+        String csvFilePath = "d:\\Tgt.csv"; // 替换为你的CSV文件路径
 
         try {
-            List<tgt> tgts = readTgtDataFromCsv(csvFilePath);
+            List<Tgt> Tgts = readTgtDataFromCsv(csvFilePath);
 
-            for (tgt t : tgts) {
+            for (Tgt t : Tgts) {
                 System.out.println(t);
             }
 
@@ -38,11 +38,11 @@ public class tgtTest {
         }
     }
 
-    public static List<tgt> readTgtDataFromCsv(String filePath) throws IOException {
-        List<tgt> tgts = new ArrayList<>();
+    public static List<Tgt> readTgtDataFromCsv(String filePath) throws IOException {
+        List<Tgt> Tgts = new ArrayList<>();
         // 更新时间格式以匹配CSV文件中的格式 (没有小时和分钟的前导零)
         DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("H:mm.s");
-        final int TOTAL_COLUMNS = 46; // 根据提供的CSV文件确定总列数
+        final Integer TOTAL_COLUMNS = 46; // 根据提供的CSV文件确定总列数
 
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
@@ -65,10 +65,10 @@ public class tgtTest {
                 LocalTime satelliteGuidanceTime = LocalTime.parse(values[2].trim(), timeFormatter);
                 LocalTime localTime = LocalTime.parse(values[3].trim(), timeFormatter);
 
-                long messageSequenceNumber = Long.parseLong(values[4].trim());
-                int targetCount = 5;  //应该根据表里的目标数量读取，这里方便测试设为固定
+                Long messageSequenceNumber = Long.parseLong(values[4].trim());
+                Integer targetCount = 5;  //应该根据表里的目标数量读取，这里方便测试设为固定
 
-                tgt tgtObject = tgt.builder()
+                Tgt tgtObject = Tgt.builder()
                         .aircraftId(aircraftId)
                         .messageTime(messageTime)
                         .satelliteGuidanceTime(satelliteGuidanceTime)
@@ -78,9 +78,9 @@ public class tgtTest {
                         .targets(new ArrayList<>())
                         .build();
 
-                int targetDataStartIndex = 6;
-                for (int i = 0; i < targetCount; i++) {
-                    int baseIndex = targetDataStartIndex + i * 5;
+                Integer targetDataStartIndex = 6;
+                for (Integer i = 0; i < targetCount; i++) {
+                    Integer baseIndex = targetDataStartIndex + i * 5;
 //
 //                    if (baseIndex + 4 >= values.length) {
 //                        System.err.println("警告：CSV行中目标数据不完整，已跳过部分目标数据。行内容：" + line);
@@ -92,16 +92,14 @@ public class tgtTest {
                     //处理传感器数据中可能存在的空格
                     sensor = sensor.replace(" ", "");
 
-                    double pitch = Double.parseDouble(values[baseIndex + 2].trim());
-                    double azimuth = Double.parseDouble(values[baseIndex + 3].trim());
-                    double slantRange = Double.parseDouble(values[baseIndex + 4].trim());
-
-                    tgtObject.addTargetData(identifier, sensor, pitch, azimuth, slantRange);
+                    Double pitch = Double.parseDouble(values[baseIndex + 2].trim());
+                    Double azimuth = Double.parseDouble(values[baseIndex + 3].trim());
+                    Double slantRange = Double.parseDouble(values[baseIndex + 4].trim());
                 }
-                tgts.add(tgtObject);
+                Tgts.add(tgtObject);
             }
         }
 
-        return tgts;
+        return Tgts;
     }
 }

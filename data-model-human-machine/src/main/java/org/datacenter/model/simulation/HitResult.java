@@ -15,9 +15,12 @@ import java.time.LocalTime;
 @AllArgsConstructor
 @Builder
 @JsonPropertyOrder({"发射方ID", "目标ID", "武器类型", "武器ID", "发射时间", "结束时间", "命中结果"})
-public class hitResult {
+public class HitResult {
 
-    private long id; // Optional: auto-incrementing ID
+    /**
+     * 主键 auto-incrementing ID
+     */
+    private Long id;
 
     @JsonProperty(value = "发射方ID")
     private String launcherId;
@@ -39,5 +42,5 @@ public class hitResult {
     private LocalTime endTime;
 
     @JsonProperty(value = "命中结果")
-    private String hitResult; // Or boolean hit;
+    private String hitResult;
 }

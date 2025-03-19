@@ -14,10 +14,13 @@ import java.time.LocalTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@JsonPropertyOrder({"飞机ID", "消息时间", "卫导时间", "本地时间", "消息序列号", "方位起始角", "扇区相对基准", "扇区类型", "扇区号", "动作代码", "范围终止角"})
-public class ews_KJ500 {
+@JsonPropertyOrder({"飞机ID", "消息时间", "卫导时间", "本地时间", "消息序列号", "工作模式", "开机状态", "待机状态"})
+public class EoState {
 
-    private long id;  // Optional: auto-incrementing ID
+    /**
+     * 主键 auto-incrementing ID
+     */
+    private Long id;
 
     @JsonProperty(value = "飞机ID")
     private String aircraftId;
@@ -35,23 +38,14 @@ public class ews_KJ500 {
     private LocalTime localTime;
 
     @JsonProperty(value = "消息序列号")
-    private long messageSequenceNumber;
+    private Long messageSequenceNumber;
 
-    @JsonProperty(value = "方位起始角")
-    private double azimuthStartAngle;
+    @JsonProperty(value = "工作模式")
+    private String workingMode;
 
-    @JsonProperty(value = "扇区相对基准")
-    private String sectorReference; //  Could be an enum
+    @JsonProperty(value = "开机状态")
+    private String powerStatus;
 
-    @JsonProperty(value = "扇区类型")
-    private String sectorType; // Could be an enum
-
-    @JsonProperty(value = "扇区号")
-    private String sectorNumber; // Or int, depending on the format
-
-    @JsonProperty(value = "动作代码")
-    private String actionCode;  // Could be an enum
-
-    @JsonProperty(value = "范围终止角")
-    private double azimuthEndAngle;
+    @JsonProperty(value = "待机状态")
+    private String standbyStatus;
 }
