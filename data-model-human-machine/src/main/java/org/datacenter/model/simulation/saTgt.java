@@ -1,0 +1,60 @@
+package org.datacenter.model.simulation;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalTime;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@JsonPropertyOrder({"地防ID", "消息时间", "卫导时间", "本地时间", "消息序列号", "装备类型", "装备编号", "目标方位角", "目标俯仰角", "目标斜距", "通道号", "目标批号"})
+public class saTgt {
+
+    private long id; // Optional: auto-incrementing ID
+
+    @JsonProperty(value = "地防ID")
+    private String groundDefenseId;
+
+    @JsonFormat(pattern = "HH:mm:ss.SSS", timezone = "GMT+8")
+    @JsonProperty(value = "消息时间")
+    private LocalTime messageTime;
+
+    @JsonFormat(pattern = "HH:mm:ss.SSS", timezone = "GMT+8")
+    @JsonProperty(value = "卫导时间")
+    private LocalTime satelliteGuidanceTime;
+
+    @JsonFormat(pattern = "HH:mm:ss.SSS", timezone = "GMT+8")
+    @JsonProperty(value = "本地时间")
+    private LocalTime localTime;
+
+    @JsonProperty(value = "消息序列号")
+    private long messageSequenceNumber;
+
+    @JsonProperty(value = "装备类型")
+    private String equipmentType; // Consider an enum
+
+    @JsonProperty(value = "装备编号")
+    private String equipmentNumber; // Or int
+
+    @JsonProperty(value = "目标方位角")
+    private double targetAzimuth;
+
+    @JsonProperty(value = "目标俯仰角")
+    private double targetElevation;
+
+    @JsonProperty(value = "目标斜距")
+    private double targetSlantRange;
+
+    @JsonProperty(value = "通道号")
+    private String channelNumber;  // Or int
+
+    @JsonProperty(value = "目标批号")
+    private String targetBatchNumber; // Or int
+}
