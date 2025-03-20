@@ -12,10 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author : ning]
- * &#064;description  : 从CSV文件读取数据并填充tgt对象 (根据提供的tgt.csv文件)
+ * @author : ningaocheng
+ * @description  : 从CSV文件读取数据并填充tgt对象 (根据提供的tgt.csv文件)
  */
-public class tgtTest {
+public class TgtTest {
 
     public static void main(String[] args) {
         String csvFilePath = "d:\\Tgt.csv"; // 替换为你的CSV文件路径
