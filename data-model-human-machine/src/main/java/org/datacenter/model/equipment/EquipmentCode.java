@@ -32,8 +32,8 @@ public class EquipmentCode {
     /**
      * 创建时间 create_time
      */
-    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
-    private LocalDate createTime;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private LocalDateTime createTime;
 
     /**
      * 修改人 update_people
@@ -94,8 +94,8 @@ public class EquipmentCode {
     /**
      * 使用时间 yyyy-MM-dd used_time
      */
-    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
-    private LocalDate usedTime;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private LocalDateTime usedTime;
 
     /**
      * icd_version_id
