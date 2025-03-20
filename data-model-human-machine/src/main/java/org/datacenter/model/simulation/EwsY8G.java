@@ -1,6 +1,7 @@
 package org.datacenter.model.simulation;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.AllArgsConstructor;
@@ -15,12 +16,18 @@ import java.time.LocalTime;
 @AllArgsConstructor
 @Builder
 @JsonPropertyOrder({"飞机ID", "消息时间", "卫导时间", "本地时间", "消息序列号", "X波段干扰俯仰", "C波段干扰俯仰", "C波段干扰方位", "S波段干扰俯仰", "S波段干扰方位", "L波段干扰俯仰", "L波段干扰方位", "U波段干扰方位", "干扰状态", "X波段干扰方位角"})
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class EwsY8G {
 
     /**
      * 主键 auto-incrementing ID
      */
     private Long id;
+
+    /**
+     * 架次号 分区键
+     */
+    private String sortieNumber;
 
     @JsonProperty(value = "飞机ID")
     private String aircraftId;

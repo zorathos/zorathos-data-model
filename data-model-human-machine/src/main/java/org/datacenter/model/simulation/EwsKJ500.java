@@ -1,6 +1,7 @@
 package org.datacenter.model.simulation;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.AllArgsConstructor;
@@ -15,12 +16,18 @@ import java.time.LocalTime;
 @AllArgsConstructor
 @Builder
 @JsonPropertyOrder({"飞机ID", "消息时间", "卫导时间", "本地时间", "消息序列号", "方位起始角", "扇区相对基准", "扇区类型", "扇区号", "动作代码", "范围终止角"})
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class EwsKJ500 {
 
     /**
      * 主键 auto-incrementing ID
      */
     private Long id;
+
+    /**
+     * 架次号 分区键
+     */
+    private String sortieNumber;
 
     @JsonProperty(value = "飞机ID")
     private String aircraftId;
@@ -50,7 +57,7 @@ public class EwsKJ500 {
     private String sectorType; // Could be an enum
 
     @JsonProperty(value = "扇区号")
-    private String sectorNumber; 
+    private String sectorNumber;
 
     @JsonProperty(value = "动作代码")
     private String actionCode;  // Could be an enum

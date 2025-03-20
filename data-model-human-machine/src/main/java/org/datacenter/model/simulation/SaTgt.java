@@ -1,6 +1,7 @@
 package org.datacenter.model.simulation;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.AllArgsConstructor;
@@ -15,12 +16,18 @@ import java.time.LocalTime;
 @AllArgsConstructor
 @Builder
 @JsonPropertyOrder({"地防ID", "消息时间", "卫导时间", "本地时间", "消息序列号", "装备类型", "装备编号", "目标方位角", "目标俯仰角", "目标斜距", "通道号", "目标批号"})
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class SaTgt {
 
     /**
      * 主键 auto-incrementing ID
      */
     private Long id;
+
+    /**
+     * 架次号 分区键
+     */
+    private String sortieNumber;
 
     @JsonProperty(value = "地防ID")
     private String groundDefenseId;

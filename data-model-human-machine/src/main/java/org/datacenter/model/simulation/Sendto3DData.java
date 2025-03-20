@@ -1,5 +1,6 @@
 package org.datacenter.model.simulation;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.AllArgsConstructor;
@@ -12,12 +13,18 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @JsonPropertyOrder({"飞机ID", "飞机代字", "飞机代号", "红蓝属性", "飞行批次"})
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Sendto3DData {
 
     /**
      * 主键 auto-incrementing ID
      */
     private Long id;
+
+    /**
+     * 架次号 分区键
+     */
+    private String sortieNumber;
 
     @JsonProperty(value = "飞机ID")
     private String aircraftId;  // Or Integer, depending on ID format

@@ -30,6 +30,11 @@ public class FlightPlan {
     private Long id;
 
     /**
+     * 架次编号 手动拼接
+     */
+    private String sortieNumber;
+
+    /**
      * 机场ID JCID
      */
     @JacksonXmlProperty(localName = "JCID", isAttribute = true)
@@ -54,16 +59,16 @@ public class FlightPlan {
     private String ys;
 
     /**
-     * 大纲 DG
+     * 机型 DG
      */
     @JacksonXmlProperty(localName = "DG", isAttribute = true)
-    private String outline;
+    private String planeModel;
 
     /**
-     * LXH
+     * 练习号 LXH
      */
     @JacksonXmlProperty(localName = "LXH", isAttribute = true)
-    private String lxh;
+    private String practiceNumber;
 
     /**
      * CS
@@ -108,10 +113,10 @@ public class FlightPlan {
     private String fz;
 
     /**
-     * BDNO
+     * 编队编号 BDNO
      */
     @JacksonXmlProperty(localName = "BDNO", isAttribute = true)
-    private String bdno;
+    private String formationNumber;
 
     /**
      * 是否长机 SFZJ

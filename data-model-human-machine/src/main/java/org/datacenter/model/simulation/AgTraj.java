@@ -1,6 +1,7 @@
 package org.datacenter.model.simulation;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.AllArgsConstructor;
@@ -14,12 +15,18 @@ import java.time.LocalTime;
 @AllArgsConstructor
 @Builder
 @JsonPropertyOrder({"飞机ID", "消息时间", "卫导时间", "本地时间", "消息序列号", "武器ID", "武器类型", "经度", "纬度", "高度", "航向", "俯仰", "北速", "天速", "东速", "导引头号", "截获标志", "终止标志", "截获成员ID", "截获装备ID", "截获装备类型", "发射方ID", "导引头方位中心", "导引头俯仰中心", "目标ID", "弹目距离"})
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class AgTraj {
 
     /**
      * 主键 auto-incrementing ID
      */
     private Long id;
+
+    /**
+     * 架次号 分区键
+     */
+    private String sortieNumber;
 
     @JsonProperty(value = "飞机ID")
     private String aircraftId;

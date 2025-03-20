@@ -1,6 +1,7 @@
 package org.datacenter.model.simulation;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.AllArgsConstructor;
@@ -15,12 +16,18 @@ import java.time.LocalTime;
 @AllArgsConstructor
 @Builder
 @JsonPropertyOrder({"批次号", "设备号", "航管号", "本地时间", "消息时间", "消息序列号", "经度", "纬度", "高度", "地速", "垂直速度", "航向"})
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class HJPlaneData {
 
     /**
      * 主键 auto-incrementing ID
      */
     private Long id;
+
+    /**
+     * 架次号 分区键
+     */
+    private String sortieNumber;
 
     @JsonProperty(value = "批次号")
     private String batchNumber; // Or Integer, depending on format
