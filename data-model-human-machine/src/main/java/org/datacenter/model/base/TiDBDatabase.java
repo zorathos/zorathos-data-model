@@ -9,7 +9,7 @@ import lombok.Getter;
 @Getter
 public enum TiDBDatabase {
     /**
-     * 大库 非时序化数据 存飞行员和装备数据 下面应该有personnel_info,equipment_code和equipment_info 3个表
+     * 大库 非时序化数据 存飞行员和装备数据 下面应该有 personnel_info, equipment_code 和 equipment_info 3个表
      */
     HUMAN_MACHINE("human_machine"),
 
@@ -35,7 +35,7 @@ public enum TiDBDatabase {
     SORTIES("sorties"),
 
     /**
-     * 生理数据库 包含
+     * 生理数据库 包含 多通道背心 脑电 三维动捕 血氧手环 眼动仪 五个表
      */
     PHYSIOLOGICAL("physiological");
 
