@@ -42,7 +42,7 @@ public class HitResult {
     private String weaponId;
 
     @JsonProperty(value = "发射时间")
-    private String launchTime; // See notes below about String vs LocalTime
+    private String launchTime;
 
     @JsonFormat(pattern = "HH:mm:ss.SSS", timezone = "GMT+8")
     @JsonProperty(value = "结束时间")

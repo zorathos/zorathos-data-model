@@ -37,6 +37,10 @@ public class Aatraj {
     private LocalTime messageTime;
 
     @JsonFormat(pattern = "HH:mm:ss.SSS", timezone = "GMT+8")
+    @JsonProperty(value = "卫导时间")
+    private LocalTime satelliteGuidanceTime;
+
+    @JsonFormat(pattern = "HH:mm:ss.SSS", timezone = "GMT+8")
     @JsonProperty(value = "本地时间")
     private LocalTime localTime;
 

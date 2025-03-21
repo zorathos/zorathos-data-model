@@ -30,13 +30,13 @@ public class HJPlaneData {
     private String sortieNumber;
 
     @JsonProperty(value = "批次号")
-    private String batchNumber; // Or String, depending on format
+    private String batchNumber;
 
     @JsonProperty(value = "设备号")
-    private String deviceNumber; // Or String, depending on format
+    private String deviceNumber;
 
     @JsonProperty(value = "航管号")
-    private String flightControlNumber; // Or String
+    private String flightControlNumber;
 
     @JsonFormat(pattern = "HH:mm:ss.SSS", timezone = "GMT+8")
     @JsonProperty(value = "本地时间")
