@@ -66,7 +66,7 @@ public class PL17Rtkn {
     private String missReason;
 
     @JsonProperty(value = "脱靶量")
-    private Double missDistance;
+    private String missDistance;
 
     @JsonProperty(value = "匹配失败原因")
     private String matchingFailureReason;
@@ -84,8 +84,8 @@ public class PL17Rtkn {
     private String headOn;
 
     @JsonProperty(value = "航向")
-    private Double heading;
+    private String heading;
 
     @JsonProperty(value = "俯仰")
-    private Double pitch;
+    private String pitch;
 }

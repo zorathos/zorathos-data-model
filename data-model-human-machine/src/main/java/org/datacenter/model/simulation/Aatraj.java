@@ -56,19 +56,19 @@ public class Aatraj {
     private String targetId;
 
     @JsonProperty(value = "经度")
-    private Double Longitude;
+    private String Longitude;
 
     @JsonProperty(value = "纬度")
-    private Double latitude;
+    private String latitude;
 
     @JsonProperty(value = "高度")
-    private Double altitude;
+    private String altitude;
 
     @JsonProperty(value = "弹目距离")
-    private Double missileTargetDistance;
+    private String missileTargetDistance;
 
     @JsonProperty(value = "弹速度")
-    private Double missileSpeed;
+    private String missileSpeed;
 
     @JsonProperty(value = "截获状态")
     private String interceptionStatus;
@@ -77,10 +77,10 @@ public class Aatraj {
     private String nonInterceptionReason;
 
     @JsonProperty(value = "导引头视线方位角")
-    private Double seekerAzimuth;
+    private String seekerAzimuth;
 
     @JsonProperty(value = "导引头视线俯仰角")
-    private Double seekerElevation;
+    private String seekerElevation;
 
     @JsonProperty(value = "目标TSPI状态")
     private String targetTspiStatus;

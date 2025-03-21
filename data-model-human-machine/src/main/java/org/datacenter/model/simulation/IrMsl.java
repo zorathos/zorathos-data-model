@@ -48,10 +48,10 @@ public class IrMsl {
     private Long messageSequenceNumber;
 
     @JsonProperty(value = "导引头方位角")
-    private Double seekerAzimuth;
+    private String seekerAzimuth;
 
     @JsonProperty(value = "导引头俯仰角")
-    private Double seekerElevation;
+    private String seekerElevation;
 
     @JsonProperty(value = "武器类型")
     private String weaponType;

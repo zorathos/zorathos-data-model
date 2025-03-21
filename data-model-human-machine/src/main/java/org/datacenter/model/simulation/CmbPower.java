@@ -48,10 +48,10 @@ public class CmbPower {
     private Long messageSequenceNumber;
 
     @JsonProperty(value = "可用导弹数量")
-    private Integer availableMissileCount;
+    private String availableMissileCount;
 
     @JsonProperty(value = "可用目标通道数量")
-    private Integer availableTargetChannelCount;
+    private String availableTargetChannelCount;
 
     @JsonProperty(value = "训练模式")
     private String trainingMode;

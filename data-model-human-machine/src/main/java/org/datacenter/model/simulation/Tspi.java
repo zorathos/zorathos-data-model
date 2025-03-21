@@ -51,41 +51,41 @@ public class Tspi {
     private Long messageSequenceNumber;
 
     @JsonProperty(value = "经度")
-    private Double Longitude;
+    private String Longitude;
 
     @JsonProperty(value = "纬度")
-    private Double latitude;
+    private String latitude;
 
     @JsonProperty(value = "气压高度")
-    private Double pressureAltitude;
+    private String pressureAltitude;
 
     @JsonProperty(value = "横滚")
-    private Double roll;
+    private String roll;
 
     @JsonProperty(value = "俯仰")
-    private Double pitch;
+    private String pitch;
 
     @JsonProperty(value = "航向")
-    private Double heading;
+    private String heading;
 
     @JsonProperty(value = "卫星高度")
-    private Double satelliteAltitude;
+    private String satelliteAltitude;
 
     @JsonProperty(value = "训练状态")
-    private Double trainingStatus;
+    private String trainingStatus;
 
     @JsonProperty(value = "干扰弹")
-    private Double chaff;
+    private String chaff;
 
     @JsonProperty(value = "加力")
-    private Double afterburner;
+    private String afterburner;
 
     @JsonProperty(value = "北向速度")
-    private Double northVelocity;
+    private String northVelocity;
 
     @JsonProperty(value = "天向速度")
-    private Double verticalVelocity;
+    private String verticalVelocity;
 
     @JsonProperty(value = "东向速度")
-    private Double eastVelocity;
+    private String eastVelocity;
 }

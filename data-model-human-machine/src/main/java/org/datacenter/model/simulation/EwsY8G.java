@@ -48,32 +48,32 @@ public class EwsY8G {
     private Long messageSequenceNumber;
 
     @JsonProperty(value = "X波段干扰俯仰")
-    private Double xBandJammingElevation;
+    private String xBandJammingElevation;
 
     @JsonProperty(value = "C波段干扰俯仰")
-    private Double cBandJammingElevation;
+    private String cBandJammingElevation;
 
     @JsonProperty(value = "C波段干扰方位")
-    private Double cBandJammingAzimuth;
+    private String cBandJammingAzimuth;
 
     @JsonProperty(value = "S波段干扰俯仰")
-    private Double sBandJammingElevation;
+    private String sBandJammingElevation;
 
     @JsonProperty(value = "S波段干扰方位")
-    private Double sBandJammingAzimuth;
+    private String sBandJammingAzimuth;
 
     @JsonProperty(value = "L波段干扰俯仰")
-    private Double lBandJammingElevation;
+    private String lBandJammingElevation;
 
     @JsonProperty(value = "L波段干扰方位")
-    private Double lBandJammingAzimuth;
+    private String lBandJammingAzimuth;
 
     @JsonProperty(value = "U波段干扰方位")
-    private Double uBandJammingAzimuth;
+    private String uBandJammingAzimuth;
 
     @JsonProperty(value = "干扰状态")
     private String jammingStatus;
 
     @JsonProperty(value = "X波段干扰方位角")
-    private Double xBandJammingAzimuthAngle;
+    private String xBandJammingAzimuthAngle;
 }

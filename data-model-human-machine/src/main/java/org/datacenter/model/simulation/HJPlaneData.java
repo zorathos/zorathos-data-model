@@ -30,40 +30,40 @@ public class HJPlaneData {
     private String sortieNumber;
 
     @JsonProperty(value = "批次号")
-    private String batchNumber; // Or Integer, depending on format
+    private String batchNumber; // Or String, depending on format
 
     @JsonProperty(value = "设备号")
-    private String deviceNumber; // Or Integer, depending on format
+    private String deviceNumber; // Or String, depending on format
 
     @JsonProperty(value = "航管号")
-    private String flightControlNumber; // Or Integer
+    private String flightControlNumber; // Or String
 
     @JsonFormat(pattern = "HH:mm:ss.SSS", timezone = "GMT+8")
     @JsonProperty(value = "本地时间")
     private LocalTime localTime;
 
-    // Handle potential formatting issues of "消息时间"
+    @JsonFormat(pattern = "HH:mm:ss.SSS", timezone = "GMT+8")
     @JsonProperty(value = "消息时间")
-    private String messageTime;
+    private LocalTime messageTime;
 
     @JsonProperty(value = "消息序列号")
     private Long messageSequenceNumber;
 
     @JsonProperty(value = "经度")
-    private Double Longitude;
+    private String Longitude;
 
     @JsonProperty(value = "纬度")
-    private Double latitude;
+    private String latitude;
 
     @JsonProperty(value = "高度")
-    private Double altitude;
+    private String altitude;
 
     @JsonProperty(value = "地速")
-    private Double groundSpeed;
+    private String groundSpeed;
 
     @JsonProperty(value = "垂直速度")
-    private Double verticalSpeed;
+    private String verticalSpeed;
 
     @JsonProperty(value = "航向")
-    private Double heading;
+    private String heading;
 }

@@ -48,10 +48,10 @@ public class EwsY9T {
     private Long messageSequenceNumber;
 
     @JsonProperty(value = "干扰方位角")
-    private Double jammingAzimuth;
+    private String jammingAzimuth;
 
     @JsonProperty(value = "干扰频点数量")
-    private Integer jammingFrequencyCount;
+    private String jammingFrequencyCount;
 
     @JsonProperty(value = "干扰类型")
     private String jammingType;
@@ -66,11 +66,11 @@ public class EwsY9T {
     private String jammingStatus;
 
     @JsonProperty(value = "干扰俯仰角")
-    private Double jammingElevation;
+    private String jammingElevation;
 
     @JsonProperty(value = "干扰开始频率")
-    private Double jammingStartFrequency;
+    private String jammingStartFrequency;
 
     @JsonProperty(value = "干扰终止频率")
-    private Double jammingEndFrequency;
+    private String jammingEndFrequency;
 }

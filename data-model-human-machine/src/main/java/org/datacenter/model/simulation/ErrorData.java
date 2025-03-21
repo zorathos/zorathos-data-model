@@ -47,7 +47,7 @@ public class ErrorData {
     private String messageId;
 
     @JsonProperty(value = "消息长度")
-    private Integer messageLength;
+    private String messageLength;
 
     @JsonProperty(value = "错误信息")
     private String errorMessage;

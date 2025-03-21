@@ -57,64 +57,64 @@ public class AgRtsn {
     private String weaponType;
 
     @JsonProperty(value = "投放弹数")
-    private Integer numberOfMissilesReleased;
+    private String numberOfMissilesReleased;
 
     @JsonProperty(value = "载机地速")
-    private Double aircraftGroundSpeed;
+    private String aircraftGroundSpeed;
 
     @JsonProperty(value = "载机经度")
-    private Double aircraftLongitude;
+    private String aircraftLongitude;
 
     @JsonProperty(value = "载机纬度")
-    private Double aircraftLatitude;
+    private String aircraftLatitude;
 
     @JsonProperty(value = "载机高度")
-    private Double aircraftAltitude;
+    private String aircraftAltitude;
 
     @JsonProperty(value = "载机航向")
-    private Double aircraftHeading;
+    private String aircraftHeading;
 
     @JsonProperty(value = "载机俯仰")
-    private Double aircraftPitch;
+    private String aircraftPitch;
 
     @JsonProperty(value = "载机横滚")
-    private Double aircraftRoll;
+    private String aircraftRoll;
 
     @JsonProperty(value = "载机攻角")
-    private Double aircraftAngleOfAttack;
+    private String aircraftAngleOfAttack;
 
     @JsonProperty(value = "载机北速")
-    private Double aircraftNorthSpeed;
+    private String aircraftNorthSpeed;
 
     @JsonProperty(value = "载机天速")
-    private Double aircraftVerticalSpeed;
+    private String aircraftVerticalSpeed;
 
     @JsonProperty(value = "载机东速")
-    private Double aircraftEastSpeed;
+    private String aircraftEastSpeed;
 
     @JsonProperty(value = "北向风速")
-    private Double northWindSpeed;
+    private String northWindSpeed;
 
     @JsonProperty(value = "天向风速")
-    private Double verticalWindSpeed;
+    private String verticalWindSpeed;
 
     @JsonProperty(value = "东向风速")
-    private Double eastWindSpeed;
+    private String eastWindSpeed;
 
     @JsonProperty(value = "目标经度")
-    private Double targetLongitude;
+    private String targetLongitude;
 
     @JsonProperty(value = "目标纬度")
-    private Double targetLatitude;
+    private String targetLatitude;
 
     @JsonProperty(value = "目标高度")
-    private Double targetAltitude;
+    private String targetAltitude;
 
     @JsonProperty(value = "目标距离")
-    private Double targetDistance;
+    private String targetDistance;
 
     @JsonProperty(value = "导引头号")
-    private Integer seekerHeadNumber;
+    private String seekerHeadNumber;
 
     @JsonProperty(value = "目标经纬高有效标识")
     private String targetCoordinateValidity;
@@ -123,19 +123,19 @@ public class AgRtsn {
     private String targetAzimuthElevationValidity;
 
     @JsonProperty(value = "目标俯仰角(惯性侧滑角)")
-    private Double targetElevationAngle;
+    private String targetElevationAngle;
 
     @JsonProperty(value = "目标方位角(真空速)")
-    private Double targetAzimuthAngle;
+    private String targetAzimuthAngle;
 
     @JsonProperty(value = "落角有效性")
     private String impactAngleValidity;
 
     @JsonProperty(value = "进入角")
-    private Double entryAngle;
+    private String entryAngle;
 
     @JsonProperty(value = "落角")
-    private Double impactAngle;
+    private String impactAngle;
 
     @JsonProperty(value = "方向有效性")
     private String directionValidity;

@@ -27,7 +27,7 @@ public class Sendto3DData {
     private String sortieNumber;
 
     @JsonProperty(value = "飞机ID")
-    private String aircraftId;  // Or Integer, depending on ID format
+    private String aircraftId;  // Or String, depending on ID format
 
     @JsonProperty(value = "飞机代字")
     private String aircraftCallsign;
@@ -39,5 +39,5 @@ public class Sendto3DData {
     private String redBlueAffiliation; // Or an enum (e.g., enum Affiliation { RED, BLUE })
 
     @JsonProperty(value = "飞行批次")
-    private String flightBatch; // Or Integer
+    private String flightBatch; // Or String
 }

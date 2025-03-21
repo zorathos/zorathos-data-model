@@ -60,17 +60,17 @@ public class GTspi {
     private String status;
 
     @JsonProperty(value = "指北角")
-    private Double northAngle;
+    private String northAngle;
 
     @JsonProperty(value = "经度")
-    private Double Longitude;
+    private String Longitude;
 
     @JsonProperty(value = "纬度")
-    private Double latitude;
+    private String latitude;
 
     @JsonProperty(value = "高度")
-    private Double altitude;
+    private String altitude;
 
     @JsonProperty(value = "假阵地编号")
-    private String decoyPositionId; // Or Integer, depending on the ID format
+    private String decoyPositionId;
 }

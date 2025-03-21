@@ -54,7 +54,7 @@ public class SrdState {
     private String equipmentType;
 
     @JsonProperty(value = "装备编号")
-    private String equipmentNumber; // Or Integer
+    private String equipmentNumber; // Or String
 
     @JsonProperty(value = "是否开机")
     private String powerOn;

@@ -51,20 +51,20 @@ public class SaTgt {
     private String equipmentType;
 
     @JsonProperty(value = "装备编号")
-    private String equipmentNumber; // Or Integer
+    private String equipmentNumber; // Or String
 
     @JsonProperty(value = "目标方位角")
-    private Double targetAzimuth;
+    private String targetAzimuth;
 
     @JsonProperty(value = "目标俯仰角")
-    private Double targetElevation;
+    private String targetElevation;
 
     @JsonProperty(value = "目标斜距")
-    private Double targetSlantRange;
+    private String targetSlantRange;
 
     @JsonProperty(value = "通道号")
-    private String channelNumber;  // Or Integer
+    private String channelNumber;  // Or String
 
     @JsonProperty(value = "目标批号")
-    private String targetBatchNumber; // Or Integer
+    private String targetBatchNumber; // Or String
 }

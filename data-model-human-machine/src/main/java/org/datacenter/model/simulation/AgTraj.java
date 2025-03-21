@@ -53,28 +53,28 @@ public class AgTraj {
     private String weaponType;
 
     @JsonProperty(value = "经度")
-    private Double Longitude;
+    private String Longitude;
 
     @JsonProperty(value = "纬度")
-    private Double latitude;
+    private String latitude;
 
     @JsonProperty(value = "高度")
-    private Double altitude;
+    private String altitude;
 
     @JsonProperty(value = "航向")
-    private Double heading;
+    private String heading;
 
     @JsonProperty(value = "俯仰")
-    private Double pitch;
+    private String pitch;
 
     @JsonProperty(value = "北速")
-    private Double northSpeed;
+    private String northSpeed;
 
     @JsonProperty(value = "天速")
-    private Double skySpeed;
+    private String skySpeed;
 
     @JsonProperty(value = "东速")
-    private Double eastSpeed;
+    private String eastSpeed;
 
     @JsonProperty(value = "导引头号")
     private String seekerId;
@@ -98,15 +98,15 @@ public class AgTraj {
     private String launcherId;
 
     @JsonProperty(value = "导引头方位中心")
-    private Double seekerAzimuthCenter;
+    private String seekerAzimuthCenter;
 
     @JsonProperty(value = "导引头俯仰中心")
-    private Double seekerPitchCenter;
+    private String seekerPitchCenter;
 
     @JsonProperty(value = "目标ID")
     private String targetId;
 
     @JsonProperty(value = "弹目距离")
-    private Double missileTargetDistance;
+    private String missileTargetDistance;
 
 }

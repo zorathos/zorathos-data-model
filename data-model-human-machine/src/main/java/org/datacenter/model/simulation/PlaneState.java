@@ -48,25 +48,25 @@ public class PlaneState {
     private Long messageSequenceNumber;
 
     @JsonProperty(value = "真攻角")
-    private Double trueAngleOfAttack;
+    private String trueAngleOfAttack;
 
     @JsonProperty(value = "马赫数")
-    private Double machNumber;
+    private String machNumber;
 
     @JsonProperty(value = "法向过载")
-    private Double normalLoadFactor;
+    private String normalLoadFactor;
 
     @JsonProperty(value = "表速(km/h)")
-    private Double indicatedAirspeed; // km/h
+    private String indicatedAirspeed; // km/h
 
     @JsonProperty(value = "场高")
-    private Double fieldElevation;
+    private String fieldElevation;
 
     @JsonProperty(value = "无线电高度")
-    private Double radioAltitude;
+    private String radioAltitude;
 
     @JsonProperty(value = "余油量")
-    private Double remainingFuel;  // Consider adding units: (kg) or (lbs)
+    private String remainingFuel;
 
     @JsonProperty(value = "场景")
     private String scenario;

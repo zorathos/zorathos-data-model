@@ -48,7 +48,7 @@ public class EwsKJ500 {
     private Long messageSequenceNumber;
 
     @JsonProperty(value = "方位起始角")
-    private Double azimuthStartAngle;
+    private String azimuthStartAngle;
 
     @JsonProperty(value = "扇区相对基准")
     private String sectorReference; //  Could be an enum
@@ -63,5 +63,5 @@ public class EwsKJ500 {
     private String actionCode;  // Could be an enum
 
     @JsonProperty(value = "范围终止角")
-    private Double azimuthEndAngle;
+    private String azimuthEndAngle;
 }

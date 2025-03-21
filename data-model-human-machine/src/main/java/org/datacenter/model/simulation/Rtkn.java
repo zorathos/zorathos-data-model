@@ -66,52 +66,52 @@ public class Rtkn {
     private String missReason;
 
     @JsonProperty(value = "脱靶量")
-    private Double missDistance;
+    private String missDistance;
 
     @JsonProperty(value = "匹配失败原因")
     private String matchingFailureReason;
 
     @JsonProperty(value = "地导装备类型")
-    private Double groundDefenseEquipmentType;
+    private String groundDefenseEquipmentType;
 
     @JsonProperty(value = "地导装备ID")
-    private Double groundDefenseEquipmentId;
+    private String groundDefenseEquipmentId;
 
     @JsonProperty(value = "地导装备类型.1")
-    private Double groundDefenseEquipmentType1;
+    private String groundDefenseEquipmentType1;
 
     @JsonProperty(value = "地导装备ID.1")
-    private Double groundDefenseEquipmentId1;
+    private String groundDefenseEquipmentId1;
 
     @JsonProperty(value = "地导装备类型.2")
-    private Double groundDefenseEquipmentType2;
+    private String groundDefenseEquipmentType2;
 
     @JsonProperty(value = "地导装备ID.2")
-    private Double groundDefenseEquipmentId2;
+    private String groundDefenseEquipmentId2;
 
     @JsonProperty(value = "地导装备类型.3")
-    private Double groundDefenseEquipmentType3;
+    private String groundDefenseEquipmentType3;
 
     @JsonProperty(value = "地导装备ID.3")
-    private Double groundDefenseEquipmentId3;
+    private String groundDefenseEquipmentId3;
 
     @JsonProperty(value = "干扰是否有效")
     private String jammingEffective;
 
     @JsonProperty(value = "干扰")
-    private Double jamming;
+    private String jamming;
 
     @JsonProperty(value = "加力")
-    private Double afterburner;
+    private String afterburner;
 
     @JsonProperty(value = "迎头")
-    private Double headOn;
+    private String headOn;
 
     @JsonProperty(value = "航向")
-    private Double heading;
+    private String heading;
 
     @JsonProperty(value = "俯仰")
-    private Double pitch;
+    private String pitch;
 
 
 }
