@@ -14,10 +14,10 @@ import java.util.List;
  * @description 最外层的封装 所有数据落库最终都是这个形式
  * #####-----#####
  * ZorathosEntity
- *  - {@link ZorathosData}
- *    - {@link ZorathosData.CoordinateReferenceSystem}
- *    - {@link HeightDesc}
- *    - {@link PerceivedStatus}
+ * - {@link ZorathosData}
+ * - {@link ZorathosData.CoordinateReferenceSystem}
+ * - {@link HeightDesc}
+ * - {@link PerceivedStatus}
  */
 @Data
 @Builder

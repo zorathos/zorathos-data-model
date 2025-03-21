@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 /**
  * 装备类，表示某一型号的装备信息
  * 表名plane_dir
+ *
  * @author wangminan
  * @description 装备类
  */

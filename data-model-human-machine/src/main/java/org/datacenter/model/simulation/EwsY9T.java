@@ -19,7 +19,6 @@ import java.time.LocalTime;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class EwsY9T {
 
-    
 
     /**
      * 架次号

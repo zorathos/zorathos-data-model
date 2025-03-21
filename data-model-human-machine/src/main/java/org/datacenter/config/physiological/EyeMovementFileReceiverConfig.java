@@ -12,6 +12,6 @@ import org.datacenter.config.BaseReceiverConfig;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class EyeMovementFileReceiverConfig  extends BaseReceiverConfig {
+public class EyeMovementFileReceiverConfig extends BaseReceiverConfig {
     private String url;
 }

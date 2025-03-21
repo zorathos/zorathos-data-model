@@ -16,7 +16,6 @@ import lombok.NoArgsConstructor;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PlanePro {
 
-    
 
     /**
      * 架次号

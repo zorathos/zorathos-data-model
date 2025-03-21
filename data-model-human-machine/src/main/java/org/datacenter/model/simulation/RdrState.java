@@ -19,7 +19,6 @@ import java.time.LocalTime;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class RdrState {
 
-    
 
     /**
      * 架次号

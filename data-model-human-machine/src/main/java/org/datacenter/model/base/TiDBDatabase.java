@@ -4,6 +4,7 @@ import lombok.Getter;
 
 /**
  * TiDB数据库枚举 接入使用
+ *
  * @author wangminan
  */
 @Getter

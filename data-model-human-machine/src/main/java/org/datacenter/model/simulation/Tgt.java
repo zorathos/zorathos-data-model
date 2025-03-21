@@ -20,7 +20,6 @@ import java.time.LocalTime;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Tgt {
 
-    
 
     /**
      * 架次号

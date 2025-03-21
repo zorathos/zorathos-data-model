@@ -20,7 +20,6 @@ import java.time.LocalTime;
 public class SrdState {
 
 
-
     /**
      * 架次号
      */

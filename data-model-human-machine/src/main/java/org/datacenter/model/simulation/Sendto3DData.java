@@ -17,7 +17,6 @@ import lombok.NoArgsConstructor;
 public class Sendto3DData {
 
 
-
     /**
      * 架次号
      */

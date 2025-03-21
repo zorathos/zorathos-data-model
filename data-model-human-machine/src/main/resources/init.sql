@@ -4,7 +4,8 @@ CREATE DATABASE IF NOT EXISTS `flight_plan`; # 飞行计划数据库
 CREATE DATABASE IF NOT EXISTS `simulation`; # 模拟飞行数据库
 CREATE DATABASE IF NOT EXISTS `real_world_flight`; # 实装飞行数据库
 CREATE DATABASE IF NOT EXISTS `sorties`; # 架次数据库
-CREATE DATABASE IF NOT EXISTS `physiological`; # 生理数据库
+CREATE DATABASE IF NOT EXISTS `physiological`;
+# 生理数据库
 
 # 按库构建 TiFlash 副本
 ALTER DATABASE `human_machine` SET TIFLASH REPLICA 1;

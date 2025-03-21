@@ -8,8 +8,8 @@ zorathos-data-model是云软件与智能决策实验室数据中台的数据模�
 
 + data-model-human-machine 是为 翔腾 XXX系统提供数据基底的项目
 + data-model-maps 是为 205 MAPS无人机防御系统提供数据基底的项目
-  + data-model-maps的model.original包包含上行数据模型
-  + data-model-maps的model.aggregation包符合标准silas格式，是聚合后的数据类型，也是上传给silas的标准数据，完全符合silas协议
+    + data-model-maps的model.original包包含上行数据模型
+    + data-model-maps的model.aggregation包符合标准silas格式，是聚合后的数据类型，也是上传给silas的标准数据，完全符合silas协议
 
 ### 依赖的使用方法
 
@@ -45,4 +45,5 @@ mvn -Dmaven.test.skip=true -Dgpg.skip=true clean install
 
 这样，zorathos-data-model将作为一个依赖被安装到本地仓库中。您可以在别的本地项目中使用该依赖。
 
-我们没有使用release-plugin，该插件在执行多人协作时需要配置较复杂的前置环境。因此，在确认变更无误后，您需要**全局搜索并替换当前的版本号**，**修改此文档中的版本号**，然后推送到仓库。流水线将自动执行发布依赖到maven中央仓库的流程。
+我们没有使用release-plugin，该插件在执行多人协作时需要配置较复杂的前置环境。因此，在确认变更无误后，您需要**全局搜索并替换当前的版本号
+**，**修改此文档中的版本号**，然后推送到仓库。流水线将自动执行发布依赖到maven中央仓库的流程。

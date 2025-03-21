@@ -11,7 +11,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Builder
-public class GroundPosition extends BasePosition{
+public class GroundPosition extends BasePosition {
     /**
      * -180~180 精确到小数点后7位
      */

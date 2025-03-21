@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  * @author : ningaocheng
- * @description  : 从CSV文件读取数据并填充tgt对象 (根据提供的tgt.csv文件)
+ * @description : 从CSV文件读取数据并填充tgt对象 (根据提供的tgt.csv文件)
  */
 public class TgtTest {
 

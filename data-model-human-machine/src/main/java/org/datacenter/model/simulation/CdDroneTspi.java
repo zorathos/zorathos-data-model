@@ -19,7 +19,6 @@ import java.time.LocalTime;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CdDroneTspi {
 
-    
 
     /**
      * 架次号

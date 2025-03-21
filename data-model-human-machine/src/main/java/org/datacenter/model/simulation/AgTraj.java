@@ -19,7 +19,6 @@ import java.time.LocalTime;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AgTraj {
 
-    
 
     /**
      * 架次号

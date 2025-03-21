@@ -11,7 +11,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Builder
-public class SensorPosition extends BasePosition{
+public class SensorPosition extends BasePosition {
 
     /**
      * 0-10000 精确到小数点后两位 米

@@ -19,7 +19,6 @@ import java.time.LocalTime;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class HJPlaneData {
 
-    
 
     /**
      * 架次号

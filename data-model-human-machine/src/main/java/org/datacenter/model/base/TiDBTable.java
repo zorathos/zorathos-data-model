@@ -2,6 +2,10 @@ package org.datacenter.model.base;
 
 import lombok.Getter;
 
+/**
+ * Enum representing various TiDB tables.
+ * Each enum constant corresponds to a specific table in the TiDB database.
+ */
 @Getter
 public enum TiDBTable {
 
@@ -58,7 +62,40 @@ public enum TiDBTable {
     /**
      * 架次表
      */
-    SORTIES("sorties");
+    SORTIES("sorties"),
+
+    AA_TRAJ("aa_traj"),
+    AG_RTSN("ag_rtsn"),
+    AG_TRAJ("ag_traj"),
+    CD_DRONE_PLANE_STATE("cd_drone_plane_state"),
+    CMB_POWER("cmb_power"),
+    COMMAND("command"),
+    EO_STATE("eo_state"),
+    ERROR_DATA("error_data"),
+    EWS("ews"),
+    EWS_KJ500("ews_kj500"),
+    EWS_Y8G("ews_y8g"),
+    EWS_Y9T("ews_y9t"),
+    EWS_YZ8("ews_yz8"),
+    GT_SPI("gt_spi"),
+    GT_SPI_BACK("gt_spi_back"),
+    HIT_RESULT("hit_result"),
+    HJ_PLANE_DATA("hj_plane_data"),
+    IR_MSL("ir_msl"),
+    PL17_RTK("pl17_rtkn"),
+    PL17_RTSN("pl17_rtsn"),
+    PL17_TRAJ("pl17_traj"),
+    PLANE_PRO("plane_pro"),
+    PLANE_STATE("plane_state"),
+    RDR_STATE("rdr_state"),
+    RTKN("rtkn"),
+    RTSN("rtsn"),
+    SA_TGT("sa_tgt"),
+    SA_TRAJ("sa_traj"),
+    SENDTO_3D_DATA("sendto_3d_data"),
+    SRD_STATE("srd_state"),
+    TGT("tgt"),
+    TSPI("tspi");
 
     private final String name;
 
