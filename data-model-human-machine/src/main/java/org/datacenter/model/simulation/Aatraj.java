@@ -15,7 +15,7 @@ import java.time.LocalTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@JsonPropertyOrder({"飞机ID", "消息时间","卫导时间","本地时间","消息序列号","武器ID","挂架ID","武器类型","目标ID","经度","纬度","高度","弹目距离","弹速度","截获状态","未截获原因","导引头视线方位角","导引头视线俯仰角","目标TSPI状态","指令机状态","擦地角满足标志","过零标志"})
+@JsonPropertyOrder({"飞机ID", "消息时间", "卫导时间", "本地时间", "消息序列号", "武器ID", "挂架ID", "武器类型", "目标ID", "经度", "纬度", "高度", "弹目距离", "弹速度", "截获状态", "未截获原因", "导引头视线方位角", "导引头视线俯仰角", "目标TSPI状态", "指令机状态", "擦地角满足标志", "过零标志"})
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Aatraj {
 
