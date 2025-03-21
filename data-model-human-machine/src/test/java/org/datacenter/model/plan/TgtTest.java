@@ -74,8 +74,7 @@ public class TgtTest {
                         .satelliteGuidanceTime(satelliteGuidanceTime)
                         .localTime(localTime)
                         .messageSequenceNumber(messageSequenceNumber)
-                        .targetCount(targetCount)
-                        .targets(new ArrayList<>())
+                        .targetCount(String.valueOf(targetCount))
                         .build();
 
                 Integer targetDataStartIndex = 6;
