@@ -25,7 +25,7 @@ public class SaTgt {
     private Long id;
 
     /**
-     * 架次号 分区键
+     * 架次号
      */
     private String sortieNumber;
 
@@ -51,7 +51,7 @@ public class SaTgt {
     private String equipmentType;
 
     @JsonProperty(value = "装备编号")
-    private String equipmentNumber; // Or String
+    private String equipmentNumber;
 
     @JsonProperty(value = "目标方位角")
     private String targetAzimuth;
@@ -63,8 +63,8 @@ public class SaTgt {
     private String targetSlantRange;
 
     @JsonProperty(value = "通道号")
-    private String channelNumber;  // Or String
+    private String channelNumber;
 
     @JsonProperty(value = "目标批号")
-    private String targetBatchNumber; // Or String
+    private String targetBatchNumber;
 }

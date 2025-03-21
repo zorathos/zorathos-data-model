@@ -15,7 +15,7 @@ public class GroundPosition extends BasePosition{
     /**
      * -180~180 精确到小数点后7位
      */
-    private Double Longitude;
+    private Double longitude;
     /**
      * -90~90 精确到小数点后7位
      */
@@ -41,9 +41,9 @@ public class GroundPosition extends BasePosition{
         super(PositionBase.Ground);
     }
 
-    public GroundPosition(Double Longitude, Double latitude, Double height, Double deltaLongitude, Double deltaLatitude, Double deltaHeight) {
+    public GroundPosition(Double longitude, Double latitude, Double height, Double deltaLongitude, Double deltaLatitude, Double deltaHeight) {
         super(PositionBase.Ground);
-        this.Longitude = Longitude;
+        this.longitude = longitude;
         this.latitude = latitude;
         this.height = height;
         this.deltaLongitude = deltaLongitude;

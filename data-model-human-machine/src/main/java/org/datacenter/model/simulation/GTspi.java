@@ -25,7 +25,7 @@ public class GTspi {
     private Long id;
 
     /**
-     * 架次号 分区键
+     * 架次号
      */
     private String sortieNumber;
 
@@ -63,7 +63,7 @@ public class GTspi {
     private String northAngle;
 
     @JsonProperty(value = "经度")
-    private String Longitude;
+    private String longitude;
 
     @JsonProperty(value = "纬度")
     private String latitude;

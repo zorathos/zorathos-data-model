@@ -22,7 +22,7 @@ public class PlanePro {
     private Long id;
 
     /**
-     * 架次号 分区键
+     * 架次号
      */
     private String sortieNumber;
 

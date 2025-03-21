@@ -13,7 +13,7 @@ public class Manipulator {
     /**
      * 无人机操作器经度
      */
-    private Double Longitude;
+    private Double longitude;
     /**
      * 无人机操作器纬度
      */

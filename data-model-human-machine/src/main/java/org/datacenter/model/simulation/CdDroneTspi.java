@@ -25,7 +25,7 @@ public class CdDroneTspi {
     private Long id;
 
     /**
-     * 架次号 分区键
+     * 架次号
      */
     private String sortieNumber;
 
@@ -51,7 +51,7 @@ public class CdDroneTspi {
     private Long messageSequenceNumber;
 
     @JsonProperty(value = "经度")
-    private String Longitude;
+    private String longitude;
 
     @JsonProperty(value = "纬度")
     private String latitude;

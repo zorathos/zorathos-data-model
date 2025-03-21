@@ -25,7 +25,7 @@ public class SrdState {
     private Long id;
 
     /**
-     * 架次号 分区键
+     * 架次号
      */
     private String sortieNumber;
 

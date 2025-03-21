@@ -13,7 +13,7 @@ public class SensorLocation {
     /**
      * 经度
      */
-    private Double Longitude;
+    private Double longitude;
     /**
      * 纬度
      */

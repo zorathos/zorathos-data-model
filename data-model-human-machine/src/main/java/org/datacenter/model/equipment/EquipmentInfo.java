@@ -98,9 +98,9 @@ public class EquipmentInfo {
     private String workingFrequencyBand;
 
     /**
-     * 经度 Longitude
+     * 经度 longitude
      */
-    private Double Longitude;
+    private Double longitude;
 
     /**
      * 纬度 latitude

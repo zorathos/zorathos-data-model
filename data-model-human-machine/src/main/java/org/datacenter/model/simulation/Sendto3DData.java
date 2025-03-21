@@ -22,7 +22,7 @@ public class Sendto3DData {
     private Long id;
 
     /**
-     * 架次号 分区键
+     * 架次号
      */
     private String sortieNumber;
 
