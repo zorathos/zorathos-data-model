@@ -19,10 +19,7 @@ import java.time.LocalTime;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CdDronePlaneState {
 
-    /**
-     * 主键 auto-incrementing ID
-     */
-    private Long id;
+    
 
     /**
      * 架次号

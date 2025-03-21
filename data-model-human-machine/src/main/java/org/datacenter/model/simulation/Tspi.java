@@ -20,11 +20,6 @@ import java.time.LocalTime;
 public class Tspi {
 
     /**
-     * 主键 auto-incrementing ID
-     */
-    private Long id;
-
-    /**
      * 架次号
      */
     private String sortieNumber;

@@ -19,10 +19,7 @@ import java.time.LocalTime;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SrdState {
 
-    /**
-     * 主键 auto-incrementing ID
-     */
-    private Long id;
+
 
     /**
      * 架次号
@@ -54,7 +51,7 @@ public class SrdState {
     private String equipmentType;
 
     @JsonProperty(value = "装备编号")
-    private String equipmentNumber; // Or String
+    private String equipmentNumber;
 
     @JsonProperty(value = "是否开机")
     private String powerOn;

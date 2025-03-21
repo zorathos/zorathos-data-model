@@ -16,10 +16,7 @@ import lombok.NoArgsConstructor;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PlanePro {
 
-    /**
-     * 主键 auto-incrementing ID
-     */
-    private Long id;
+    
 
     /**
      * 架次号
