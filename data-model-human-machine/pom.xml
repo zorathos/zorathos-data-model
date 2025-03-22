@@ -54,6 +54,12 @@
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-jsr310</artifactId>
         </dependency>
+
+        <!-- CSV解析 引入这个 否则 @JsonPropertyOrder对CSV解析不生效 -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-csv</artifactId>
+        </dependency>
         <!-- jackson全家桶-->
     </dependencies>
 </project>
