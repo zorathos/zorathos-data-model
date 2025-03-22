@@ -303,6 +303,9 @@ CREATE TABLE IF NOT EXISTS `simulation`.`aa_traj`
     INDEX idx_sortie_number (`sortie_number`)
 ) COMMENT = 'Aatraj' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
 
+ALTER TABLE `simulation`.`aa_traj` COALESCE PARTITION 1;
+
+
 CREATE TABLE IF NOT EXISTS `simulation`.`ag_rtsn`
 (
     `sortie_number`                     VARCHAR(50) COMMENT '架次号',
