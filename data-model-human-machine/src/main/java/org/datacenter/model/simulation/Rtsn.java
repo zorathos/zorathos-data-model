@@ -2,7 +2,6 @@ package org.datacenter.model.simulation;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,55 +14,80 @@ import java.time.LocalTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@JsonPropertyOrder({"飞机ID", "消息时间", "卫导时间", "本地时间", "消息序列号", "目标ID", "被拦截武器ID", "目标实虚属性", "武器ID", "挂架ID", "武器类型", "弹道类型", "导弹攻击模式"})
+@JsonPropertyOrder({"aircraftId", "messageTime", "satelliteGuidanceTime", "localTime", "messageSequenceNumber", "targetId", "interceptedWeaponId", "targetRealOrVirtual", "weaponId", "pylonId", "weaponType", "trajectoryType", "missileAttackMode"})
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Rtsn {
-
 
     /**
      * 架次号
      */
     private String sortieNumber;
 
-    @JsonProperty(value = "飞机ID")
+    /**
+     * 飞机ID
+     */
     private String aircraftId;
 
+    /**
+     * 消息时间
+     */
     @JsonFormat(pattern = "HH:mm:ss.SSS", timezone = "GMT+8")
-    @JsonProperty(value = "消息时间")
     private LocalTime messageTime;
 
+    /**
+     * 卫导时间
+     */
     @JsonFormat(pattern = "HH:mm:ss.SSS", timezone = "GMT+8")
-    @JsonProperty(value = "卫导时间")
     private LocalTime satelliteGuidanceTime;
 
+    /**
+     * 本地时间
+     */
     @JsonFormat(pattern = "HH:mm:ss.SSS", timezone = "GMT+8")
-    @JsonProperty(value = "本地时间")
     private LocalTime localTime;
 
-    @JsonProperty(value = "消息序列号")
+    /**
+     * 消息序列号
+     */
     private Long messageSequenceNumber;
 
-    @JsonProperty(value = "目标ID")
+    /**
+     * 目标ID
+     */
     private String targetId;
 
-    @JsonProperty(value = "被拦截武器ID")
+    /**
+     * 被拦截武器ID
+     */
     private String interceptedWeaponId;
 
-    @JsonProperty(value = "目标实虚属性")
+    /**
+     * 目标实虚属性
+     */
     private String targetRealOrVirtual;
 
-    @JsonProperty(value = "武器ID")
+    /**
+     * 武器ID
+     */
     private String weaponId;
 
-    @JsonProperty(value = "挂架ID")
+    /**
+     * 挂架ID
+     */
     private String pylonId;
 
-    @JsonProperty(value = "武器类型")
+    /**
+     * 武器类型
+     */
     private String weaponType;
 
-    @JsonProperty(value = "弹道类型")
+    /**
+     * 弹道类型
+     */
     private String trajectoryType;
 
-    @JsonProperty(value = "导弹攻击模式")
+    /**
+     * 导弹攻击模式
+     */
     private String missileAttackMode;
 }
