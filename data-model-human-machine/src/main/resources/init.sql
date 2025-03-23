@@ -303,7 +303,8 @@ CREATE TABLE IF NOT EXISTS `simulation`.`aa_traj`
     INDEX idx_sortie_number (`sortie_number`)
 ) COMMENT = 'Aatraj' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
 
-ALTER TABLE `simulation`.`aa_traj` COALESCE PARTITION 1;
+ALTER TABLE `simulation`.`aa_traj`
+    COALESCE PARTITION 1;
 
 
 CREATE TABLE IF NOT EXISTS `simulation`.`ag_rtsn`
@@ -1000,4 +1001,12 @@ CREATE TABLE IF NOT EXISTS `simulation`.`tspi`
     FROM `simulation`.`partition_test`
     WHERE `sortie_number` = '20250303_五_01_ACT-3_邱陈_J16_07#02';
 -*/
+
+CREATE TABLE `test`
+(
+    `sortie_number`           varchar(50) DEFAULT NULL COMMENT '架次号',
+    `message_time`            time(3)     DEFAULT NULL COMMENT '消息时间（精确到毫秒）',
+    `satellite_guidance_time` time(3)     DEFAULT NULL COMMENT '卫导时间（精确到毫秒）',
+    `local_time`              time(3)     DEFAULT NULL COMMENT '本地时间（精确到毫秒）'
+);
 

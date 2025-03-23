@@ -2,7 +2,6 @@ package org.datacenter.model.simulation;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,7 +13,6 @@ import java.time.LocalTime;
 @NoArgsConstructor
 @Builder
 @AllArgsConstructor
-@JsonPropertyOrder({"aircraftId", "messageTime", "satelliteGuidanceTime", "localTime", "messageSequenceNumber", "targetCount", "identifier1", "sensor1", "pitch1", "azimuth1", "slantRange1", "identifier2", "sensor2", "pitch2", "azimuth2", "slantRange2", "identifier3", "sensor3", "pitch3", "azimuth3", "slantRange3", "identifier4", "sensor4", "pitch4", "azimuth4", "slantRange4", "identifier5", "sensor5", "pitch5", "azimuth5", "slantRange5", "identifier6", "sensor6", "pitch6", "azimuth6", "slantRange6", "identifier7", "sensor7", "pitch7", "azimuth7", "slantRange7", "identifier8", "sensor8", "pitch8", "azimuth8", "slantRange8"})
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Tgt {
 

@@ -1,7 +1,6 @@
 package org.datacenter.model.simulation;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,7 +10,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@JsonPropertyOrder({"aircraftId", "aircraftCallsign", "aircraftCodeName", "redBlueAffiliation", "flightBatch"})
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Sendto3DData {
 

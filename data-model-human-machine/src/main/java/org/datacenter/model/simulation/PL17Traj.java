@@ -2,7 +2,6 @@ package org.datacenter.model.simulation;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,7 +13,6 @@ import java.time.LocalTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@JsonPropertyOrder({"aircraftId", "messageTime", "satelliteGuidanceTime", "localTime", "messageSequenceNumber", "weaponId", "pylonId", "weaponType", "targetId", "longitude", "latitude", "altitude", "missileTargetDistance", "missileSpeed", "interceptionStatus", "nonInterceptionReason", "seekerAzimuth", "seekerElevation", "targetTspiStatus", "commandMachineStatus", "groundAngleSatisfactionFlag", "zeroCrossingFlag", "distanceInterceptionFlag", "speedInterceptionFlag", "angleInterceptionFlag"})
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PL17Traj {
 
