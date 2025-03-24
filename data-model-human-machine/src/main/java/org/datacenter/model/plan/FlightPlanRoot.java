@@ -53,16 +53,15 @@ public class FlightPlanRoot {
     private List<FlightPlan> flightPlans;
 
     public FlightPlanRoot() {
-        // UUID
-        this.id = UUID.randomUUID().toString();
         this.flightCommands = new ArrayList<>();
         this.flightTasks = new ArrayList<>();
         this.flightPlans = new ArrayList<>();
     }
 
-    public static FlightPlanRoot fromXml(String xml) throws JsonProcessingException {
+    public static FlightPlanRoot fromXml(String xml, String rootId) throws JsonProcessingException {
         XmlMapper xmlMapper = new XmlMapper();
         FlightPlanRoot root = xmlMapper.readValue(xml, FlightPlanRoot.class);
+        root.setId(rootId);
         root.getFlightHead().setRootId(root.getId());
         root.getFlightNotes().setRootId(root.getId());
         root.getFlightCommands().forEach(flightCmd -> flightCmd.setRootId(root.getId()));
