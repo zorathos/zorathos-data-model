@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.datacenter.model.real.Asset;
+import org.datacenter.model.real.AssetSummary;
 
 import java.util.List;
 
@@ -19,5 +19,5 @@ import java.util.List;
 public class DataAssetResponse {
     private Integer code;
     private String msg;
-    private List<Asset> result;
+    private List<AssetSummary> result;
 }

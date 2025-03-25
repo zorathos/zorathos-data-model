@@ -14,6 +14,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AssetTableProperty {
+
+    /**
+     * 字段ID 源库没有 auto_increment bigint
+     */
+    private Long id;
+
+    /**
+     * 数据资产ID 源接口也没有 手动映射
+     */
+    private Long modelId;
+
     /**
      * 字段序号
      */
@@ -25,7 +36,7 @@ public class AssetTableProperty {
     private String name;
 
     /**
-     * 字段类型
+     * 属性类型
      */
     private String type;
 
@@ -33,6 +44,14 @@ public class AssetTableProperty {
      * 是否时间 在字段类型为Long时判断生效 1是
      */
     private int isTime;
+
+    /**
+     * 是否二维展示
+     */
     private int twoDDisplay;
+
+    /**
+     * 属性标签
+     */
     private String label;
 }
