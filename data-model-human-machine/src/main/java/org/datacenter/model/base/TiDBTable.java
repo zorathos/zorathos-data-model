@@ -68,6 +68,7 @@ public enum TiDBTable {
     AG_RTSN("ag_rtsn"),
     AG_TRAJ("ag_traj"),
     CD_DRONE_PLANE_STATE("cd_drone_plane_state"),
+    CD_DRONE_TSPI("cd_drone_tspi"),
     CMB_POWER("cmb_power"),
     COMMAND("command"),
     EO_STATE("eo_state"),
