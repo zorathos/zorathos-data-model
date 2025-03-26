@@ -304,7 +304,7 @@ CREATE TABLE IF NOT EXISTS `simulation`.`aa_traj`
 ) COMMENT = 'Aatraj' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
 
 ALTER TABLE `simulation`.`aa_traj`
-    COALESCE PARTITION 8;
+    COALESCE PARTITION 4;
 
 
 CREATE TABLE IF NOT EXISTS `simulation`.`ag_rtsn`
