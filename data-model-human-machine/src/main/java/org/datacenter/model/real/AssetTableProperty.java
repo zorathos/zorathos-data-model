@@ -21,6 +21,11 @@ public class AssetTableProperty {
     private Long id;
 
     /**
+     * 架次号
+     */
+    private String sortieNumber;
+
+    /**
      * 数据资产ID 源接口也没有 手动映射
      */
     private Long modelId;

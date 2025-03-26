@@ -95,7 +95,22 @@ public enum TiDBTable {
     SENDTO_3D_DATA("sendto_3d_data"),
     SRD_STATE("srd_state"),
     TGT("tgt"),
-    TSPI("tspi");
+    TSPI("tspi"),
+
+    /**
+     * 数据模型摘要
+     */
+    ASSET_SUMMARY("asset_summary"),
+
+    /**
+     * 数据资产模型
+     */
+    ASSET_TABLE_MODEL("asset_table_model"),
+
+    /**
+     * 数据资产配置
+     */
+    ASSET_TABLE_PROPERTY("asset_table_property");
 
     private final String name;
 
