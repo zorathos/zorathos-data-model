@@ -23,6 +23,11 @@ public class AssetSummary {
     private Long id;
 
     /**
+     * 架次号
+     */
+    private String sortieNumber;
+
+    /**
      * 数据资产名称
      */
     private String name;

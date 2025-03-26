@@ -21,6 +21,11 @@ public class AssetTableModel {
     private Long id;
 
     /**
+     * 架次号
+     */
+    private String sortieNumber;
+
+    /**
      * 数据资产id
      */
     private Long assetId;
