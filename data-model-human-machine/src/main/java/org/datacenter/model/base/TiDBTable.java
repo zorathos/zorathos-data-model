@@ -83,7 +83,7 @@ public enum TiDBTable {
     HIT_RESULT("hit_result"),
     HJ_PLANE_DATA("hj_plane_data"),
     IR_MSL("ir_msl"),
-    PL17_RTK("pl17_rtkn"),
+    PL17_RTKN("pl17_rtkn"),
     PL17_RTSN("pl17_rtsn"),
     PL17_TRAJ("pl17_traj"),
     PLANE_PRO("plane_pro"),
