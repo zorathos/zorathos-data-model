@@ -1,0 +1,40 @@
+package org.datacenter.config.plan;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import org.datacenter.config.BaseReceiverConfig;
+
+/**
+ * @author : [wangminan]
+ * @description : 航迹系统接收配置
+ */
+@EqualsAndHashCode(callSuper = true)
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class FlightPlanReceiverConfig extends BaseReceiverConfig {
+
+    /**
+     * 飞行日期URL http://192.168.0.18/fxjh/getfxrq?from=1970-01-01&to=" + today + "&dwdm=90121"
+     */
+    private String flightDateUrl;
+
+    /**
+     * 飞行计划URL http://192.168.0.18/fxdt/BindJHxx?rq" + flightDate.getDate().toString() + "&dwdm=90121&_=1742546210611"
+     */
+    private String flightCodeUrl;
+
+    /**
+     * 获取飞行XML http://192.168.0.18/fxdt/getxml?jhbh=" + planCode.getCode()
+     */
+    private String flightXmlUrl;
+
+    @Override
+    public boolean validate() {
+        return !flightDateUrl.isEmpty() && !flightCodeUrl.isEmpty() && !flightXmlUrl.isEmpty();
+    }
+}

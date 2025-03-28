@@ -33,4 +33,9 @@ public class SimulationReceiverConfig extends BaseReceiverConfig implements Seri
      * 仿真数据在对象存储上的架次名
      */
     private String sortieNumber;
+
+    @Override
+    public boolean validate() {
+        return true;
+    }
 }

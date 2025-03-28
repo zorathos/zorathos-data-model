@@ -17,6 +17,17 @@ import org.datacenter.config.BaseReceiverConfig;
 @AllArgsConstructor
 @Builder
 public class AssetReceiverConfig extends BaseReceiverConfig {
+
+    /**
+     * 数据资产服务URL http://192.168.10.100:8088/datahandle/asset/getObjectifyAsset
+     */
+    private String assetListBaseUrl;
+
+    /**
+     * 数据资产列信息配置URL http://192.168.10.100:8088/datahandle/asset/getAssetValidConfig
+     */
+    private String assetConfigBaseUrl;
+
     /**
      * 数据资产导入的最终输入 架次号
      */
@@ -36,4 +47,9 @@ public class AssetReceiverConfig extends BaseReceiverConfig {
      * Doris库的密码
      */
     private String password;
+
+    @Override
+    public boolean validate() {
+        return true;
+    }
 }
