@@ -1,4 +1,4 @@
-package org.datacenter.config.personnel;
+package org.datacenter.config.crew;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
