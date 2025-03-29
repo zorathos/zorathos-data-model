@@ -1,21 +1,14 @@
 # 初始化所有数据库 和TiDBDatabase类映射
-CREATE DATABASE IF NOT EXISTS `human_machine`; # 人员与装备数据库
-CREATE DATABASE IF NOT EXISTS `flight_plan`; # 飞行计划数据库
-CREATE DATABASE IF NOT EXISTS `simulation`; # 模拟飞行数据库
-CREATE DATABASE IF NOT EXISTS `real_world_flight`; # 实装飞行数据库
-CREATE DATABASE IF NOT EXISTS `sorties`; # 架次数据库
-CREATE DATABASE IF NOT EXISTS `physiological`;
-# 生理数据库
+CREATE DATABASE IF NOT EXISTS `human_machine`; -- 人员与装备数据库
+CREATE DATABASE IF NOT EXISTS `flight_plan`; -- 飞行计划数据库
+CREATE DATABASE IF NOT EXISTS `simulation`; -- 模拟飞行数据库
+CREATE DATABASE IF NOT EXISTS `real_world_flight`; -- 实装飞行数据库
+CREATE DATABASE IF NOT EXISTS `sorties`; -- 架次数据库
+CREATE DATABASE IF NOT EXISTS `physiological`; -- 生理数据库
+CREATE DATABASE IF NOT EXISTS `collection`;
+-- 采集数据库
 
-# 按库构建 TiFlash 副本
-ALTER DATABASE `human_machine` SET TIFLASH REPLICA 1;
-ALTER DATABASE `flight_plan` SET TIFLASH REPLICA 1;
-ALTER DATABASE `simulation` SET TIFLASH REPLICA 1;
-ALTER DATABASE `real_world_flight` SET TIFLASH REPLICA 1;
-ALTER DATABASE `sorties` SET TIFLASH REPLICA 1;
-ALTER DATABASE `physiological` SET TIFLASH REPLICA 1;
-
-# -------- 人员 --------
+# ---------------------------------------- 人员 ----------------------------------------
 CREATE TABLE IF NOT EXISTS `human_machine`.`personnel_info`
 (
     `id`                          varchar(255) NOT NULL COMMENT 'id（主键） ID',
@@ -62,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `human_machine`.`personnel_info`
 );
 
 
-# -------- 装备 equipment_code --------
+# ---------------------------------------- 装备 equipment_code ----------------------------------------
 CREATE TABLE IF NOT EXISTS `human_machine`.`equipment_code`
 (
     `id`                      varchar(32) NOT NULL COMMENT '装备编号,主键 和 EquipmentInfo 中的 id 不是一个概念 id',
@@ -85,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `human_machine`.`equipment_code`
 );
 
 
-# -------- 装备 equipment_info --------
+# ---------------------------------------- 装备 equipment_info ----------------------------------------
 CREATE TABLE IF NOT EXISTS `human_machine`.`equipment_info`
 (
     `id`                     varchar(255) NOT NULL COMMENT '装备型号,主键 和 EquipmentCode 中的 equipmentNumber 不是一个概念 id',
@@ -109,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `human_machine`.`equipment_info`
     PRIMARY KEY (`id`)
 );
 
-# -------- 飞行计划数据库 XML解析 --------
+# ---------------------------------------- 飞行计划数据库 XML解析 ----------------------------------------
 CREATE TABLE IF NOT EXISTS `flight_plan`.`flight_plan_root`
 (
     `id`          varchar(255) NOT NULL COMMENT '根ID',
@@ -210,7 +203,7 @@ CREATE TABLE IF NOT EXISTS `flight_plan`.`flight_plan`
     PRIMARY KEY (`id`)
 );
 
-# -------- sorties --------
+# ---------------------------------------- sorties ----------------------------------------
 CREATE TABLE IF NOT EXISTS `sorties`.`sorties_batch`
 (
     `id`           varchar(255) NOT NULL COMMENT '主键ID',
@@ -258,7 +251,7 @@ CREATE TABLE IF NOT EXISTS `sorties`.`sorties`
 );
 
 
-# -------- 生理数据库 --------
+# ---------------------------------------- 生理数据库 ----------------------------------------
 CREATE TABLE IF NOT EXISTS `physiological`.`collection_task`
 (
     task_id           BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '采集任务编号',
@@ -274,7 +267,7 @@ CREATE TABLE IF NOT EXISTS `physiological`.`collection_task`
     modificationTime  DATETIME     DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '任务修改时间'
 ) COMMENT ='飞行员生理数据采集任务表';
 
-# -------- 模拟飞行数据库 --------
+# ---------------------------------------- 模拟飞行数据库 ----------------------------------------
 CREATE TABLE IF NOT EXISTS `simulation`.`aa_traj`
 (
     `sortie_number`                  VARCHAR(50) COMMENT '架次号',
@@ -1010,7 +1003,7 @@ CREATE TABLE IF NOT EXISTS `simulation`.`tspi`
     `local_time`              time(3)     DEFAULT NULL COMMENT '本地时间（精确到毫秒）'
 );*/
 
-# -------- real_world_flight --------
+# ---------------------------------------- real_world_flight ----------------------------------------
 -- asset_summary 表
 CREATE TABLE IF NOT EXISTS real_world_flight.asset_summary
 (
@@ -1060,3 +1053,55 @@ CREATE TABLE IF NOT EXISTS real_world_flight.asset_table_property
     label         VARCHAR(255) COMMENT '属性标签',
     INDEX idx_sortie_number (sortie_number)
 );
+
+# ---------------------------------------- 采集数据表 ----------------------------------------
+
+CREATE TABLE IF NOT EXISTS collection.task
+(
+    task_id           BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '任务编号',
+    task_status       TINYINT      NOT NULL DEFAULT 0 COMMENT '任务状态', -- 0-已下发未执行 1-执行中 2-已完成 3-执行异常]
+    equipment_id      BIGINT       NOT NULL COMMENT '设备序列号',
+    sensor_id         BIGINT       NOT NULL COMMENT '传感器序列号',
+    sorties_number    VARCHAR(255) NOT NULL COMMENT '架次',
+    collector_name    VARCHAR(255) NOT NULL COMMENT '采集人',
+    subject_name      VARCHAR(255) NOT NULL COMMENT '被试人',
+    collection_device VARCHAR(255) NOT NULL COMMENT '采集设备',
+    task_type         VARCHAR(255) NOT NULL COMMENT '任务类型',
+    task_start_time   DATETIME     NOT NULL COMMENT '任务开始时间',
+    creator           VARCHAR(255) NOT NULL COMMENT '任务创建人',
+    create_time       DATETIME              DEFAULT CURRENT_TIMESTAMP COMMENT '任务创建时间',
+    modifier          VARCHAR(255)          DEFAULT NULL COMMENT '任务修改人',
+    modificationTime  DATETIME              DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '任务修改时间'
+) COMMENT ='飞行员生理数据采集任务表';
+
+CREATE TABLE IF NOT EXISTS collection.sensor
+(
+    sensor_id         BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '传感器序列号',
+    sensor_name       VARCHAR(255) NOT NULL COMMENT '传感器名称',
+    equipment_id      BIGINT       NOT NULL COMMENT '设备序列号',
+    manufacturer_id   VARCHAR(255) NOT NULL COMMENT '传感器生产厂家统一社会信用代码',
+    manufacturer_name VARCHAR(255) NOT NULL COMMENT '传感器生产厂家名称',
+    manufacture_phone VARCHAR(255) NOT NULL COMMENT '传感器生产厂家电话',
+    sensor_type       TINYINT      NOT NULL COMMENT '传感器类型',                  -- 0-脑电 1-眼动 2-床垫 ... 采集自己看着办
+    additional_info   VARCHAR(255)          DEFAULT NULL COMMENT '传感器附加信息', -- 传感器附加信息
+    sensor_status     TINYINT      NOT NULL DEFAULT 0 COMMENT '传感器状态'         -- 0-离线 1-在线空闲 2-在线使用中
+) COMMENT ='生理传感器表';
+
+CREATE TABLE IF NOT EXISTS collection.equipment
+(
+    equipment_id     BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '设备序列号',
+    equipment_name   VARCHAR(255) NOT NULL COMMENT '设备名称',
+    ip_address       VARCHAR(255) NOT NULL COMMENT 'IP地址',
+    equipment_status TINYINT      NOT NULL DEFAULT 0 COMMENT '设备状态',       -- 0-离线 1-在线空闲 2-在线使用中
+    equipment_type   TINYINT      NOT NULL COMMENT '设备类型',                 -- 0-机载 1-地面笔记本 2-地面服务器 3-其他
+    additional_info  VARCHAR(255)          DEFAULT NULL COMMENT '设备附加信息' -- 设备附加信息
+) COMMENT ='采集设备表';
+
+# 按库构建 TiFlash 副本
+ALTER DATABASE `human_machine` SET TIFLASH REPLICA 1;
+ALTER DATABASE `flight_plan` SET TIFLASH REPLICA 1;
+ALTER DATABASE `simulation` SET TIFLASH REPLICA 1;
+ALTER DATABASE `real_world_flight` SET TIFLASH REPLICA 1;
+ALTER DATABASE `sorties` SET TIFLASH REPLICA 1;
+ALTER DATABASE `physiological` SET TIFLASH REPLICA 1;
+ALTER DATABASE `collection` SET TIFLASH REPLICA 1;
