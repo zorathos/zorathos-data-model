@@ -48,10 +48,10 @@ public class AssetTableModel {
     /**
      * 重复间隔
      */
-    private int repeatInterval;
+    private Integer repeatInterval;
 
     /**
      * 重复次数
      */
-    private int repeatTimes;
+    private Integer repeatTimes;
 }

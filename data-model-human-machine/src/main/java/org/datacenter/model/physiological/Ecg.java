@@ -43,7 +43,7 @@ public class Ecg {
     /**
      * 心率（T_HR)
      */
-    private int heartRate;
+    private Integer heartRate;
 
     /**
      * 心率变异率(T_HRV)
@@ -63,5 +63,5 @@ public class Ecg {
     /**
      * 血氧饱和度(T_SpO2）
      */
-    private int bloodOxygenSaturation;
+    private Integer bloodOxygenSaturation;
 }

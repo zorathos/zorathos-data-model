@@ -45,7 +45,7 @@ public class AssetSummary {
     /**
      * ICD ID
      */
-    private int icdId;
+    private Integer icdId;
 
     /**
      * ICD

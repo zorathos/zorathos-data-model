@@ -37,7 +37,7 @@ public class Ppg {
     /**
      * 血氧饱和度(B_SpO2）
      */
-    private int bloodOxygenSaturation;
+    private Integer bloodOxygenSaturation;
 
     /**
      * 绿光（PPG）
@@ -47,7 +47,7 @@ public class Ppg {
     /**
      * 心率(B_HR)
      */
-    private int heartRate;
+    private Integer heartRate;
 
     /**
      * 心率变异率(B_HRV)

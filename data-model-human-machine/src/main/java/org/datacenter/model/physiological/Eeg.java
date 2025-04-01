@@ -44,7 +44,7 @@ public class Eeg {
     /**
      * Channel Count
      */
-    private int channelCount;
+    private Integer channelCount;
 
     /**
      * Sampling Rate

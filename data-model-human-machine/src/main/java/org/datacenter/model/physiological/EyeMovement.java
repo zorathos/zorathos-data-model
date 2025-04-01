@@ -88,12 +88,12 @@ public class EyeMovement {
     /**
      * blank_Left
      */
-    private int blankLeft;
+    private Integer blankLeft;
 
     /**
      * blank_Right
      */
-    private int blankRight;
+    private Integer blankRight;
 
     /**
      * Openness Left[%]
@@ -193,12 +193,12 @@ public class EyeMovement {
     /**
      * FIXATION_SACCADE_Count
      */
-    private int fixationSaccadeCount;
+    private Integer fixationSaccadeCount;
 
     /**
      * FIXATION_SACCADE_State
      */
-    private int fixationSaccadeState;
+    private Integer fixationSaccadeState;
 
     /**
      * FIXATION_SACCADE_Center_x

@@ -48,12 +48,12 @@ public class AssetTableProperty {
     /**
      * 是否时间 在字段类型为Long时判断生效 1是
      */
-    private int isTime;
+    private Integer isTime;
 
     /**
      * 是否二维展示
      */
-    private int twoDDisplay;
+    private Integer twoDDisplay;
 
     /**
      * 属性标签
