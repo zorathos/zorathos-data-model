@@ -7,16 +7,21 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.datacenter.config.BaseReceiverConfig;
 
+/**
+ * @author : [wangminan]
+ * @description : 生理数据kafka数据接收器配置
+ */
 @EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class EyeMovementFileReceiverConfig extends BaseReceiverConfig {
-    private String url;
+public class PhysiologicalKafkaReceiverConfig extends BaseReceiverConfig {
+
+    private String topic;
 
     @Override
     public boolean validate() {
-        return true;
+        return !topic.isEmpty();
     }
 }
