@@ -21,13 +21,14 @@ public class PersonnelAndPlanLoginConfig extends BaseReceiverConfig {
      */
     private String loginUrl;
 
-    /*
+    /**
      * 登录请求参数
      * {
      *   "userInput": "user",
      *   "grbsInput": "user",
      *   "passwordInput": "123456",
      * }
+     * 输入系统时请做base64编码 否则会在处理parameter的时候被切分
      */
     private String loginJson;
 

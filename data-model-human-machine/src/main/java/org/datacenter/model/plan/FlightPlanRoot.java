@@ -2,11 +2,13 @@ package org.datacenter.model.plan;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -20,6 +22,7 @@ import java.util.List;
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JacksonXmlRootElement(localName = "FLTPLAN")
+@SuppressWarnings("deprecation")
 public class FlightPlanRoot {
 
     /**
@@ -59,6 +62,10 @@ public class FlightPlanRoot {
 
     public static FlightPlanRoot fromXml(String xml, String rootId) throws JsonProcessingException {
         XmlMapper xmlMapper = new XmlMapper();
+        xmlMapper.registerModule(new JavaTimeModule());
+        xmlMapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_CONTROL_CHARS, true);
+        xmlMapper.configure(JsonParser.Feature.INCLUDE_SOURCE_IN_LOCATION, true);
+        xmlMapper.configure(JsonParser.Feature.ALLOW_NON_NUMERIC_NUMBERS, true);
         FlightPlanRoot root = xmlMapper.readValue(xml, FlightPlanRoot.class);
         root.setId(rootId);
         root.getFlightHead().setRootId(root.getId());

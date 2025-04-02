@@ -24,12 +24,14 @@ public class FlightPlanReceiverConfig extends BaseReceiverConfig {
     private String flightDateUrl;
 
     /**
-     * 飞行计划URL http://192.168.0.18/fxdt/BindJHxx?rq" + flightDate.getDate().toString() + "&dwdm=90121&_=1742546210611"
+     * 飞行计划URL http://192.168.0.18/fxdt/BindJHxx?dwdm=90121&_=1742546210611&rq=" + flightDate.getDate().toString()
+     * 日期参数由agent拼接
      */
     private String flightCodeUrl;
 
     /**
      * 获取飞行XML http://192.168.0.18/fxdt/getxml?jhbh=" + planCode.getCode()
+     * 计划参数由agent拼接
      */
     private String flightXmlUrl;
 

@@ -131,8 +131,6 @@ CREATE TABLE IF NOT EXISTS `flight_plan`.`flight_head`
     PRIMARY KEY (`id`)
 );
 
-
-
 CREATE TABLE IF NOT EXISTS `flight_plan`.`flight_notes`
 (
     `root_id` varchar(255) DEFAULT NULL COMMENT '根ID',
