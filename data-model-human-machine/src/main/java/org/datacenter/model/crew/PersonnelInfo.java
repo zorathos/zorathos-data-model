@@ -1,6 +1,7 @@
 package org.datacenter.model.crew;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,14 +19,8 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class PersonnelInfo {
-
-    /**
-     * id（主键） ID
-     */
-    @JsonProperty("ID")
-    private String id;
-
     /**
      * 单位代码 DWDM
      */
@@ -55,6 +50,12 @@ public class PersonnelInfo {
      */
     @JsonProperty("ZW")
     private String position;
+
+    /**
+     * 性别 XB
+     */
+    @JsonProperty("XB")
+    private String sex;
 
     /**
      * 任职年月 RZNY
@@ -134,10 +135,10 @@ public class PersonnelInfo {
     private String flightLevel;
 
     /**
-     * 现飞机型 XJX
+     * 现飞机型 XFJX
      */
-    @JsonProperty("XJX")
-    private String currentAircraftModel;
+    @JsonProperty("XFJX")
+    private String currentAircraftType;
 
     /**
      * PXH

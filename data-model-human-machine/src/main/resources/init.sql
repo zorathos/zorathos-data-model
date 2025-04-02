@@ -5,17 +5,18 @@ CREATE DATABASE IF NOT EXISTS `simulation`; -- 模拟飞行数据库
 CREATE DATABASE IF NOT EXISTS `real_world_flight`; -- 实装飞行数据库
 CREATE DATABASE IF NOT EXISTS `sorties`; -- 架次数据库
 CREATE DATABASE IF NOT EXISTS `physiological`; -- 生理数据库
-CREATE DATABASE IF NOT EXISTS `collection`; -- 采集数据库
+CREATE DATABASE IF NOT EXISTS `collection`;
+-- 采集数据库
 
 # ---------------------------------------- 人员 ----------------------------------------
 CREATE TABLE IF NOT EXISTS `human_machine`.`personnel_info`
 (
-    `id`                          varchar(255) NOT NULL COMMENT 'id（主键） ID',
+    `personal_identifier`         varchar(255) COMMENT '个人标识 GRBS',
     `unit_code`                   varchar(255) DEFAULT NULL COMMENT '单位代码 DWDM',
     `unit`                        varchar(255) DEFAULT NULL COMMENT '单位 DW',
-    `personal_identifier`         varchar(255) DEFAULT NULL COMMENT '个人标识 GRBS',
     `name`                        varchar(255) DEFAULT NULL COMMENT '姓名 XM',
     `position`                    varchar(255) DEFAULT NULL COMMENT '职务 ZW',
+    `sex`                         varchar(10)  DEFAULT NULL COMMENT '性别 XB',
     `appointment_date`            date         DEFAULT NULL COMMENT '任职年月 RZNY',
     `native_place`                varchar(255) DEFAULT NULL COMMENT '籍贯 JG',
     `family_background`           varchar(255) DEFAULT NULL COMMENT '家庭出身 JTCS',
@@ -28,7 +29,7 @@ CREATE TABLE IF NOT EXISTS `human_machine`.`personnel_info`
     `military_rank`               varchar(255) DEFAULT NULL COMMENT '军衔 JX',
     `pilot_role`                  varchar(255) DEFAULT NULL COMMENT '正副驾驶 ZFJS',
     `flight_level`                varchar(255) DEFAULT NULL COMMENT '飞行等级 FXDJ',
-    `current_aircraft_model`      varchar(255) DEFAULT NULL COMMENT '现飞机型 XJX',
+    `current_aircraft_type`       varchar(255) DEFAULT NULL COMMENT '现飞机型 XFJX',
     `pxh`                         varchar(255) DEFAULT NULL COMMENT 'PXH',
     `code_name`                   varchar(255) DEFAULT NULL COMMENT '代号 DH',
     `bm`                          varchar(255) DEFAULT NULL COMMENT 'BM',
@@ -50,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `human_machine`.`personnel_info`
     `total_time_history`          varchar(255) DEFAULT NULL COMMENT '历年总时间 LNZSJ HH:mm',
     `total_time_current_year`     varchar(255) DEFAULT NULL COMMENT '本年总时间 BNZSJ HH:mm',
     `total_teaching_time_history` varchar(255) DEFAULT NULL COMMENT '历年任教时间 LNRJSJ HH:mm',
-    PRIMARY KEY (`id`)
+    PRIMARY KEY (`personal_identifier`)
 );
 
 
