@@ -6,14 +6,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * @author : [wangminan]
- * @description : 血氧
+ * @author : [ning]
+ * @description : Tshirt的ECG数据
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Ppg {
+public class TShirtECGAccelGyro {
+
     /**
      * 我们自己加的主键 auto_increment bigint
      */
@@ -35,37 +36,19 @@ public class Ppg {
     private Long timestamp;
 
     /**
-     * 血氧饱和度(B_SpO2）
+     * ECG通道1数据(24位原始值转换后的电压或其它单位)
      */
-    private Integer bloodOxygenSaturation;
+    private double ecg1;
+
 
     /**
-     * 绿光（PPG）
+     * ECG通道2数据
      */
-    private double ppg;
+    private double ecg2;
 
     /**
-     * 心率(B_HR)
+     * ECG通道3数据
      */
-    private Integer heartRate;
+    private double ecg3;
 
-    /**
-     * 心率变异率(B_HRV)
-     */
-    private double heartRateVariability;
-
-    /**
-     * 皮电（GSR）
-     */
-    private double gsr;
-
-    /**
-     * 肤温（ST）
-     */
-    private float skinTemperature;
-
-    /**
-     * 皮电加速度（A - GSR）
-     */
-    private double gsrAcceleration;
 }
