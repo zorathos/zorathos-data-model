@@ -18,6 +18,9 @@ import org.datacenter.config.BaseReceiverConfig;
 @Builder
 public class SortiesReceiverConfig extends BaseReceiverConfig {
 
+    /**
+     * 架次查询URL /task/dataAsset/querySortiesByBatchId
+     */
     private String sortiesBaseUrl;
 
     @Override

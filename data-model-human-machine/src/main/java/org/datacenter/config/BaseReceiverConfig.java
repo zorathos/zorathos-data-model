@@ -7,6 +7,7 @@ import java.io.Serializable;
  * @author : [wangminan]
  * @description : 接收器配置 与系统级配置不同的是，系统级配置一经指定之后进入打包流程 基本不变更。 接收器配置从flink-agent传入 由agent指定
  * 对所有URL 不带base的说明要补充完整参数 带base的只需要基URL即可
+ * 对所有JSON请求体 都需要使用BASE64编码后传入
  */
 public abstract class BaseReceiverConfig implements Serializable {
 

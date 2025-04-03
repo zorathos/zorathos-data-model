@@ -17,7 +17,20 @@ import org.datacenter.config.BaseReceiverConfig;
 @AllArgsConstructor
 @Builder
 public class SortiesBatchReceiverConfig extends BaseReceiverConfig {
+
+    /**
+     * 批次查询URL /task/dataAsset/queryAllBatches
+     */
     private String sortiesBatchUrl;
+
+    /**
+     * 批次查询JSON
+     * {
+     *   "acmiTimeEnd": "",
+     *   "acmiTimeStart": ""
+     * }
+     * ewogICJhY21pVGltZUVuZCI6ICIiLAogICJhY21pVGltZVN0YXJ0IjogIiIKfQo=
+     */
     private String sortiesBatchJson;
 
     @Override
