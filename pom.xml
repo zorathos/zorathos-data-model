@@ -58,7 +58,7 @@
         <lombok-maven-plugin.version>1.18.20.0</lombok-maven-plugin.version>
         <!-- maven插件 -->
 
-        <lombok.version>1.18.36</lombok.version>
+        <lombok.version>1.18.38</lombok.version>
         <delombok.output.dir>${project.build.directory}/delombok</delombok.output.dir>
 
         <jackson.version>2.18.3</jackson.version>
