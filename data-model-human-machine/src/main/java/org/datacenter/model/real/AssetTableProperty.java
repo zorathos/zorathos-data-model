@@ -33,7 +33,7 @@ public class AssetTableProperty {
     /**
      * 字段序号
      */
-    private Long code;
+    private String code;
 
     /**
      * 字段名称

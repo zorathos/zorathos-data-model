@@ -34,7 +34,7 @@ public class AssetReceiverConfig extends BaseReceiverConfig {
     private String sortieNumber;
 
     /**
-     * Doris FE http 地址，支持多个地址，使用逗号分隔
+     * Doris FE http 地址，支持多个地址，使用逗号分隔 127.0.0.1
      */
     private String feNodes;
 

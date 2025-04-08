@@ -1040,10 +1040,10 @@ CREATE TABLE IF NOT EXISTS real_world_flight.asset_table_model
 -- asset_table_property 表
 CREATE TABLE IF NOT EXISTS real_world_flight.asset_table_property
 (
-    id            BIGINT PRIMARY KEY COMMENT '字段ID 源库没有 auto_increment bigint',
+    id            BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '字段ID 源库没有 auto_increment bigint',
     sortie_number VARCHAR(50) COMMENT '架次号',
     model_id      BIGINT COMMENT '数据资产ID 源接口也没有 手动映射',
-    code          BIGINT COMMENT '字段序号',
+    code          VARCHAR(255) COMMENT '字段序号',
     name          VARCHAR(255) COMMENT '字段名称',
     type          VARCHAR(255) COMMENT '属性类型',
     is_time       INT COMMENT '是否时间 在字段类型为Long时判断生效 1是',
