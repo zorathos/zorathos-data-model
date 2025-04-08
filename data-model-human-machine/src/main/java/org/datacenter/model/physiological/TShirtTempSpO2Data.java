@@ -6,15 +6,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * @author : [wangminan]
- * @description : 心电数据
+ * @author : [ning]
+ * @description : Tshirt的温度和饱和度数据
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Ecg {
-
+public class TShirtTempSpO2Data {
     /**
      * 我们自己加的主键 auto_increment bigint
      */
@@ -36,32 +35,12 @@ public class Ecg {
     private Long timestamp;
 
     /**
-     * 心电（ECG）
-     */
-    private double ecg;
-
-    /**
-     * 心率（T_HR)
-     */
-    private Integer heartRate;
-
-    /**
-     * 心率变异率(T_HRV)
-     */
-    private double heartRateVariability;
-
-    /**
-     * 呼吸率(Resp)
-     */
-    private double respirationRate;
-
-    /**
-     * 体温（T)
+     * 腋下体温(转换后的温度值单位℃℃)
      */
     private float temperature;
 
     /**
-     * 血氧饱和度(T_SpO2）
+     * 血氧饱和度(转换后的血氧值单位%)
      */
-    private Integer bloodOxygenSaturation;
+    private float spo2;
 }
