@@ -39,665 +39,665 @@ public class MotionCapture {
     /**
      * Hips_qx
      */
-    private float hipsQx;
+    private Float hipsQx;
 
     /**
      * Hips_qy
      */
-    private float hipsQy;
+    private Float hipsQy;
 
     /**
      * Hips_qz
      */
-    private float hipsQz;
+    private Float hipsQz;
 
     /**
      * Hips_px
      */
-    private float hipsPx;
+    private Float hipsPx;
 
     /**
      * Hips_py
      */
-    private float hipsPy;
+    private Float hipsPy;
 
     /**
      * Hips_pz
      */
-    private float hipsPz;
+    private Float hipsPz;
 
     /**
      * Hips_Timestamp
      */
-    private long hipsTimestamp;
+    private LocalDateTime hipsTimestamp;
 
     /**
      * JointTag_Spine_qx
      */
-    private float jointTagSpineQx;
+    private Float jointTagSpineQx;
 
     /**
      * JointTag_Spine_qy
      */
-    private float jointTagSpineQy;
+    private Float jointTagSpineQy;
 
     /**
      * JointTag_Spine_qz
      */
-    private float jointTagSpineQz;
+    private Float jointTagSpineQz;
 
     /**
      * JointTag_Spine_px
      */
-    private float jointTagSpinePx;
+    private Float jointTagSpinePx;
 
     /**
      * JointTag_Spine_py
      */
-    private float jointTagSpinePy;
+    private Float jointTagSpinePy;
 
     /**
      * JointTag_Spine_pz
      */
-    private float jointTagSpinePz;
+    private Float jointTagSpinePz;
 
     /**
      * JointTag_Spine_Timestamp
      */
-    private long jointTagSpineTimestamp;
+    private LocalDateTime jointTagSpineTimestamp;
 
     /**
      * JointTag_Spine1_qx
      */
-    private float jointTagSpine1Qx;
+    private Float jointTagSpine1Qx;
 
     /**
      * JointTag_Spine1_qy
      */
-    private float jointTagSpine1Qy;
+    private Float jointTagSpine1Qy;
 
     /**
      * JointTag_Spine1_qz
      */
-    private float jointTagSpine1Qz;
+    private Float jointTagSpine1Qz;
 
     /**
      * JointTag_Spine1_px
      */
-    private float jointTagSpine1Px;
+    private Float jointTagSpine1Px;
 
     /**
      * JointTag_Spine1_py
      */
-    private float jointTagSpine1Py;
+    private Float jointTagSpine1Py;
 
     /**
      * JointTag_Spine1_pz
      */
-    private float jointTagSpine1Pz;
+    private Float jointTagSpine1Pz;
 
     /**
      * JointTag_Spine1_Timestamp
      */
-    private long jointTagSpine1Timestamp;
+    private LocalDateTime jointTagSpine1Timestamp;
 
     /**
      * JointTag_Spine2_qx
      */
-    private float jointTagSpine2Qx;
+    private Float jointTagSpine2Qx;
 
     /**
      * JointTag_Spine2_qy
      */
-    private float jointTagSpine2Qy;
+    private Float jointTagSpine2Qy;
 
     /**
      * JointTag_Spine2_qz
      */
-    private float jointTagSpine2Qz;
+    private Float jointTagSpine2Qz;
 
     /**
      * JointTag_Spine2_px
      */
-    private float jointTagSpine2Px;
+    private Float jointTagSpine2Px;
 
     /**
      * JointTag_Spine2_py
      */
-    private float jointTagSpine2Py;
+    private Float jointTagSpine2Py;
 
     /**
      * JointTag_Spine2_pz
      */
-    private float jointTagSpine2Pz;
+    private Float jointTagSpine2Pz;
 
     /**
      * JointTag_Spine2_Timestamp
      */
-    private long jointTagSpine2Timestamp;
+    private LocalDateTime jointTagSpine2Timestamp;
 
     /**
      * JointTag_Neck_qx
      */
-    private float jointTagNeckQx;
+    private Float jointTagNeckQx;
 
     /**
      * JointTag_Neck_qy
      */
-    private float jointTagNeckQy;
+    private Float jointTagNeckQy;
 
     /**
      * JointTag_Neck_qz
      */
-    private float jointTagNeckQz;
+    private Float jointTagNeckQz;
 
     /**
      * JointTag_Neck_px
      */
-    private float jointTagNeckPx;
+    private Float jointTagNeckPx;
 
     /**
      * JointTag_Neck_py
      */
-    private float jointTagNeckPy;
+    private Float jointTagNeckPy;
 
     /**
      * JointTag_Neck_pz
      */
-    private float jointTagNeckPz;
+    private Float jointTagNeckPz;
 
     /**
      * JointTag_Neck_Timestamp
      */
-    private long jointTagNeckTimestamp;
+    private LocalDateTime jointTagNeckTimestamp;
 
     /**
      * JointTag_Neck1_qx
      */
-    private float jointTagNeck1Qx;
+    private Float jointTagNeck1Qx;
 
     /**
      * JointTag_Neck1_qy
      */
-    private float jointTagNeck1Qy;
+    private Float jointTagNeck1Qy;
 
     /**
      * JointTag_Neck1_qz
      */
-    private float jointTagNeck1Qz;
+    private Float jointTagNeck1Qz;
 
     /**
      * JointTag_Neck1_px
      */
-    private float jointTagNeck1Px;
+    private Float jointTagNeck1Px;
 
     /**
      * JointTag_Neck1_py
      */
-    private float jointTagNeck1Py;
+    private Float jointTagNeck1Py;
 
     /**
      * JointTag_Neck1_pz
      */
-    private float jointTagNeck1Pz;
+    private Float jointTagNeck1Pz;
 
     /**
      * JointTag_Neck1_Timestamp
      */
-    private long jointTagNeck1Timestamp;
+    private LocalDateTime jointTagNeck1Timestamp;
 
     /**
      * JointTag_Head_qx
      */
-    private float jointTagHeadQx;
+    private Float jointTagHeadQx;
 
     /**
      * JointTag_Head_qy
      */
-    private float jointTagHeadQy;
+    private Float jointTagHeadQy;
 
     /**
      * JointTag_Head_qz
      */
-    private float jointTagHeadQz;
+    private Float jointTagHeadQz;
 
     /**
      * JointTag_Head_px
      */
-    private float jointTagHeadPx;
+    private Float jointTagHeadPx;
 
     /**
      * JointTag_Head_py
      */
-    private float jointTagHeadPy;
+    private Float jointTagHeadPy;
 
     /**
      * JointTag_Head_pz
      */
-    private float jointTagHeadPz;
+    private Float jointTagHeadPz;
 
     /**
      * JointTag_Head_Timestamp
      */
-    private long jointTagHeadTimestamp;
+    private LocalDateTime jointTagHeadTimestamp;
 
     /**
      * JointTag_RightShoulder_qx
      */
-    private float jointTagRightShoulderQx;
+    private Float jointTagRightShoulderQx;
 
     /**
      * JointTag_RightShoulder_qy
      */
-    private float jointTagRightShoulderQy;
+    private Float jointTagRightShoulderQy;
 
     /**
      * JointTag_RightShoulder_qz
      */
-    private float jointTagRightShoulderQz;
+    private Float jointTagRightShoulderQz;
 
     /**
      * JointTag_RightShoulder_px
      */
-    private float jointTagRightShoulderPx;
+    private Float jointTagRightShoulderPx;
 
     /**
      * JointTag_RightShoulder_py
      */
-    private float jointTagRightShoulderPy;
+    private Float jointTagRightShoulderPy;
 
     /**
      * JointTag_RightShoulder_pz
      */
-    private float jointTagRightShoulderPz;
+    private Float jointTagRightShoulderPz;
 
     /**
      * JointTag_RightShoulder_Timestamp
      */
-    private long jointTagRightShoulderTimestamp;
+    private LocalDateTime jointTagRightShoulderTimestamp;
 
     /**
      * JointTag_RightArm_qx
      */
-    private float jointTagRightArmQx;
+    private Float jointTagRightArmQx;
 
     /**
      * JointTag_RightArm_qy
      */
-    private float jointTagRightArmQy;
+    private Float jointTagRightArmQy;
 
     /**
      * JointTag_RightArm_qz
      */
-    private float jointTagRightArmQz;
+    private Float jointTagRightArmQz;
 
     /**
      * JointTag_RightArm_px
      */
-    private float jointTagRightArmPx;
+    private Float jointTagRightArmPx;
 
     /**
      * JointTag_RightArm_py
      */
-    private float jointTagRightArmPy;
+    private Float jointTagRightArmPy;
 
     /**
      * JointTag_RightArm_pz
      */
-    private float jointTagRightArmPz;
+    private Float jointTagRightArmPz;
 
     /**
      * JointTag_RightArm_Timestamp
      */
-    private long jointTagRightArmTimestamp;
+    private LocalDateTime jointTagRightArmTimestamp;
 
     /**
      * JointTag_RightForeArm_qx
      */
-    private float jointTagRightForeArmQx;
+    private Float jointTagRightForeArmQx;
 
     /**
      * JointTag_RightForeArm_qy
      */
-    private float jointTagRightForeArmQy;
+    private Float jointTagRightForeArmQy;
 
     /**
      * JointTag_RightForeArm_qz
      */
-    private float jointTagRightForeArmQz;
+    private Float jointTagRightForeArmQz;
 
     /**
      * JointTag_RightForeArm_px
      */
-    private float jointTagRightForeArmPx;
+    private Float jointTagRightForeArmPx;
 
     /**
      * JointTag_RightForeArm_py
      */
-    private float jointTagRightForeArmPy;
+    private Float jointTagRightForeArmPy;
 
     /**
      * JointTag_RightForeArm_pz
      */
-    private float jointTagRightForeArmPz;
+    private Float jointTagRightForeArmPz;
 
     /**
      * JointTag_RightForeArm_Timestamp
      */
-    private long jointTagRightForeArmTimestamp;
+    private LocalDateTime jointTagRightForeArmTimestamp;
 
     /**
      * JointTag_RightHand_qx
      */
-    private float jointTagRightHandQx;
+    private Float jointTagRightHandQx;
 
     /**
      * JointTag_RightHand_qy
      */
-    private float jointTagRightHandQy;
+    private Float jointTagRightHandQy;
 
     /**
      * JointTag_RightHand_qz
      */
-    private float jointTagRightHandQz;
+    private Float jointTagRightHandQz;
 
     /**
      * JointTag_RightHand_px
      */
-    private float jointTagRightHandPx;
+    private Float jointTagRightHandPx;
 
     /**
      * JointTag_RightHand_py
      */
-    private float jointTagRightHandPy;
+    private Float jointTagRightHandPy;
 
     /**
      * JointTag_RightHand_pz
      */
-    private float jointTagRightHandPz;
+    private Float jointTagRightHandPz;
 
     /**
      * JointTag_RightHand_Timestamp
      */
-    private long jointTagRightHandTimestamp;
+    private LocalDateTime jointTagRightHandTimestamp;
 
     /**
      * JointTag_RightInHandIndex_qx
      */
-    private float jointTagRightInHandIndexQx;
+    private Float jointTagRightInHandIndexQx;
 
     /**
      * JointTag_RightInHandIndex_qy
      */
-    private float jointTagRightInHandIndexQy;
+    private Float jointTagRightInHandIndexQy;
 
     /**
      * JointTag_RightInHandIndex_qz
      */
-    private float jointTagRightInHandIndexQz;
+    private Float jointTagRightInHandIndexQz;
 
     /**
      * JointTag_RightInHandIndex_px
      */
-    private float jointTagRightInHandIndexPx;
+    private Float jointTagRightInHandIndexPx;
 
     /**
      * JointTag_RightInHandIndex_py
      */
-    private float jointTagRightInHandIndexPy;
+    private Float jointTagRightInHandIndexPy;
 
     /**
      * JointTag_RightInHandIndex_pz
      */
-    private float jointTagRightInHandIndexPz;
+    private Float jointTagRightInHandIndexPz;
 
     /**
      * JointTag_RightInHandIndex_Timestamp
      */
-    private long jointTagRightInHandIndexTimestamp;
+    private LocalDateTime jointTagRightInHandIndexTimestamp;
 
     /**
      * JointTag_RightInHandMiddle_qx
      */
-    private float jointTagRightInHandMiddleQx;
+    private Float jointTagRightInHandMiddleQx;
 
     /**
      * JointTag_RightInHandMiddle_qy
      */
-    private float jointTagRightInHandMiddleQy;
+    private Float jointTagRightInHandMiddleQy;
 
     /**
      * JointTag_RightInHandMiddle_qz
      */
-    private float jointTagRightInHandMiddleQz;
+    private Float jointTagRightInHandMiddleQz;
 
     /**
      * JointTag_RightInHandMiddle_px
      */
-    private float jointTagRightInHandMiddlePx;
+    private Float jointTagRightInHandMiddlePx;
 
     /**
      * JointTag_RightInHandMiddle_py
      */
-    private float jointTagRightInHandMiddlePy;
+    private Float jointTagRightInHandMiddlePy;
 
     /**
      * JointTag_RightInHandMiddle_pz
      */
-    private float jointTagRightInHandMiddlePz;
+    private Float jointTagRightInHandMiddlePz;
 
     /**
      * JointTag_RightInHandMiddle_Timestamp
      */
-    private long jointTagRightInHandMiddleTimestamp;
+    private LocalDateTime jointTagRightInHandMiddleTimestamp;
 
     /**
      * JointTag_LeftShoulder_qx
      */
-    private float jointTagLeftShoulderQx;
+    private Float jointTagLeftShoulderQx;
 
     /**
      * JointTag_LeftShoulder_qy
      */
-    private float jointTagLeftShoulderQy;
+    private Float jointTagLeftShoulderQy;
 
     /**
      * JointTag_LeftShoulder_qz
      */
-    private float jointTagLeftShoulderQz;
+    private Float jointTagLeftShoulderQz;
 
     /**
      * JointTag_LeftShoulder_px
      */
-    private float jointTagLeftShoulderPx;
+    private Float jointTagLeftShoulderPx;
 
     /**
      * JointTag_LeftShoulder_py
      */
-    private float jointTagLeftShoulderPy;
+    private Float jointTagLeftShoulderPy;
 
     /**
      * JointTag_LeftShoulder_pz
      */
-    private float jointTagLeftShoulderPz;
+    private Float jointTagLeftShoulderPz;
 
     /**
      * JointTag_LeftShoulder_Timestamp
      */
-    private long jointTagLeftShoulderTimestamp;
+    private LocalDateTime jointTagLeftShoulderTimestamp;
 
     /**
      * JointTag_LeftArm_qx
      */
-    private float jointTagLeftArmQx;
+    private Float jointTagLeftArmQx;
 
     /**
      * JointTag_LeftArm_qy
      */
-    private float jointTagLeftArmQy;
+    private Float jointTagLeftArmQy;
 
     /**
      * JointTag_LeftArm_qz
      */
-    private float jointTagLeftArmQz;
+    private Float jointTagLeftArmQz;
 
     /**
      * JointTag_LeftArm_px
      */
-    private float jointTagLeftArmPx;
+    private Float jointTagLeftArmPx;
 
     /**
      * JointTag_LeftArm_py
      */
-    private float jointTagLeftArmPy;
+    private Float jointTagLeftArmPy;
 
     /**
      * JointTag_LeftArm_pz
      */
-    private float jointTagLeftArmPz;
+    private Float jointTagLeftArmPz;
 
     /**
      * JointTag_LeftArm_Timestamp
      */
-    private long jointTagLeftArmTimestamp;
+    private LocalDateTime jointTagLeftArmTimestamp;
 
     /**
      * JointTag_LeftForeArm_qx
      */
-    private float jointTagLeftForeArmQx;
+    private Float jointTagLeftForeArmQx;
 
     /**
      * JointTag_LeftForeArm_qy
      */
-    private float jointTagLeftForeArmQy;
+    private Float jointTagLeftForeArmQy;
 
     /**
      * JointTag_LeftForeArm_qz
      */
-    private float jointTagLeftForeArmQz;
+    private Float jointTagLeftForeArmQz;
 
     /**
      * JointTag_LeftForeArm_px
      */
-    private float jointTagLeftForeArmPx;
+    private Float jointTagLeftForeArmPx;
 
     /**
      * JointTag_LeftForeArm_py
      */
-    private float jointTagLeftForeArmPy;
+    private Float jointTagLeftForeArmPy;
 
     /**
      * JointTag_LeftForeArm_pz
      */
-    private float jointTagLeftForeArmPz;
+    private Float jointTagLeftForeArmPz;
 
     /**
      * JointTag_LeftForeArm_Timestamp
      */
-    private long jointTagLeftForeArmTimestamp;
+    private LocalDateTime jointTagLeftForeArmTimestamp;
 
     /**
      * JointTag_LeftHand_qx
      */
-    private float jointTagLeftHandQx;
+    private Float jointTagLeftHandQx;
 
     /**
      * JointTag_LeftHand_qy
      */
-    private float jointTagLeftHandQy;
+    private Float jointTagLeftHandQy;
 
     /**
      * JointTag_LeftHand_qz
      */
-    private float jointTagLeftHandQz;
+    private Float jointTagLeftHandQz;
 
     /**
      * JointTag_LeftHand_px
      */
-    private float jointTagLeftHandPx;
+    private Float jointTagLeftHandPx;
 
     /**
      * JointTag_LeftHand_py
      */
-    private float jointTagLeftHandPy;
+    private Float jointTagLeftHandPy;
 
     /**
      * JointTag_LeftHand_pz
      */
-    private float jointTagLeftHandPz;
+    private Float jointTagLeftHandPz;
 
     /**
      * JointTag_LeftHand_Timestamp
      */
-    private long jointTagLeftHandTimestamp;
+    private LocalDateTime jointTagLeftHandTimestamp;
 
     /**
      * JointTag_LeftInHandIndex_qx
      */
-    private float jointTagLeftInHandIndexQx;
+    private Float jointTagLeftInHandIndexQx;
 
     /**
      * JointTag_LeftInHandIndex_qy
      */
-    private float jointTagLeftInHandIndexQy;
+    private Float jointTagLeftInHandIndexQy;
 
     /**
      * JointTag_LeftInHandIndex_qz
      */
-    private float jointTagLeftInHandIndexQz;
+    private Float jointTagLeftInHandIndexQz;
 
     /**
      * JointTag_LeftInHandIndex_px
      */
-    private float jointTagLeftInHandIndexPx;
+    private Float jointTagLeftInHandIndexPx;
 
     /**
      * JointTag_LeftInHandIndex_py
      */
-    private float jointTagLeftInHandIndexPy;
+    private Float jointTagLeftInHandIndexPy;
 
     /**
      * JointTag_LeftInHandIndex_pz
      */
-    private float jointTagLeftInHandIndexPz;
+    private Float jointTagLeftInHandIndexPz;
 
     /**
      * JointTag_LeftInHandIndex_Timestamp
      */
-    private long jointTagLeftInHandIndexTimestamp;
+    private LocalDateTime jointTagLeftInHandIndexTimestamp;
 
     /**
      * JointTag_LeftInHandMiddle_qx
      */
-    private float jointTagLeftInHandMiddleQx;
+    private Float jointTagLeftInHandMiddleQx;
 
     /**
      * JointTag_LeftInHandMiddle_qy
      */
-    private float jointTagLeftInHandMiddleQy;
+    private Float jointTagLeftInHandMiddleQy;
 
     /**
      * JointTag_LeftInHandMiddle_qz
      */
-    private float jointTagLeftInHandMiddleQz;
+    private Float jointTagLeftInHandMiddleQz;
 
     /**
      * JointTag_LeftInHandMiddle_px
      */
-    private float jointTagLeftInHandMiddlePx;
+    private Float jointTagLeftInHandMiddlePx;
 
     /**
      * JointTag_LeftInHandMiddle_py
      */
-    private float jointTagLeftInHandMiddlePy;
+    private Float jointTagLeftInHandMiddlePy;
 
     /**
      * JointTag_LeftInHandMiddle_pz
      */
-    private float jointTagLeftInHandMiddlePz;
+    private Float jointTagLeftInHandMiddlePz;
 
     /**
      * JointTag_LeftInHandMiddle_Timestamp
      */
-    private long jointTagLeftInHandMiddleTimestamp;
+    private LocalDateTime jointTagLeftInHandMiddleTimestamp;
 }

@@ -61,80 +61,80 @@ public class Eeg {
     /**
      * Channel_1
      */
-    private float channel1;
+    private Float channel1;
 
     /**
      * Channel_2
      */
-    private float channel2;
+    private Float channel2;
 
     /**
      * Channel_3
      */
-    private float channel3;
+    private Float channel3;
 
     /**
      * Channel_4
      */
-    private float channel4;
+    private Float channel4;
 
     /**
      * Channel_5
      */
-    private float channel5;
+    private Float channel5;
 
     /**
      * Channel_6
      */
-    private float channel6;
+    private Float channel6;
 
     /**
      * Channel_7
      */
-    private float channel7;
+    private Float channel7;
 
     /**
      * Channel_8
      */
-    private float channel8;
+    private Float channel8;
 
     /**
      * Channel_9
      */
-    private float channel9;
+    private Float channel9;
 
     /**
      * Channel_10
      */
-    private float channel10;
+    private Float channel10;
 
     /**
      * Channel_11
      */
-    private float channel11;
+    private Float channel11;
 
     /**
      * Channel_2
      */
-    private float channel12;
+    private Float channel12;
 
     /**
      * Channel_13
      */
-    private float channel13;
+    private Float channel13;
 
     /**
      * Channel_14
      */
-    private float channel14;
+    private Float channel14;
 
     /**
      * Channel_15
      */
-    private float channel15;
+    private Float channel15;
 
     /**
      * Channel_16
      */
-    private float channel16;
+    private Float channel16;
 }

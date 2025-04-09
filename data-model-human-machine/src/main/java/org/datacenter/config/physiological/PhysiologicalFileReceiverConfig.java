@@ -15,8 +15,10 @@ import org.datacenter.config.BaseReceiverConfig;
 public class PhysiologicalFileReceiverConfig extends BaseReceiverConfig {
     private String url;
 
+    private String sortieNumber;
+
     @Override
     public boolean validate() {
-        return !url.isEmpty();
+        return !url.isEmpty() && !sortieNumber.isEmpty();
     }
 }

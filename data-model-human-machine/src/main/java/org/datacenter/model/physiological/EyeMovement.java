@@ -40,52 +40,52 @@ public class EyeMovement {
     /**
      * Pupil Diameter Left[px]
      */
-    private float pupilDiameterLeftPx;
+    private Float pupilDiameterLeftPx;
 
     /**
      * Pupil Diameter Left[mm]
      */
-    private float pupilDiameterLeftMm;
+    private Float pupilDiameterLeftMm;
 
     /**
      * Pupil Diameter Right[px]
      */
-    private float pupilDiameterRightPx;
+    private Float pupilDiameterRightPx;
 
     /**
      * Pupil Diameter Right[mm]
      */
-    private float pupilDiameterRightMm;
+    private Float pupilDiameterRightMm;
 
     /**
      * pupil_distance Left
      */
-    private float pupilDistanceLeft;
+    private Float pupilDistanceLeft;
 
     /**
      * pupil_distance Right
      */
-    private float pupilDistanceRight;
+    private Float pupilDistanceRight;
 
     /**
      * pupil_center_x Left
      */
-    private float pupilCenterXLeft;
+    private Float pupilCenterXLeft;
 
     /**
      * pupil_center_y Left
      */
-    private float pupilCenterYLeft;
+    private Float pupilCenterYLeft;
 
     /**
      * pupil_center_x Right
      */
-    private float pupilCenterXRight;
+    private Float pupilCenterXRight;
 
     /**
      * pupil_center_y Right
      */
-    private float pupilCenterYRight;
+    private Float pupilCenterYRight;
 
     /**
      * blank_Left
@@ -100,92 +100,92 @@ public class EyeMovement {
     /**
      * Openness Left[%]
      */
-    private float opennessLeft;
+    private Float opennessLeft;
 
     /**
      * Openness Right[%]
      */
-    private float opennessRight;
+    private Float opennessRight;
 
     /**
      * Gaze Point Left X[px]
      */
-    private float gazePointLeftX;
+    private Float gazePointLeftX;
 
     /**
      * Gaze Point Left Y[px]
      */
-    private float gazePointLeftY;
+    private Float gazePointLeftY;
 
     /**
      * Gaze Point Right X[px]
      */
-    private float gazePointRightX;
+    private Float gazePointRightX;
 
     /**
      * Gaze Point Right Y[px]
      */
-    private float gazePointRightY;
+    private Float gazePointRightY;
 
     /**
      * Gaze Origin Left X[mm]
      */
-    private float gazeOriginLeftX;
+    private Float gazeOriginLeftX;
 
     /**
      * Gaze Origin Left Y[mm]
      */
-    private float gazeOriginLeftY;
+    private Float gazeOriginLeftY;
 
     /**
      * Gaze Origin Left Z[mm]
      */
-    private float gazeOriginLeftZ;
+    private Float gazeOriginLeftZ;
 
     /**
      * Gaze Origin Right X[mm]
      */
-    private float gazeOriginRightX;
+    private Float gazeOriginRightX;
 
     /**
      * Gaze Origin Right Y[mm]
      */
-    private float gazeOriginRightY;
+    private Float gazeOriginRightY;
 
     /**
      * Gaze Origin Right Z[mm]
      */
-    private float gazeOriginRightZ;
+    private Float gazeOriginRightZ;
 
     /**
      * Gaze Direction Left X
      */
-    private float gazeDirectionLeftX;
+    private Float gazeDirectionLeftX;
 
     /**
      * Gaze Direction Left Y
      */
-    private float gazeDirectionLeftY;
+    private Float gazeDirectionLeftY;
 
     /**
      * Gaze Direction Left Z
      */
-    private float gazeDirectionLeftZ;
+    private Float gazeDirectionLeftZ;
 
     /**
      * Gaze Direction Right X
      */
-    private float gazeDirectionRightX;
+    private Float gazeDirectionRightX;
 
     /**
      * Gaze Direction Right Y
      */
-    private float gazeDirectionRightY;
+    private Float gazeDirectionRightY;
 
     /**
      * Gaze Direction Right Z
      */
-    private float gazeDirectionRightZ;
+    private Float gazeDirectionRightZ;
 
     /**
      * Fixation Duration[ms]
@@ -205,10 +205,10 @@ public class EyeMovement {
     /**
      * FIXATION_SACCADE_Center_x
      */
-    private float fixationSaccadeCenterX;
+    private Float fixationSaccadeCenterX;
 
     /**
      * FIXATION_SACCADE_Center_y
      */
-    private float fixationSaccadeCenterY;
+    private Float fixationSaccadeCenterY;
 }
