@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 /**
  * @author : [wangminan]
  * @description : 三维动捕
@@ -30,10 +32,9 @@ public class MotionCapture {
     private String sensorId;
 
     /**
-     * 采样的unix时间戳
+     * 采样时间
      */
-    private Long timestamp;
-
+    private LocalDateTime sampleTimestamp;
 
     /**
      * Hips_qx

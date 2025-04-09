@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 /**
  * @author : [ning]
  * @description : Tshirt的ECG数据
@@ -31,24 +33,24 @@ public class TShirtECGAccelGyro {
     private String sensorId;
 
     /**
-     * 采样的unix时间戳
+     * 采样时间
      */
-    private Long timestamp;
+    private LocalDateTime sampleTimestamp;
 
     /**
      * ECG通道1数据(24位原始值转换后的电压或其它单位)
      */
-    private double ecg1;
+    private Double ecg1;
 
 
     /**
      * ECG通道2数据
      */
-    private double ecg2;
+    private Double ecg2;
 
     /**
      * ECG通道3数据
      */
-    private double ecg3;
+    private Double ecg3;
 
 }

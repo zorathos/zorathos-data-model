@@ -34,7 +34,12 @@ public class AssetReceiverConfig extends BaseReceiverConfig {
     private String sortieNumber;
 
     /**
-     * Doris FE http 地址，支持多个地址，使用逗号分隔 127.0.0.1
+     * Doris的 SQL 地址 是给 DDL 获取用的 只支持标准JDBC连接串的单个host 127.0.0.1:9030
+     */
+    private String sqlNodes;
+
+    /**
+     * Doris FE http 地址，支持多个地址，使用逗号分隔 127.0.0.1:8030
      */
     private String feNodes;
 

@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 /**
  * @description  : 眼动
  * @author       : [wangminan]
@@ -31,9 +33,9 @@ public class EyeMovement {
     private String sensorId;
 
     /**
-     * 采样的unix时间戳
+     * 采样时间
      */
-    private Long timestamp;
+    private LocalDateTime sampleTimestamp;
 
     /**
      * Pupil Diameter Left[px]

@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 /**
  * @author : [ning]
  * @description : Tshirt的PPG数据
@@ -30,23 +32,23 @@ public class WristbandPPGAccelData {
     private String sensorId;
 
     /**
-     * 采样的unix时间戳
+     * 采样时间
      */
-    private Long timestamp;
+    private LocalDateTime sampleTimestamp;
     /**
      * 腕部加速度X轴(从6字节加速度数据中转换得到)
      */
-    private double accel_x;
+    private Double accel_x;
 
     /**
      * 腕部加速度Y轴(从6字节加速度数据中转换得到)
      */
-    private double accel_y;
+    private Double accel_y;
 
     /**
      * 腕部加速度Z轴(从6字节加速度数据中转换得到)
      */
-    private double accel_z;
+    private Double accel_z;
 
     /**
      *红光PPG通道1数据，存储五个采样点（JSON数组格式）
