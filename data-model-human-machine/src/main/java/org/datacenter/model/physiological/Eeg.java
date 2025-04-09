@@ -5,8 +5,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
 /**
  * @author : [wangminan]
  * @description : 脑电数据
@@ -35,8 +33,7 @@ public class Eeg {
     /**
      * 采样时间
      */
-    private LocalDateTime sampleTimestamp;
-
+    private Long sampleTimestamp;
 
     /**
      * Stream Name

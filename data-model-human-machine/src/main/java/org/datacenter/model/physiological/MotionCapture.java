@@ -5,8 +5,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
 /**
  * @author : [wangminan]
  * @description : 三维动捕
@@ -34,7 +32,7 @@ public class MotionCapture {
     /**
      * 采样时间
      */
-    private LocalDateTime sampleTimestamp;
+    private Long sampleTimestamp;
 
     /**
      * Hips_qx
@@ -69,7 +67,7 @@ public class MotionCapture {
     /**
      * Hips_Timestamp
      */
-    private LocalDateTime hipsTimestamp;
+    private Long hipsTimestamp;
 
     /**
      * JointTag_Spine_qx
@@ -104,7 +102,7 @@ public class MotionCapture {
     /**
      * JointTag_Spine_Timestamp
      */
-    private LocalDateTime jointTagSpineTimestamp;
+    private Long jointTagSpineTimestamp;
 
     /**
      * JointTag_Spine1_qx
@@ -139,7 +137,7 @@ public class MotionCapture {
     /**
      * JointTag_Spine1_Timestamp
      */
-    private LocalDateTime jointTagSpine1Timestamp;
+    private Long jointTagSpine1Timestamp;
 
     /**
      * JointTag_Spine2_qx
@@ -174,7 +172,7 @@ public class MotionCapture {
     /**
      * JointTag_Spine2_Timestamp
      */
-    private LocalDateTime jointTagSpine2Timestamp;
+    private Long jointTagSpine2Timestamp;
 
     /**
      * JointTag_Neck_qx
@@ -209,7 +207,7 @@ public class MotionCapture {
     /**
      * JointTag_Neck_Timestamp
      */
-    private LocalDateTime jointTagNeckTimestamp;
+    private Long jointTagNeckTimestamp;
 
     /**
      * JointTag_Neck1_qx
@@ -244,7 +242,7 @@ public class MotionCapture {
     /**
      * JointTag_Neck1_Timestamp
      */
-    private LocalDateTime jointTagNeck1Timestamp;
+    private Long jointTagNeck1Timestamp;
 
     /**
      * JointTag_Head_qx
@@ -279,7 +277,7 @@ public class MotionCapture {
     /**
      * JointTag_Head_Timestamp
      */
-    private LocalDateTime jointTagHeadTimestamp;
+    private Long jointTagHeadTimestamp;
 
     /**
      * JointTag_RightShoulder_qx
@@ -314,7 +312,7 @@ public class MotionCapture {
     /**
      * JointTag_RightShoulder_Timestamp
      */
-    private LocalDateTime jointTagRightShoulderTimestamp;
+    private Long jointTagRightShoulderTimestamp;
 
     /**
      * JointTag_RightArm_qx
@@ -349,7 +347,7 @@ public class MotionCapture {
     /**
      * JointTag_RightArm_Timestamp
      */
-    private LocalDateTime jointTagRightArmTimestamp;
+    private Long jointTagRightArmTimestamp;
 
     /**
      * JointTag_RightForeArm_qx
@@ -384,7 +382,7 @@ public class MotionCapture {
     /**
      * JointTag_RightForeArm_Timestamp
      */
-    private LocalDateTime jointTagRightForeArmTimestamp;
+    private Long jointTagRightForeArmTimestamp;
 
     /**
      * JointTag_RightHand_qx
@@ -419,7 +417,7 @@ public class MotionCapture {
     /**
      * JointTag_RightHand_Timestamp
      */
-    private LocalDateTime jointTagRightHandTimestamp;
+    private Long jointTagRightHandTimestamp;
 
     /**
      * JointTag_RightInHandIndex_qx
@@ -454,7 +452,7 @@ public class MotionCapture {
     /**
      * JointTag_RightInHandIndex_Timestamp
      */
-    private LocalDateTime jointTagRightInHandIndexTimestamp;
+    private Long jointTagRightInHandIndexTimestamp;
 
     /**
      * JointTag_RightInHandMiddle_qx
@@ -489,7 +487,7 @@ public class MotionCapture {
     /**
      * JointTag_RightInHandMiddle_Timestamp
      */
-    private LocalDateTime jointTagRightInHandMiddleTimestamp;
+    private Long jointTagRightInHandMiddleTimestamp;
 
     /**
      * JointTag_LeftShoulder_qx
@@ -524,7 +522,7 @@ public class MotionCapture {
     /**
      * JointTag_LeftShoulder_Timestamp
      */
-    private LocalDateTime jointTagLeftShoulderTimestamp;
+    private Long jointTagLeftShoulderTimestamp;
 
     /**
      * JointTag_LeftArm_qx
@@ -559,7 +557,7 @@ public class MotionCapture {
     /**
      * JointTag_LeftArm_Timestamp
      */
-    private LocalDateTime jointTagLeftArmTimestamp;
+    private Long jointTagLeftArmTimestamp;
 
     /**
      * JointTag_LeftForeArm_qx
@@ -594,7 +592,7 @@ public class MotionCapture {
     /**
      * JointTag_LeftForeArm_Timestamp
      */
-    private LocalDateTime jointTagLeftForeArmTimestamp;
+    private Long jointTagLeftForeArmTimestamp;
 
     /**
      * JointTag_LeftHand_qx
@@ -629,7 +627,7 @@ public class MotionCapture {
     /**
      * JointTag_LeftHand_Timestamp
      */
-    private LocalDateTime jointTagLeftHandTimestamp;
+    private Long jointTagLeftHandTimestamp;
 
     /**
      * JointTag_LeftInHandIndex_qx
@@ -664,7 +662,7 @@ public class MotionCapture {
     /**
      * JointTag_LeftInHandIndex_Timestamp
      */
-    private LocalDateTime jointTagLeftInHandIndexTimestamp;
+    private Long jointTagLeftInHandIndexTimestamp;
 
     /**
      * JointTag_LeftInHandMiddle_qx
@@ -699,5 +697,5 @@ public class MotionCapture {
     /**
      * JointTag_LeftInHandMiddle_Timestamp
      */
-    private LocalDateTime jointTagLeftInHandMiddleTimestamp;
+    private Long jointTagLeftInHandMiddleTimestamp;
 }

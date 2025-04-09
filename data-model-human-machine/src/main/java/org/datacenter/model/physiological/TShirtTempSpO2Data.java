@@ -5,8 +5,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
 /**
  * @author : [ning]
  * @description : Tshirt的温度和饱和度数据
@@ -34,7 +32,7 @@ public class TShirtTempSpO2Data {
     /**
      * 采样时间
      */
-    private LocalDateTime sampleTimestamp;
+    private Long sampleTimestamp;
 
     /**
      * 腋下体温(转换后的温度值单位℃℃)

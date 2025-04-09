@@ -5,8 +5,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
 /**
  * @author : [ning]
  * @description : Tshirt的Resp数据
@@ -35,7 +33,7 @@ public class TShirtRespData {
     /**
      * 采样时间
      */
-    private LocalDateTime sampleTimestamp;
+    private Long sampleTimestamp;
 
     /**
      * 呼吸带原始数据，存储50个采样点(数组或JSON字符串)

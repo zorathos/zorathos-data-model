@@ -5,8 +5,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
 /**
  * @author : [ning]
  * @description : Tshirt的PPG数据
@@ -34,7 +32,8 @@ public class WristbandPPGAccelData {
     /**
      * 采样时间
      */
-    private LocalDateTime sampleTimestamp;
+    private Long sampleTimestamp;
+
     /**
      * 腕部加速度X轴(从6字节加速度数据中转换得到)
      */
