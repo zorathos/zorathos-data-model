@@ -1099,9 +1099,9 @@ CREATE TABLE IF NOT EXISTS collection.equipment
 CREATE TABLE IF NOT EXISTS physiological.eeg
 (
     id               BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '主键ID',
-    sortie_number    VARCHAR(255) NOT NULL COMMENT '架次号 关联',
-    sensor_id        VARCHAR(255) COMMENT '采集用传感器Id',
-    sample_timestamp LONG COMMENT '采样时间',
+    task_id          LONG NOT NULL COMMENT '生理测试任务Id 关联',
+    sensor_id        LONG COMMENT '采集用传感器Id',
+    sample_timestamp LONG COMMENT '采样时间 微秒级时间戳',
     stream_name      VARCHAR(255) COMMENT 'Stream Name',
     channel_count    INT COMMENT 'Channel Count',
     sampling_rate    DOUBLE COMMENT 'Sampling Rate',
@@ -1122,15 +1122,15 @@ CREATE TABLE IF NOT EXISTS physiological.eeg
     channel_14       FLOAT COMMENT 'Channel_14',
     channel_15       FLOAT COMMENT 'Channel_15',
     channel_16       FLOAT COMMENT 'Channel_16',
-    INDEX idx_sortie_number (sortie_number)
+    INDEX idx_task_id (task_id)
 ) COMMENT ='脑电数据';
 
 CREATE TABLE IF NOT EXISTS physiological.eye_movement
 (
     id                        BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '主键ID',
-    sortie_number             VARCHAR(255) NOT NULL COMMENT '架次号 关联',
-    sensor_id                 VARCHAR(255) COMMENT '采集用传感器Id',
-    sample_timestamp          LONG COMMENT '采样时间',
+    task_id          LONG NOT NULL COMMENT '生理测试任务Id 关联',
+    sensor_id        LONG COMMENT '采集用传感器Id',
+    sample_timestamp LONG COMMENT '采样时间 微秒级时间戳',
     pupil_diameter_left_px    FLOAT COMMENT 'Pupil Diameter Left[px]',
     pupil_diameter_left_mm    FLOAT COMMENT 'Pupil Diameter Left[mm]',
     pupil_diameter_right_px   FLOAT COMMENT 'Pupil Diameter Right[px]',
@@ -1166,15 +1166,15 @@ CREATE TABLE IF NOT EXISTS physiological.eye_movement
     fixation_saccade_state    INT COMMENT 'FIXATION_SACCADE_State',
     fixation_saccade_center_x FLOAT COMMENT 'FIXATION_SACCADE_Center_x',
     fixation_saccade_center_y FLOAT COMMENT 'FIXATION_SACCADE_Center_y',
-    INDEX idx_sortie_number (sortie_number)
+    INDEX idx_task_id (task_id)
 ) COMMENT ='眼动数据';
 
 CREATE TABLE IF NOT EXISTS physiological.motion_capture
 (
     id                                       BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '主键ID',
-    sortie_number                            VARCHAR(255) NOT NULL COMMENT '架次号 关联',
-    sensor_id                                VARCHAR(255) COMMENT '采集用传感器Id',
-    sample_timestamp                         LONG COMMENT '采样时间',
+    task_id          LONG NOT NULL COMMENT '生理测试任务Id 关联',
+    sensor_id        LONG COMMENT '采集用传感器Id',
+    sample_timestamp LONG COMMENT '采样时间 微秒级时间戳',
     hips_qx                                  FLOAT COMMENT 'Hips_qx',
     hips_qy                                  FLOAT COMMENT 'Hips_qy',
     hips_qz                                  FLOAT COMMENT 'Hips_qz',
@@ -1308,48 +1308,48 @@ CREATE TABLE IF NOT EXISTS physiological.motion_capture
     joint_tag_left_in_hand_middle_py         FLOAT COMMENT 'JointTag_LeftInHandMiddle_py',
     joint_tag_left_in_hand_middle_pz         FLOAT COMMENT 'JointTag_LeftInHandMiddle_pz',
     joint_tag_left_in_hand_middle_timestamp  LONG COMMENT 'JointTag_LeftInHandMiddle_Timestamp',
-    INDEX idx_sortie_number (sortie_number)
+    INDEX idx_task_id (task_id)
 ) COMMENT ='三维动捕数据';
 
 CREATE TABLE IF NOT EXISTS physiological.t_shirt_ecg_accel_gyro
 (
     id               BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '我们自己加的主键 auto_increment bigint',
-    sortie_number    VARCHAR(255) NOT NULL COMMENT '架次号 关联',
-    sensor_id        VARCHAR(255) COMMENT '采集用传感器Id',
-    sample_timestamp LONG COMMENT '采样时间',
+    task_id          LONG NOT NULL COMMENT '生理测试任务Id 关联',
+    sensor_id        LONG COMMENT '采集用传感器Id',
+    sample_timestamp LONG COMMENT '采样时间 微秒级时间戳',
     ecg1             DOUBLE COMMENT 'ECG通道1数据(24位原始值转换后的电压或其它单位)',
     ecg2             DOUBLE COMMENT 'ECG通道2数据',
     ecg3             DOUBLE COMMENT 'ECG通道3数据',
-    INDEX idx_sortie_number (sortie_number)
+    INDEX idx_task_id (task_id)
 ) COMMENT ='Tshirt的ECG数据';
 
 CREATE TABLE IF NOT EXISTS physiological.t_shirt_resp_data
 (
     id               BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '我们自己加的主键 auto_increment bigint',
-    sortie_number    VARCHAR(255) NOT NULL COMMENT '架次号 关联',
-    sensor_id        VARCHAR(255) COMMENT '采集用传感器Id',
-    sample_timestamp LONG COMMENT '采样的unix时间戳',
+    task_id          LONG NOT NULL COMMENT '生理测试任务Id 关联',
+    sensor_id        LONG COMMENT '采集用传感器Id',
+    sample_timestamp LONG COMMENT '采样时间 微秒级时间戳',
     resp_data        JSON COMMENT '呼吸带原始数据，存储50个采样点(数组或JSON字符串)',
-    INDEX idx_sortie_number (sortie_number)
+    INDEX idx_task_id (task_id)
 ) COMMENT ='Tshirt的Resp数据';
 
 CREATE TABLE IF NOT EXISTS physiological.t_shirt_temp_sp_o2_data
 (
     id               BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '我们自己加的主键 auto_increment bigint',
-    sortie_number    VARCHAR(255) NOT NULL COMMENT '架次号 关联',
-    sensor_id        VARCHAR(255) COMMENT '采集用传感器Id',
-    sample_timestamp LONG COMMENT '采样时间',
+    task_id          LONG NOT NULL COMMENT '生理测试任务Id 关联',
+    sensor_id        LONG COMMENT '采集用传感器Id',
+    sample_timestamp LONG COMMENT '采样时间 微秒级时间戳',
     temperature      FLOAT COMMENT '腋下体温(转换后的温度值单位℃)',
     spo2             INT COMMENT '血氧饱和度(转换后的血氧值单位%)',
-    INDEX idx_sortie_number (sortie_number)
+    INDEX idx_task_id (task_id)
 ) COMMENT ='Tshirt的温度和饱和度数据';
 
 CREATE TABLE IF NOT EXISTS physiological.wristband_ppg_accel_data
 (
     id               BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '我们自己加的主键 auto_increment bigint',
-    sortie_number    VARCHAR(255) NOT NULL COMMENT '架次号 关联',
-    sensor_id        VARCHAR(255) COMMENT '采集用传感器Id',
-    sample_timestamp LONG COMMENT '采样时间',
+    task_id          LONG NOT NULL COMMENT '生理测试任务Id 关联',
+    sensor_id        LONG COMMENT '采集用传感器Id',
+    sample_timestamp LONG COMMENT '采样时间 微秒级时间戳',
     accel_x          DOUBLE COMMENT '腕部加速度X轴(从6字节加速度数据中转换得到)',
     accel_y          DOUBLE COMMENT '腕部加速度Y轴(从6字节加速度数据中转换得到)',
     accel_z          DOUBLE COMMENT '腕部加速度Z轴(从6字节加速度数据中转换得到)',
@@ -1361,7 +1361,7 @@ CREATE TABLE IF NOT EXISTS physiological.wristband_ppg_accel_data
     ppg_infrared2    JSON COMMENT '红外PPG通道2数据，存储五个采样点（JSON数组格式）',
     ppg_infrared3    JSON COMMENT '红外PPG通道3数据，存储五个采样点（JSON数组格式）',
     ppg_infrared4    JSON COMMENT '红外PPG通道4数据，存储五个采样点（JSON数组格式）',
-    INDEX idx_sortie_number (sortie_number)
+    INDEX idx_task_id (task_id)
 ) COMMENT ='腕带PPG和加速度数据';
 
 # 按库构建 TiFlash 副本

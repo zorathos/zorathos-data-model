@@ -20,10 +20,8 @@ public class PhysiologicalKafkaReceiverConfig extends BaseReceiverConfig {
 
     private String topic;
 
-    private String sortieNumber;
-
     @Override
     public boolean validate() {
-        return !topic.isEmpty() && !sortieNumber.isEmpty();
+        return !topic.isEmpty();
     }
 }

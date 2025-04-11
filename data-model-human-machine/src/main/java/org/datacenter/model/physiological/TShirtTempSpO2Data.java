@@ -20,17 +20,17 @@ public class TShirtTempSpO2Data {
     private Long id;
 
     /**
-     * 架次号 关联
+     * 生理测试任务Id 关联
      */
-    private String sortieNumber;
+    private Long taskId;
 
     /**
      * 采集用传感器Id
      */
-    private String sensorId;
+    private Long sensorId;
 
     /**
-     * 采样时间
+     * 采样时间 微秒级时间戳
      */
     private Long sampleTimestamp;
 
