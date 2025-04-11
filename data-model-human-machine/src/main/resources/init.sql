@@ -248,23 +248,6 @@ CREATE TABLE IF NOT EXISTS `sorties`.`sorties`
     PRIMARY KEY (`sortie_id`)
 );
 
-
-# ---------------------------------------- 生理数据库 ----------------------------------------
-CREATE TABLE IF NOT EXISTS `physiological`.`collection_task`
-(
-    task_id           BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '采集任务编号',
-    sortie_number     VARCHAR(255) NOT NULL COMMENT '架次',
-    collector_name    VARCHAR(255) NOT NULL COMMENT '采集人',
-    subject_name      VARCHAR(255) NOT NULL COMMENT '被试人',
-    collection_device VARCHAR(255) NOT NULL COMMENT '采集设备',
-    task_type         VARCHAR(255) NOT NULL COMMENT '任务类型',
-    task_start_time   DATETIME     NOT NULL COMMENT '任务开始时间',
-    creator           VARCHAR(255) NOT NULL COMMENT '任务创建人',
-    create_time       DATETIME     DEFAULT CURRENT_TIMESTAMP COMMENT '任务创建时间',
-    modifier          VARCHAR(255) DEFAULT NULL COMMENT '任务修改人',
-    modificationTime  DATETIME     DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '任务修改时间'
-) COMMENT ='飞行员生理数据采集任务表';
-
 # ---------------------------------------- 模拟飞行数据库 ----------------------------------------
 CREATE TABLE IF NOT EXISTS `simulation`.`aa_traj`
 (
@@ -1053,7 +1036,7 @@ CREATE TABLE IF NOT EXISTS real_world_flight.asset_table_property
 );
 
 # ---------------------------------------- 采集数据表 ----------------------------------------
-CREATE TABLE IF NOT EXISTS collection.task
+CREATE TABLE IF NOT EXISTS collection.collection_task
 (
     task_id           BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '任务编号',
     task_status       TINYINT      NOT NULL DEFAULT 0 COMMENT '任务状态', -- 0-已下发未执行 1-执行中 2-已完成 3-执行异常]
@@ -1064,14 +1047,14 @@ CREATE TABLE IF NOT EXISTS collection.task
     subject_name      VARCHAR(255) NOT NULL COMMENT '被试人',
     collection_device VARCHAR(255) NOT NULL COMMENT '采集设备',
     task_type         VARCHAR(255) NOT NULL COMMENT '任务类型',
-    task_start_time   DATETIME     NOT NULL COMMENT '任务开始时间',
+    task_start_time   LONG         NOT NULL COMMENT '任务开始时间  UNIX微秒级时间戳',
     creator           VARCHAR(255) NOT NULL COMMENT '任务创建人',
-    create_time       DATETIME              DEFAULT CURRENT_TIMESTAMP COMMENT '任务创建时间',
+    create_time       LONG         NOT NULL COMMENT '任务创建时间 UNIX微秒级时间戳',
     modifier          VARCHAR(255)          DEFAULT NULL COMMENT '任务修改人',
-    modificationTime  DATETIME              DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '任务修改时间'
+    modificationTime  LONG                  DEFAULT NULL COMMENT '任务修改时间  UNIX微秒级时间戳'
 ) COMMENT ='飞行员生理数据采集任务表';
 
-CREATE TABLE IF NOT EXISTS collection.sensor
+CREATE TABLE IF NOT EXISTS collection.collection_sensor
 (
     sensor_id         BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '传感器序列号',
     sensor_name       VARCHAR(255) NOT NULL COMMENT '传感器名称',
@@ -1084,7 +1067,7 @@ CREATE TABLE IF NOT EXISTS collection.sensor
     sensor_status     TINYINT      NOT NULL DEFAULT 0 COMMENT '传感器状态'         -- 0-离线 1-在线空闲 2-在线使用中
 ) COMMENT ='生理传感器表';
 
-CREATE TABLE IF NOT EXISTS collection.equipment
+CREATE TABLE IF NOT EXISTS collection.collection_equipment
 (
     equipment_id     BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '设备序列号',
     equipment_name   VARCHAR(255) NOT NULL COMMENT '设备名称',
@@ -1128,9 +1111,9 @@ CREATE TABLE IF NOT EXISTS physiological.eeg
 CREATE TABLE IF NOT EXISTS physiological.eye_movement
 (
     id                        BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '主键ID',
-    task_id          LONG NOT NULL COMMENT '生理测试任务Id 关联',
-    sensor_id        LONG COMMENT '采集用传感器Id',
-    sample_timestamp LONG COMMENT '采样时间 微秒级时间戳',
+    task_id                   LONG NOT NULL COMMENT '生理测试任务Id 关联',
+    sensor_id                 LONG COMMENT '采集用传感器Id',
+    sample_timestamp          LONG COMMENT '采样时间 微秒级时间戳',
     pupil_diameter_left_px    FLOAT COMMENT 'Pupil Diameter Left[px]',
     pupil_diameter_left_mm    FLOAT COMMENT 'Pupil Diameter Left[mm]',
     pupil_diameter_right_px   FLOAT COMMENT 'Pupil Diameter Right[px]',
@@ -1172,9 +1155,9 @@ CREATE TABLE IF NOT EXISTS physiological.eye_movement
 CREATE TABLE IF NOT EXISTS physiological.motion_capture
 (
     id                                       BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '主键ID',
-    task_id          LONG NOT NULL COMMENT '生理测试任务Id 关联',
-    sensor_id        LONG COMMENT '采集用传感器Id',
-    sample_timestamp LONG COMMENT '采样时间 微秒级时间戳',
+    task_id                                  LONG NOT NULL COMMENT '生理测试任务Id 关联',
+    sensor_id                                LONG COMMENT '采集用传感器Id',
+    sample_timestamp                         LONG COMMENT '采样时间 微秒级时间戳',
     hips_qx                                  FLOAT COMMENT 'Hips_qx',
     hips_qy                                  FLOAT COMMENT 'Hips_qy',
     hips_qz                                  FLOAT COMMENT 'Hips_qz',
