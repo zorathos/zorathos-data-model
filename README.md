@@ -13,7 +13,7 @@ zorathos-data-model是云软件与智能决策实验室数据中台的数据模�
 
 ### 依赖的使用方法
 
-项目应该不能作为一个整体引入 你需要在human-machine和maps的模块做分别引入 最新的依赖版本为**0.0.11**
+项目应该不能作为一个整体引入 你需要在human-machine和maps的模块做分别引入 最新的依赖版本为**0.0.12**
 
 MAPS依赖如下
 
@@ -21,7 +21,7 @@ MAPS依赖如下
 <dependency>
   <groupId>io.github.wangminan</groupId>
   <artifactId>data-model-human-maps</artifactId>
-  <version>0.0.11</version>
+  <version>0.0.12</version>
 </dependency>
 ```
 
@@ -31,7 +31,7 @@ human-machine依赖如下
 <dependency>
   <groupId>io.github.wangminan</groupId>
   <artifactId>data-model-human-machine</artifactId>
-  <version>0.0.11</version>
+  <version>0.0.12</version>
 </dependency>
 ```
 

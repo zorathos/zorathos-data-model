@@ -6,7 +6,7 @@
     <parent>
         <groupId>io.github.wangminan</groupId>
         <artifactId>zorathos-data-model</artifactId>
-        <version>0.0.11</version>
+        <version>0.0.12</version>
     </parent>
 
     <artifactId>data-model-human-machine</artifactId>
@@ -31,33 +31,33 @@
         <dependency>
             <groupId>io.github.wangminan</groupId>
             <artifactId>data-model-base</artifactId>
-            <version>0.0.11</version>
+            <version>0.0.12</version>
         </dependency>
-
 
         <!-- 日志依赖 -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <optional>true</optional>
         </dependency>
 
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-slf4j2-impl</artifactId>
-            <optional>true</optional>
         </dependency>
 
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
-            <optional>true</optional>
         </dependency>
 
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
-            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>io.minio</groupId>
+            <artifactId>minio</artifactId>
         </dependency>
     </dependencies>
 </project>

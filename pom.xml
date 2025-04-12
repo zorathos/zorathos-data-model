@@ -6,7 +6,7 @@
 
     <groupId>io.github.wangminan</groupId>
     <artifactId>zorathos-data-model</artifactId>
-    <version>0.0.11</version>
+    <version>0.0.12</version>
     <packaging>pom</packaging>
 
 
@@ -65,6 +65,7 @@
         <jackson.version>2.18.3</jackson.version>
         <slf4j-api.version>2.0.17</slf4j-api.version>
         <log4j2.version>2.24.3</log4j2.version>
+        <minio.version>8.5.17</minio.version>
 
         <gpg.skip>false</gpg.skip>
     </properties>
@@ -149,6 +150,13 @@
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-core</artifactId>
                 <version>${log4j2.version}</version>
+            </dependency>
+
+            <!-- MinIO客户端 -->
+            <dependency>
+                <groupId>io.minio</groupId>
+                <artifactId>minio</artifactId>
+                <version>${minio.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -335,6 +343,16 @@
                             <artifact>org.projectlombok:lombok</artifact>
                             <excludes>
                                 <exclude>**/*</exclude>
+                            </excludes>
+                        </filter>
+                        <filter>
+                            <!-- Do not copy the signatures in the META-INF folder.
+                            Otherwise, this might cause SecurityExceptions when using the JAR. -->
+                            <artifact>*:*</artifact>
+                            <excludes>
+                                <exclude>META-INF/*.SF</exclude>
+                                <exclude>META-INF/*.DSA</exclude>
+                                <exclude>META-INF/*.RSA</exclude>
                             </excludes>
                         </filter>
                     </filters>

@@ -3,8 +3,8 @@ package org.datacenter.config;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.extern.slf4j.Slf4j;
-import org.datacenter.config.keys.HumanMachineReceiverConfigKey;
 import org.datacenter.config.keys.HumanMachineSysConfigKey;
+import org.datacenter.config.util.MinioUtil;
 import org.datacenter.exception.ZorathosException;
 
 import java.io.BufferedReader;
@@ -14,6 +14,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Properties;
 
 /**
@@ -26,6 +28,7 @@ import java.util.Properties;
 public class HumanMachineConfig extends BaseConfig {
 
     private final String ZORATHOS_HUMAN_MACHINE_CONFIG = "ZORATHOS_HUMAN_MACHINE_CONFIG";
+    private final String CONFIG_TYPE_S3 = "s3";
 
     private boolean useSystemEnv;
 
@@ -98,14 +101,19 @@ public class HumanMachineConfig extends BaseConfig {
 
     @Override
     public synchronized void loadConfig() {
+        loadSysConfig();
+    }
+
+    private void loadSysConfig() {
         /*
          * 逐条打印System.getenv
          */
-        System.getenv().forEach((k, v) -> log.info("System env key:{}, value:{}", k, v));
+        System.getenv().forEach((k, v) -> log.info("Loading system env, key:{}, value:{}", k, v));
 
         // 从系统中获取 "ZORATHOS_HUMAN_MACHINE_CONFIG" 环境变量
         if (System.getenv(ZORATHOS_HUMAN_MACHINE_CONFIG) != null) {
-            File externelConfigFile = new File(System.getenv(ZORATHOS_HUMAN_MACHINE_CONFIG));
+            String machineConfigUrl = System.getenv(ZORATHOS_HUMAN_MACHINE_CONFIG);
+            File externelConfigFile = new File(machineConfigUrl);
             log.info("ZORATHOS_HUMAN_MACHINE_CONFIG found in system env, trying to load sys config from file {}", externelConfigFile.getAbsolutePath());
             // 从配置文件加载
             try (
@@ -115,10 +123,25 @@ public class HumanMachineConfig extends BaseConfig {
                 humanMachineProperties.load(br);
                 useSystemEnv = true;
             } catch (IOException e) {
-                throw new ZorathosException(e, "You have   ZORATHOS_HUMAN_MACHINE_CONFIG in system environment, but error occurs while loading properties from file " + externelConfigFile.getAbsolutePath());
+                throw new ZorathosException(e, "You have ZORATHOS_HUMAN_MACHINE_CONFIG in system environment, but error occurs while loading properties from file " + externelConfigFile.getAbsolutePath());
+            }
+            String configType = getProperty(HumanMachineSysConfigKey.CONFIG_TYPE);
+            log.info("Config type is {}", configType);
+            // 如果配置文件中config.type为 s3 从 minio 拉取并覆盖
+            if (configType.equals(CONFIG_TYPE_S3)) {
+                log.info("Loading config properties from s3 base: {}", getProperty(HumanMachineSysConfigKey.CONFIG_S3_URL));
+                try (
+                        InputStream fis = MinioUtil.download(getProperty(HumanMachineSysConfigKey.CONFIG_S3_URL));
+                        BufferedReader br = new BufferedReader(new InputStreamReader(fis))
+                ) {
+                    humanMachineProperties.load(br);
+                    useSystemEnv = true;
+                } catch (IOException e) {
+                    throw new ZorathosException(e, "You have ZORATHOS_HUMAN_MACHINE_CONFIG in system environment, but error occurs while loading properties from file " + externelConfigFile.getAbsolutePath());
+                }
             }
         } else {
-            log.info("ZORATHOS_HUMAN_MACHINE_CONFIG not found in system env, trying to load sys config from embedded file human-machine.properties");
+            log.info("ZORATHOS_HUMAN_MACHINE_CONFIG not found in system env, trying to load sys config from embedded file human-machine.properties。 It is not recommended to use this way in production environment.");
             // 从resources文件夹加载
             try (// 判断human-machine.properties是否存在
                  InputStream embeddedConfigFis = HumanMachineConfig.class.getClassLoader().getResourceAsStream("human-machine.properties")
@@ -152,6 +175,16 @@ public class HumanMachineConfig extends BaseConfig {
             }
         } catch (IOException e) {
             throw new ZorathosException(e, "Error occurs while saving properties to file " + System.getenv(ZORATHOS_HUMAN_MACHINE_CONFIG));
+        }
+        // 如果配置文件中config.type为 s3 上传到 minio 以覆盖
+        String configType = getProperty(HumanMachineSysConfigKey.CONFIG_TYPE);
+        if (configType.equals(CONFIG_TYPE_S3)) {
+            log.info("Uploading config properties to s3 base: {}", getProperty(HumanMachineSysConfigKey.CONFIG_S3_URL));
+            try {
+                MinioUtil.upload(getProperty(HumanMachineSysConfigKey.CONFIG_S3_URL), Files.newInputStream(Path.of(getProperty(HumanMachineSysConfigKey.CONFIG_S3_URL))));
+            } catch (IOException e) {
+                throw new ZorathosException(e, "Error occurs while uploading properties to s3");
+            }
         }
     }
 }

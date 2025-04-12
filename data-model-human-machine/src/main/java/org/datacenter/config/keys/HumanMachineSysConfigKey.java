@@ -11,6 +11,8 @@ public enum HumanMachineSysConfigKey {
 
     // 基础配置
     CONFIG_TYPE("config.type", "配置类型"),
+    CONFIG_VERSION("config.version", "配置版本"),
+    CONFIG_S3_URL("config.s3.url", "S3存储地址"),
 
     // Kafka配置组
     KAFKA_BOOTSTRAP_SERVERS("kafka.bootstrap.servers", "Kafka服务器地址"),
