@@ -3,6 +3,7 @@ package org.datacenter.config;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.extern.slf4j.Slf4j;
+import org.datacenter.config.keys.HumanMachineReceiverConfigKey;
 import org.datacenter.config.keys.HumanMachineSysConfigKey;
 import org.datacenter.exception.ZorathosException;
 
@@ -48,7 +49,6 @@ public class HumanMachineConfig extends BaseConfig {
      * 获取配置项 请使用枚举Key替换
      *
      * @param key 键
-     * @return 值
      */
     @Deprecated
     public static void setProperty(String key, String value) {
@@ -92,8 +92,8 @@ public class HumanMachineConfig extends BaseConfig {
         return humanMachineProperties.getProperty(key, alternative);
     }
 
-    public static String getProperty(HumanMachineSysConfigKey configKey, String alternative) {
-        return humanMachineProperties.getProperty(configKey.getKey(), alternative);
+    public static String getProperty(HumanMachineSysConfigKey configKey, String defaultValue) {
+        return humanMachineProperties.getProperty(configKey.getKey(), defaultValue);
     }
 
     @Override

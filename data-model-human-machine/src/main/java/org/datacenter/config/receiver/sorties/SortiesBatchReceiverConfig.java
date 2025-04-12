@@ -21,7 +21,7 @@ public class SortiesBatchReceiverConfig extends BaseReceiverConfig {
     /**
      * 批次查询URL /task/dataAsset/queryAllBatches
      */
-    private String sortiesBatchUrl;
+    private String url;
 
     /**
      * 批次查询JSON
@@ -31,10 +31,10 @@ public class SortiesBatchReceiverConfig extends BaseReceiverConfig {
      * }
      * ewogICJhY21pVGltZUVuZCI6ICIiLAogICJhY21pVGltZVN0YXJ0IjogIiIKfQo=
      */
-    private String sortiesBatchJson;
+    private String json;
 
     @Override
     public boolean validate() {
-        return !sortiesBatchUrl.isEmpty() && !sortiesBatchJson.isEmpty();
+        return !url.isEmpty() && !json.isEmpty();
     }
 }

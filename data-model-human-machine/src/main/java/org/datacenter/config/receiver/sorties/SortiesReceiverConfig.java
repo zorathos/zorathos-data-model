@@ -21,10 +21,10 @@ public class SortiesReceiverConfig extends BaseReceiverConfig {
     /**
      * 架次查询URL /task/dataAsset/querySortiesByBatchId
      */
-    private String sortiesBaseUrl;
+    private String baseUrl;
 
     @Override
     public boolean validate() {
-        return !sortiesBaseUrl.isEmpty();
+        return !baseUrl.isEmpty();
     }
 }

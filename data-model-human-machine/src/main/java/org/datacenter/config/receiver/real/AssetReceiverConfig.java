@@ -21,12 +21,12 @@ public class AssetReceiverConfig extends BaseReceiverConfig {
     /**
      * 数据资产服务URL http://192.168.10.100:8088/datahandle/asset/getObjectifyAsset
      */
-    private String assetListBaseUrl;
+    private String listBaseUrl;
 
     /**
      * 数据资产列信息配置URL http://192.168.10.100:8088/datahandle/asset/getAssetValidConfig
      */
-    private String assetConfigBaseUrl;
+    private String configBaseUrl;
 
     /**
      * 数据资产导入的最终输入 架次号
