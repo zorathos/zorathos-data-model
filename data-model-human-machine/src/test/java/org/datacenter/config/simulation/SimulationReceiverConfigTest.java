@@ -1,6 +1,7 @@
 package org.datacenter.config.simulation;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.datacenter.config.receiver.simulation.SimulationReceiverConfig;
 
 /**
  * @author : [wangminan]

@@ -5,8 +5,16 @@ CREATE DATABASE IF NOT EXISTS `simulation`; -- 模拟飞行数据库
 CREATE DATABASE IF NOT EXISTS `real_world_flight`; -- 实装飞行数据库
 CREATE DATABASE IF NOT EXISTS `sorties`; -- 架次数据库
 CREATE DATABASE IF NOT EXISTS `physiological`; -- 生理数据库
-CREATE DATABASE IF NOT EXISTS `collection`;
--- 采集数据库
+CREATE DATABASE IF NOT EXISTS `collection`; -- 采集数据库
+CREATE DATABASE IF NOT EXISTS `config`;
+
+# ---------------------------------------- 配置 ----------------------------------------
+CREATE TABLE IF NOT EXISTS `config`.`receiver_config`
+(
+    `id` BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '主键ID',
+    `key` VARCHAR(255) NOT NULL COMMENT '配置项',
+    `value` TEXT NOT NULL COMMENT '配置值'
+);
 
 # ---------------------------------------- 人员 ----------------------------------------
 CREATE TABLE IF NOT EXISTS `human_machine`.`personnel_info`

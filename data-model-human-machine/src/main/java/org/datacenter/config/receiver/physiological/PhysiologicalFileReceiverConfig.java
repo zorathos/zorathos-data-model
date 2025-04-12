@@ -1,11 +1,11 @@
-package org.datacenter.config.physiological;
+package org.datacenter.config.receiver.physiological;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.datacenter.config.BaseReceiverConfig;
+import org.datacenter.config.receiver.BaseReceiverConfig;
 
 @EqualsAndHashCode(callSuper = true)
 @Data

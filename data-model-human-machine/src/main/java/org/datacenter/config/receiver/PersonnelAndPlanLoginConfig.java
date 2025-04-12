@@ -1,4 +1,4 @@
-package org.datacenter.config;
+package org.datacenter.config.receiver;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

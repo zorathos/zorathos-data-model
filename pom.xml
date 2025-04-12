@@ -16,6 +16,7 @@
     <modules>
         <module>data-model-human-machine</module>
         <module>data-model-maps</module>
+        <module>data-model-base</module>
     </modules>
 
     <licenses>

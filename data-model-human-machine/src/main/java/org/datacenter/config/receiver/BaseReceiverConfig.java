@@ -1,4 +1,4 @@
-package org.datacenter.config;
+package org.datacenter.config.receiver;
 
 import java.io.Serial;
 import java.io.Serializable;

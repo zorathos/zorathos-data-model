@@ -1,22 +1,22 @@
-package org.datacenter.config.equipment;
+package org.datacenter.config.receiver.equipment;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.datacenter.config.BaseReceiverConfig;
+import org.datacenter.config.receiver.BaseReceiverConfig;
 
 /**
  * @author : [wangminan]
- * @description : 装备信息接收配置
+ * @description : 装备接收配置
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class EquipmentInfoReceiverConfig extends BaseReceiverConfig {
+public class EquipmentCodeReceiverConfig extends BaseReceiverConfig {
     private String host;
     private String port;
     private String database;

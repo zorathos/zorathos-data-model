@@ -1,11 +1,11 @@
-package org.datacenter.config.simulation;
+package org.datacenter.config.receiver.simulation;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.datacenter.config.BaseReceiverConfig;
+import org.datacenter.config.receiver.BaseReceiverConfig;
 
 import java.io.Serial;
 import java.io.Serializable;
