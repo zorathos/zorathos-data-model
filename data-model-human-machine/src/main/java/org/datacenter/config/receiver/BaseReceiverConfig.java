@@ -1,5 +1,7 @@
 package org.datacenter.config.receiver;
 
+import org.datacenter.exception.ZorathosException;
+
 import java.io.Serial;
 import java.io.Serializable;
 
@@ -25,7 +27,7 @@ public abstract class BaseReceiverConfig implements Serializable {
                     sb.append("--").append(field.getName()).append(" ").append(value).append(" ");
                 }
             } catch (IllegalAccessException e) {
-                throw new RuntimeException("Error accessing field: " + field.getName(), e);
+                throw new ZorathosException(e, "Error accessing field: " + field.getName());
             }
         }
         return sb.toString().trim();

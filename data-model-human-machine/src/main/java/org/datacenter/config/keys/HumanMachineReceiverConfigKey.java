@@ -36,7 +36,7 @@ public enum HumanMachineReceiverConfigKey {
 
     // 生理配置组
     PHYSIOLOGY_FILE_URL("url", "physiology_file_url", "生理数据文件的url"),
-    PHYSIOLOGY_KAFKA_TOPIC("kafkaTopic", "physiology_kafka_topic", "生理数据投递的kafka topic"),
+    PHYSIOLOGY_KAFKA_TOPIC("topic", "physiology_kafka_topic", "生理数据投递的kafka topic"),
 
     // 实装配置组
     ASSET_LIST_BASE_URL("listBaseUrl", "asset_list_base_url", "实装列表的url"),
@@ -57,7 +57,7 @@ public enum HumanMachineReceiverConfigKey {
     SORTIES_BATCH_JSON("json", "sorties_batch_json", "批次数据的json");
 
     /**
-     * 人机交互接收器启动时的对应配置的 flink 用的参数 和类中的驼峰变量名一致
+     * 人机交互接收器启动时的对应配置的 flink 用的参数 和类中的驼峰属性名一致
      */
     private final String keyForParamsMap;
 
@@ -75,5 +75,23 @@ public enum HumanMachineReceiverConfigKey {
         this.keyForParamsMap = keyForParamsMap;
         this.keyOfPersistence = keyOfPersistence;
         this.description = description;
+    }
+
+    public HumanMachineReceiverConfigKey fromKeyForParamsMap(String key) {
+        for (HumanMachineReceiverConfigKey value : values()) {
+            if (value.keyForParamsMap.equals(key)) {
+                return value;
+            }
+        }
+        throw new IllegalArgumentException("No enum constant for key: " + key);
+    }
+
+    public HumanMachineReceiverConfigKey fromKeyOfPersistence(String key) {
+        for (HumanMachineReceiverConfigKey value : values()) {
+            if (value.keyOfPersistence.equals(key)) {
+                return value;
+            }
+        }
+        throw new IllegalArgumentException("No enum constant for key: " + key);
     }
 }
