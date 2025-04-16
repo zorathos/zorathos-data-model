@@ -1,11 +1,11 @@
-package org.datacenter.config.agent.crew;
+package org.datacenter.config.receiver.crew;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.datacenter.config.BaseReceiverAndAgentConfig;
+import org.datacenter.config.receiver.BaseReceiverConfig;
 
 /**
  * @author : [wangminan]
@@ -16,7 +16,7 @@ import org.datacenter.config.BaseReceiverAndAgentConfig;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class PersonnelAgentAndAgentConfig extends BaseReceiverAndAgentConfig {
+public class PersonnelReceiverConfig extends BaseReceiverConfig {
 
     /**
      * 人员系统查询URL http://192.168.0.18/FXY/BindFxyLb?dwdm=90121&...

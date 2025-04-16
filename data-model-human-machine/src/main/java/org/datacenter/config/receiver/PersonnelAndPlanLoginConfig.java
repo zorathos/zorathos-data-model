@@ -1,11 +1,10 @@
-package org.datacenter.config.agent;
+package org.datacenter.config.receiver;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.datacenter.config.BaseReceiverAndAgentConfig;
 
 /**
  * @author : [wangminan]
@@ -16,7 +15,7 @@ import org.datacenter.config.BaseReceiverAndAgentConfig;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class PersonnelAndPlanLoginAndAgentConfig extends BaseReceiverAndAgentConfig {
+public class PersonnelAndPlanLoginConfig extends BaseReceiverConfig {
     /**
      * 登录URL http://192.168.0.18/home/login
      */

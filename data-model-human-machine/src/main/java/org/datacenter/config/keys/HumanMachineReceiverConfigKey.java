@@ -8,6 +8,18 @@ import lombok.Getter;
  */
 @Getter
 public enum HumanMachineReceiverConfigKey {
+    // 人员与飞行计划通用配置组
+    PERSONNEL_AND_PLAN_LOGIN_URL("loginUrl", "personnel_and_plan_login_url", "人员与飞行计划登录的url"),
+    PERSONNEL_AND_PLAN_LOGIN_JSON("loginJson", "personnel_and_plan_login_json", "人员与飞行计划登录的json"),
+
+    // 人员系统配置组
+    PERSONNEL_URL("url", "personnel_url", "人员信息拉取的url"),
+
+    // 飞行计划配置组
+    FLIGHT_PLAN_FLIGHT_DATA_URL("flightDateUrl", "flight_plan_flight_data_url", "飞行计划数据拉取的url"),
+    FLIGHT_PLAN_FLIGHT_CODE_URL("flightCodeUrl", "flight_plan_flight_code_url", "飞行计划航班号拉取的url"),
+    FLIGHT_PLAN_FLIGHT_XML_URL("flightXmlUrl", "flight_plan_flight_xml_url", "飞行计划xml拉取的url"),
+
     // 装备配置组
     EQUIPMENT_CODE_HOST("host", "equipment_code_host", "装备系统的host"),
     EQUIPMENT_CODE_PORT("port", "equipment_code_port", "装备系统的port"),

@@ -5,7 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.datacenter.config.BaseReceiverAndAgentConfig;
+import org.datacenter.config.receiver.BaseReceiverConfig;
 
 /**
  * @author : [wangminan]
@@ -16,7 +16,7 @@ import org.datacenter.config.BaseReceiverAndAgentConfig;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class SortiesReceiverAndAgentConfig extends BaseReceiverAndAgentConfig {
+public class SortiesReceiverConfig extends BaseReceiverConfig {
 
     /**
      * 架次查询URL /task/dataAsset/querySortiesByBatchId

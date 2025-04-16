@@ -5,14 +5,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.datacenter.config.BaseReceiverAndAgentConfig;
+import org.datacenter.config.receiver.BaseReceiverConfig;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class PhysiologicalFileReceiverAndAgentConfig extends BaseReceiverAndAgentConfig {
+public class PhysiologicalFileReceiverConfig extends BaseReceiverConfig {
     private String url;
 
     @Override

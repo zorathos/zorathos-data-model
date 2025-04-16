@@ -11,9 +11,9 @@ CREATE DATABASE IF NOT EXISTS `config`;
 # ---------------------------------------- 配置 ----------------------------------------
 CREATE TABLE IF NOT EXISTS `config`.`receiver_config`
 (
-    `id`    BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '主键ID',
-    `key`   VARCHAR(255) NOT NULL COMMENT '配置项',
-    `value` TEXT DEFAULT NULL COMMENT '配置值'
+    `id` BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '主键ID',
+    `key` VARCHAR(255) NOT NULL COMMENT '配置项',
+    `value` TEXT NOT NULL COMMENT '配置值'
 );
 
 # ---------------------------------------- 人员 ----------------------------------------

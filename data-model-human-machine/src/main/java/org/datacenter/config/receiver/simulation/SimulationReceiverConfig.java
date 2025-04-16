@@ -5,7 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.datacenter.config.BaseReceiverAndAgentConfig;
+import org.datacenter.config.receiver.BaseReceiverConfig;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -19,7 +19,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class SimulationReceiverAndAgentConfig extends BaseReceiverAndAgentConfig implements Serializable {
+public class SimulationReceiverConfig extends BaseReceiverConfig implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 123143L;

@@ -5,7 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.datacenter.config.BaseReceiverAndAgentConfig;
+import org.datacenter.config.receiver.BaseReceiverConfig;
 
 /**
  * @author : [wangminan]
@@ -16,7 +16,7 @@ import org.datacenter.config.BaseReceiverAndAgentConfig;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class EquipmentCodeReceiverAndAgentConfig extends BaseReceiverAndAgentConfig {
+public class EquipmentCodeReceiverConfig extends BaseReceiverConfig {
     private String host;
     private String port;
     private String database;
