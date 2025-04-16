@@ -1,11 +1,11 @@
-package org.datacenter.config.receiver.plan;
+package org.datacenter.config.agent.plan;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.datacenter.config.receiver.BaseReceiverConfig;
+import org.datacenter.config.BaseReceiverAndAgentConfig;
 
 /**
  * @author : [wangminan]
@@ -16,7 +16,7 @@ import org.datacenter.config.receiver.BaseReceiverConfig;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class FlightPlanReceiverConfig extends BaseReceiverConfig {
+public class FlightPlanAgentAndAgentConfig extends BaseReceiverAndAgentConfig {
 
     /**
      * 飞行日期URL http://192.168.0.18/fxjh/getfxrq?from=1970-01-01&to=" + today + "&dwdm=90121"

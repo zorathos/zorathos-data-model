@@ -5,7 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.datacenter.config.receiver.BaseReceiverConfig;
+import org.datacenter.config.BaseReceiverAndAgentConfig;
 
 /**
  * @author : [wangminan]
@@ -16,7 +16,7 @@ import org.datacenter.config.receiver.BaseReceiverConfig;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class AssetReceiverConfig extends BaseReceiverConfig {
+public class AssetReceiverAndAgentConfig extends BaseReceiverAndAgentConfig {
 
     /**
      * 数据资产服务URL http://192.168.10.100:8088/datahandle/asset/getObjectifyAsset
