@@ -21,7 +21,13 @@ public enum HumanMachineAgentConfigKey {
     // 飞行计划配置组
     FLIGHT_PLAN_FLIGHT_DATE_URL("flightDateUrl", "flight_plan_flight_date_url", "飞行计划日期拉取的url"),
     FLIGHT_PLAN_FLIGHT_CODE_URL("flightCodeUrl", "flight_plan_flight_code_url", "飞行计划编号号拉取的url"),
-    FLIGHT_PLAN_FLIGHT_XML_URL("flightXmlUrl", "flight_plan_flight_xml_url", "飞行计划xml拉取的url");
+    FLIGHT_PLAN_FLIGHT_XML_URL("flightXmlUrl", "flight_plan_flight_xml_url", "飞行计划xml拉取的url"),
+
+    // 架次配置组
+    SORTIES_BASE_URL("baseUrl", "sorties_base_url", "架次数据的url"),
+    SORTIES_BATCH_URL("url", "sorties_batch_url", "批次数据的url"),
+    SORTIES_BATCH_JSON("json", "sorties_batch_json", "批次数据的json");
+
 
     /**
      * 人机交互接收器启动时的对应配置的 flink 用的参数 和类中的驼峰属性名一致

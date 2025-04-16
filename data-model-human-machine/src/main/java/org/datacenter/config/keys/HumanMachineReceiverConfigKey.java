@@ -37,12 +37,7 @@ public enum HumanMachineReceiverConfigKey {
 
     // 仿真配置组
     SIMULATION_URL("url", "simulation_url", "仿真数据文件的url"),
-    SIMULATION_SORTIE_NUMBER("sortieNumber", "simulation_sortie_number", "仿真数据的架次"),
-
-    // 架次配置组
-    SORTIES_BASE_URL("baseUrl", "sorties_base_url", "架次数据的url"),
-    SORTIES_BATCH_URL("url", "sorties_batch_url", "批次数据的url"),
-    SORTIES_BATCH_JSON("json", "sorties_batch_json", "批次数据的json");
+    SIMULATION_SORTIE_NUMBER("sortieNumber", "simulation_sortie_number", "仿真数据的架次");
 
     /**
      * 人机交互接收器启动时的对应配置的 flink 用的参数 和类中的驼峰属性名一致
