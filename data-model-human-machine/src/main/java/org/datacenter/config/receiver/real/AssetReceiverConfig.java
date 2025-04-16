@@ -16,7 +16,7 @@ import org.datacenter.config.BaseReceiverAndAgentConfig;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class AssetReceiverAndAgentConfig extends BaseReceiverAndAgentConfig {
+public class AssetReceiverConfig extends BaseReceiverAndAgentConfig {
 
     /**
      * 数据资产服务URL http://192.168.10.100:8088/datahandle/asset/getObjectifyAsset

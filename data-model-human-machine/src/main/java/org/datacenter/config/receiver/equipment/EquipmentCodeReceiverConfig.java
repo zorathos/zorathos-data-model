@@ -9,14 +9,14 @@ import org.datacenter.config.BaseReceiverAndAgentConfig;
 
 /**
  * @author : [wangminan]
- * @description : 装备信息接收配置
+ * @description : 装备接收配置
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class EquipmentInfoReceiverAndAgentConfig extends BaseReceiverAndAgentConfig {
+public class EquipmentCodeReceiverConfig extends BaseReceiverAndAgentConfig {
     private String host;
     private String port;
     private String database;

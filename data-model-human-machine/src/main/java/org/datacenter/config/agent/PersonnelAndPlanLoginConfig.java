@@ -16,7 +16,7 @@ import org.datacenter.config.BaseReceiverAndAgentConfig;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class PersonnelAndPlanLoginAndAgentConfig extends BaseReceiverAndAgentConfig {
+public class PersonnelAndPlanLoginConfig extends BaseReceiverAndAgentConfig {
     /**
      * 登录URL http://192.168.0.18/home/login
      */

@@ -19,7 +19,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class SimulationReceiverAndAgentConfig extends BaseReceiverAndAgentConfig implements Serializable {
+public class SimulationReceiverConfig extends BaseReceiverAndAgentConfig implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 123143L;

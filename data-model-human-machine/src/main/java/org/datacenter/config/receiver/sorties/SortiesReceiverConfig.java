@@ -16,7 +16,7 @@ import org.datacenter.config.BaseReceiverAndAgentConfig;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class SortiesReceiverAndAgentConfig extends BaseReceiverAndAgentConfig {
+public class SortiesReceiverConfig extends BaseReceiverAndAgentConfig {
 
     /**
      * 架次查询URL /task/dataAsset/querySortiesByBatchId
