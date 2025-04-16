@@ -1,4 +1,4 @@
-package org.datacenter.config.agent.sorties;
+package org.datacenter.config.receiver.sorties;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -16,7 +16,7 @@ import org.datacenter.config.BaseReceiverAndAgentConfig;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class SortiesAgentConfig extends BaseReceiverAndAgentConfig {
+public class SortiesReceiverConfig extends BaseReceiverAndAgentConfig {
 
     /**
      * 架次查询URL /task/dataAsset/querySortiesByBatchId
