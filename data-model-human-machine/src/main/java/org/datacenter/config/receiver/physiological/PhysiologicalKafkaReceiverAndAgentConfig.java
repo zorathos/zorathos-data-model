@@ -16,7 +16,7 @@ import org.datacenter.config.BaseReceiverAndAgentConfig;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class PhysiologicalKafkaReceiverConfig extends BaseReceiverAndAgentConfig {
+public class PhysiologicalKafkaReceiverAndAgentConfig extends BaseReceiverAndAgentConfig {
 
     private String topic;
 
