@@ -2,6 +2,7 @@
 CREATE DATABASE IF NOT EXISTS `human_machine`; -- 人员与装备数据库
 CREATE DATABASE IF NOT EXISTS `flight_plan`; -- 飞行计划数据库
 CREATE DATABASE IF NOT EXISTS `simulation`; -- 模拟飞行数据库
+CREATE DATABASE IF NOT EXISTS `simulation_integration`; -- 实装飞行数据库
 CREATE DATABASE IF NOT EXISTS `real_world_flight`; -- 实装飞行数据库
 CREATE DATABASE IF NOT EXISTS `sorties`; -- 架次数据库
 CREATE DATABASE IF NOT EXISTS `physiological`; -- 生理数据库

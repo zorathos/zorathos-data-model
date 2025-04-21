@@ -26,6 +26,11 @@ public enum TiDBDatabase {
     SIMULATION("simulation"),
 
     /**
+     * 模拟数据集成数据库
+     */
+    SIMULATION_INTEGRATION("simulation_integration"),
+
+    /**
      * 实装飞行数据库
      */
     REAL_WORLD_FLIGHT("real_world_flight"),
