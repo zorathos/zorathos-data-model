@@ -26,7 +26,7 @@ import java.util.List;
 public class FlightPlanRoot {
 
     /**
-     * 我们自己加的字段 用来做主键ID 必须是String 因为所有数据插入之前都需要写入这个 所以用UUID生成
+     * 我们自己加的字段 用来做主键ID 从计划编号接口获取
      */
     private String id;
 

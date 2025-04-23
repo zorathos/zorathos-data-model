@@ -9,17 +9,17 @@ import org.datacenter.config.receiver.BaseReceiverConfig;
 
 /**
  * @author : [wangminan]
- * @description : 人员系统接收配置
+ * @description : 人员Json文件接收器配置
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class PersonnelReceiverConfig extends BaseReceiverConfig {
+public class PersonnelJsonFileReceiverConfig extends BaseReceiverConfig {
 
     /**
-     * 人员系统查询URL http://192.168.0.18/FXY/BindFxyLb?dwdm=90121&...
+     * 人员Json文件在对象存储上的URL s3://开头
      */
     private String url;
 

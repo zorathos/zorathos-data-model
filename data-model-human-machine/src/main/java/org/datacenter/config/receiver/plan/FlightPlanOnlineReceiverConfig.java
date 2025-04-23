@@ -16,7 +16,7 @@ import org.datacenter.config.receiver.BaseReceiverConfig;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class FlightPlanReceiverConfig extends BaseReceiverConfig {
+public class FlightPlanOnlineReceiverConfig extends BaseReceiverConfig {
 
     /**
      * 飞行日期URL http://192.168.0.18/fxjh/getfxrq?from=1970-01-01&to=" + today + "&dwdm=90121"
