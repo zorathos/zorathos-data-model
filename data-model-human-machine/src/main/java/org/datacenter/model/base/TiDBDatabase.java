@@ -10,15 +10,34 @@ import lombok.Getter;
 @Getter
 public enum TiDBDatabase {
     /**
-     * 大库 非时序化数据 存飞行员和装备数据 下面应该有 personnel_info, equipment_code 和 equipment_info 3个表
+     * 人员数据库
+     * 内含 personnel_info
      */
-    HUMAN_MACHINE("human_machine"),
+    PERSONNEL("personnel"),
+
+    /**
+     * 装备数据库
+     * 内含 equipment_code equipment_info 2个表
+     */
+    EQUIPMENT("equipment"),
 
     /**
      * 飞行计划数据库
      * 内含 flight_cmd flight_head flight_notes flight_plan flight_plan_root flight_task 6个表
      */
     FLIGHT_PLAN("flight_plan"),
+
+    /**
+     * 飞行计划实施库
+     * 内含 flight_cmd flight_head flight_notes flight_plan flight_plan_root flight_task 6个表
+     */
+    FLIGHT_PLAN_IMPLEMENTATION("flight_plan_implementation"),
+
+    /**
+     * 飞行计划动态库
+     * 内含 flight_cmd flight_head flight_notes flight_plan flight_plan_root flight_task 6个表
+     */
+    FLIGHT_PLAN_DYNAMIC("flight_plan_dynamic"),
 
     /**
      * 模拟飞行数据库

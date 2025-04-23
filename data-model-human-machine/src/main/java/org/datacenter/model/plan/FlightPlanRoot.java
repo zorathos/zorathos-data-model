@@ -12,6 +12,7 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +27,7 @@ import java.util.List;
 public class FlightPlanRoot {
 
     /**
-     * 我们自己加的字段 用来做主键ID 从计划编号接口获取
+     * 使用系统计划编号
      */
     private String id;
 
@@ -35,6 +36,12 @@ public class FlightPlanRoot {
      */
     @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private LocalDate flightDate;
+
+    /**
+     * 飞行时间 从接口KFSK拿
+     */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private LocalDateTime flightDateTime;
 
     @JacksonXmlProperty(localName = "HEAD")
     private FlightHead flightHead;

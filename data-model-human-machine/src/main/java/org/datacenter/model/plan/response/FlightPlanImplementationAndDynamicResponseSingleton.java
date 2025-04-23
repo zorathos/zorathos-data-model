@@ -8,18 +8,18 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 /**
  * @author : [wangminan]
- * @description : 飞行计划响应
+ * @description : 飞行计划实施响应
  */
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class FlightPlanResponse {
+public class FlightPlanImplementationAndDynamicResponseSingleton {
 
     /**
      * 飞行计划编号
@@ -29,11 +29,11 @@ public class FlightPlanResponse {
     private String planRootId;
 
     /**
-     * 飞行计划日期
+     * 飞行计划具体时间点
      */
-    @JsonProperty("FXRQ")
-    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
-    private LocalDate flightDate;
+    @JsonProperty("KFSK")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private LocalDateTime flightDateTime;
 
     /**
      * 飞行计划标准XML
