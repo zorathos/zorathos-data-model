@@ -13,9 +13,6 @@ import java.time.LocalDateTime;
  * @description 生理数据基类，包含所有生理数据表共有的字段。所有具体生理数据实体类应继承此基类。
  */
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
 public class PhysiologicalInputBase {
     /**
      * 采集数据阶段开始时间点
