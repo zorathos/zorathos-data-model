@@ -15,9 +15,9 @@ CREATE DATABASE IF NOT EXISTS `config`;
 # ---------------------------------------- 配置 ----------------------------------------
 CREATE TABLE IF NOT EXISTS `config`.`receiver_config`
 (
-    `id` BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '主键ID',
-    `key` VARCHAR(255) NOT NULL COMMENT '配置项',
-    `value` TEXT NOT NULL COMMENT '配置值'
+    `id`    BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '主键ID',
+    `key`   VARCHAR(255) NOT NULL COMMENT '配置项',
+    `value` TEXT         NOT NULL COMMENT '配置值'
 );
 
 # ---------------------------------------- 人员 ----------------------------------------
@@ -117,8 +117,8 @@ CREATE TABLE IF NOT EXISTS `equipment`.`equipment_info`
 # ---------------------------------------- 飞行计划数据库 XML解析 ----------------------------------------
 CREATE TABLE IF NOT EXISTS `flight_plan`.`flight_plan_root`
 (
-    `id`          varchar(255) NOT NULL COMMENT '根ID',
-    `flight_date` date DEFAULT NULL COMMENT '飞行日期',
+    `id`               varchar(255) NOT NULL COMMENT '根ID',
+    `flight_date`      date     DEFAULT NULL COMMENT '飞行日期',
     `flight_date_time` datetime DEFAULT NULL COMMENT '飞行日期时间',
     PRIMARY KEY (`id`)
 );
@@ -217,8 +217,8 @@ CREATE TABLE IF NOT EXISTS `flight_plan`.`flight_plan`
 # ---------------------------------------- 飞行计划实施数据库 XML解析 ----------------------------------------
 CREATE TABLE IF NOT EXISTS `flight_plan_implementation`.`flight_plan_root`
 (
-    `id`          varchar(255) NOT NULL COMMENT '根ID',
-    `flight_date` date DEFAULT NULL COMMENT '飞行日期',
+    `id`               varchar(255) NOT NULL COMMENT '根ID',
+    `flight_date`      date     DEFAULT NULL COMMENT '飞行日期',
     `flight_date_time` datetime DEFAULT NULL COMMENT '飞行日期时间',
     PRIMARY KEY (`id`)
 );
@@ -317,8 +317,8 @@ CREATE TABLE IF NOT EXISTS `flight_plan_implementation`.`flight_plan`
 # ---------------------------------------- 飞行现场动态数据库 XML解析 ----------------------------------------
 CREATE TABLE IF NOT EXISTS `flight_plan_dynamic`.`flight_plan_root`
 (
-    `id`          varchar(255) NOT NULL COMMENT '根ID',
-    `flight_date` date DEFAULT NULL COMMENT '飞行日期',
+    `id`               varchar(255) NOT NULL COMMENT '根ID',
+    `flight_date`      date     DEFAULT NULL COMMENT '飞行日期',
     `flight_date_time` datetime DEFAULT NULL COMMENT '飞行日期时间',
     PRIMARY KEY (`id`)
 );
@@ -1558,3 +1558,19 @@ CREATE TABLE IF NOT EXISTS physiological.wristband_ppg_accel_data
 # ALTER DATABASE `sorties` SET TIFLASH REPLICA 1;
 # ALTER DATABASE `physiological` SET TIFLASH REPLICA 1;
 # ALTER DATABASE `collection` SET TIFLASH REPLICA 1;
+
+
+# ------------------------------------------ 仿真整合数据表 ----------------------------------------
+CREATE TABLE IF NOT EXISTS `simulation_integration`.`merged_flight`
+(
+    `sortie_number`         VARCHAR(50)  NOT NULL COMMENT '架次号',
+    `event_ts`              TIMESTAMP(3) NOT NULL COMMENT '事件时间戳（含日期）',
+    `weapon_type`           VARCHAR(50) DEFAULT NULL COMMENT '武器类型',
+    `aircraft_ground_speed` VARCHAR(50) DEFAULT NULL COMMENT '载机地速',
+    `target_distance`       VARCHAR(50) DEFAULT NULL COMMENT '目标距离',
+    `traj_longitude`        VARCHAR(50) DEFAULT NULL COMMENT '轨迹经度',
+    `traj_latitude`         VARCHAR(50) DEFAULT NULL COMMENT '轨迹纬度',
+    PRIMARY KEY (`sortie_number`, `event_ts`)
+)
+    COMMENT = '合并后的飞行数据'
+    PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
