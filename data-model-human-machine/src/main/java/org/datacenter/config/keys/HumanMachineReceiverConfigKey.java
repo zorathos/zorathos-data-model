@@ -14,11 +14,17 @@ public enum HumanMachineReceiverConfigKey {
 
     // 人员系统配置组
     PERSONNEL_URL("url", "personnel_url", "人员信息拉取的url"),
+    PERSONNEL_STARTUP_MODE("startupMode", "personnel_startup_mode", "人员信息拉取的起始模式"),
+    PERSONNEL_OUTPUT_DIRECTORY("outputDir", "personnel_output_dir", "人员信息拉取的输出目录"),
 
     // 飞行计划配置组
-    FLIGHT_PLAN_FLIGHT_DATA_URL("flightDateUrl", "flight_plan_flight_data_url", "飞行计划数据拉取的url"),
+    FLIGHT_PLAN_FLIGHT_DATE_URL("flightDateUrl", "flight_plan_flight_data_url", "飞行计划数据拉取的url"),
     FLIGHT_PLAN_FLIGHT_CODE_URL("flightCodeUrl", "flight_plan_flight_code_url", "飞行计划航班号拉取的url"),
     FLIGHT_PLAN_FLIGHT_XML_URL("flightXmlUrl", "flight_plan_flight_xml_url", "飞行计划xml拉取的url"),
+    FLIGHT_PLAN_FILE_URL("url", "flight_plan_file_url", "飞行计划数据文件的url"),
+    FLIGHT_PLAN_FILE_RECEIVER_TYPE("receiverType", "flight_plan_file_receiver_type", "飞行计划数据文件的接收器类型"),
+    FLIGHT_PLAN_STARTUP_MODE("startupMode", "flight_plan_startup_mode", "飞行计划数据拉取的起始模式"),
+    FLIGHT_PLAN_OUTPUT_DIRECTORY("outputDir", "flight_plan_output_dir", "飞行计划数据拉取的输出目录"),
 
     // 装备配置组
     EQUIPMENT_CODE_HOST("host", "equipment_code_host", "装备系统的host"),

@@ -490,9 +490,6 @@ CREATE TABLE IF NOT EXISTS `simulation`.`aa_traj`
     INDEX idx_sortie_number (`sortie_number`)
 ) COMMENT = 'Aatraj' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
 
-ALTER TABLE `simulation`.`aa_traj`
-    COALESCE PARTITION 4;
-
 
 CREATE TABLE IF NOT EXISTS `simulation`.`ag_rtsn`
 (
@@ -1554,10 +1551,10 @@ CREATE TABLE IF NOT EXISTS physiological.wristband_ppg_accel_data
 ) COMMENT ='腕带PPG和加速度数据';
 
 # 按库构建 TiFlash 副本
-ALTER DATABASE `human_machine` SET TIFLASH REPLICA 1;
-ALTER DATABASE `flight_plan` SET TIFLASH REPLICA 1;
-ALTER DATABASE `simulation` SET TIFLASH REPLICA 1;
-ALTER DATABASE `real_world_flight` SET TIFLASH REPLICA 1;
-ALTER DATABASE `sorties` SET TIFLASH REPLICA 1;
-ALTER DATABASE `physiological` SET TIFLASH REPLICA 1;
-ALTER DATABASE `collection` SET TIFLASH REPLICA 1;
+# ALTER DATABASE `human_machine` SET TIFLASH REPLICA 1;
+# ALTER DATABASE `flight_plan` SET TIFLASH REPLICA 1;
+# ALTER DATABASE `simulation` SET TIFLASH REPLICA 1;
+# ALTER DATABASE `real_world_flight` SET TIFLASH REPLICA 1;
+# ALTER DATABASE `sorties` SET TIFLASH REPLICA 1;
+# ALTER DATABASE `physiological` SET TIFLASH REPLICA 1;
+# ALTER DATABASE `collection` SET TIFLASH REPLICA 1;

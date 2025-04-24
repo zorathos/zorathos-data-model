@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.datacenter.config.receiver.BaseReceiverConfig;
 
@@ -16,7 +17,7 @@ import org.datacenter.config.receiver.BaseReceiverConfig;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class FlightPlanOnlineReceiverConfig extends BaseReceiverConfig {
+public class FlightPlanAgentReceiverConfig extends BaseReceiverConfig {
 
     /**
      * 飞行日期URL http://192.168.0.18/fxjh/getfxrq?from=1970-01-01&to=" + today + "&dwdm=90121"
@@ -35,8 +36,31 @@ public class FlightPlanOnlineReceiverConfig extends BaseReceiverConfig {
      */
     private String flightXmlUrl;
 
+    private StartupMode startupMode;
+
+    /**
+     * 输出文件的存储路径 是一个本地的地址 在startupMode为JSON_FILE时有效
+     */
+    private String outputDir;
+
+    @Getter
+    public enum StartupMode {
+        KAFKA,
+        JSON_FILE;
+
+        public static StartupMode fromString(String mode) {
+            for (StartupMode startupMode : StartupMode.values()) {
+                if (startupMode.name().equalsIgnoreCase(mode)) {
+                    return startupMode;
+                }
+            }
+            throw new IllegalArgumentException("Unknown startup mode: " + mode);
+        }
+    }
+
     @Override
     public boolean validate() {
-        return !flightDateUrl.isEmpty() && !flightCodeUrl.isEmpty() && !flightXmlUrl.isEmpty();
+        return !flightDateUrl.isEmpty() && !flightCodeUrl.isEmpty() && !flightXmlUrl.isEmpty()
+                && !outputDir.isEmpty() && startupMode != null;
     }
 }
