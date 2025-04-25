@@ -64,6 +64,7 @@ public enum TiDBTable {
      */
     SORTIES("sorties"),
 
+    // 以下是仿真数据
     AA_TRAJ("aa_traj"),
     AG_RTSN("ag_rtsn"),
     AG_TRAJ("ag_traj"),
@@ -97,6 +98,9 @@ public enum TiDBTable {
     SRD_STATE("srd_state"),
     TGT("tgt"),
     TSPI("tspi"),
+
+    // 以下是仿真整合数据表
+    MISSILE_INTEGRATION("missile_integration"),
 
     /**
      * 数据模型摘要
