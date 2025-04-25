@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.datacenter.model.physiological.PhysiologicalInputBase;
 
 /**
  * @author wangminan
@@ -19,7 +20,7 @@ public class EegInput extends PhysiologicalInputBase {
     /**
      * 脑电设备ID NAODIAN_ID
      */
-    private Integer eegId;
+    private Integer deviceId;
 
     /**
      * 采样率

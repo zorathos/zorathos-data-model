@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.datacenter.model.physiological.PhysiologicalInputBase;
 
 /**
  * @author wangminan
@@ -20,7 +21,7 @@ public class WristbandInput extends PhysiologicalInputBase {
      * 原名: SHOUHUAN_id
      * 手环设备ID
      */
-    private Integer wristbandId;
+    private Integer deviceId;
 
     /**
      * 原名: accel_x
