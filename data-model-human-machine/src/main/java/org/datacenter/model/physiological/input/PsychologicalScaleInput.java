@@ -1,5 +1,6 @@
 package org.datacenter.model.physiological.input;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -21,17 +22,20 @@ public class PsychologicalScaleInput extends PhysiologicalInputBase {
      * 原名: YJQD_scale_type
      * 量表种类，JSON 格式
      */
+    @JsonProperty("YJQD_scale_type")
     private String scaleType;
 
     /**
      * 原名: YJQD_scale_score
      * 量表打分方式，JSON 格式
      */
+    @JsonProperty("YJQD_scale_score")
     private String scaleScore;
 
     /**
      * 原名: YJQD_scale_sub_scores
      * 分项得分，JSON 格式
      */
+    @JsonProperty("YJQD_scale_sub_scores")
     private String scaleSubScores;
 }

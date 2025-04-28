@@ -1,5 +1,6 @@
 package org.datacenter.model.physiological.input;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,5 +20,10 @@ import org.datacenter.model.physiological.PhysiologicalInputBase;
 public class HboInput extends PhysiologicalInputBase {
     private Integer deviceId;
 
+    /**
+     * 原名: HBO
+     * 脑氧饱和度
+     */
+    @JsonProperty("HBO")
     private Integer hbo;
 }
