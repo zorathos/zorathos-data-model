@@ -62,7 +62,7 @@
         <lombok.version>1.18.38</lombok.version>
         <delombok.output.dir>${project.build.directory}/delombok</delombok.output.dir>
 
-        <jackson.version>2.18.3</jackson.version>
+        <jackson.version>2.19.0</jackson.version>
         <slf4j-api.version>2.0.17</slf4j-api.version>
         <log4j2.version>2.24.3</log4j2.version>
         <minio.version>8.5.17</minio.version>
