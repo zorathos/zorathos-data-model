@@ -1,4 +1,4 @@
-package org.datacenter.config.integration.simalation;
+package org.datacenter.config.integration.simulation;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
