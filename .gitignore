@@ -2,6 +2,7 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+dependency-reduced-pom.xml
 
 ### IntelliJ IDEA ###
 .idea
@@ -33,5 +34,3 @@ build/
 
 ### Mac OS ###
 .DS_Store
-
-dependency-reduced-pom.xml
