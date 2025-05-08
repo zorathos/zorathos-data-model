@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class PersonnelAndPlanLoginConfig extends BaseReceiverConfig {
     /**
-     * 登录URL http://192.168.0.18/home/login
+     * 登录URL http://192.168.0.18/Home/Login
      */
     private String loginUrl;
 

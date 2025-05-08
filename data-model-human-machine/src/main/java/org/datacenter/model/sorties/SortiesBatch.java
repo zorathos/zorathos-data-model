@@ -22,7 +22,7 @@ public class SortiesBatch {
     private String id;
 
     /**
-     * 批次号
+     * 批次号 包含一组对抗数据 ATC-3程_辛_鸿陈_泽彦+ATCs青_林_鹏辉
      */
     private String batchNumber;
 }

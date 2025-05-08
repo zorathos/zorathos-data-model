@@ -1263,7 +1263,7 @@ CREATE TABLE IF NOT EXISTS collection.collection_equipment
 # ---------------------------------------- 生理数据表 ----------------------------------------
 # -- 生理数据输入
 -- 脑电数据表
-CREATE TABLE IF NOT EXISTS eeg_input
+CREATE TABLE IF NOT EXISTS physiological.eeg_input
 (
     Timestamp_BG   TIMESTAMP(6) COMMENT '采集数据阶段开始时间点',
     Timestamp_ED   TIMESTAMP(6) COMMENT '采集数据阶段结束时间点',
@@ -1295,7 +1295,7 @@ CREATE TABLE IF NOT EXISTS eeg_input
 ) COMMENT = '脑电数据输入';
 
 -- 眼动数据表
-CREATE TABLE IF NOT EXISTS eye_movement_input
+CREATE TABLE IF NOT EXISTS physiological.eye_movement_input
 (
     Timestamp_BG              TIMESTAMP(6) COMMENT '采集数据阶段开始时间点',
     Timestamp_ED              TIMESTAMP(6) COMMENT '采集数据阶段结束时间点',
@@ -1346,7 +1346,7 @@ CREATE TABLE IF NOT EXISTS eye_movement_input
 ) COMMENT = '眼动数据输入';
 
 -- 脑氧数据表
-CREATE TABLE IF NOT EXISTS hbo_input
+CREATE TABLE IF NOT EXISTS physiological.hbo_input
 (
     Timestamp_BG TIMESTAMP(6) COMMENT '采集数据阶段开始时间点',
     Timestamp_ED TIMESTAMP(6) COMMENT '采集数据阶段结束时间点',
@@ -1361,7 +1361,7 @@ CREATE TABLE IF NOT EXISTS hbo_input
 ) COMMENT = '脑氧数据输入';
 
 -- 心理量表数据表
-CREATE TABLE IF NOT EXISTS psychological_scale_input
+CREATE TABLE IF NOT EXISTS physiological.psychological_scale_input
 (
     Timestamp_BG          TIMESTAMP(6) COMMENT '采集数据阶段开始时间点',
     Timestamp_ED          TIMESTAMP(6) COMMENT '采集数据阶段结束时间点',
@@ -1377,7 +1377,7 @@ CREATE TABLE IF NOT EXISTS psychological_scale_input
 ) COMMENT = '心理量表数据输入';
 
 -- 手环数据表
-CREATE TABLE IF NOT EXISTS wristband_input
+CREATE TABLE IF NOT EXISTS physiological.wristband_input
 (
     Timestamp_BG  TIMESTAMP(6) COMMENT '采集数据阶段开始时间点',
     Timestamp_ED  TIMESTAMP(6) COMMENT '采集数据阶段结束时间点',
@@ -1404,7 +1404,7 @@ CREATE TABLE IF NOT EXISTS wristband_input
 ) COMMENT = '手环生理数据输入';
 
 -- T恤数据表
-CREATE TABLE IF NOT EXISTS tshirt_input
+CREATE TABLE IF NOT EXISTS physiological.tshirt_input
 (
     Timestamp_BG     TIMESTAMP(6) COMMENT '采集数据阶段开始时间点',
     Timestamp_ED     TIMESTAMP(6) COMMENT '采集数据阶段结束时间点',
@@ -1428,7 +1428,7 @@ CREATE TABLE IF NOT EXISTS tshirt_input
 
 # -- 生理数据输出
 -- 注意力水平表
-CREATE TABLE attention_level
+CREATE TABLE physiological.attention_level
 (
     ZYLSP_Timestamp_OUTPUT TIMESTAMP(6) COMMENT '时间戳',
     ZYLSP_Scenario         INT COMMENT '类型 1：sz  2：地面',
@@ -1442,7 +1442,7 @@ CREATE TABLE attention_level
 ) COMMENT '注意力水平';
 
 -- 警觉度表
-CREATE TABLE alertness
+CREATE TABLE physiological.alertness
 (
     JJD_Timestamp_OUTPUT TIMESTAMP(6) COMMENT '时间戳',
     JJD_Scenario         INT COMMENT '类型 1：sz  2：地面',
@@ -1456,7 +1456,7 @@ CREATE TABLE alertness
 ) COMMENT '警觉度';
 
 -- 平衡感知表
-CREATE TABLE balance_perception
+CREATE TABLE physiological.balance_perception
 (
     PHGZ_Timestamp_OUTPUT TIMESTAMP(6) COMMENT '时间戳',
     PHGZ_Scenario         INT COMMENT '类型 1：sz  2：地面',
@@ -1470,7 +1470,7 @@ CREATE TABLE balance_perception
 ) COMMENT '平衡感知';
 
 -- 睡眠质量表
-CREATE TABLE sleep_quality
+CREATE TABLE physiological.sleep_quality
 (
     SMZL_Timestamp_OUTPUT TIMESTAMP(6) COMMENT '时间戳',
     SMZL_Scenario         INT COMMENT '类型 1：sz  2：地面',
@@ -1484,7 +1484,7 @@ CREATE TABLE sleep_quality
 ) COMMENT '睡眠质量';
 
 -- 作息节律表
-CREATE TABLE circadian_rhythm
+CREATE TABLE physiological.circadian_rhythm
 (
     ZXJL_Timestamp_OUTPUT TIMESTAMP(6) COMMENT '时间戳',
     ZXJL_Scenario         INT COMMENT '类型 1：sz  2：地面',
@@ -1498,7 +1498,7 @@ CREATE TABLE circadian_rhythm
 ) COMMENT '作息节律';
 
 -- 肩部肌肉疲劳表
-CREATE TABLE shoulder_fatigue
+CREATE TABLE physiological.shoulder_fatigue
 (
     JABJRPL_Timestamp_OUTPUT TIMESTAMP(6) COMMENT '时间戳',
     JABJRPL_Scenario         INT COMMENT '类型 1：sz  2：地面',
@@ -1512,7 +1512,7 @@ CREATE TABLE shoulder_fatigue
 ) COMMENT '肩部肌肉疲劳';
 
 -- 颈部肌肉疲劳
-CREATE TABLE neck_fatigue
+CREATE TABLE physiological.neck_fatigue
 (
     JIBJRPL_Timestamp_OUTPUT TIMESTAMP(6) COMMENT '时间戳',
     JIBJRPL_Scenario         INT COMMENT '类型 1：sz  2：地面',
@@ -1526,7 +1526,7 @@ CREATE TABLE neck_fatigue
 ) COMMENT '颈部肌肉疲劳';
 
 -- 手臂肌肉疲劳表
-CREATE TABLE arm_fatigue
+CREATE TABLE physiological.arm_fatigue
 (
     SBJRPL_Timestamp_OUTPUT TIMESTAMP(6) COMMENT '时间戳',
     SBJRPL_Scenario         INT COMMENT '类型 1：sz  2：地面',
@@ -1540,7 +1540,7 @@ CREATE TABLE arm_fatigue
 ) COMMENT '手臂肌肉疲劳';
 
 -- 腰部肌肉疲劳表
-CREATE TABLE waist_fatigue
+CREATE TABLE physiological.waist_fatigue
 (
     YBJRPL_Timestamp_OUTPUT TIMESTAMP(6) COMMENT '时间戳',
     YBJRPL_Scenario         INT COMMENT '类型 1：sz  2：地面',
@@ -1554,7 +1554,7 @@ CREATE TABLE waist_fatigue
 ) COMMENT '腰部肌肉疲劳';
 
 -- 脑力负荷表
-CREATE TABLE mental_workload
+CREATE TABLE physiological.mental_workload
 (
     NLFH_Timestamp_OUTPUT TIMESTAMP(6) COMMENT '时间戳',
     NLFH_Scenario         INT COMMENT '类型 1：sz  2：地面',
@@ -1568,7 +1568,7 @@ CREATE TABLE mental_workload
 ) COMMENT '脑力负荷';
 
 -- 任务应激状态表
-CREATE TABLE task_stress_status
+CREATE TABLE physiological.task_stress_status
 (
     RWYJZT_Timestamp_OUTPUT TIMESTAMP(6) COMMENT '时间戳',
     RWYJZT_Scenario         INT COMMENT '类型 1：sz  2：地面',
@@ -1582,7 +1582,7 @@ CREATE TABLE task_stress_status
 ) COMMENT '任务应激状态';
 
 -- 精神疲劳表
-CREATE TABLE mental_fatigue
+CREATE TABLE physiological.mental_fatigue
 (
     JSPL_Timestamp_OUTPUT TIMESTAMP(6) COMMENT '时间戳',
     JSPL_Scenario         INT COMMENT '类型 1：sz  2：地面',
@@ -1596,7 +1596,7 @@ CREATE TABLE mental_fatigue
 ) COMMENT '精神疲劳';
 
 -- 视觉负荷表
-CREATE TABLE visual_workload
+CREATE TABLE physiological.visual_workload
 (
     SJFH_Timestamp_OUTPUT TIMESTAMP(6) COMMENT '时间戳',
     SJFH_Scenario         INT COMMENT '类型 1：sz  2：地面',
@@ -1610,7 +1610,7 @@ CREATE TABLE visual_workload
 ) COMMENT '视觉负荷';
 
 -- 体力负荷表
-CREATE TABLE physical_workload
+CREATE TABLE physiological.physical_workload
 (
     TLFH_Timestamp_OUTPUT TIMESTAMP(6) COMMENT '时间戳',
     TLFH_Scenario         INT COMMENT '类型 1：sz  2：地面',
@@ -1624,7 +1624,7 @@ CREATE TABLE physical_workload
 ) COMMENT '体力负荷';
 
 -- 工作负荷表
-CREATE TABLE workload
+CREATE TABLE physiological.workload
 (
     GZFH_Timestamp_OUTPUT TIMESTAMP(6) COMMENT '时间戳',
     GZFH_Scenario         INT COMMENT '类型 1：sz  2：地面',
@@ -1638,7 +1638,7 @@ CREATE TABLE workload
 ) COMMENT '工作负荷';
 
 -- 应激强度表
-CREATE TABLE stress_intensity
+CREATE TABLE physiological.stress_intensity
 (
     YJQD_Timestamp_OUTPUT TIMESTAMP(6) COMMENT '时间戳',
     YJQD_Scenario         INT COMMENT '类型 1：sz  2：地面',
@@ -1652,7 +1652,7 @@ CREATE TABLE stress_intensity
 ) COMMENT '应激强度';
 
 -- 缺氧状态表
-CREATE TABLE hypoxia_status
+CREATE TABLE physiological.hypoxia_status
 (
     QYZT_Timestamp_OUTPUT TIMESTAMP(6) COMMENT '时间戳',
     QYZT_Scenario         INT COMMENT '类型 1：sz  2：地面',
@@ -1665,27 +1665,147 @@ CREATE TABLE hypoxia_status
     QYZT_ATTR_2           FLOAT COMMENT '缺氧状态可选：待确定数据2'
 ) COMMENT '缺氧状态';
 
-# 按库构建 TiFlash 副本
-ALTER DATABASE `human_machine` SET TIFLASH REPLICA 1;
-ALTER DATABASE `flight_plan` SET TIFLASH REPLICA 1;
-ALTER DATABASE `simulation` SET TIFLASH REPLICA 1;
-ALTER DATABASE `real_world_flight` SET TIFLASH REPLICA 1;
-ALTER DATABASE `sorties` SET TIFLASH REPLICA 1;
-ALTER DATABASE `physiological` SET TIFLASH REPLICA 1;
-ALTER DATABASE `collection` SET TIFLASH REPLICA 1;
+# # 按库构建 TiFlash 副本
+# ALTER DATABASE `human_machine` SET TIFLASH REPLICA 1;
+# ALTER DATABASE `flight_plan` SET TIFLASH REPLICA 1;
+# ALTER DATABASE `simulation` SET TIFLASH REPLICA 1;
+# ALTER DATABASE `real_world_flight` SET TIFLASH REPLICA 1;
+# ALTER DATABASE `sorties` SET TIFLASH REPLICA 1;
+# ALTER DATABASE `physiological` SET TIFLASH REPLICA 1;
+# ALTER DATABASE `collection` SET TIFLASH REPLICA 1;
 
 
 # ------------------------------------------ 仿真整合数据表 ----------------------------------------
-CREATE TABLE IF NOT EXISTS `simulation_integration`.`merged_flight`
+create table simulation_integration.missile_integration
 (
-    `sortie_number`         VARCHAR(50)  NOT NULL COMMENT '架次号',
-    `event_ts`              TIMESTAMP(3) NOT NULL COMMENT '事件时间戳（含日期）',
-    `weapon_type`           VARCHAR(50) DEFAULT NULL COMMENT '武器类型',
-    `aircraft_ground_speed` VARCHAR(50) DEFAULT NULL COMMENT '载机地速',
-    `target_distance`       VARCHAR(50) DEFAULT NULL COMMENT '目标距离',
-    `traj_longitude`        VARCHAR(50) DEFAULT NULL COMMENT '轨迹经度',
-    `traj_latitude`         VARCHAR(50) DEFAULT NULL COMMENT '轨迹纬度',
-    PRIMARY KEY (`sortie_number`, `event_ts`)
-)
-    COMMENT = '合并后的飞行数据'
-    PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
+    sortie_number                  varchar(50)  not null comment '架次号',
+    event_ts                       timestamp(3) not null comment '事件时间戳',
+    aircraft_id                    varchar(50)  null comment '飞机ID',
+    message_time                   time(3)      null comment '消息时间',
+    satellite_guidance_time        time(3)      null comment '卫导时间',
+    local_time                     time(3)      null comment '本地时间',
+    message_sequence_number        bigint       null comment '消息序列号',
+    weapon_id                      varchar(50)  null comment '武器ID',
+    weapon_type                    varchar(50)  null comment '武器类型',
+    target_id                      varchar(50)  null comment '目标ID',
+    pylon_id                       varchar(50)  null comment '挂架ID',
+    longitude                      varchar(50)  null comment '经度',
+    latitude                       varchar(50)  null comment '纬度',
+    altitude                       varchar(50)  null comment '高度',
+    heading                        varchar(50)  null comment '航向',
+    pitch                          varchar(50)  null comment '俯仰',
+    roll                           varchar(50)  null comment '横滚',
+    missile_speed                  varchar(50)  null comment '弹速度',
+    aircraft_ground_speed          varchar(50)  null comment '载机地速',
+    north_speed                    varchar(50)  null comment '北速',
+    sky_speed                      varchar(50)  null comment '天速',
+    east_speed                     varchar(50)  null comment '东速',
+    north_wind_speed               varchar(50)  null comment '北向风速',
+    vertical_wind_speed            varchar(50)  null comment '天向风速',
+    east_wind_speed                varchar(50)  null comment '东向风速',
+    aircraft_north_speed           varchar(50)  null comment '载机北速',
+    aircraft_vertical_speed        varchar(50)  null comment '载机天速',
+    aircraft_east_speed            varchar(50)  null comment '载机东速',
+    missile_target_distance        varchar(50)  null comment '弹目距离',
+    target_distance                varchar(50)  null comment '目标距离',
+    target_longitude               varchar(50)  null comment '目标经度',
+    target_latitude                varchar(50)  null comment '目标纬度',
+    target_altitude                varchar(50)  null comment '目标高度',
+    target_elevation_angle         varchar(50)  null comment '目标俯仰角',
+    target_azimuth_angle           varchar(50)  null comment '目标方位角',
+    target_tspi_status             varchar(50)  null comment '目标TSPI状态',
+    target_real_or_virtual         varchar(50)  null comment '目标实虚属性',
+    target_coordinate_validity     varchar(50)  null comment '目标经纬高有效标识',
+    intercepted_weapon_id          varchar(50)  null comment '被拦截武器ID',
+    seeker_azimuth                 varchar(50)  null comment '导引头视线方位角',
+    seeker_elevation               varchar(50)  null comment '导引头视线俯仰角',
+    seeker_id                      varchar(50)  null comment '导引头号',
+    seeker_head_number             varchar(50)  null comment '导引头号',
+    seeker_azimuth_center          varchar(50)  null comment '导引头方位中心',
+    seeker_pitch_center            varchar(50)  null comment '导引头俯仰中心',
+    interception_status            varchar(50)  null comment '截获状态',
+    interception_flag              varchar(50)  null comment '截获标志',
+    non_interception_reason        varchar(50)  null comment '未截获原因',
+    hit_result                     varchar(50)  null comment '命中结果',
+    miss_reason                    varchar(50)  null comment '未命中原因',
+    miss_distance                  varchar(50)  null comment '脱靶量',
+    matching_failure_reason        varchar(50)  null comment '匹配失败原因',
+    termination_flag               varchar(50)  null comment '终止标志',
+    distance_interception_flag     varchar(50)  null comment '距离截获标志',
+    speed_interception_flag        varchar(50)  null comment '速度截获标志',
+    angle_interception_flag        varchar(50)  null comment '角度截获标志',
+    command_machine_status         varchar(50)  null comment '指令机状态',
+    ground_angle_satisfaction_flag varchar(50)  null comment '擦地角满足标志',
+    zero_crossing_flag             varchar(50)  null comment '过零标志',
+    aircraft_angle_of_attack       varchar(50)  null comment '载机攻角',
+    impact_angle_validity          varchar(50)  null comment '落角有效性',
+    entry_angle                    varchar(50)  null comment '进入角',
+    impact_angle                   varchar(50)  null comment '落角',
+    direction_validity             varchar(50)  null comment '方向有效性',
+    missile_attack_mode            varchar(50)  null comment '导弹攻击模式',
+    trajectory_type                varchar(50)  null comment '弹道类型',
+    jamming_effective              varchar(50)  null comment '干扰是否有效',
+    jamming                        varchar(50)  null comment '干扰',
+    afterburner                    varchar(50)  null comment '加力',
+    head_on                        varchar(50)  null comment '迎头',
+    intercepting_member_id         varchar(50)  null comment '截获成员ID',
+    intercepting_equipment_id      varchar(50)  null comment '截获装备ID',
+    intercepting_equipment_type    varchar(50)  null comment '截获装备类型',
+    launcher_id                    varchar(50)  null comment '发射方ID',
+    ground_defense_equipment_type  varchar(50)  null comment '地导装备类型',
+    ground_defense_equipment_id    varchar(50)  null comment '地导装备ID',
+    source_table                   varchar(50)  null comment '数据来源表',
+    primary key (sortie_number, event_ts)
+) comment '导弹数据整合表' partition by key (`sortie_number`) partitions 1;
+
+CREATE TABLE simulation_integration.plane_state_integration
+(
+    sortie_number            VARCHAR(50)  NOT NULL COMMENT '架次号',
+    event_ts                 TIMESTAMP(3) NOT NULL COMMENT '事件时间戳',
+    aircraft_id              VARCHAR(50)  NULL COMMENT '飞机ID',
+    aircraft_type            VARCHAR(50)  NULL COMMENT '飞机类型',
+    message_time             TIME(3)      NULL COMMENT '消息时间',
+    satellite_guidance_time  TIME(3)      NULL COMMENT '卫导时间',
+    local_time               TIME(3)      NULL COMMENT '本地时间',
+    message_sequence_number  BIGINT       NULL COMMENT '消息序列号',
+    -- 位置和姿态数据
+    longitude                VARCHAR(50)  NULL COMMENT '经度',
+    latitude                 VARCHAR(50)  NULL COMMENT '纬度',
+    pressure_altitude        VARCHAR(50)  NULL COMMENT '气压高度',
+    satellite_altitude       VARCHAR(50)  NULL COMMENT '卫星高度',
+    roll                     VARCHAR(50)  NULL COMMENT '横滚',
+    pitch                    VARCHAR(50)  NULL COMMENT '俯仰',
+    heading                  VARCHAR(50)  NULL COMMENT '航向',
+    -- 速度数据
+    north_velocity           VARCHAR(50)  NULL COMMENT '北向速度',
+    vertical_velocity        VARCHAR(50)  NULL COMMENT '天向速度',
+    east_velocity            VARCHAR(50)  NULL COMMENT '东向速度',
+    indicated_airspeed       VARCHAR(50)  NULL COMMENT '表速(km/h)',
+    -- 飞行状态数据
+    true_angle_of_attack     VARCHAR(50)  NULL COMMENT '真攻角',
+    mach_number              VARCHAR(50)  NULL COMMENT '马赫数',
+    normal_load_factor       VARCHAR(50)  NULL COMMENT '法向过载',
+    field_elevation          VARCHAR(50)  NULL COMMENT '场高',
+    radio_altitude           VARCHAR(50)  NULL COMMENT '无线电高度',
+    remaining_fuel           VARCHAR(50)  NULL COMMENT '余油量',
+    -- 训练/演习状态
+    training_status          VARCHAR(50)  NULL COMMENT '训练状态',
+    scenario                 VARCHAR(50)  NULL COMMENT '场景',
+    manual_respawn           VARCHAR(50)  NULL COMMENT '手动复活',
+    parameter_setting_status VARCHAR(50)  NULL COMMENT '参数设置状态',
+    encryption_status        VARCHAR(50)  NULL COMMENT '加密状态',
+    -- 对抗措施
+    chaff                    VARCHAR(50)  NULL COMMENT '干扰弹',
+    afterburner              VARCHAR(50)  NULL COMMENT '加力',
+    -- 命令相关
+    command_type             VARCHAR(50)  NULL COMMENT '导调/导调回复',
+    command_id               VARCHAR(50)  NULL COMMENT '命令ID',
+    command_content          VARCHAR(50)  NULL COMMENT '命令内容',
+    response_sequence_number BIGINT       NULL COMMENT '回复序列号',
+    -- 其他状态
+    delay_status             VARCHAR(50)  NULL COMMENT '延迟状态',
+    -- 来源信息
+    source_table             VARCHAR(50)  NULL COMMENT '数据来源表',
+    PRIMARY KEY (sortie_number, event_ts)
+) COMMENT = '飞机状态整合表' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
+
