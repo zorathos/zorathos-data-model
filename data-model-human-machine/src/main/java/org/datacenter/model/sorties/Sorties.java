@@ -19,6 +19,8 @@ import java.time.LocalDateTime;
 @Builder
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Sorties {
+    public static final String END_SIGNAL_PREFIX = "END_SIGNAL_";
+
     /**
      * 导入ID
      */

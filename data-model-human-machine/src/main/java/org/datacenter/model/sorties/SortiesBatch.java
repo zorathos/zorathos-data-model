@@ -16,6 +16,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SortiesBatch {
+    public static final String END_SIGNAL_PREFIX = "END_SIGNAL_";
+
     /**
      * 导入ID
      */

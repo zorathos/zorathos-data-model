@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.datacenter.config.receiver.BaseReceiverConfig;
 
@@ -23,6 +24,8 @@ public class SortiesBatchReceiverConfig extends BaseReceiverConfig {
      */
     private String importId;
 
+    private RunMode runMode;
+
     /**
      * 批次查询URL /task/dataAsset/queryAllBatches
      */
@@ -31,12 +34,27 @@ public class SortiesBatchReceiverConfig extends BaseReceiverConfig {
     /**
      * 批次查询JSON
      * {
-     *   "acmiTimeEnd": "",
-     *   "acmiTimeStart": ""
+     * "acmiTimeEnd": "",
+     * "acmiTimeStart": ""
      * }
      * ewogICJhY21pVGltZUVuZCI6ICIiLAogICJhY21pVGltZVN0YXJ0IjogIiIKfQo=
      */
     private String json;
+
+    @Getter
+    public enum RunMode {
+        AT_ONCE,
+        SCHEDULED;
+
+        public static SortiesBatchReceiverConfig.RunMode fromString(String mode) {
+            for (SortiesBatchReceiverConfig.RunMode runMode : SortiesBatchReceiverConfig.RunMode.values()) {
+                if (runMode.name().equalsIgnoreCase(mode)) {
+                    return runMode;
+                }
+            }
+            throw new IllegalArgumentException("Unknown run mode: " + mode);
+        }
+    }
 
     @Override
     public boolean validate() {

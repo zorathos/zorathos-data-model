@@ -62,6 +62,7 @@ public enum HumanMachineReceiverConfigKey {
 
     // 架次配置组
     SORTIES_BASE_URL("baseUrl", "sorties_base_url", "架次数据的url"),
+    SORTIES_RUN_MODE("runMode", "sorties_run_mode", "架次数据的运行模式"),
     SORTIES_BATCH_URL("url", "sorties_batch_url", "批次数据的url"),
     SORTIES_BATCH_JSON("json", "sorties_batch_json", "批次数据的json");
 
