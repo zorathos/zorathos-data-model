@@ -8,6 +8,9 @@ import lombok.Getter;
  */
 @Getter
 public enum HumanMachineReceiverConfigKey {
+    // 全局性配置
+    IMPORT_ID("importId", "import_id", "导入ID"),
+
     // 人员与飞行计划通用配置组
     PERSONNEL_AND_PLAN_LOGIN_URL("loginUrl", "personnel_and_plan_login_url", "人员与飞行计划登录的url"),
     PERSONNEL_AND_PLAN_LOGIN_JSON("loginJson", "personnel_and_plan_login_json", "人员与飞行计划登录的json"),
