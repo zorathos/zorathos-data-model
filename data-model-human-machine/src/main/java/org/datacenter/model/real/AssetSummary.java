@@ -16,6 +16,10 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AssetSummary {
+    /**
+     * 导入ID
+     */
+    private String importId;
 
     /**
      * 数据资产ID 对应着AssetTableModel的assetId字段

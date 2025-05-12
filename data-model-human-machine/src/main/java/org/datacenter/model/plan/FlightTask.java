@@ -19,6 +19,11 @@ import lombok.NoArgsConstructor;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class FlightTask {
     /**
+     * 导入ID
+     */
+    private String importId;
+
+    /**
      * 根ID
      */
     private String rootId;

@@ -16,6 +16,11 @@ import lombok.NoArgsConstructor;
 public class AssetTableProperty {
 
     /**
+     * 导入ID
+     */
+    private String importId;
+
+    /**
      * 字段ID 源库没有 auto_increment bigint
      */
     private Long id;

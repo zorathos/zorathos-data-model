@@ -14,6 +14,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AssetTableModel {
+    /**
+     * 导入ID
+     */
+    private String importId;
 
     /**
      * id

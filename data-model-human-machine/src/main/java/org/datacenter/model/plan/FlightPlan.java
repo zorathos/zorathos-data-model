@@ -20,6 +20,11 @@ import lombok.NoArgsConstructor;
 public class FlightPlan {
 
     /**
+     * 导入ID
+     */
+    private String importId;
+
+    /**
      * 根ID
      */
     private String rootId;

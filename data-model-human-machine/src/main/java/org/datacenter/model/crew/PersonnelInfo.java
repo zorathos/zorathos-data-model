@@ -21,6 +21,12 @@ import java.time.LocalDate;
 @Builder
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PersonnelInfo {
+
+    /**
+     * 导入ID
+     */
+    private String importId;
+
     /**
      * 单位代码 DWDM
      */

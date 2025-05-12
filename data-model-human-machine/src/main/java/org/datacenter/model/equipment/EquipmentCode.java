@@ -19,6 +19,11 @@ import java.time.LocalDateTime;
 public class EquipmentCode {
 
     /**
+     * 导入ID
+     */
+    private String importId;
+
+    /**
      * 装备编号，主键 和 EquipmentInfo 中的 id 不是一个概念 id
      */
     private String id;

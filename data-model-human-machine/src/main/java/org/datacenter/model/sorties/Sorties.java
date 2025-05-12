@@ -20,6 +20,11 @@ import java.time.LocalDateTime;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Sorties {
     /**
+     * 导入ID
+     */
+    private String importId;
+
+    /**
      * 机型
      */
     private String airplaneModel;

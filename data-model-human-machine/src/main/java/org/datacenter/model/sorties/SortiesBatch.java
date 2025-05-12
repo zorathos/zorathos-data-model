@@ -17,6 +17,11 @@ import lombok.NoArgsConstructor;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SortiesBatch {
     /**
+     * 导入ID
+     */
+    private String importId;
+
+    /**
      * 主键ID
      */
     private String id;

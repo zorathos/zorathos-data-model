@@ -27,6 +27,11 @@ import java.util.List;
 public class FlightPlanRoot {
 
     /**
+     * 导入ID
+     */
+    private String importId;
+
+    /**
      * 使用系统计划编号
      */
     private String id;
