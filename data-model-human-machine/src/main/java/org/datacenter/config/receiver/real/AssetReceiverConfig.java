@@ -19,6 +19,11 @@ import org.datacenter.config.receiver.BaseReceiverConfig;
 public class AssetReceiverConfig extends BaseReceiverConfig {
 
     /**
+     * 接入ID
+     */
+    private String importId;
+
+    /**
      * 数据资产服务URL http://192.168.10.100:8088/datahandle/asset/getObjectifyAsset
      */
     private String listBaseUrl;

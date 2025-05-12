@@ -19,6 +19,11 @@ import org.datacenter.config.receiver.BaseReceiverConfig;
 public class SortiesBatchReceiverConfig extends BaseReceiverConfig {
 
     /**
+     * 接入ID
+     */
+    private String importId;
+
+    /**
      * 批次查询URL /task/dataAsset/queryAllBatches
      */
     private String url;

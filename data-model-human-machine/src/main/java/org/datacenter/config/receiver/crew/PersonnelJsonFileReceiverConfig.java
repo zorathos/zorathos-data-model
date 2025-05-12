@@ -17,6 +17,10 @@ import org.datacenter.config.receiver.BaseReceiverConfig;
 @AllArgsConstructor
 @Builder
 public class PersonnelJsonFileReceiverConfig extends BaseReceiverConfig {
+    /**
+     * 接入ID
+     */
+    private String importId;
 
     /**
      * 人员Json文件在对象存储上的URL s3://开头

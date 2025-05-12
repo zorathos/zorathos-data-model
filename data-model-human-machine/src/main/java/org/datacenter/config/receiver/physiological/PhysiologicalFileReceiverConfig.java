@@ -13,6 +13,10 @@ import org.datacenter.config.receiver.BaseReceiverConfig;
 @AllArgsConstructor
 @Builder
 public class PhysiologicalFileReceiverConfig extends BaseReceiverConfig {
+    /**
+     * 接入ID
+     */
+    private String importId;
     private String url;
 
     @Override

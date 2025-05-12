@@ -20,6 +20,11 @@ import org.datacenter.config.receiver.BaseReceiverConfig;
 public class FlightPlanImplementationAndDynamicJsonFileReceiverConfig extends BaseReceiverConfig {
 
     /**
+     * 接入ID
+     */
+    private String importId;
+
+    /**
      * 接收器类型
      */
     private FlightPlanReceiverType receiverType;

@@ -18,6 +18,11 @@ import org.datacenter.config.receiver.BaseReceiverConfig;
 @Builder
 public class FlightPlanJsonFileReceiverConfig extends BaseReceiverConfig {
     /**
+     * 接入ID
+     */
+    private String importId;
+
+    /**
      * 飞行计划Json文件在对象存储上的URL s3://开头
      */
     private String url;
