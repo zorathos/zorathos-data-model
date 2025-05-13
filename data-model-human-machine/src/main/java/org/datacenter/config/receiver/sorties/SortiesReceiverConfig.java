@@ -8,6 +8,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.datacenter.config.receiver.BaseReceiverConfig;
 
+import java.io.Serial;
+import java.io.Serializable;
+
 /**
  * @author : [wangminan]
  * @description : 架次接收配置
@@ -17,7 +20,10 @@ import org.datacenter.config.receiver.BaseReceiverConfig;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class SortiesReceiverConfig extends BaseReceiverConfig {
+public class SortiesReceiverConfig extends BaseReceiverConfig implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 2134567890L;
 
     /**
      * 接入ID
@@ -32,7 +38,7 @@ public class SortiesReceiverConfig extends BaseReceiverConfig {
     private String baseUrl;
 
     @Getter
-    public enum RunMode {
+    public enum RunMode implements Serializable {
         AT_ONCE,
         SCHEDULED;
 

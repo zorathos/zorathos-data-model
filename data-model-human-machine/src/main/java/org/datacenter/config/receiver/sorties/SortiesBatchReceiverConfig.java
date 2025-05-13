@@ -8,6 +8,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.datacenter.config.receiver.BaseReceiverConfig;
 
+import java.io.Serial;
+import java.io.Serializable;
+
 /**
  * @author : [wangminan]
  * @description : 批次接收配置
@@ -17,7 +20,10 @@ import org.datacenter.config.receiver.BaseReceiverConfig;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class SortiesBatchReceiverConfig extends BaseReceiverConfig {
+public class SortiesBatchReceiverConfig extends BaseReceiverConfig implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 2345678910L;
 
     /**
      * 接入ID
