@@ -1,6 +1,6 @@
 package org.datacenter.model.aggregation;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonAlias;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -42,6 +42,6 @@ public class ZorathosEntity {
     private String source = "ZORATHOS";
     private Long uploadTime;
     @Singular
-    @JsonProperty("data")
+    @JsonAlias("data")
     private List<ZorathosData> zorathosItems;
 }

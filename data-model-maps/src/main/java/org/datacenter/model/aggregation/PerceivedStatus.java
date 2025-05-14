@@ -3,7 +3,7 @@
  */
 package org.datacenter.model.aggregation;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonAlias;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
@@ -48,13 +48,13 @@ public class PerceivedStatus {
      * 目标位置与精度
      */
     @Singular
-    @JsonProperty("objectPosition")
+    @JsonAlias("objectPosition")
     private List<BasePosition> objectPositions;
     /**
      * 飞行目标速度与精度
      */
     @Singular
-    @JsonProperty("objectVelocity")
+    @JsonAlias("objectVelocity")
     private List<BaseVelocity> objectVelocities;
     /**
      * 对目标的补充描述

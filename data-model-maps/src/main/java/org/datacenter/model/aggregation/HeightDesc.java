@@ -1,6 +1,6 @@
 package org.datacenter.model.aggregation;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonAlias;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
@@ -19,9 +19,9 @@ public class HeightDesc {
     /**
      * 高度基准 推荐EGM2008
      */
-    @JsonProperty("baseModel")
+    @JsonAlias("baseModel")
     private BaseModel baseModel;
-    @JsonProperty("baseDEM")
+    @JsonAlias("baseDEM")
     private BaseDEM baseDEM;
 
     @Getter

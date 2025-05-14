@@ -1,6 +1,6 @@
 package org.datacenter.model.aggregation.sensor;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonAlias;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
@@ -41,7 +41,7 @@ public class SensorOperatorInfo {
         /**
          * 盈利法人
          */
-        @JsonProperty("For-profitLegalPerson")
+        @JsonAlias("For-profitLegalPerson")
         ForProfit,
         /**
          * 事业单位
@@ -74,7 +74,7 @@ public class SensorOperatorInfo {
         /**
          * 基层群众性自治组织法人
          */
-        @JsonProperty("Community-LevelSelf-GevOrgLegalPerson")
+        @JsonAlias("Community-LevelSelf-GevOrgLegalPerson")
         CommunityLevelSelfGevOrgLegalPerson,
         /**
          * 国内无人机生产厂商

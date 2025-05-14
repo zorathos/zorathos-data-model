@@ -1,6 +1,6 @@
 package org.datacenter.model.aggregation.aircraft;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonAlias;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
@@ -26,7 +26,7 @@ public class Aircraft {
     private Double aircraftEmptyWeightWithBattery;
     private Double actualPayloadWeight;
     private Double maxTakeoffWeight;
-    @JsonProperty("SN")
+    @JsonAlias("SN")
     private String SN;
 
     /**
