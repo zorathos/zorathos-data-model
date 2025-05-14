@@ -1,19 +1,17 @@
 package org.datacenter.model.physiological.input;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.datacenter.model.physiological.PhysiologicalInputBase;
+import org.datacenter.model.physiological.BasePhysiologicalInput;
 
 /**
  * @author wangminan
- * @description 眼动数据输入实体，继承 {@link PhysiologicalInputBase}。包含注视点、瞳孔参数、眨眼状态、注视中心及可选属性等字段。
+ * @description 眼动数据输入实体，继承 {@link BasePhysiologicalInput}。包含注视点、瞳孔参数、眨眼状态、注视中心及可选属性等字段。
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -21,7 +19,7 @@ import org.datacenter.model.physiological.PhysiologicalInputBase;
 @AllArgsConstructor
 @Builder
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class EyeTrackingInput extends PhysiologicalInputBase {
+public class EyeTracking extends BasePhysiologicalInput {
     /**
      * 原名: pupil_diameter_left_px
      * 左眼瞳孔直径，瞳孔长轴(0-1)，像素值与图像宽的比值
