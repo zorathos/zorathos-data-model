@@ -28,7 +28,7 @@ public class SortiesReceiverConfig extends BaseReceiverConfig implements Seriali
     /**
      * 接入ID
      */
-    private String importId;
+    private Long importId;
 
     private RunMode runMode;
 

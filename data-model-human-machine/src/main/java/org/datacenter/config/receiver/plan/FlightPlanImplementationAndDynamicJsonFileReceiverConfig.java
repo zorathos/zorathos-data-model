@@ -22,7 +22,7 @@ public class FlightPlanImplementationAndDynamicJsonFileReceiverConfig extends Ba
     /**
      * 接入ID
      */
-    private String importId;
+    private Long importId;
 
     /**
      * 接收器类型

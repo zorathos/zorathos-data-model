@@ -16,7 +16,7 @@ public class PhysiologicalFileReceiverConfig extends BaseReceiverConfig {
     /**
      * 接入ID
      */
-    private String importId;
+    private Long importId;
     private String url;
 
     @Override

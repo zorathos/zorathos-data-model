@@ -1,8 +1,9 @@
-CREATE DATABASE IF NOT EXISTS `flight_plan_implementation`; -- 飞行计划实施库
+CREATE DATABASE IF NOT EXISTS `flight_plan_implementation`;
+-- 飞行计划实施库
 # ---------------------------------------- 飞行计划实施数据库 XML解析 ----------------------------------------
 CREATE TABLE IF NOT EXISTS `flight_plan_implementation`.`flight_plan_root`
 (
-    `import_id`        varchar(255) NOT NULL COMMENT '导入ID',
+    `import_id`        BIGINT       NOT NULL COMMENT '导入ID',
     `id`               varchar(255) NOT NULL COMMENT '根ID',
     `flight_date`      date     DEFAULT NULL COMMENT '飞行日期',
     `flight_date_time` datetime DEFAULT NULL COMMENT '飞行日期时间',
@@ -11,9 +12,9 @@ CREATE TABLE IF NOT EXISTS `flight_plan_implementation`.`flight_plan_root`
 
 CREATE TABLE IF NOT EXISTS `flight_plan_implementation`.`flight_head`
 (
-    `import_id`     varchar(255) NOT NULL COMMENT '导入ID',
+    `import_id`     BIGINT NOT NULL COMMENT '导入ID',
     `root_id`       varchar(255) DEFAULT NULL COMMENT '根ID',
-    `id`            bigint       NOT NULL AUTO_INCREMENT COMMENT '这个字段是咱自己的 主键 bigint auto increment,源库没有主键',
+    `id`            bigint NOT NULL AUTO_INCREMENT COMMENT '这个字段是咱自己的 主键 bigint auto increment,源库没有主键',
     `ver`           varchar(255) DEFAULT NULL COMMENT '版本',
     `title`         varchar(255) DEFAULT NULL COMMENT '标题',
     `timeline`      varchar(255) DEFAULT NULL COMMENT '时间线',
@@ -34,18 +35,18 @@ CREATE TABLE IF NOT EXISTS `flight_plan_implementation`.`flight_head`
 
 CREATE TABLE IF NOT EXISTS `flight_plan_implementation`.`flight_notes`
 (
-    `import_id` varchar(255) NOT NULL COMMENT '导入ID',
+    `import_id` BIGINT NOT NULL COMMENT '导入ID',
     `root_id`   varchar(255) DEFAULT NULL COMMENT '根ID',
-    `id`        bigint       NOT NULL AUTO_INCREMENT COMMENT '这个字段是咱自己的 主键 bigint auto increment,源库没有主键',
+    `id`        bigint NOT NULL AUTO_INCREMENT COMMENT '这个字段是咱自己的 主键 bigint auto increment,源库没有主键',
     `note`      varchar(255) DEFAULT NULL COMMENT '备注',
     PRIMARY KEY (`id`)
 );
 
 CREATE TABLE IF NOT EXISTS `flight_plan_implementation`.`flight_cmd`
 (
-    `import_id` varchar(255) NOT NULL COMMENT '导入ID',
+    `import_id` BIGINT NOT NULL COMMENT '导入ID',
     `root_id`   varchar(255) DEFAULT NULL COMMENT '根ID',
-    `id`        bigint       NOT NULL AUTO_INCREMENT COMMENT '这个字段是咱自己的 主键 bigint auto increment,源库没有主键',
+    `id`        bigint NOT NULL AUTO_INCREMENT COMMENT '这个字段是咱自己的 主键 bigint auto increment,源库没有主键',
     `name`      varchar(255) DEFAULT NULL COMMENT '姓名',
     `lb`        varchar(255) DEFAULT NULL COMMENT '类别',
     `sx`        varchar(255) DEFAULT NULL COMMENT '属性',
@@ -54,9 +55,9 @@ CREATE TABLE IF NOT EXISTS `flight_plan_implementation`.`flight_cmd`
 
 CREATE TABLE IF NOT EXISTS `flight_plan_implementation`.`flight_task`
 (
-    `import_id` varchar(255) NOT NULL COMMENT '导入ID',
+    `import_id` BIGINT NOT NULL COMMENT '导入ID',
     `root_id`   varchar(255) DEFAULT NULL COMMENT '根ID',
-    `id`        bigint       NOT NULL AUTO_INCREMENT COMMENT '这个字段是咱自己的 主键 bigint auto increment,源库没有主键',
+    `id`        bigint NOT NULL AUTO_INCREMENT COMMENT '这个字段是咱自己的 主键 bigint auto increment,源库没有主键',
     `model`     varchar(255) DEFAULT NULL COMMENT '型号',
     `code`      varchar(255) DEFAULT NULL COMMENT '代码',
     `name`      varchar(255) DEFAULT NULL COMMENT '姓名',
@@ -66,9 +67,9 @@ CREATE TABLE IF NOT EXISTS `flight_plan_implementation`.`flight_task`
 
 CREATE TABLE IF NOT EXISTS `flight_plan_implementation`.`flight_plan`
 (
-    `import_id`           varchar(255) NOT NULL COMMENT '导入ID',
+    `import_id`           BIGINT NOT NULL COMMENT '导入ID',
     `root_id`             varchar(255) DEFAULT NULL COMMENT '根ID',
-    `id`                  bigint       NOT NULL AUTO_INCREMENT COMMENT '主键,自增ID',
+    `id`                  bigint NOT NULL AUTO_INCREMENT COMMENT '主键,自增ID',
     `sortie_number`       varchar(255) DEFAULT NULL COMMENT '架次编号',
     `airport_id`          varchar(255) DEFAULT NULL COMMENT '机场ID JCID',
     `takeoff_time`        varchar(255) DEFAULT NULL COMMENT '起飞时间 HH:mm QFSK',

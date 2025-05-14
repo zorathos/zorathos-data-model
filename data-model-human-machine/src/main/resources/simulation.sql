@@ -1,9 +1,10 @@
-CREATE DATABASE IF NOT EXISTS `simulation`; -- 模拟飞行数据库
+CREATE DATABASE IF NOT EXISTS `simulation`;
+-- 模拟飞行数据库
 # ---------------------------------------- 模拟飞行数据库 ----------------------------------------
 CREATE TABLE IF NOT EXISTS `simulation`.`aa_traj`
 (
-    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
-    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
+    `import_id`                      BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number`                   varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`                    VARCHAR(50) COMMENT '飞机ID',
     `message_time`                   TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time`        TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -31,8 +32,8 @@ CREATE TABLE IF NOT EXISTS `simulation`.`aa_traj`
 
 CREATE TABLE IF NOT EXISTS `simulation`.`ag_rtsn`
 (
-    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
-    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
+    `import_id`                         BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number`                      varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`                       VARCHAR(50) COMMENT '飞机ID',
     `message_time`                      TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time`           TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -74,8 +75,8 @@ CREATE TABLE IF NOT EXISTS `simulation`.`ag_rtsn`
 
 CREATE TABLE IF NOT EXISTS `simulation`.`ag_traj`
 (
-    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
-    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
+    `import_id`                   BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number`                varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`                 VARCHAR(50) COMMENT '飞机ID',
     `message_time`                TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time`     TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -107,8 +108,8 @@ CREATE TABLE IF NOT EXISTS `simulation`.`ag_traj`
 
 CREATE TABLE IF NOT EXISTS `simulation`.`cd_drone_plane_state`
 (
-    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
-    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
+    `import_id`                BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number`             varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`              VARCHAR(50) COMMENT '飞机ID',
     `message_time`             TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time`  TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -128,8 +129,8 @@ CREATE TABLE IF NOT EXISTS `simulation`.`cd_drone_plane_state`
 
 CREATE TABLE IF NOT EXISTS `simulation`.`cd_drone_tspi`
 (
-    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
-    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
+    `import_id`               BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number`            varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`             VARCHAR(50) COMMENT '飞机ID',
     `aircraft_type`           VARCHAR(50) COMMENT '飞机类型',
     `message_time`            TIME(3) COMMENT '消息时间（精确到毫秒）',
@@ -155,8 +156,8 @@ CREATE TABLE IF NOT EXISTS `simulation`.`cd_drone_tspi`
 
 CREATE TABLE IF NOT EXISTS `simulation`.`cmb_power`
 (
-    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
-    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
+    `import_id`                      BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number`                   varchar(255) DEFAULT NULL COMMENT '批次号',
     `ground_defense_id`              VARCHAR(50) COMMENT '地防ID',
     `message_time`                   TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time`        TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -172,8 +173,8 @@ CREATE TABLE IF NOT EXISTS `simulation`.`cmb_power`
 
 CREATE TABLE IF NOT EXISTS `simulation`.`command`
 (
-    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
-    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
+    `import_id`                BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number`             varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`              VARCHAR(50) COMMENT '飞机ID',
     `message_time`             TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time`  TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -188,8 +189,8 @@ CREATE TABLE IF NOT EXISTS `simulation`.`command`
 
 CREATE TABLE IF NOT EXISTS `simulation`.`eo_state`
 (
-    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
-    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
+    `import_id`               BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number`            varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`             VARCHAR(50) COMMENT '飞机ID',
     `message_time`            TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time` TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -203,8 +204,8 @@ CREATE TABLE IF NOT EXISTS `simulation`.`eo_state`
 
 CREATE TABLE IF NOT EXISTS `simulation`.`error_data`
 (
-    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
-    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
+    `import_id`               BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number`            varchar(255) DEFAULT NULL COMMENT '批次号',
     `sender_id`               VARCHAR(50) COMMENT '发送方ID',
     `message_time`            TIME(3) COMMENT '消息时间（精确到毫秒）',
     `local_time`              TIME(3) COMMENT '本地时间（精确到毫秒）',
@@ -217,8 +218,8 @@ CREATE TABLE IF NOT EXISTS `simulation`.`error_data`
 
 CREATE TABLE IF NOT EXISTS `simulation`.`ews`
 (
-    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
-    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
+    `import_id`               BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number`            varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`             VARCHAR(50) COMMENT '飞机ID',
     `message_time`            TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time` TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -235,8 +236,8 @@ CREATE TABLE IF NOT EXISTS `simulation`.`ews`
 
 CREATE TABLE IF NOT EXISTS `simulation`.`ews_y8g`
 (
-    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
-    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
+    `import_id`                    BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number`                 varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`                  VARCHAR(50) COMMENT '飞机ID',
     `message_time`                 TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time`      TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -257,8 +258,8 @@ CREATE TABLE IF NOT EXISTS `simulation`.`ews_y8g`
 
 CREATE TABLE IF NOT EXISTS `simulation`.`ews_y9t`
 (
-    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
-    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
+    `import_id`               BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number`            varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`             VARCHAR(50) COMMENT '飞机ID',
     `message_time`            TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time` TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -278,8 +279,8 @@ CREATE TABLE IF NOT EXISTS `simulation`.`ews_y9t`
 
 CREATE TABLE IF NOT EXISTS `simulation`.`ews_yz8`
 (
-    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
-    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
+    `import_id`                    BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number`                 varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`                  VARCHAR(50) COMMENT '飞机ID',
     `message_time`                 TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time`      TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -298,8 +299,8 @@ CREATE TABLE IF NOT EXISTS `simulation`.`ews_yz8`
 
 CREATE TABLE IF NOT EXISTS `simulation`.`g_tspi`
 (
-    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
-    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
+    `import_id`               BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number`            varchar(255) DEFAULT NULL COMMENT '批次号',
     `ground_defense_id`       VARCHAR(50) COMMENT '地防ID',
     `message_time`            TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time` TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -319,8 +320,8 @@ CREATE TABLE IF NOT EXISTS `simulation`.`g_tspi`
 
 CREATE TABLE IF NOT EXISTS `simulation`.`ews_kj500`
 (
-    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
-    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
+    `import_id`               BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number`            varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`             VARCHAR(50) COMMENT '飞机ID',
     `message_time`            TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time` TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -337,8 +338,8 @@ CREATE TABLE IF NOT EXISTS `simulation`.`ews_kj500`
 
 CREATE TABLE IF NOT EXISTS `simulation`.`g_tspi_back`
 (
-    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
-    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
+    `import_id`                        BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number`                     varchar(255) DEFAULT NULL COMMENT '批次号',
     `ground_defense_id`                VARCHAR(50) COMMENT '地防ID',
     `message_time`                     TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time`          TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -352,21 +353,21 @@ CREATE TABLE IF NOT EXISTS `simulation`.`hit_result`
 (
     `import_id`    BIGINT NOT NULL COMMENT '导入ID',
     `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
-    `launcher_id`   VARCHAR(50) COMMENT '发射方ID',
-    `target_id`     VARCHAR(50) COMMENT '目标ID',
-    `weapon_type`   VARCHAR(50) COMMENT '武器类型',
-    `weapon_id`     VARCHAR(50) COMMENT '武器ID',
-    `launch_time`   VARCHAR(50) COMMENT '发射时间',
-    `end_time`      TIME(3) COMMENT '结束时间（精确到毫秒）',
-    `hit_result`    VARCHAR(50) COMMENT '命中结果',
+    `launcher_id`  VARCHAR(50) COMMENT '发射方ID',
+    `target_id`    VARCHAR(50) COMMENT '目标ID',
+    `weapon_type`  VARCHAR(50) COMMENT '武器类型',
+    `weapon_id`    VARCHAR(50) COMMENT '武器ID',
+    `launch_time`  VARCHAR(50) COMMENT '发射时间',
+    `end_time`     TIME(3) COMMENT '结束时间（精确到毫秒）',
+    `hit_result`   VARCHAR(50) COMMENT '命中结果',
     INDEX idx_batch_number (`batch_number`)
 ) COMMENT = 'HitResult' PARTITION BY KEY (`batch_number`) PARTITIONS 1;
 
 CREATE TABLE IF NOT EXISTS `simulation`.`hj_plane_data`
 (
-    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
-    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
-    `local_batch_number`            VARCHAR(50) COMMENT '本地批次号',
+    `import_id`               BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number`            varchar(255) DEFAULT NULL COMMENT '批次号',
+    `local_batch_number`      VARCHAR(50) COMMENT '本地批次号',
     `device_number`           VARCHAR(50) COMMENT '设备号',
     `flight_control_number`   VARCHAR(50) COMMENT '航管号',
     `local_time`              TIME(3) COMMENT '本地时间（精确到毫秒）',
@@ -383,8 +384,8 @@ CREATE TABLE IF NOT EXISTS `simulation`.`hj_plane_data`
 
 CREATE TABLE IF NOT EXISTS `simulation`.`ir_msl`
 (
-    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
-    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
+    `import_id`               BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number`            varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`             VARCHAR(50) COMMENT '飞机ID',
     `message_time`            TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time` TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -399,8 +400,8 @@ CREATE TABLE IF NOT EXISTS `simulation`.`ir_msl`
 
 CREATE TABLE IF NOT EXISTS `simulation`.`pl17_rtkn`
 (
-    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
-    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
+    `import_id`               BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number`            varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`             VARCHAR(50) COMMENT '飞机ID',
     `message_time`            TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time` TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -425,8 +426,8 @@ CREATE TABLE IF NOT EXISTS `simulation`.`pl17_rtkn`
 
 CREATE TABLE IF NOT EXISTS `simulation`.`pl17_rtsn`
 (
-    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
-    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
+    `import_id`               BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number`            varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`             VARCHAR(50) COMMENT '飞机ID',
     `message_time`            TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time` TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -445,8 +446,8 @@ CREATE TABLE IF NOT EXISTS `simulation`.`pl17_rtsn`
 
 CREATE TABLE IF NOT EXISTS `simulation`.`pl17_traj`
 (
-    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
-    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
+    `import_id`                      BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number`                   varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`                    VARCHAR(50) COMMENT '飞机ID',
     `message_time`                   TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time`        TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -477,8 +478,8 @@ CREATE TABLE IF NOT EXISTS `simulation`.`pl17_traj`
 
 CREATE TABLE IF NOT EXISTS `simulation`.`plane_pro`
 (
-    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
-    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
+    `import_id`            BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number`         varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`          VARCHAR(50) COMMENT '飞机ID',
     `aircraft_callsign`    VARCHAR(50) COMMENT '飞机代字',
     `aircraft_code_name`   VARCHAR(50) COMMENT '飞机代号',
@@ -489,8 +490,8 @@ CREATE TABLE IF NOT EXISTS `simulation`.`plane_pro`
 
 CREATE TABLE IF NOT EXISTS `simulation`.`plane_state`
 (
-    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
-    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
+    `import_id`                BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number`             varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`              VARCHAR(50) COMMENT '飞机ID',
     `message_time`             TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time`  TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -512,8 +513,8 @@ CREATE TABLE IF NOT EXISTS `simulation`.`plane_state`
 
 CREATE TABLE IF NOT EXISTS `simulation`.`rdr_state`
 (
-    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
-    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
+    `import_id`               BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number`            varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`             VARCHAR(50) COMMENT '飞机ID',
     `message_time`            TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time` TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -528,8 +529,8 @@ CREATE TABLE IF NOT EXISTS `simulation`.`rdr_state`
 
 CREATE TABLE IF NOT EXISTS `simulation`.`rtsn`
 (
-    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
-    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
+    `import_id`               BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number`            varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`             VARCHAR(50) COMMENT '飞机ID',
     `message_time`            TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time` TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -548,8 +549,8 @@ CREATE TABLE IF NOT EXISTS `simulation`.`rtsn`
 
 CREATE TABLE IF NOT EXISTS `simulation`.`sa_tgt`
 (
-    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
-    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
+    `import_id`               BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number`            varchar(255) DEFAULT NULL COMMENT '批次号',
     `ground_defense_id`       VARCHAR(50) COMMENT '地防ID',
     `message_time`            TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time` TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -567,8 +568,8 @@ CREATE TABLE IF NOT EXISTS `simulation`.`sa_tgt`
 
 CREATE TABLE IF NOT EXISTS `simulation`.`sa_traj`
 (
-    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
-    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
+    `import_id`               BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number`            varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`             VARCHAR(50) COMMENT '飞机ID',
     `message_time`            TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time` TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -595,8 +596,8 @@ CREATE TABLE IF NOT EXISTS `simulation`.`sa_traj`
 
 CREATE TABLE IF NOT EXISTS `simulation`.`send_to_3d_data`
 (
-    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
-    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
+    `import_id`            BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number`         varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`          VARCHAR(50) COMMENT '飞机ID',
     `aircraft_callsign`    VARCHAR(50) COMMENT '飞机代字',
     `aircraft_code_name`   VARCHAR(50) COMMENT '飞机代号',
@@ -607,8 +608,8 @@ CREATE TABLE IF NOT EXISTS `simulation`.`send_to_3d_data`
 
 CREATE TABLE IF NOT EXISTS `simulation`.`rtkn`
 (
-    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
-    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
+    `import_id`                      BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number`                   varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`                    VARCHAR(50) COMMENT '飞机ID',
     `message_time`                   TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time`        TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -641,8 +642,8 @@ CREATE TABLE IF NOT EXISTS `simulation`.`rtkn`
 
 CREATE TABLE IF NOT EXISTS `simulation`.`srd_state`
 (
-    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
-    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
+    `import_id`               BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number`            varchar(255) DEFAULT NULL COMMENT '批次号',
     `ground_defense_id`       VARCHAR(50) COMMENT '地防ID',
     `message_time`            TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time` TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -660,8 +661,8 @@ CREATE TABLE IF NOT EXISTS `simulation`.`srd_state`
 
 CREATE TABLE IF NOT EXISTS `simulation`.`tgt`
 (
-    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
-    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
+    `import_id`               BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number`            varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`             VARCHAR(50) COMMENT '飞机ID',
     `message_time`            TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time` TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -713,8 +714,8 @@ CREATE TABLE IF NOT EXISTS `simulation`.`tgt`
 
 CREATE TABLE IF NOT EXISTS `simulation`.`tspi`
 (
-    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
-    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
+    `import_id`               BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number`            varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`             VARCHAR(50) COMMENT '飞机ID',
     `aircraft_type`           VARCHAR(50) COMMENT '飞机类型',
     `message_time`            TIME(3) COMMENT '消息时间（精确到毫秒）',

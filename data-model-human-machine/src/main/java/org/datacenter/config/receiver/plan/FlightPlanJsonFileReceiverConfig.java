@@ -20,7 +20,7 @@ public class FlightPlanJsonFileReceiverConfig extends BaseReceiverConfig {
     /**
      * 接入ID
      */
-    private String importId;
+    private Long importId;
 
     /**
      * 飞行计划Json文件在对象存储上的URL s3://开头

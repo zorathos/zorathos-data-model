@@ -29,7 +29,7 @@ public class FlightPlanRoot {
     /**
      * 导入ID
      */
-    private String importId;
+    private Long importId;
 
     /**
      * 使用系统计划编号

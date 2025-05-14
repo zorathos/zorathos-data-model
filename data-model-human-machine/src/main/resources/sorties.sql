@@ -1,8 +1,9 @@
-CREATE DATABASE IF NOT EXISTS `sorties`; -- sorties
+CREATE DATABASE IF NOT EXISTS `sorties`;
+-- sorties
 # ---------------------------------------- sorties ----------------------------------------
 CREATE TABLE IF NOT EXISTS `sorties`.`sorties_batch`
 (
-    `import_id`    varchar(255) NOT NULL COMMENT '导入ID',
+    `import_id`    BIGINT       NOT NULL COMMENT '导入ID',
     `id`           varchar(255) NOT NULL COMMENT '主键ID',
     `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
     PRIMARY KEY (`id`)
@@ -10,7 +11,7 @@ CREATE TABLE IF NOT EXISTS `sorties`.`sorties_batch`
 
 CREATE TABLE IF NOT EXISTS `sorties`.`sorties`
 (
-    `import_id`         varchar(255) NOT NULL COMMENT '导入ID',
+    `import_id`         BIGINT       NOT NULL COMMENT '导入ID',
     `airplane_model`    varchar(255)      DEFAULT NULL COMMENT '机型',
     `airplane_number`   varchar(255)      DEFAULT NULL COMMENT '机号',
     `arm_type`          varchar(255)      DEFAULT NULL COMMENT '武器类型',

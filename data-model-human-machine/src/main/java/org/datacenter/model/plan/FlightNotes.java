@@ -22,7 +22,7 @@ public class FlightNotes {
     /**
      * 导入ID
      */
-    private String importId;
+    private Long importId;
 
     /**
      * 根ID

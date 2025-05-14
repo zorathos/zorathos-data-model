@@ -64,7 +64,7 @@ public enum TiDBTable {
      */
     SORTIES("sorties"),
 
-    // 以下是仿真数据
+    // ---------------- 以下是仿真数据表 ----------------
     AA_TRAJ("aa_traj"),
     AG_RTSN("ag_rtsn"),
     AG_TRAJ("ag_traj"),
@@ -115,7 +115,68 @@ public enum TiDBTable {
     /**
      * 数据资产配置
      */
-    ASSET_TABLE_PROPERTY("asset_table_property");
+    ASSET_TABLE_PROPERTY("asset_table_property"),
+
+    // ---------------- 以下是生理数据表 ----------------
+    /**
+     * 脑电及肌电
+     */
+    EEG_EMG("eeg_emg"),
+
+    /**
+     * 眼动数据
+     */
+    EYE_TRACKING("eye_tracking"),
+
+    /**
+     * 肢体动作
+     */
+    JOINT_POSTURE("joint_posture"),
+
+    /**
+     * 心电
+     */
+    T_SHIRT_ECG_ACCEL_GYRO("tshirt_ecg_accel_gyro"),
+
+    /**
+     * 呼吸应变
+     */
+    T_SHIRT_RESP("tshirt_resp"),
+
+    /**
+     * 呼吸率
+     */
+    T_SHIRT_RESPIRATORY_RATE("tshirt_respiratory_rate"),
+
+    /**
+     * 心率
+     */
+    T_SHIRT_HEART_RATE("tshirt_heartrate"),
+
+    /**
+     * 心率变异性
+     */
+    T_SHIRT_HRV("tshirt_hrv"),
+
+    /**
+     * 体温
+     */
+    T_SHIRT_TEMP("tshirt_temp"),
+
+    /**
+     * 红光及红外光
+     */
+    WRISTBAND_PPG_ACCEL("wristband_ppg_accel"),
+
+    /**
+     * 血氧
+     */
+    WRISTBAND_SPO2("wristband_spo2"),
+
+    /**
+     * 皮电
+     */
+    WRISTBAND_GSR("wristband_gsr");
 
     private final String name;
 

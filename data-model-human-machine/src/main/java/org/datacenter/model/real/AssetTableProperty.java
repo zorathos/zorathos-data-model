@@ -18,7 +18,7 @@ public class AssetTableProperty {
     /**
      * 导入ID
      */
-    private String importId;
+    private Long importId;
 
     /**
      * 字段ID 源库没有 auto_increment bigint

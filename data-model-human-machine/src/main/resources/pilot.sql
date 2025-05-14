@@ -1,8 +1,9 @@
-CREATE DATABASE IF NOT EXISTS `personnel`; -- 人员库
+CREATE DATABASE IF NOT EXISTS `personnel`;
+-- 人员库
 # ---------------------------------------- 人员 ----------------------------------------
 CREATE TABLE IF NOT EXISTS `personnel`.`personnel_info`
 (
-    `import_id`                   varchar(255) NOT NULL COMMENT '导入ID',
+    `import_id`                   BIGINT NOT NULL COMMENT '导入ID',
     `personal_identifier`         varchar(255) COMMENT '个人标识 GRBS',
     `unit_code`                   varchar(255) DEFAULT NULL COMMENT '单位代码 DWDM',
     `unit`                        varchar(255) DEFAULT NULL COMMENT '单位 DW',

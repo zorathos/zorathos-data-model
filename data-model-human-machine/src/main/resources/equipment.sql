@@ -1,9 +1,9 @@
-CREATE DATABASE IF NOT EXISTS `equipment`; -- 装备库
+CREATE DATABASE IF NOT EXISTS `equipment`;
+-- 装备库
 # ---------------------------------------- 装备 equipment_code ----------------------------------------
 CREATE TABLE IF NOT EXISTS `equipment`.`equipment_code`
 (
-    `import_id`               varchar(255) NOT NULL COMMENT '导入ID',
-    `id`                      varchar(32)  NOT NULL COMMENT '装备编号,主键 和 EquipmentInfo 中的 id 不是一个概念 id',
+    `id`                      varchar(32) NOT NULL COMMENT '装备编号,主键 和 EquipmentInfo 中的 id 不是一个概念 id',
     `creator`                 varchar(32)  DEFAULT NULL COMMENT '创建人 create_people',
     `create_time`             datetime     DEFAULT NULL COMMENT '创建时间 create_time',
     `modifier`                varchar(32)  DEFAULT NULL COMMENT '修改人 update_people',
@@ -25,7 +25,6 @@ CREATE TABLE IF NOT EXISTS `equipment`.`equipment_code`
 # ---------------------------------------- 装备 equipment_info ----------------------------------------
 CREATE TABLE IF NOT EXISTS `equipment`.`equipment_info`
 (
-    `import_id`              varchar(255) NOT NULL COMMENT '导入ID',
     `id`                     varchar(255) NOT NULL COMMENT '装备型号,主键 和 EquipmentCode 中的 equipmentNumber 不是一个概念 id',
     `create_time`            datetime     NULL DEFAULT NULL COMMENT '创建时间',
     `modification_time`      datetime     NULL DEFAULT NULL COMMENT '修改时间',

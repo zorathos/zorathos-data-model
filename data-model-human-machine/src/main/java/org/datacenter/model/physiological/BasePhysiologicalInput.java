@@ -18,6 +18,11 @@ public abstract class BasePhysiologicalInput implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
+    /**
+     * 导入ID
+     */
+    private Long importId;
+
     @JsonAlias("record_id")
     protected Long recordId;
 

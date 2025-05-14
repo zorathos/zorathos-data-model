@@ -28,7 +28,7 @@ public class SortiesBatchReceiverConfig extends BaseReceiverConfig implements Se
     /**
      * 接入ID
      */
-    private String importId;
+    private Long importId;
 
     private RunMode runMode;
 

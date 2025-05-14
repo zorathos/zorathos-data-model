@@ -25,7 +25,7 @@ public class PersonnelInfo {
     /**
      * 导入ID
      */
-    private String importId;
+    private Long importId;
 
     /**
      * 单位代码 DWDM

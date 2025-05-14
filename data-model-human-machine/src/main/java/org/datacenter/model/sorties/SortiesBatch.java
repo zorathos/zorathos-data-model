@@ -21,7 +21,7 @@ public class SortiesBatch {
     /**
      * 导入ID
      */
-    private String importId;
+    private Long importId;
 
     /**
      * 主键ID

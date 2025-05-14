@@ -20,7 +20,7 @@ public class PhysiologicalKafkaReceiverConfig extends BaseReceiverConfig {
     /**
      * 接入ID
      */
-    private String importId;
+    private Long importId;
     private String topic;
 
     @Override

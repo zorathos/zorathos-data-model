@@ -1,9 +1,10 @@
-CREATE DATABASE IF NOT EXISTS `real_world_flight`; -- 实装飞行数据库
+CREATE DATABASE IF NOT EXISTS `real_world_flight`;
+-- 实装飞行数据库
 # ---------------------------------------- real_world_flight ----------------------------------------
 -- asset_summary 表
 CREATE TABLE IF NOT EXISTS real_world_flight.asset_summary
 (
-    `import_id`    varchar(255) NOT NULL COMMENT '导入ID',
+    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
     id             BIGINT PRIMARY KEY COMMENT '数据资产ID 对应着AssetTableModel的asset_id字段',
     sortie_number  VARCHAR(50) COMMENT '架次号',
     name           VARCHAR(255) COMMENT '数据资产名称',
@@ -25,7 +26,7 @@ CREATE TABLE IF NOT EXISTS real_world_flight.asset_summary
 -- asset_table_model 表
 CREATE TABLE IF NOT EXISTS real_world_flight.asset_table_model
 (
-    `import_id`     varchar(255) NOT NULL COMMENT '导入ID',
+    `import_id`     BIGINT NOT NULL COMMENT '导入ID',
     id              BIGINT PRIMARY KEY COMMENT 'id',
     sortie_number   VARCHAR(50) COMMENT '架次号',
     asset_id        BIGINT COMMENT '数据资产id',
@@ -40,7 +41,7 @@ CREATE TABLE IF NOT EXISTS real_world_flight.asset_table_model
 -- asset_table_property 表
 CREATE TABLE IF NOT EXISTS real_world_flight.asset_table_property
 (
-    `import_id`   varchar(255) NOT NULL COMMENT '导入ID',
+    `import_id`   BIGINT NOT NULL COMMENT '导入ID',
     id            BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '字段ID 源库没有 auto_increment bigint',
     sortie_number VARCHAR(50) COMMENT '架次号',
     model_id      BIGINT COMMENT '数据资产ID 源接口也没有 手动映射',

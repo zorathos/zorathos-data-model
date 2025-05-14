@@ -24,7 +24,7 @@ public class Sorties {
     /**
      * 导入ID
      */
-    private String importId;
+    private Long importId;
 
     /**
      * 机型

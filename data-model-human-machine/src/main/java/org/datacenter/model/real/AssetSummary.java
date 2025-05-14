@@ -19,7 +19,7 @@ public class AssetSummary {
     /**
      * 导入ID
      */
-    private String importId;
+    private Long importId;
 
     /**
      * 数据资产ID 对应着AssetTableModel的assetId字段

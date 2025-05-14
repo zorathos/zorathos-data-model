@@ -24,7 +24,7 @@ public class EquipmentInfo {
     /**
      * 导入ID
      */
-    private String importId;
+    private Long importId;
 
     /**
      * 装备型号，主键 和 EquipmentCode 中的 equipmentNumber 不是一个概念 id
