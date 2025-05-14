@@ -58,7 +58,8 @@ public enum HumanMachineReceiverConfigKey {
 
     // 仿真配置组
     SIMULATION_URL("url", "simulation_url", "仿真数据文件的url"),
-    SIMULATION_SORTIE_NUMBER("sortieNumber", "simulation_sortie_number", "仿真数据的架次"),
+    SIMULATION_BATCH_NUMBER("batchNumber", "simulation_batch_number", "仿真数据的批次"),
+
 
     // 架次配置组
     SORTIES_BASE_URL("baseUrl", "sorties_base_url", "架次数据的url"),

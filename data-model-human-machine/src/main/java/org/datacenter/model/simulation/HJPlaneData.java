@@ -17,14 +17,18 @@ import java.time.LocalTime;
 public class HJPlaneData {
 
     /**
-     * 架次号
+     * 导入ID
      */
-    private String sortieNumber;
-
+    private long importId;
     /**
      * 批次号
      */
     private String batchNumber;
+
+    /**
+     * 本地批次号
+     */
+    private String localBatchNumber;
 
     /**
      * 设备号

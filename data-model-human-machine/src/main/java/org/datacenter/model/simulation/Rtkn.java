@@ -17,9 +17,13 @@ import java.time.LocalTime;
 public class Rtkn {
 
     /**
-     * 架次号
+     * 导入ID
      */
-    private String sortieNumber;
+    private long importId;
+    /**
+     * 批次号
+     */
+    private String batchNumber;
 
     /**
      * 飞机ID

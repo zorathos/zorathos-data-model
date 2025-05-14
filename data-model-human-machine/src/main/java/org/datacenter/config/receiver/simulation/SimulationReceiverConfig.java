@@ -30,9 +30,14 @@ public class SimulationReceiverConfig extends BaseReceiverConfig implements Seri
     private String url;
 
     /**
-     * 仿真数据在对象存储上的架次名
+     * 接入ID
      */
-    private String sortieNumber;
+    private long importId;
+
+    /**
+     * 仿真数据在对象存储上的批次名
+     */
+    private String batchNumber;
 
     @Override
     public boolean validate() {

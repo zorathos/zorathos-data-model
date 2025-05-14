@@ -2,7 +2,8 @@ CREATE DATABASE IF NOT EXISTS `simulation`; -- 模拟飞行数据库
 # ---------------------------------------- 模拟飞行数据库 ----------------------------------------
 CREATE TABLE IF NOT EXISTS `simulation`.`aa_traj`
 (
-    `sortie_number`                  VARCHAR(50) COMMENT '架次号',
+    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`                    VARCHAR(50) COMMENT '飞机ID',
     `message_time`                   TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time`        TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -25,12 +26,13 @@ CREATE TABLE IF NOT EXISTS `simulation`.`aa_traj`
     `command_machine_status`         VARCHAR(50) COMMENT '指令机状态',
     `ground_angle_satisfaction_flag` VARCHAR(50) COMMENT '擦地角满足标志',
     `zero_crossing_flag`             VARCHAR(50) COMMENT '过零标志',
-    INDEX idx_sortie_number (`sortie_number`)
-) COMMENT = 'Aatraj' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
+    INDEX idx_batch_number (`batch_number`)
+) COMMENT = 'Aatraj' PARTITION BY KEY (`batch_number`) PARTITIONS 1;
 
 CREATE TABLE IF NOT EXISTS `simulation`.`ag_rtsn`
 (
-    `sortie_number`                     VARCHAR(50) COMMENT '架次号',
+    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`                       VARCHAR(50) COMMENT '飞机ID',
     `message_time`                      TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time`           TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -67,12 +69,13 @@ CREATE TABLE IF NOT EXISTS `simulation`.`ag_rtsn`
     `entry_angle`                       VARCHAR(50) COMMENT '进入角',
     `impact_angle`                      VARCHAR(50) COMMENT '落角',
     `direction_validity`                VARCHAR(50) COMMENT '方向有效性',
-    INDEX idx_sortie_number (`sortie_number`)
-) COMMENT = 'AgRtsn' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
+    INDEX idx_batch_number (`batch_number`)
+) COMMENT = 'AgRtsn' PARTITION BY KEY (`batch_number`) PARTITIONS 1;
 
 CREATE TABLE IF NOT EXISTS `simulation`.`ag_traj`
 (
-    `sortie_number`               VARCHAR(50) COMMENT '架次号',
+    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`                 VARCHAR(50) COMMENT '飞机ID',
     `message_time`                TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time`     TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -99,12 +102,13 @@ CREATE TABLE IF NOT EXISTS `simulation`.`ag_traj`
     `seeker_pitch_center`         VARCHAR(50) COMMENT '导引头俯仰中心',
     `target_id`                   VARCHAR(50) COMMENT '目标ID',
     `missile_target_distance`     VARCHAR(50) COMMENT '弹目距离',
-    INDEX idx_sortie_number (`sortie_number`)
-) COMMENT = 'AgTraj' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
+    INDEX idx_batch_number (`batch_number`)
+) COMMENT = 'AgTraj' PARTITION BY KEY (`batch_number`) PARTITIONS 1;
 
 CREATE TABLE IF NOT EXISTS `simulation`.`cd_drone_plane_state`
 (
-    `sortie_number`            VARCHAR(50) COMMENT '架次号',
+    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`              VARCHAR(50) COMMENT '飞机ID',
     `message_time`             TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time`  TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -119,12 +123,13 @@ CREATE TABLE IF NOT EXISTS `simulation`.`cd_drone_plane_state`
     `remaining_fuel`           VARCHAR(50) COMMENT '余油量',
     `manual_respawn`           VARCHAR(50) COMMENT '手动复活',
     `parameter_setting_status` VARCHAR(50) COMMENT '参数设置状态',
-    INDEX idx_sortie_number (`sortie_number`)
-) COMMENT = 'CdDronePlaneState' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
+    INDEX idx_batch_number (`batch_number`)
+) COMMENT = 'CdDronePlaneState' PARTITION BY KEY (`batch_number`) PARTITIONS 1;
 
 CREATE TABLE IF NOT EXISTS `simulation`.`cd_drone_tspi`
 (
-    `sortie_number`           VARCHAR(50) COMMENT '架次号',
+    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`             VARCHAR(50) COMMENT '飞机ID',
     `aircraft_type`           VARCHAR(50) COMMENT '飞机类型',
     `message_time`            TIME(3) COMMENT '消息时间（精确到毫秒）',
@@ -145,12 +150,13 @@ CREATE TABLE IF NOT EXISTS `simulation`.`cd_drone_tspi`
     `vertical_velocity`       VARCHAR(50) COMMENT '天向速度',
     `east_velocity`           VARCHAR(50) COMMENT '东向速度',
     `delay_status`            VARCHAR(50) COMMENT '延迟状态',
-    INDEX idx_sortie_number (`sortie_number`)
-) COMMENT = 'CdDroneTspi' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
+    INDEX idx_batch_number (`batch_number`)
+) COMMENT = 'CdDroneTspi' PARTITION BY KEY (`batch_number`) PARTITIONS 1;
 
 CREATE TABLE IF NOT EXISTS `simulation`.`cmb_power`
 (
-    `sortie_number`                  VARCHAR(50) COMMENT '架次号',
+    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
     `ground_defense_id`              VARCHAR(50) COMMENT '地防ID',
     `message_time`                   TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time`        TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -161,12 +167,13 @@ CREATE TABLE IF NOT EXISTS `simulation`.`cmb_power`
     `training_mode`                  VARCHAR(50) COMMENT '训练模式',
     `allow_missile_reset`            VARCHAR(50) COMMENT '允许重置导弹',
     `auto_respawn`                   VARCHAR(50) COMMENT '自主复活',
-    INDEX idx_sortie_number (`sortie_number`)
-) COMMENT = 'CmbPower' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
+    INDEX idx_batch_number (`batch_number`)
+) COMMENT = 'CmbPower' PARTITION BY KEY (`batch_number`) PARTITIONS 1;
 
 CREATE TABLE IF NOT EXISTS `simulation`.`command`
 (
-    `sortie_number`            VARCHAR(50) COMMENT '架次号',
+    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`              VARCHAR(50) COMMENT '飞机ID',
     `message_time`             TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time`  TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -176,12 +183,13 @@ CREATE TABLE IF NOT EXISTS `simulation`.`command`
     `command_id`               VARCHAR(50) COMMENT '命令ID',
     `command_content`          VARCHAR(50) COMMENT '命令内容',
     `response_sequence_number` BIGINT COMMENT '回复序列号',
-    INDEX idx_sortie_number (`sortie_number`)
-) COMMENT = 'Command' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
+    INDEX idx_batch_number (`batch_number`)
+) COMMENT = 'Command' PARTITION BY KEY (`batch_number`) PARTITIONS 1;
 
 CREATE TABLE IF NOT EXISTS `simulation`.`eo_state`
 (
-    `sortie_number`           VARCHAR(50) COMMENT '架次号',
+    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`             VARCHAR(50) COMMENT '飞机ID',
     `message_time`            TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time` TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -190,12 +198,13 @@ CREATE TABLE IF NOT EXISTS `simulation`.`eo_state`
     `working_mode`            VARCHAR(50) COMMENT '工作模式',
     `power_status`            VARCHAR(50) COMMENT '开机状态',
     `standby_status`          VARCHAR(50) COMMENT '待机状态',
-    INDEX idx_sortie_number (`sortie_number`)
-) COMMENT = 'EoState' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
+    INDEX idx_batch_number (`batch_number`)
+) COMMENT = 'EoState' PARTITION BY KEY (`batch_number`) PARTITIONS 1;
 
 CREATE TABLE IF NOT EXISTS `simulation`.`error_data`
 (
-    `sortie_number`           VARCHAR(50) COMMENT '架次号',
+    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
     `sender_id`               VARCHAR(50) COMMENT '发送方ID',
     `message_time`            TIME(3) COMMENT '消息时间（精确到毫秒）',
     `local_time`              TIME(3) COMMENT '本地时间（精确到毫秒）',
@@ -203,12 +212,13 @@ CREATE TABLE IF NOT EXISTS `simulation`.`error_data`
     `message_id`              VARCHAR(50) COMMENT '消息标识',
     `message_length`          VARCHAR(50) COMMENT '消息长度',
     `error_message`           VARCHAR(50) COMMENT '错误信息',
-    INDEX idx_sortie_number (`sortie_number`)
-) COMMENT = 'ErrorData' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
+    INDEX idx_batch_number (`batch_number`)
+) COMMENT = 'ErrorData' PARTITION BY KEY (`batch_number`) PARTITIONS 1;
 
 CREATE TABLE IF NOT EXISTS `simulation`.`ews`
 (
-    `sortie_number`           VARCHAR(50) COMMENT '架次号',
+    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`             VARCHAR(50) COMMENT '飞机ID',
     `message_time`            TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time` TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -220,12 +230,13 @@ CREATE TABLE IF NOT EXISTS `simulation`.`ews`
     `right_rear_jamming`      VARCHAR(50) COMMENT '右后干扰',
     `pod_forward_jamming`     VARCHAR(50) COMMENT '吊舱前向干扰',
     `pod_rearward_jamming`    VARCHAR(50) COMMENT '吊舱后向干扰',
-    INDEX idx_sortie_number (`sortie_number`)
-) COMMENT = 'Ews' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
+    INDEX idx_batch_number (`batch_number`)
+) COMMENT = 'Ews' PARTITION BY KEY (`batch_number`) PARTITIONS 1;
 
 CREATE TABLE IF NOT EXISTS `simulation`.`ews_y8g`
 (
-    `sortie_number`                VARCHAR(50) COMMENT '架次号',
+    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`                  VARCHAR(50) COMMENT '飞机ID',
     `message_time`                 TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time`      TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -241,12 +252,13 @@ CREATE TABLE IF NOT EXISTS `simulation`.`ews_y8g`
     `u_band_jamming_azimuth`       VARCHAR(50) COMMENT 'U波段干扰方位',
     `jamming_status`               VARCHAR(50) COMMENT '干扰状态',
     `x_band_jamming_azimuth_angle` VARCHAR(50) COMMENT 'X波段干扰方位角',
-    INDEX idx_sortie_number (`sortie_number`)
-) COMMENT = 'EwsY8G' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
+    INDEX idx_batch_number (`batch_number`)
+) COMMENT = 'EwsY8G' PARTITION BY KEY (`batch_number`) PARTITIONS 1;
 
 CREATE TABLE IF NOT EXISTS `simulation`.`ews_y9t`
 (
-    `sortie_number`           VARCHAR(50) COMMENT '架次号',
+    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`             VARCHAR(50) COMMENT '飞机ID',
     `message_time`            TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time` TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -261,12 +273,13 @@ CREATE TABLE IF NOT EXISTS `simulation`.`ews_y9t`
     `jamming_elevation`       VARCHAR(50) COMMENT '干扰俯仰角',
     `jamming_start_frequency` VARCHAR(50) COMMENT '干扰开始频率',
     `jamming_end_frequency`   VARCHAR(50) COMMENT '干扰终止频率',
-    INDEX idx_sortie_number (`sortie_number`)
-) COMMENT = 'EwsY9T' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
+    INDEX idx_batch_number (`batch_number`)
+) COMMENT = 'EwsY9T' PARTITION BY KEY (`batch_number`) PARTITIONS 1;
 
 CREATE TABLE IF NOT EXISTS `simulation`.`ews_yz8`
 (
-    `sortie_number`                VARCHAR(50) COMMENT '架次号',
+    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`                  VARCHAR(50) COMMENT '飞机ID',
     `message_time`                 TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time`      TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -280,12 +293,13 @@ CREATE TABLE IF NOT EXISTS `simulation`.`ews_yz8`
     `precise_direction_finding_j3` VARCHAR(50) COMMENT '精测向J3频段',
     `high_gain_g1`                 VARCHAR(50) COMMENT '高增益G1频段',
     `high_gain_g2`                 VARCHAR(50) COMMENT '高增益G2频段',
-    INDEX idx_sortie_number (`sortie_number`)
-) COMMENT = 'EwsYZ8' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
+    INDEX idx_batch_number (`batch_number`)
+) COMMENT = 'EwsYZ8' PARTITION BY KEY (`batch_number`) PARTITIONS 1;
 
 CREATE TABLE IF NOT EXISTS `simulation`.`g_tspi`
 (
-    `sortie_number`           VARCHAR(50) COMMENT '架次号',
+    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
     `ground_defense_id`       VARCHAR(50) COMMENT '地防ID',
     `message_time`            TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time` TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -300,12 +314,13 @@ CREATE TABLE IF NOT EXISTS `simulation`.`g_tspi`
     `latitude`                VARCHAR(50) COMMENT '纬度',
     `altitude`                VARCHAR(50) COMMENT '高度',
     `decoy_position_id`       VARCHAR(50) COMMENT '假阵地编号',
-    INDEX idx_sortie_number (`sortie_number`)
-) COMMENT = 'GTspi' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
+    INDEX idx_batch_number (`batch_number`)
+) COMMENT = 'GTspi' PARTITION BY KEY (`batch_number`) PARTITIONS 1;
 
 CREATE TABLE IF NOT EXISTS `simulation`.`ews_kj500`
 (
-    `sortie_number`           VARCHAR(50) COMMENT '架次号',
+    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`             VARCHAR(50) COMMENT '飞机ID',
     `message_time`            TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time` TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -317,24 +332,26 @@ CREATE TABLE IF NOT EXISTS `simulation`.`ews_kj500`
     `sector_number`           VARCHAR(50) COMMENT '扇区号',
     `action_code`             VARCHAR(50) COMMENT '动作代码',
     `azimuth_end_angle`       VARCHAR(50) COMMENT '范围终止角',
-    INDEX idx_sortie_number (`sortie_number`)
-) COMMENT = 'EwsKJ500' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
+    INDEX idx_batch_number (`batch_number`)
+) COMMENT = 'EwsKJ500' PARTITION BY KEY (`batch_number`) PARTITIONS 1;
 
 CREATE TABLE IF NOT EXISTS `simulation`.`g_tspi_back`
 (
-    `sortie_number`                    VARCHAR(50) COMMENT '架次号',
+    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
     `ground_defense_id`                VARCHAR(50) COMMENT '地防ID',
     `message_time`                     TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time`          TIME(3) COMMENT '卫导时间（精确到毫秒）',
     `local_time`                       TIME(3) COMMENT '本地时间（精确到毫秒）',
     `message_sequence_number`          BIGINT COMMENT '消息序列号',
     `response_message_sequence_number` BIGINT COMMENT '回复消息序列号',
-    INDEX idx_sortie_number (`sortie_number`)
-) COMMENT = 'GTspiBack' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
+    INDEX idx_batch_number (`batch_number`)
+) COMMENT = 'GTspiBack' PARTITION BY KEY (`batch_number`) PARTITIONS 1;
 
 CREATE TABLE IF NOT EXISTS `simulation`.`hit_result`
 (
-    `sortie_number` VARCHAR(50) COMMENT '架次号',
+    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
     `launcher_id`   VARCHAR(50) COMMENT '发射方ID',
     `target_id`     VARCHAR(50) COMMENT '目标ID',
     `weapon_type`   VARCHAR(50) COMMENT '武器类型',
@@ -342,13 +359,14 @@ CREATE TABLE IF NOT EXISTS `simulation`.`hit_result`
     `launch_time`   VARCHAR(50) COMMENT '发射时间',
     `end_time`      TIME(3) COMMENT '结束时间（精确到毫秒）',
     `hit_result`    VARCHAR(50) COMMENT '命中结果',
-    INDEX idx_sortie_number (`sortie_number`)
-) COMMENT = 'HitResult' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
+    INDEX idx_batch_number (`batch_number`)
+) COMMENT = 'HitResult' PARTITION BY KEY (`batch_number`) PARTITIONS 1;
 
 CREATE TABLE IF NOT EXISTS `simulation`.`hj_plane_data`
 (
-    `sortie_number`           VARCHAR(50) COMMENT '架次号',
-    `batch_number`            VARCHAR(50) COMMENT '批次号',
+    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
+    `local_batch_number`            VARCHAR(50) COMMENT '本地批次号',
     `device_number`           VARCHAR(50) COMMENT '设备号',
     `flight_control_number`   VARCHAR(50) COMMENT '航管号',
     `local_time`              TIME(3) COMMENT '本地时间（精确到毫秒）',
@@ -360,12 +378,13 @@ CREATE TABLE IF NOT EXISTS `simulation`.`hj_plane_data`
     `ground_speed`            VARCHAR(50) COMMENT '地速',
     `vertical_speed`          VARCHAR(50) COMMENT '垂直速度',
     `heading`                 VARCHAR(50) COMMENT '航向',
-    INDEX idx_sortie_number (`sortie_number`)
-) COMMENT = 'HJPlaneData' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
+    INDEX idx_batch_number (`batch_number`)
+) COMMENT = 'HJPlaneData' PARTITION BY KEY (`batch_number`) PARTITIONS 1;
 
 CREATE TABLE IF NOT EXISTS `simulation`.`ir_msl`
 (
-    `sortie_number`           VARCHAR(50) COMMENT '架次号',
+    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`             VARCHAR(50) COMMENT '飞机ID',
     `message_time`            TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time` TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -375,12 +394,13 @@ CREATE TABLE IF NOT EXISTS `simulation`.`ir_msl`
     `seeker_elevation`        VARCHAR(50) COMMENT '导引头俯仰角',
     `weapon_type`             VARCHAR(50) COMMENT '武器类型',
     `interception_flag`       VARCHAR(50) COMMENT '截获标识',
-    INDEX idx_sortie_number (`sortie_number`)
-) COMMENT = 'IrMsl' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
+    INDEX idx_batch_number (`batch_number`)
+) COMMENT = 'IrMsl' PARTITION BY KEY (`batch_number`) PARTITIONS 1;
 
 CREATE TABLE IF NOT EXISTS `simulation`.`pl17_rtkn`
 (
-    `sortie_number`           VARCHAR(50) COMMENT '架次号',
+    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`             VARCHAR(50) COMMENT '飞机ID',
     `message_time`            TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time` TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -400,12 +420,13 @@ CREATE TABLE IF NOT EXISTS `simulation`.`pl17_rtkn`
     `head_on`                 VARCHAR(50) COMMENT '迎头',
     `heading`                 VARCHAR(50) COMMENT '航向',
     `pitch`                   VARCHAR(50) COMMENT '俯仰',
-    INDEX idx_sortie_number (`sortie_number`)
-) COMMENT = 'PL17Rtkn' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
+    INDEX idx_batch_number (`batch_number`)
+) COMMENT = 'PL17Rtkn' PARTITION BY KEY (`batch_number`) PARTITIONS 1;
 
 CREATE TABLE IF NOT EXISTS `simulation`.`pl17_rtsn`
 (
-    `sortie_number`           VARCHAR(50) COMMENT '架次号',
+    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`             VARCHAR(50) COMMENT '飞机ID',
     `message_time`            TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time` TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -419,12 +440,13 @@ CREATE TABLE IF NOT EXISTS `simulation`.`pl17_rtsn`
     `weapon_type`             VARCHAR(50) COMMENT '武器类型',
     `trajectory_type`         VARCHAR(50) COMMENT '弹道类型',
     `missile_attack_mode`     VARCHAR(50) COMMENT '导弹攻击模式',
-    INDEX idx_sortie_number (`sortie_number`)
-) COMMENT = 'PL17Rtsn' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
+    INDEX idx_batch_number (`batch_number`)
+) COMMENT = 'PL17Rtsn' PARTITION BY KEY (`batch_number`) PARTITIONS 1;
 
 CREATE TABLE IF NOT EXISTS `simulation`.`pl17_traj`
 (
-    `sortie_number`                  VARCHAR(50) COMMENT '架次号',
+    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`                    VARCHAR(50) COMMENT '飞机ID',
     `message_time`                   TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time`        TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -450,23 +472,25 @@ CREATE TABLE IF NOT EXISTS `simulation`.`pl17_traj`
     `distance_interception_flag`     VARCHAR(50) COMMENT '距离截获标志',
     `speed_interception_flag`        VARCHAR(50) COMMENT '速度截获标志',
     `angle_interception_flag`        VARCHAR(50) COMMENT '角度截获标志',
-    INDEX idx_sortie_number (`sortie_number`)
-) COMMENT = 'PL17Traj' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
+    INDEX idx_batch_number (`batch_number`)
+) COMMENT = 'PL17Traj' PARTITION BY KEY (`batch_number`) PARTITIONS 1;
 
 CREATE TABLE IF NOT EXISTS `simulation`.`plane_pro`
 (
-    `sortie_number`        VARCHAR(50) COMMENT '架次号',
+    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`          VARCHAR(50) COMMENT '飞机ID',
     `aircraft_callsign`    VARCHAR(50) COMMENT '飞机代字',
     `aircraft_code_name`   VARCHAR(50) COMMENT '飞机代号',
     `red_blue_affiliation` VARCHAR(50) COMMENT '红蓝属性',
     `flight_batch`         VARCHAR(50) COMMENT '飞行批次',
-    INDEX idx_sortie_number (`sortie_number`)
-) COMMENT = 'PlanePro' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
+    INDEX idx_batch_number (`batch_number`)
+) COMMENT = 'PlanePro' PARTITION BY KEY (`batch_number`) PARTITIONS 1;
 
 CREATE TABLE IF NOT EXISTS `simulation`.`plane_state`
 (
-    `sortie_number`            VARCHAR(50) COMMENT '架次号',
+    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`              VARCHAR(50) COMMENT '飞机ID',
     `message_time`             TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time`  TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -483,12 +507,13 @@ CREATE TABLE IF NOT EXISTS `simulation`.`plane_state`
     `manual_respawn`           VARCHAR(50) COMMENT '手动复活',
     `parameter_setting_status` VARCHAR(50) COMMENT '参数设置状态',
     `encryption_status`        VARCHAR(50) COMMENT '加密状态',
-    INDEX idx_sortie_number (`sortie_number`)
-) COMMENT = 'PlaneState' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
+    INDEX idx_batch_number (`batch_number`)
+) COMMENT = 'PlaneState' PARTITION BY KEY (`batch_number`) PARTITIONS 1;
 
 CREATE TABLE IF NOT EXISTS `simulation`.`rdr_state`
 (
-    `sortie_number`           VARCHAR(50) COMMENT '架次号',
+    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`             VARCHAR(50) COMMENT '飞机ID',
     `message_time`            TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time` TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -498,12 +523,13 @@ CREATE TABLE IF NOT EXISTS `simulation`.`rdr_state`
     `air_sea_scan_ratio`      VARCHAR(50) COMMENT '空海扫描比',
     `power_status`            VARCHAR(50) COMMENT '开机状态',
     `emission_status`         VARCHAR(50) COMMENT '辐射状态',
-    INDEX idx_sortie_number (`sortie_number`)
-) COMMENT = 'RdrState' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
+    INDEX idx_batch_number (`batch_number`)
+) COMMENT = 'RdrState' PARTITION BY KEY (`batch_number`) PARTITIONS 1;
 
 CREATE TABLE IF NOT EXISTS `simulation`.`rtsn`
 (
-    `sortie_number`           VARCHAR(50) COMMENT '架次号',
+    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`             VARCHAR(50) COMMENT '飞机ID',
     `message_time`            TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time` TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -517,12 +543,13 @@ CREATE TABLE IF NOT EXISTS `simulation`.`rtsn`
     `weapon_type`             VARCHAR(50) COMMENT '武器类型',
     `trajectory_type`         VARCHAR(50) COMMENT '弹道类型',
     `missile_attack_mode`     VARCHAR(50) COMMENT '导弹攻击模式',
-    INDEX idx_sortie_number (`sortie_number`)
-) COMMENT = 'Rtsn' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
+    INDEX idx_batch_number (`batch_number`)
+) COMMENT = 'Rtsn' PARTITION BY KEY (`batch_number`) PARTITIONS 1;
 
 CREATE TABLE IF NOT EXISTS `simulation`.`sa_tgt`
 (
-    `sortie_number`           VARCHAR(50) COMMENT '架次号',
+    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
     `ground_defense_id`       VARCHAR(50) COMMENT '地防ID',
     `message_time`            TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time` TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -535,12 +562,13 @@ CREATE TABLE IF NOT EXISTS `simulation`.`sa_tgt`
     `target_slant_range`      VARCHAR(50) COMMENT '目标斜距',
     `channel_number`          VARCHAR(50) COMMENT '通道号',
     `target_batch_number`     VARCHAR(50) COMMENT '目标批号',
-    INDEX idx_sortie_number (`sortie_number`)
-) COMMENT = 'SaTgt' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
+    INDEX idx_batch_number (`batch_number`)
+) COMMENT = 'SaTgt' PARTITION BY KEY (`batch_number`) PARTITIONS 1;
 
 CREATE TABLE IF NOT EXISTS `simulation`.`sa_traj`
 (
-    `sortie_number`           VARCHAR(50) COMMENT '架次号',
+    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`             VARCHAR(50) COMMENT '飞机ID',
     `message_time`            TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time` TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -562,23 +590,25 @@ CREATE TABLE IF NOT EXISTS `simulation`.`sa_traj`
     `seeker_elevation`        VARCHAR(50) COMMENT '导引头视线俯仰角',
     `target_tspi_status`      VARCHAR(50) COMMENT '目标TSPI状态',
     `command_machine_status`  VARCHAR(50) COMMENT '指令机状态',
-    INDEX idx_sortie_number (`sortie_number`)
-) COMMENT = 'SaTraj' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
+    INDEX idx_batch_number (`batch_number`)
+) COMMENT = 'SaTraj' PARTITION BY KEY (`batch_number`) PARTITIONS 1;
 
 CREATE TABLE IF NOT EXISTS `simulation`.`send_to_3d_data`
 (
-    `sortie_number`        VARCHAR(50) COMMENT '架次号',
+    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`          VARCHAR(50) COMMENT '飞机ID',
     `aircraft_callsign`    VARCHAR(50) COMMENT '飞机代字',
     `aircraft_code_name`   VARCHAR(50) COMMENT '飞机代号',
     `red_blue_affiliation` VARCHAR(50) COMMENT '红蓝属性',
     `flight_batch`         VARCHAR(50) COMMENT '飞行批次',
-    INDEX idx_sortie_number (`sortie_number`)
-) COMMENT = 'Sendto3DData' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
+    INDEX idx_batch_number (`batch_number`)
+) COMMENT = 'Sendto3DData' PARTITION BY KEY (`batch_number`) PARTITIONS 1;
 
 CREATE TABLE IF NOT EXISTS `simulation`.`rtkn`
 (
-    `sortie_number`                  VARCHAR(50) COMMENT '架次号',
+    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`                    VARCHAR(50) COMMENT '飞机ID',
     `message_time`                   TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time`        TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -606,12 +636,13 @@ CREATE TABLE IF NOT EXISTS `simulation`.`rtkn`
     `head_on`                        VARCHAR(50) COMMENT '迎头',
     `heading`                        VARCHAR(50) COMMENT '航向',
     `pitch`                          VARCHAR(50) COMMENT '俯仰',
-    INDEX idx_sortie_number (`sortie_number`)
-) COMMENT = 'Rtkn' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
+    INDEX idx_batch_number (`batch_number`)
+) COMMENT = 'Rtkn' PARTITION BY KEY (`batch_number`) PARTITIONS 1;
 
 CREATE TABLE IF NOT EXISTS `simulation`.`srd_state`
 (
-    `sortie_number`           VARCHAR(50) COMMENT '架次号',
+    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
     `ground_defense_id`       VARCHAR(50) COMMENT '地防ID',
     `message_time`            TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time` TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -624,12 +655,13 @@ CREATE TABLE IF NOT EXISTS `simulation`.`srd_state`
     `emitter_frequency_band`  VARCHAR(50) COMMENT '辐射源频段',
     `decoy_blink_period`      VARCHAR(50) COMMENT '诱饵闪烁周期',
     `antenna_pointing`        VARCHAR(50) COMMENT '天线指向',
-    INDEX idx_sortie_number (`sortie_number`)
-) COMMENT = 'SrdState' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
+    INDEX idx_batch_number (`batch_number`)
+) COMMENT = 'SrdState' PARTITION BY KEY (`batch_number`) PARTITIONS 1;
 
 CREATE TABLE IF NOT EXISTS `simulation`.`tgt`
 (
-    `sortie_number`           VARCHAR(50) COMMENT '架次号',
+    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`             VARCHAR(50) COMMENT '飞机ID',
     `message_time`            TIME(3) COMMENT '消息时间（精确到毫秒）',
     `satellite_guidance_time` TIME(3) COMMENT '卫导时间（精确到毫秒）',
@@ -676,12 +708,13 @@ CREATE TABLE IF NOT EXISTS `simulation`.`tgt`
     `pitch8`                  VARCHAR(50) COMMENT '俯仰8',
     `azimuth8`                VARCHAR(50) COMMENT '方位8',
     `slant_range8`            VARCHAR(50) COMMENT '斜距8',
-    INDEX idx_sortie_number (`sortie_number`)
-) COMMENT = 'Tgt' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
+    INDEX idx_batch_number (`batch_number`)
+) COMMENT = 'Tgt' PARTITION BY KEY (`batch_number`) PARTITIONS 1;
 
 CREATE TABLE IF NOT EXISTS `simulation`.`tspi`
 (
-    `sortie_number`           VARCHAR(50) COMMENT '架次号',
+    `import_id`    BIGINT NOT NULL COMMENT '导入ID',
+    `batch_number` varchar(255) DEFAULT NULL COMMENT '批次号',
     `aircraft_id`             VARCHAR(50) COMMENT '飞机ID',
     `aircraft_type`           VARCHAR(50) COMMENT '飞机类型',
     `message_time`            TIME(3) COMMENT '消息时间（精确到毫秒）',
@@ -701,5 +734,6 @@ CREATE TABLE IF NOT EXISTS `simulation`.`tspi`
     `north_velocity`          VARCHAR(50) COMMENT '北向速度',
     `vertical_velocity`       VARCHAR(50) COMMENT '天向速度',
     `east_velocity`           VARCHAR(50) COMMENT '东向速度',
-    INDEX idx_sortie_number (`sortie_number`)
-) COMMENT = 'Tspi' PARTITION BY KEY (`sortie_number`) PARTITIONS 1;
+    INDEX idx_batch_number (`batch_number`)
+) COMMENT = 'Tspi' PARTITION BY KEY (`batch_number`) PARTITIONS 1;
+

@@ -20,9 +20,13 @@ public class HitResult {
 
 
     /**
-     * 架次号
+     * 导入ID
      */
-    private String sortieNumber;
+    private long importId;
+    /**
+     * 批次号
+     */
+    private String batchNumber;
 
     @JsonProperty(value = "发射方ID")
     private String launcherId;
