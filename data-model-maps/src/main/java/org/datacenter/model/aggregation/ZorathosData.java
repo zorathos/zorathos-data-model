@@ -1,6 +1,6 @@
 package org.datacenter.model.aggregation;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonAlias;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
@@ -25,7 +25,7 @@ public class ZorathosData {
      * 坐标参考系 默认用WGS84
      */
     @Builder.Default
-    @JsonProperty("CRS")
+    @JsonAlias("CRS")
     private CoordinateReferenceSystem CRS = CoordinateReferenceSystem.WGS84;
     /**
      * 高度描述符
@@ -35,7 +35,7 @@ public class ZorathosData {
      * 感知目标动态
      */
     @Singular
-    @JsonProperty("perceivedStatus")
+    @JsonAlias("perceivedStatus")
     private List<PerceivedStatus> perceivedStatuses;
 
     @Getter

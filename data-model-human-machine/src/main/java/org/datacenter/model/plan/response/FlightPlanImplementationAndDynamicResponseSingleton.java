@@ -2,7 +2,7 @@ package org.datacenter.model.plan.response;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonAlias;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -25,19 +25,19 @@ public class FlightPlanImplementationAndDynamicResponseSingleton {
      * 飞行计划编号
      * 不确定是否一定有 默认required=false
      */
-    @JsonProperty(value = "JHBH")
+    @JsonAlias(value = "JHBH")
     private String planRootId;
 
     /**
      * 飞行计划具体时间点
      */
-    @JsonProperty("KFSK")
+    @JsonAlias("KFSK")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private LocalDateTime flightDateTime;
 
     /**
      * 飞行计划标准XML
      */
-    @JsonProperty("XML")
+    @JsonAlias("XML")
     private String xml;
 }

@@ -1,6 +1,6 @@
 package org.datacenter.model.aggregation.sensor;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonAlias;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
@@ -29,7 +29,7 @@ public class BaseSensorExtra {
         /**
          * 4D高清传统毫米波雷达
          */
-        @JsonProperty("4DmmWaveRadar")
+        @JsonAlias("4DmmWaveRadar")
         _4DmmWaveRadar,
         /**
          * 激光雷达
@@ -42,7 +42,7 @@ public class BaseSensorExtra {
         /**
          * 通感一体设施
          */
-        @JsonProperty("5G-A")
+        @JsonAlias("5G-A")
         _5G_A,
         /**
          * 实时定位系统
