@@ -176,7 +176,11 @@ public enum TiDBTable {
     /**
      * 皮电
      */
-    WRISTBAND_GSR("wristband_gsr");
+    WRISTBAND_GSR("wristband_gsr"),
+
+    ILLUMINANCE("illuminance"),
+
+    TEMPERATURE_HUMIDITY("temperature_humidity");
 
     private final String name;
 

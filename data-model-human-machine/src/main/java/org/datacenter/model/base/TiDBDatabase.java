@@ -62,7 +62,12 @@ public enum TiDBDatabase {
     /**
      * 生理数据库 包含 多通道背心 脑电 三维动捕 血氧手环 眼动仪 五个表
      */
-    PHYSIOLOGICAL("physiological");
+    PHYSIOLOGICAL("physiological"),
+
+    /**
+     * 环境数据库
+     */
+    ENVIRONMENT("environment");
 
     private final String name;
 

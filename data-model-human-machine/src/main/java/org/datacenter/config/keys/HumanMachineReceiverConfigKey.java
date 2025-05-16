@@ -47,6 +47,10 @@ public enum HumanMachineReceiverConfigKey {
     PHYSIOLOGY_FILE_URL("url", "physiology_file_url", "生理数据文件的url"),
     PHYSIOLOGY_KAFKA_TOPIC("topic", "physiology_kafka_topic", "生理数据投递的kafka topic"),
 
+    // 环境配置组
+    ENVIRONMENT_FILE_URL("url", "environment_file_url", "环境数据文件的url"),
+    ENVIRONMENT_KAFKA_TOPIC("topic", "environment_kafka_topic", "环境数据投递的kafka topic"),
+
     // 实装配置组
     ASSET_LIST_BASE_URL("listBaseUrl", "asset_list_base_url", "实装列表的url"),
     ASSET_CONFIG_BASE_URL("configBaseUrl", "asset_config_base_url", "实装配置的url"),

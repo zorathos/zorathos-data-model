@@ -1,5 +1,8 @@
 package org.datacenter.config.receiver;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 import org.datacenter.exception.ZorathosException;
 
 import java.io.Serial;
@@ -11,6 +14,9 @@ import java.io.Serializable;
  * 对所有URL 不带base的说明要补充完整参数 带base的只需要基URL即可
  * 对所有JSON请求体 都需要使用BASE64编码后传入
  */
+@Data
+@NoArgsConstructor
+@SuperBuilder
 public abstract class BaseReceiverConfig implements Serializable {
 
     @Serial
