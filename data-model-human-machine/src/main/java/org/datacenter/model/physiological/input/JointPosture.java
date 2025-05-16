@@ -1,16 +1,23 @@
 package org.datacenter.model.physiological.input;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JSR310Module;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
+import lombok.experimental.SuperBuilder;
 import org.datacenter.model.physiological.BasePhysiologicalInput;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * @author : [wangminan]
@@ -20,8 +27,9 @@ import java.io.Serializable;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @JsonIgnoreProperties(ignoreUnknown = true)
+@ToString(callSuper = true)
 public class JointPosture extends BasePhysiologicalInput {
 
     /**
@@ -181,5 +189,61 @@ public class JointPosture extends BasePhysiologicalInput {
             }
             throw new IllegalArgumentException("No enum constant " + JointName.class.getCanonicalName() + "." + name);
         }
+    }
+
+    public static void main(String[] args) throws JsonProcessingException {
+        JointPosture posture = JointPosture.builder()
+                .px(Float.parseFloat("0.1"))
+                .py(Float.parseFloat("0.2"))
+                .pz(Float.parseFloat("0.3"))
+                .qx(Float.parseFloat("0.4"))
+                .qy(Float.parseFloat("0.5"))
+                .qz(Float.parseFloat("0.6"))
+                .qw(Float.parseFloat("0.7"))
+                .deviceId(1L)
+                .jointName(JointName.Hips)
+                .pilotId(1L)
+                .importId(1L)
+                .taskId(1L)
+                .timestamp(LocalDateTime.parse("2025-05-15T12:00:00.000001"))
+                .build();
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.registerModule(new JavaTimeModule());
+        System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(posture));
+
+        String jointJson = """
+                [{
+                  "taskId" : 1,
+                  "deviceId" : 1,
+                  "pilotId" : 1,
+                  "timestamp" : "2025-05-15 12:00:00.000001",
+                  "jointName" : "Hips",
+                  "qx" : 0.4,
+                  "qy" : 0.5,
+                  "qz" : 0.6,
+                  "qw" : 0.7,
+                  "px" : 0.1,
+                  "py" : 0.2,
+                  "pz" : 0.3
+                },
+                {
+                  "taskId" : 1,
+                  "deviceId" : 1,
+                  "pilotId" : 1,
+                  "timestamp" : "2025-05-15 12:00:00.000001",
+                  "jointName" : "LeftHand",
+                  "qx" : 0.4,
+                  "qy" : 0.5,
+                  "qz" : 0.6,
+                  "qw" : 0.7,
+                  "px" : 0.1,
+                  "py" : 0.2,
+                  "pz" : 0.3
+                }]
+                """;
+        // 读一个List<JointPosture>对象
+        List<JointPosture> jointPostures = mapper.readValue(jointJson,
+                mapper.getTypeFactory().constructCollectionType(List.class, JointPosture.class));
+        System.out.println(jointPostures);
     }
 }

@@ -2,10 +2,11 @@ package org.datacenter.model.physiological.input;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
+import lombok.experimental.SuperBuilder;
 import org.datacenter.model.physiological.BasePhysiologicalInput;
 
 /**
@@ -16,8 +17,9 @@ import org.datacenter.model.physiological.BasePhysiologicalInput;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @JsonIgnoreProperties(ignoreUnknown = true)
+@ToString(callSuper = true)
 public class TShirtTemp extends BasePhysiologicalInput {
 
     /**
